@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!-- atonement-lineage — interactive theology map -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Atonement Lineage</title>
+<style>
+  :root { --bg:#0b0b0c; --ink:#e5e7eb; --muted:#9ca3af; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  body { height:100vh; height:100dvh; overflow:hidden; display:flex; flex-direction:column; }
+  #hint { flex:0 0 auto; text-align:center; font-size:12.5px; color:var(--muted);
+    padding:10px 16px 2px; }
+  #legend { flex:0 0 auto; display:flex; flex-wrap:wrap; gap:6px 14px; justify-content:center;
+    padding:4px 16px 8px; font-size:11px; color:var(--muted); }
+  #legend span { display:inline-flex; align-items:center; gap:5px; }
+  #legend i { width:11px; height:11px; border-radius:3px; display:inline-block; }
+
+  #graph { flex:1 1 auto; position:relative; overflow:hidden; touch-action:none;
+    cursor:grab; }
+  #graph.grabbing { cursor:grabbing; }
+  #canvas { position:absolute; top:0; left:0; transform-origin:0 0; will-change:transform; }
+  .mermaid { margin:0; }
+  .node.clickable { cursor:pointer; }
+  .node.clickable:hover { opacity:0.88; }
+  .edgeLabel, .edgeLabel p { color:#cbd5e1 !important; background:var(--bg) !important;
+    font-size:12px !important; }
+  .cluster rect { fill:#0f172a !important; stroke:#3b82f6 !important; rx:10; }
+  .cluster .nodeLabel, .cluster text { fill:#e5e7eb !important; font-weight:600; }
+
+  #zoomctl { position:absolute; right:12px; bottom:16px; display:flex; flex-direction:column;
+    gap:8px; z-index:20; }
+  #zoomctl button { width:44px; height:44px; border-radius:12px; border:1px solid #2a2c33;
+    background:rgba(21,22,26,0.92); color:#e5e7eb; font-size:20px; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; }
+  #zoomctl button:active { background:#2c2f37; }
+
+  /* modal */
+  #overlay { position:fixed; inset:0; background:rgba(0,0,0,0.7);
+    display:none; align-items:center; justify-content:center; padding:16px; z-index:50;
+    backdrop-filter:blur(2px); }
+  #overlay.open { display:flex; }
+  #modal { position:relative; width:min(600px,94vw); max-height:88vh; overflow-y:auto;
+    background:#15161a; border:1px solid #2a2c33; border-radius:18px;
+    padding:26px 22px 30px; box-shadow:0 20px 60px rgba(0,0,0,0.6);
+    animation:pop .16s ease-out; }
+  @keyframes pop { from{ transform:scale(.96); opacity:0; } to{ transform:scale(1); opacity:1; } }
+  #closeBtn { position:absolute; top:12px; right:12px; width:38px; height:38px;
+    border-radius:50%; border:none; background:#26282f; color:#e5e7eb; font-size:18px;
+    cursor:pointer; line-height:1; }
+  #closeBtn:hover { background:#33363f; }
+  #tag { display:inline-block; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    padding:4px 10px; border-radius:999px; margin-bottom:12px; font-weight:700; }
+  #mTitle { margin:0 40px 3px 0; font-size:22px; line-height:1.25; }
+  #mMeta { color:var(--muted); font-size:13px; margin:0 0 12px; }
+  #mHeadline { margin:0 0 4px; font-size:16.5px; font-weight:700; color:#e9d8bf;
+    line-height:1.35; padding-bottom:16px; border-bottom:1px solid #2a2c33; }
+  .sec { margin-top:18px; }
+  .sec h3 { margin:0 0 6px; font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:#8b8f9a; }
+  .sec p { margin:0; font-size:15.5px; line-height:1.5; color:#eceef2; }
+  .sec.opens { border-left:3px solid #6b7280; padding-left:12px; }
+  .sec.opens h3 { color:#c4b5a0; }
+  .sec.notes { border-left:3px solid #3b82f6; padding-left:12px; margin-top:22px;
+    padding-top:10px; padding-bottom:10px; background:rgba(59,130,246,0.06); border-radius:0 8px 8px 0; }
+  .sec.notes h3 { color:#93c5fd; }
+  .sec.notes p { white-space:pre-wrap; font-style:italic; color:#dce3ea; }
+</style>
+</head>
+<body>
+  <div id="hint">Drag to pan · pinch or scroll to zoom · tap a box for its card</div>
+  <div id="legend">
+    <span><i style="background:#fde8e8"></i>critique</span>
+    <span><i style="background:#dbeafe"></i>penal</span>
+    <span><i style="background:#fef3c7"></i>governmental</span>
+    <span><i style="background:#ede9fe"></i>internal critic</span>
+    <span><i style="background:#dcfce7"></i>ontological</span>
+    <span><i style="background:#e5e7eb"></i>provocation</span>
+  </div>
+
+  <div id="graph">
+    <div id="canvas">
+      <pre class="mermaid">
+flowchart TD
+    ATH["Athanasius<br/>Recasts atonement as healing, not payment"]
+    CALV["Calvin · Institutes (1559)<br/>The Reformed doctrine of satisfaction"]
+    SOC["Socinus · De Servatore (1578)<br/>Satisfaction and forgiveness are mutually exclusive opposites.<br/>Retributive justice cannot be transferred."]
+    GRO["Grotius · Defensio (1617)<br/>Founds the governmental theory"]
+    NEW["New Divinity (18th–19th c.)<br/>Turns justice into moral government"]
+    BAX["Baxter (1649)<br/>Universal in the making, particular in the applying"]
+    KANT["Kant (1793)<br/>Moves atonement inside the moral self"]
+    CAM["McLeod Campbell (1856)<br/>Replaces penalty with vicarious repentance"]
+    TOR["T. F. Torrance (20th c.)<br/>Grounds salvation in Christ's vicarious humanity"]
+
+    UNIV["Universal redemption (1646)<br/>Christ died for all alike"]
+
+    subgraph OWEN["Owen — a self-bracing forensic system"]
+    direction TB
+        OWE47["Death of Death (1647)<br/>Introduces limited atonement"]
+        OWE53["Dissertation on Divine Justice (1653)<br/>Makes justice a necessity, not a choice"]
+        OWE55["Vindiciae Evangelicae (1655)<br/>Distinguishes penal from pecuniary satisfaction"]
+        OWE77["Justification by Faith (1677)<br/>Closes the system with double imputation"]
+        OWE47 -->|"reverses its own concession"| OWE53
+        OWE53 -->|"grounds: no relaxation possible"| OWE55
+        OWE55 -->|"still needs a transfer mechanism"| OWE77
+        OWE77 -.->|"re-secures 1647's scope"| OWE47
+    end
+
+    UNIV -->|"written to refute"| OWE47
+    CALV -->|"the doctrine it refutes (via Couet)"| SOC
+    CALV -.->|"framework Owen defends"| OWE55
+    SOC -->|"answers by conceding"| GRO
+    SOC -->|"answers by denying (via Biddle)"| OWE55
+    GRO -->|"hardens him"| OWE53
+    GRO -->|"refined into"| NEW
+    OWE47 -->|"turned on itself"| BAX
+    SOC -.->|"same objection, full strength"| KANT
+    SOC -.->|"grants it, relocates objectivity"| CAM
+    ATH -->|"ontological frame"| CAM
+    CAM -->|"carries forward"| TOR
+    ATH -->|"modern Athanasian"| TOR
+
+    classDef critique fill:#fde8e8,stroke:#b91c1c,color:#111;
+    classDef govt fill:#fef3c7,stroke:#b45309,color:#111;
+    classDef penal fill:#dbeafe,stroke:#1d4ed8,color:#111;
+    classDef hybrid fill:#ede9fe,stroke:#6d28d9,color:#111;
+    classDef onto fill:#dcfce7,stroke:#15803d,color:#111;
+    classDef target fill:#e5e7eb,stroke:#6b7280,color:#111;
+
+    class SOC,KANT critique;
+    class GRO,NEW govt;
+    class OWE47,OWE53,OWE55,OWE77,CALV penal;
+    class BAX hybrid;
+    class ATH,CAM,TOR onto;
+    class UNIV target;
+
+    click CALV call nodeClick("CALV")
+    click ATH call nodeClick("ATH")
+    click SOC call nodeClick("SOC")
+    click GRO call nodeClick("GRO")
+    click NEW call nodeClick("NEW")
+    click BAX call nodeClick("BAX")
+    click KANT call nodeClick("KANT")
+    click CAM call nodeClick("CAM")
+    click TOR call nodeClick("TOR")
+    click UNIV call nodeClick("UNIV")
+    click OWE47 call nodeClick("OWE47")
+    click OWE53 call nodeClick("OWE53")
+    click OWE55 call nodeClick("OWE55")
+    click OWE77 call nodeClick("OWE77")
+      </pre>
+    </div>
+    <div id="zoomctl">
+      <button id="zin" aria-label="Zoom in">+</button>
+      <button id="zout" aria-label="Zoom out">−</button>
+      <button id="zreset" aria-label="Reset view">⟲</button>
+    </div>
+  </div>
+
+  <div id="overlay" onclick="maybeClose(event)">
+    <div id="modal" role="dialog" aria-modal="true">
+      <button id="closeBtn" onclick="closeModal()" aria-label="Close">✕</button>
+      <span id="tag"></span>
+      <h2 id="mTitle"></h2>
+      <p id="mMeta"></p>
+      <p id="mHeadline"></p>
+      <div class="sec"><h3>The problem it faces</h3><p id="mProblem"></p></div>
+      <div class="sec"><h3>The move it makes</h3><p id="mSolution"></p></div>
+      <div class="sec opens"><h3>The new problem it opens</h3><p id="mOpens"></p></div>
+      <div class="sec notes" id="notesSec"><h3>My notes</h3><p id="mNotes"></p></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+  <script>
+    const CAMP = {
+      critique:{c:"#fde8e8",t:"#b91c1c",label:"Critique"},
+      penal:{c:"#dbeafe",t:"#1d4ed8",label:"Penal"},
+      govt:{c:"#fef3c7",t:"#b45309",label:"Governmental"},
+      hybrid:{c:"#ede9fe",t:"#6d28d9",label:"Internal critic"},
+      onto:{c:"#dcfce7",t:"#15803d",label:"Ontological"},
+      target:{c:"#e5e7eb",t:"#374151",label:"Provocation"}
+    };
+    const DATA = {
+      CALV:{camp:"penal", title:"Calvin · Institutes of the Christian Religion", meta:"definitive edition, 1559",
+        headline:"The Reformed doctrine of satisfaction",
+        problem:"How can a just and holy God forgive sinners without treating sin as though it didn't matter? Anselm had framed the answer around God's honor; the Reformers recast it around justice and God's wrath against sin.",
+        solution:"Christ, standing in our place, bears the curse and the wrath our sin deserved — a real, objective, substitutionary satisfaction of divine justice — so that God can be at once just and the justifier of those who believe. This is the fountainhead of the penal-substitution stream.",
+        opens:"It hands the critics their opening: if Christ fully bears the penalty in our place, is that forgiveness or merely payment — and can guilt be justly transferred to an innocent? Exactly the blades Socinus will press."},
+      UNIV:{camp:"target", title:"Universal redemption", meta:"Arminian 'general ransom' · Thomas More, 1646",
+        headline:"Christ died for all alike",
+        problem:"Scripture repeatedly says Christ died for 'all' and for 'the world,' and a gospel freely offered to everyone seems to require that he actually died for everyone — otherwise the universal call rings hollow.",
+        solution:"It affirms a general ransom: Christ's death is a universal provision for all people, its saving benefit becoming effective on the condition of faith. (The milder 'hypothetical universalist' variant says the death is sufficient for all but efficient only for the elect.)",
+        opens:"If Christ actually bore the full penalty for everyone, then either all must be saved or God punishes the same sin twice in those who still perish — the exact vulnerability Death of Death was written to exploit."},
+      ATH:{camp:"onto", title:"Athanasius", meta:"On the Incarnation, 4th c.",
+        headline:"Recasts atonement as healing, not payment",
+        problem:"If salvation is essentially a legal transaction, it never reaches the deeper human catastrophe: a nature that has turned from its source of life and is unravelling into corruption and death.",
+        solution:"He frames atonement ontologically. The Word takes on mortal human nature and, by uniting it to his own imperishable life, heals and re-creates it from the inside — covering death with life rather than settling a penalty.",
+        opens:"Locating salvation in the healing of nature leaves the legal and moral side underspecified — how guilt is answered and where God's justice and wrath fit — the very data the later Western tradition refuses to fold into ontology."},
+      SOC:{camp:"critique", title:"Faustus Socinus", meta:"De Jesu Christo Servatore, 1578",
+        headline:"Satisfaction and forgiveness are mutually exclusive opposites. Retributive justice cannot be transferred.",
+        problem:"Penal satisfaction struck him as self-cancelling: a debt paid in full is discharged, not forgiven, so grace vanishes — and punishing an innocent substitute for the guilty is itself unjust, since guilt can't be transferred.",
+        solution:"He drops objective satisfaction entirely. God, who tells us to forgive freely, simply forgives the repentant; Christ saves as prophet and exemplar whose exaltation gives him power to bless. No payment is owed or made.",
+        opens:"If the death accomplishes nothing objective, it becomes hard to say why the cross was needed at all; the atonement risks being morally inspiring but causally idle, and grace loses any costly ground."},
+      GRO:{camp:"govt", title:"Hugo Grotius", meta:"Defensio fidei catholicae, 1617",
+        headline:"Founds the governmental theory",
+        problem:"Socinus's dilemma only bites if God is a private creditor — but once you concede there's no strict payment, you seem pushed all the way to bare forgiveness, with nothing objective left for the cross to do.",
+        solution:"He moves God from creditor to Ruler of a moral order. God may relax the strict penalty, yet stages Christ's death as a public demonstration upholding the law's authority — so he can pardon freely without sin looking trivial.",
+        opens:"A demonstration that upholds the law's authority may not be a real satisfaction of justice at all — it looks like deterrent expediency that never touches anyone's specific guilt, and if the penalty can be relaxed, the bloody display starts to look superfluous."},
+      NEW:{camp:"govt", title:"The New Divinity", meta:"Bellamy, Edwards Jr., Park · 18th–19th c.",
+        headline:"Turns justice into moral government",
+        problem:"Grotius's rectoral sketch was suggestive but loosely defined, and Edwardsean Calvinists needed it to fit a theology centered on God's benevolent aim for the whole moral universe.",
+        solution:"They redefine divine justice as general rectitude — God's disposition to do what best serves the moral system. The atonement upholds moral government and makes pardon safe, rather than discharging a retributive debt.",
+        opens:"Recasting justice as benevolent rectitude arguably changes the subject: it strains to hold the biblical language of wrath and desert, and loosens the tie between the atonement and any individual's guilt even further."},
+      BAX:{camp:"hybrid", title:"Richard Baxter", meta:"Aphorismes of Justification, 1649",
+        headline:"Universal in the making, particular in the applying",
+        problem:"Owen's double-payment case for limited atonement only works if satisfaction behaves like money that auto-discharges the account — which flatly contradicts Owen's own penal model, where release is never automatic.",
+        solution:"He splits the difference: the satisfaction is universal in the making but particular in the applying, applied by God as Rector on the condition of faith — so its scope isn't fixed mechanically by the payment itself.",
+        opens:"Resting application on God's rectoral will plus the condition of faith reintroduces a conditional, governmental element that critics read as neonomian — dissolving the very definiteness Owen prized and pressing on whether faith becomes a work."},
+      KANT:{camp:"critique", title:"Immanuel Kant", meta:"Religion within the Bounds of Bare Reason, 1793",
+        headline:"Moves atonement inside the moral self",
+        problem:"Moral guilt looks like the most personal thing a person has — not a fungible liability you can sign over to another — so any scheme that transfers desert seems morally incoherent from the start.",
+        solution:"He internalizes the atonement: what reconciles is the sinner's own moral revolution, the new self bearing the cost of putting the old self to death, rather than the legal crediting of someone else's merit.",
+        opens:"If atonement just is the sinner's own moral reform, nothing is really received from outside — grace, Christ's work, and forgiveness turn symbolic, and the guilt of past sin that reform can't retroactively undo is left unpaid."},
+      CAM:{camp:"onto", title:"John McLeod Campbell", meta:"The Nature of the Atonement, 1856",
+        headline:"Replaces penalty with vicarious repentance",
+        problem:"Grant (rightly) that punishment can't be transferred and penal substitution collapses — yet simply dropping objectivity, the Socinian route, throws away the real God-ward reality of the cross.",
+        solution:"He relocates Christ's offering from penalty to confession: a perfect vicarious 'Amen' to the Father's judgment on sin, an adequate repentance humanity couldn't make — keeping atonement objective without transferring guilt.",
+        opens:"It's unclear whether confession and repentance can bear the objective, Godward weight that penalty carried — either an adequate answer to condemnation quietly smuggles the penal element back in, or it leaves the wrath data unaddressed."},
+      TOR:{camp:"onto", title:"T. F. Torrance", meta:"20th c. · after Athanasius & Campbell",
+        headline:"Grounds salvation in Christ's vicarious humanity",
+        problem:"A purely forensic, transactional atonement leaves God's act external to us, and struggles to show how the cross actually heals human nature or reveals a God who isn't at war with himself.",
+        solution:"He grounds salvation in Christ's vicarious humanity: the Son believes, obeys, and dies in our place and on our behalf from inside our fallen nature — so atonement is ontological union and healing, not a legal exchange with an angry Father.",
+        opens:"Critics charge that the ontological account under-accounts for the forensic and wrath-laden texts, buying its coherence by relocating that data rather than explaining it — and assuming fallen humanity raises its own worries about Christ."},
+      OWE47:{camp:"penal", title:"Death of Death in the Death of Christ", meta:"John Owen, 1647",
+        headline:"Introduces limited atonement",
+        problem:"If Christ actually bore the full penalty for everyone, then either everyone must be saved or God punishes the same sin twice — so a blankly universal atonement seems to prove too much.",
+        solution:"He argues the atonement is definite: Christ died to actually secure, not merely make possible, the salvation of the elect. The double-payment logic says God can't justly exact the debt from both Christ and the sinner.",
+        opens:"The double-payment argument quietly runs on a money-debt model where payment auto-discharges, which invites Socinus's 'then grace is merely owed' retort — and it still leaves justice a free decree, so the cross's necessity isn't yet secured."},
+      OWE53:{camp:"penal", title:"A Dissertation on Divine Justice", meta:"John Owen, 1653",
+        headline:"Makes justice a necessity, not a choice",
+        problem:"Grotius — and Owen's own earlier self — treated retributive justice as something God could waive by will. If that's true, God could have forgiven with no satisfaction at all, and the cross loses its necessity.",
+        solution:"He argues vindicatory justice is an essential attribute of God's nature, not a free choice: God can no more leave sin unpunished than deny himself. Satisfaction becomes strictly necessary, and no rectoral 'relaxation' is available.",
+        opens:"Making satisfaction strictly necessary revives Socinus's dilemma at full strength: if the penalty is rigorously exacted in full, where is there any room left for grace and forgiveness?"},
+      OWE55:{camp:"penal", title:"Vindiciae Evangelicae", meta:"John Owen vs. John Biddle, 1655",
+        headline:"Distinguishes penal from pecuniary satisfaction",
+        problem:"Socinus, through the English Socinian Biddle, pressed two blades at once: full payment leaves no room for grace, and guilt cannot be justly transferred onto an innocent substitute.",
+        solution:"He distinguishes penal from pecuniary satisfaction — penal payment doesn't auto-discharge, so release still waits on God's free act and grace survives — and grounds the transfer in Christ's voluntary suretyship and covenantal union with the elect.",
+        opens:"The penal move rescues grace but kicks out the pecuniary logic the double-payment case for limited atonement depended on (Baxter's knife) — and the suretyship answer still owes an account of how Christ's work is actually reckoned to the believer.",
+        notes:"So he moves to penal to preserve God's right to accept a substitute, and he says that it's that move that is essentially the grace of God—that God didn't have to accept a substitute but he does anyway."},
+      OWE77:{camp:"penal", title:"The Doctrine of Justification by Faith", meta:"John Owen, 1677",
+        headline:"Closes the system with double imputation",
+        problem:"The suretyship scheme still owes an account of how Christ's work actually counts as the believer's, and how a guilty person comes to stand righteous before God.",
+        solution:"He closes the forensic circuit with double imputation: the believer's sin is reckoned to Christ and Christ's righteousness reckoned to the believer, received through faith — locking the whole system together.",
+        opens:"Double imputation invites the legal-fiction charge and rests the whole system on a transactional Father–Son distinction — Christ standing before the Father — that a strong 'to see Jesus is to see the Father' would collapse.",
+        notes:"This opens another problem, which is that the imputation scheme is really just legal fiction and not something actual--it makes no actual change. To defend, he makes it forensically real (stronger than legal fiction) by basing on union with Christ. Rome says that a verdict only declares the person righteous, but doesn't make them righteous. Torrance says salvation should be an actual, not forensic, change, which pushes the actual change to sanctification--making sanctification, not justification, the actual thing that changes."}
+    };
+
+    function nodeClick(id){
+      const d = DATA[id]; if(!d) return;
+      const camp = CAMP[d.camp];
+      const tag = document.getElementById("tag");
+      tag.textContent = camp.label;
+      tag.style.background = camp.c; tag.style.color = camp.t;
+      document.getElementById("mTitle").textContent = d.title;
+      document.getElementById("mMeta").textContent = d.meta;
+      document.getElementById("mHeadline").textContent = d.headline;
+      document.getElementById("mProblem").textContent = d.problem;
+      document.getElementById("mSolution").textContent = d.solution;
+      document.getElementById("mOpens").textContent = d.opens;
+      const notesSec = document.getElementById("notesSec");
+      if(d.notes){ document.getElementById("mNotes").textContent = d.notes; notesSec.style.display=""; }
+      else { notesSec.style.display="none"; }
+      document.getElementById("overlay").classList.add("open");
+      document.getElementById("modal").scrollTop = 0;
+    }
+    function closeModal(){ document.getElementById("overlay").classList.remove("open"); }
+    function maybeClose(e){ if(e.target.id === "overlay") closeModal(); }
+    window.nodeClick = nodeClick;
+    document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
+
+    mermaid.initialize({
+      startOnLoad:false, securityLevel:"loose", theme:"base",
+      themeVariables:{ background:"#0b0b0c", lineColor:"#9ca3af",
+        primaryTextColor:"#e5e7eb", fontSize:"14px" },
+      flowchart:{ useMaxWidth:false, htmlLabels:true, curve:"basis" }
+    });
+
+    /* ---- pan / zoom layer ---- */
+    const graph = document.getElementById("graph");
+    const canvas = document.getElementById("canvas");
+    const MIN = 0.3, MAX = 5;
+    let scale = 1, tx = 0, ty = 0;
+    let natW = 0, natH = 0, initScale = 1, initTx = 0, initTy = 0;
+    const clamp = (v,a,b)=>Math.max(a,Math.min(b,v));
+    function apply(){ canvas.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`; }
+    function rel(x,y){ const r=graph.getBoundingClientRect(); return {x:x-r.left, y:y-r.top}; }
+    function zoomAround(px,py,factor){
+      const ns = clamp(scale*factor, MIN, MAX);
+      const k = ns/scale;
+      tx = px-(px-tx)*k; ty = py-(py-ty)*k; scale = ns; apply();
+    }
+    function fit(){
+      const r = graph.getBoundingClientRect();
+      if(!natW || !natH){ return; }
+      initScale = Math.min((r.width*0.98)/natW, (r.height*0.98)/natH, 1.4);
+      initScale = Math.max(initScale, MIN);
+      initTx = (r.width - natW*initScale)/2;
+      initTy = 14;
+      scale = initScale; tx = initTx; ty = initTy; apply();
+    }
+    function reset(){ scale=initScale; tx=initTx; ty=initTy; apply(); }
+
+    document.getElementById("zin").onclick = ()=>{ const r=graph.getBoundingClientRect(); zoomAround(r.width/2, r.height/2, 1.3); };
+    document.getElementById("zout").onclick = ()=>{ const r=graph.getBoundingClientRect(); zoomAround(r.width/2, r.height/2, 1/1.3); };
+    document.getElementById("zreset").onclick = reset;
+
+    graph.addEventListener("wheel", e=>{
+      e.preventDefault();
+      const p = rel(e.clientX, e.clientY);
+      zoomAround(p.x, p.y, Math.exp(-e.deltaY*0.0015));
+    }, {passive:false});
+
+    const pointers = new Map();
+    let downX=0, downY=0, lastX=0, lastY=0, lastDist=0, moved=false, justDragged=false, dragClamp=null;
+
+    graph.addEventListener("pointerdown", e=>{
+      pointers.set(e.pointerId, {x:e.clientX, y:e.clientY});
+      if(pointers.size===1){ downX=lastX=e.clientX; downY=lastY=e.clientY; moved=false; }
+      else if(pointers.size===2){ const p=[...pointers.values()]; lastDist=Math.hypot(p[0].x-p[1].x, p[0].y-p[1].y); moved=true; }
+    });
+    graph.addEventListener("pointermove", e=>{
+      if(!pointers.has(e.pointerId)) return;
+      pointers.set(e.pointerId, {x:e.clientX, y:e.clientY});
+      const pts = [...pointers.values()];
+      if(pts.length===1){
+        if(!moved && Math.hypot(e.clientX-downX, e.clientY-downY) > 8){
+          moved=true; graph.classList.add("grabbing");
+          try{ graph.setPointerCapture(e.pointerId); }catch(_){}
+        }
+        if(moved){ tx += e.clientX-lastX; ty += e.clientY-lastY; apply(); e.preventDefault(); }
+        lastX=e.clientX; lastY=e.clientY;
+      } else if(pts.length>=2){
+        const d = Math.hypot(pts[0].x-pts[1].x, pts[0].y-pts[1].y);
+        const mid = rel((pts[0].x+pts[1].x)/2, (pts[0].y+pts[1].y)/2);
+        if(lastDist>0) zoomAround(mid.x, mid.y, d/lastDist);
+        lastDist = d; moved=true; e.preventDefault();
+      }
+    });
+    function endPointer(e){
+      if(pointers.has(e.pointerId)) pointers.delete(e.pointerId);
+      if(pointers.size<2) lastDist=0;
+      if(pointers.size===0){
+        graph.classList.remove("grabbing");
+        if(moved){ justDragged=true; setTimeout(()=>{ justDragged=false; }, 120); }
+      }
+    }
+    graph.addEventListener("pointerup", endPointer);
+    graph.addEventListener("pointercancel", endPointer);
+    graph.addEventListener("pointerleave", endPointer);
+
+    // swallow the click that follows a drag/pinch so it doesn't open a card
+    graph.addEventListener("click", e=>{
+      if(justDragged){ e.stopPropagation(); e.preventDefault(); justDragged=false; }
+    }, true);
+
+    mermaid.run().then(()=>{
+      const svg = canvas.querySelector("svg");
+      if(svg){
+        const vb = svg.viewBox && svg.viewBox.baseVal;
+        natW = (vb && vb.width) ? vb.width : svg.getBoundingClientRect().width;
+        natH = (vb && vb.height) ? vb.height : svg.getBoundingClientRect().height;
+        svg.removeAttribute("style");
+        svg.style.width = natW+"px"; svg.style.height = natH+"px"; svg.style.maxWidth="none";
+        requestAnimationFrame(fit);
+      }
+    }).catch(err=>{
+      graph.innerHTML = "<p style='color:#f87171;text-align:center;padding:20px'>Diagram failed to render: "+err+"</p>";
+    });
+    window.addEventListener("resize", ()=>{ /* keep current zoom; just reapply */ apply(); });
+  </script>
+</body>
+</html>
