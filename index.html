@@ -94,7 +94,8 @@ flowchart TD
     CAM["McLeod Campbell (1856)<br/>Replaces penalty with vicarious repentance"]
     TOR["T. F. Torrance (20th c.)<br/>Grounds salvation in Christ's vicarious humanity"]
     MORT01["Intra-trinitarian transactions are nonsensical and produce inequality."]
-    MORT02["Human lacks sufficiency for payment."]
+    MORT02["Provide humanity dignity via infusion from divinity."]
+    MORT03["Make humanity the source of payment."]
 
     UNIV["Universal redemption (1646)<br/>Christ died for all alike"]
 
@@ -124,7 +125,9 @@ flowchart TD
     CAM -->|"carries forward"| TOR
     ATH -->|"modern Athanasian"| TOR
     OWE55 -->|"Trinitarian transactions (suretyships) are nonsensical"| MORT01
-    MORT01 -->|"Humanity needs something to repay" | MORT02
+    MORT01 -->|"Nonsensical transaction leads to Governmental theory" | MORT03
+    MORT03 -->|"Human dignity is insufficient." | MORT02
+    MORT02 -->|"Returns to Athanasius" | ATH
 
     classDef critique fill:#fde8e8,stroke:#b91c1c,color:#111;
     classDef govt fill:#fef3c7,stroke:#b45309,color:#111;
@@ -133,7 +136,7 @@ flowchart TD
     classDef onto fill:#dcfce7,stroke:#15803d,color:#111;
     classDef target fill:#e5e7eb,stroke:#6b7280,color:#111;
 
-    class SOC,KANT,MORT01,MORT02 critique;
+    class SOC,KANT,MORT01,MORT02,MORT03 critique;
     class GRO,NEW govt;
     class OWE47,OWE53,OWE55,OWE77,CALV penal;
     class BAX hybrid;
@@ -156,6 +159,7 @@ flowchart TD
     click OWE77 call nodeClick("OWE77")
     click MORT01 call nodeClick("MORT01")
     click MORT02 call nodeClick("MORT02")
+    click MORT03 call nodeClick("MORT03")
       </pre>
     </div>
     <div id="zoomctl">
@@ -269,11 +273,17 @@ flowchart TD
         opens:"The cost moves to the assumed flesh.",
         notes:"The classical rebuttal answers this by relocating the payment for the penalty to the human frame. When we do so, we run into another (kind of athanasian) problem. Once relocated, then we have to provide some way for the human frame to have sufficient value to repay. The best approach for this is in the deification of the body on the basis of The Word's infinite nature, and that brings us full circle back to Athanasius. If Christ's body deifies his human flesh in such a way that it can bear the penalty and be resurrected, then why can't he deify all human flesh (ontological)?"
       },
-      MORT02:{camp:"critique", title:"Human flesh lacks sufficiency for payment", meta:"Unattributed Idea",
-        headline: "Human flesh lacks sufficiency for payment and cannot be used as such",
-        problem: "The traditional response to the closed-loop repayment within the Godhead is to relocate the cost to humanity's side.",
-        solution: "Infuse humanity with uncreated light.",
-        opens: "..."
+      MORT02:{camp:"critique", title:"Infuse mankind with deified dignity to meet the demand.", meta:"Unattributed Idea",
+        headline: "Returns to the Athanasian model.",
+        problem: "Human flesh lacks the sufficiency to satisfy the demands of God.",
+        solution: "Infuse humanity with something that is sufficient to pay the penalty. This is something that had to preexist before God's death.",
+        opens: "The problem that PSA isn't really PSA anymore. It's the movement of a debt from man to God and then back to man again for payment. Man becomes nothing more than a pass-through entity."
+      },
+      MORT03:{camp:"critique", title:"Move the source of payment to human flesh.", meta:"Unattributed Idea",
+        headline: "The payment comes from man, not from God.",
+        problem: "The fact that an intra-trinitarian payment is nonsensical means that the payment must come from somewhere else.",
+        solution: "The answer is found in Chalcedonian tradition of God's impassibility. Because God is immutable and cannot be harmed by his creatures, then the repayment must be drawn from man's account and not God's.",
+        opens: "Humanity lacks the inherent value necessary to satisfy the demand."
       }
     };
 
