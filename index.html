@@ -93,6 +93,7 @@ flowchart TD
     KANT["Kant (1793)<br/>Moves atonement inside the moral self"]
     CAM["McLeod Campbell (1856)<br/>Replaces penalty with vicarious repentance"]
     TOR["T. F. Torrance (20th c.)<br/>Grounds salvation in Christ's vicarious humanity"]
+    MORT["D. Morton (2026)<br/>Intra-trinitarian transactions are nonsensical and produce inequality."]
 
     UNIV["Universal redemption (1646)<br/>Christ died for all alike"]
 
@@ -121,6 +122,7 @@ flowchart TD
     ATH -->|"ontological frame"| CAM
     CAM -->|"carries forward"| TOR
     ATH -->|"modern Athanasian"| TOR
+    OWE55 -->|"Trinitarian transactions (suretyships) are nonsensical"| MORT
 
     classDef critique fill:#fde8e8,stroke:#b91c1c,color:#111;
     classDef govt fill:#fef3c7,stroke:#b45309,color:#111;
@@ -129,7 +131,7 @@ flowchart TD
     classDef onto fill:#dcfce7,stroke:#15803d,color:#111;
     classDef target fill:#e5e7eb,stroke:#6b7280,color:#111;
 
-    class SOC,KANT critique;
+    class SOC,KANT,MORT critique;
     class GRO,NEW govt;
     class OWE47,OWE53,OWE55,OWE77,CALV penal;
     class BAX hybrid;
@@ -150,6 +152,7 @@ flowchart TD
     click OWE53 call nodeClick("OWE53")
     click OWE55 call nodeClick("OWE55")
     click OWE77 call nodeClick("OWE77")
+    click MORT call nodeClick("MORT")
       </pre>
     </div>
     <div id="zoomctl">
@@ -255,7 +258,13 @@ flowchart TD
         problem:"The suretyship scheme still owes an account of how Christ's work actually counts as the believer's, and how a guilty person comes to stand righteous before God.",
         solution:"He closes the forensic circuit with double imputation: the believer's sin is reckoned to Christ and Christ's righteousness reckoned to the believer, received through faith — locking the whole system together.",
         opens:"Double imputation invites the legal-fiction charge and rests the whole system on a transactional Father–Son distinction — Christ standing before the Father — that a strong 'to see Jesus is to see the Father' would collapse.",
-        notes:"This opens another problem, which is that the imputation scheme is really just legal fiction and not something actual--it makes no actual change. To defend, he makes it forensically real (stronger than legal fiction) by basing on union with Christ. Rome says that a verdict only declares the person righteous, but doesn't make them righteous. Torrance says salvation should be an actual, not forensic, change, which pushes the actual change to sanctification--making sanctification, not justification, the actual thing that changes."}
+        notes:"This opens another problem, which is that the imputation scheme is really just legal fiction and not something actual--it makes no actual change. To defend, he makes it forensically real (stronger than legal fiction) by basing on union with Christ. Rome says that a verdict only declares the person righteous, but doesn't make them righteous. Torrance says salvation should be an actual, not forensic, change, which pushes the actual change to sanctification--making sanctification, not justification, the actual thing that changes."},
+      MORT:{camp:"critique", title:"Divine Infinity and Simplicity Eliminates Transaction", meta:"Morton, 2026",
+        headline: "Transactions are fiction within an infinite and unified godhead",
+        problem: "The whole of the Owen system relies on the redemption-as-covenant framework, which is fiction because in it, the suretyship means that God owes God--a closed transaction. Also, a meaningful, non-symbolic transaction between the person of the Godhead creates a necessary imbalance. For a payment to happen, one party increases as the other decreases, and this leads to heresy.",
+        solution: "Reject PSA. Return to ontological/therapeutic frameworks. Abandon annihilationism and eternal conscious torment and reestablish corruption.",
+        opens:"None yet. Needs refutation"
+      }
     };
 
     function nodeClick(id){
