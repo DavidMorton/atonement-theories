@@ -72,81 +72,81 @@
 <body>
   <div id="hint">Drag to pan · pinch or scroll to zoom · tap a box for its card</div>
   <div id="legend">
-    <span><i style="background:#fde8e8"></i>critique</span>
+    <span><i style="background:#ffedd5"></i>satisfaction</span>
+    <span><i style="background:#92f3fc"></i>ransom</span>
+    <span><i style="background:#ffa8a8"></i>critique</span>
     <span><i style="background:#dbeafe"></i>penal</span>
     <span><i style="background:#fef3c7"></i>governmental</span>
-    <span><i style="background:#ede9fe"></i>internal critic</span>
+    <span><i style="background:#ffcf8b"></i>internal critic</span>
     <span><i style="background:#dcfce7"></i>ontological</span>
-    <span><i style="background:#e5e7eb"></i>provocation</span>
+    <span><i style="background:#ffffff"></i>provocation</span>
+    <span><i style="background:#d9c0fd"></i>moral exemplar</span>
   </div>
 
   <div id="graph">
     <div id="canvas">
       <pre class="mermaid">
 flowchart TD
+    ORIGEN["Origen · Commentary on Matthew (3rd century)<br/>Ransom Theory"]
     ANSELM["Anselm · Cur Deus Homo (1098)<br/>Satisfaction Theory"]
-    ATH["Athanasius<br/>Recasts atonement as healing, not payment"]
+    ATH["Athanasius · On the Incarnation<br/>Recasts atonement as healing, not payment"]
     CALV["Calvin · Institutes (1559)<br/>The Reformed doctrine of satisfaction"]
     SOC["Socinus · De Servatore (1578)<br/>Satisfaction and forgiveness are mutually exclusive opposites.<br/>Retributive justice cannot be transferred."]
     GRO["Grotius · Defensio (1617)<br/>Founds the governmental theory"]
-    NEW["New Divinity (18th–19th c.)<br/>Turns justice into moral government"]
     BAX["Baxter (1649)<br/>Universal in the making, particular in the applying"]
-    KANT["Kant (1793)<br/>Moves atonement inside the moral self"]
+    NEW["New Divinity (18th–19th c.)<br/>Turns justice into moral government"]
+    KANT["Kant (1793)<br/>Moves atonement inside the moral self<br/>Retreats to Moral Exemplar"]
     CAM["McLeod Campbell (1856)<br/>Replaces penalty with vicarious repentance"]
     TOR["T. F. Torrance (20th c.)<br/>Grounds salvation in Christ's vicarious humanity"]
-    MORT01["Intra-trinitarian transactions are nonsensical and produce inequality."]
-    MORT02["Provide humanity dignity via infusion from divinity."]
-    MORT03["Make humanity the source of payment."]
-
     UNIV["Universal redemption (1646)<br/>Christ died for all alike"]
+    OWE47["Owen · Death of Death (1647)<br/>Introduces limited atonement"]
+    OWE53["Owen · Dissertation on Divine Justice (1653)<br/>Makes justice a necessity by relocating<br/>it from God's will to God's character."]
+    OWE55["Owen · Vindiciae Evangelicae (1655)<br/>Clarifies that PSA is penal, not pecuniary.<br/>Answers Socinius with voluntary death.<br>Introduces suretyship into godhead."]
+    OWE77["Owen · Justification by Faith (1677)<br/>Closes the system with double imputation"]
+    PACKER["Packer · What Did The Cross Achieve? (1973)<br/>Double down on PSA. Accept the mystery."]
 
-    subgraph OWEN["Owen — a self-bracing forensic system"]
-    direction TB
-        OWE47["Death of Death (1647)<br/>Introduces limited atonement"]
-        OWE53["Dissertation on Divine Justice (1653)<br/>Makes justice a necessity, not a choice"]
-        OWE55["Vindiciae Evangelicae (1655)<br/>It's not pecuniary. It's penal."]
-        OWE77["Justification by Faith (1677)<br/>Closes the system with double imputation"]
-        OWE47 -->|"reverses its own concession"| OWE53
-        OWE53 -->|"grounds: no relaxation possible"| OWE55
-        OWE55 -->|"But now that it's penal, it needs a transfer mechanism that pecuniary provided"| OWE77
-        OWE77 -.->|"re-secures 1647's scope"| OWE47
-    end
-
+    ORIGEN -->|"moved creditor from Satan to God"| ANSELM
+    OWE47 -->|"turned on itself"| BAX
+    %% OWE77 -.->|"re-secures 1647's scope"| OWE47
+    OWE47 -->|"reverses its own concession"| OWE53
+    OWE53 -->|"grounds: no relaxation possible"| OWE55
+    OWE55 -->|"But now that it's penal, it needs a transfer mechanism that pecuniary provided"| OWE77
     ANSELM -->|"Adds transfer mechanism for rightousness and debt"| CALV
     UNIV -->|"written to refute"| OWE47
     CALV -->|"the doctrine it refutes (via Couet)"| SOC
-    CALV -.->|"framework Owen defends"| OWE55
+    %% CALV -.->|"framework Owen defends"| OWE55
     SOC -->|"answers by conceding"| GRO
     GRO -->|"hardens him"| OWE53
     GRO -->|"refined into"| NEW
-    OWE47 -->|"turned on itself"| BAX
-    SOC -.->|"same objection, full strength"| KANT
-    SOC -.->|"grants it, relocates objectivity"| CAM
+    SOC -->|"same objection, full strength"| KANT
+    SOC -->|"grants it, relocates objectivity"| CAM
     SOC -->|"answers by denying (via Biddle)"| OWE55
     ATH -->|"ontological frame"| CAM
     CAM -->|"carries forward"| TOR
     ATH -->|"modern Athanasian"| TOR
-    OWE55 -->|"Trinitarian transactions (suretyships) are nonsensical"| MORT01
-    MORT01 -->|"Nonsensical transaction leads to Governmental theory" | MORT03
-    MORT03 -->|"Human dignity is insufficient." | MORT02
-    MORT02 -->|"Returns to Athanasius" | ATH
+    OWE77 -->|"relegate to mystery"| PACKER
 
-    classDef critique fill:#fde8e8,stroke:#b91c1c,color:#111;
+    classDef critique fill:#ffa8a8,stroke:#b91c1c,color:#111;
     classDef govt fill:#fef3c7,stroke:#b45309,color:#111;
     classDef penal fill:#dbeafe,stroke:#1d4ed8,color:#111;
-    classDef hybrid fill:#ede9fe,stroke:#6d28d9,color:#111;
+    classDef hybrid fill:#ffcf8b,stroke:#ffcf8b,color:#111;
     classDef onto fill:#dcfce7,stroke:#15803d,color:#111;
-    classDef target fill:#e5e7eb,stroke:#6b7280,color:#111;
-    classDef satisfaction fill:#ccfbf1,stroke:#0f766e,color:#111;
+    classDef target fill:#ffffff,stroke:#6b7280,color:#111;
+    classDef satisfaction fill:#ffedd5,stroke:#ea580c,color:#111;
+    classDef ransom fill:#92f3fc,stroke:#0e7490,color:#111;
+    classDef moralexemplar fill:#d9c0fd,stroke:#bc8dff,color:#111;
 
-    class SOC,KANT,MORT01,MORT02,MORT03 critique;
+    class SOC,MORT01,MORT02,MORT03 critique;
+    class KANT moralexemplar;
     class GRO,NEW govt;
-    class OWE47,OWE53,OWE55,OWE77,CALV penal;
+    class OWE47,OWE53,OWE55,OWE77,CALV,PACKER penal;
     class BAX hybrid;
     class ATH,CAM,TOR onto;
     class UNIV target;
     class ANSELM satisfaction;
+    class ORIGEN ransom
 
+    click ORIGEN call nodeClick("ORIGEN")
     click ANSELM call nodeClick("ANSELM")
     click CALV call nodeClick("CALV")
     click ATH call nodeClick("ATH")
@@ -162,9 +162,7 @@ flowchart TD
     click OWE53 call nodeClick("OWE53")
     click OWE55 call nodeClick("OWE55")
     click OWE77 call nodeClick("OWE77")
-    click MORT01 call nodeClick("MORT01")
-    click MORT02 call nodeClick("MORT02")
-    click MORT03 call nodeClick("MORT03")
+    click PACKER call nodeClick("PACKER")
       </pre>
     </div>
     <div id="zoomctl">
@@ -196,10 +194,20 @@ flowchart TD
       govt:{c:"#fef3c7",t:"#b45309",label:"Governmental"},
       hybrid:{c:"#ede9fe",t:"#6d28d9",label:"Internal critic"},
       onto:{c:"#dcfce7",t:"#15803d",label:"Ontological"},
-      target:{c:"#e5e7eb",t:"#374151",label:"Provocation"},
-      satisfaction:{c:"#ccfbf1",t:"#0f766e",label:"Satisfaction"}
+      target:{c:"#ffffff",t:"#374151",label:"Provocation"},
+      satisfaction:{c:"#ffedd5",t:"#ea580c",label:"Satisfaction"},
+      ransom:{c:"#cffafe",t:"#0e7490",label:"Ransom"},
+      moralexemplar:{c:"#d9c0fd",stroke:"#bc8dff",label:"Moral Exemplar"}
     };
     const DATA = {
+      ORIGEN:{camp:"ransom", title:"Origen · Commentary on Matthew", meta: "3rd century",
+        headline: "Ransom Theory",
+        problem: "The devil owns the souls of men.",
+        solution: "Jesus paid the ransom to the devil to free men.",
+        opens: "Gives the devil power over God -- something that Anselm would address later.",
+        notes: "Origen, notably, was a universalist. He believed that the ransom paid covered the whole of the human race.\n\n" +
+        "The need for satisfaction (in this case to the devil) in order to achieve man's rescue is the seed he planted that would later develop into what we know as penal substitutionary atonement."
+      },
       ANSELM:{camp:"satisfaction", title:"Anselm · Cur Deus Homo", meta: "1098",
         headline:"Satisfaction Theory",
         problem:"Ransom theory has God paying a ransom to the devil, which Anselm felt was intolerable. The devil has no rights against God.",
@@ -242,7 +250,7 @@ flowchart TD
         problem:"Owen's double-payment case for limited atonement only works if satisfaction behaves like money that auto-discharges the account — which flatly contradicts Owen's own penal model, where release is never automatic.",
         solution:"He splits the difference: the satisfaction is universal in the making but particular in the applying, applied by God as Rector on the condition of faith — so its scope isn't fixed mechanically by the payment itself.",
         opens:"Resting application on God's rectoral will plus the condition of faith reintroduces a conditional, governmental element that critics read as neonomian — dissolving the very definiteness Owen prized and pressing on whether faith becomes a work."},
-      KANT:{camp:"critique", title:"Immanuel Kant", meta:"Religion within the Bounds of Bare Reason, 1793",
+      KANT:{camp:"moralexemplar", title:"Immanuel Kant", meta:"Religion within the Bounds of Bare Reason, 1793",
         headline:"Moves atonement inside the moral self",
         problem:"Moral guilt looks like the most personal thing a person has — not a fungible liability you can sign over to another — so any scheme that transfers desert seems morally incoherent from the start.",
         solution:"He internalizes the atonement: what reconciles is the sinner's own moral revolution, the new self bearing the cost of putting the old self to death, rather than the legal crediting of someone else's merit.",
@@ -302,6 +310,16 @@ flowchart TD
         problem: "The fact that an intra-trinitarian payment is nonsensical means that the payment must come from somewhere else.",
         solution: "The answer is found in Chalcedonian tradition of God's impassibility. Because God is immutable and cannot be harmed by his creatures, then the repayment must be drawn from man's account and not God's.",
         opens: "Humanity lacks the inherent value necessary to satisfy the demand."
+      },
+      PACKER:{camp:"penal", title:"What Did the Cross Achieve?", meta:"J.I. Packer, 1973",
+        headline: "PSA as the central atonement theory.",
+        problem: "General resistance to the doctrine of penal substitutionary atonement.",
+        solution: "Packer's paper essentially doubled down on the importance of penal substitutionary atonement by claiming that it is the best possible model we have. \n\n" + 
+        "While supporting the Puritans, he simultaneously critiques the rationalism of the Puritans, claiming that they left no room for mystery, and shouldn't have thought about it too deeply. \n\n" +
+        "He also rejected the common caricature of PSA as being \"cosmic child abuse\".",
+        opens: "Packer abandons reason. By arguing that the Puritans were overly rationalistic in their claims, his conclusion is not that they started with poor premises, but rather that they should have left the mechanisms open to mystery.",
+        notes: "To me this is a concession. Thousands of years of theologians have attempted to find a place for retributive justice to reside within the system logically, with little success.\n\n" +
+        "Packer's solution here is essentially to throw up his hands and just say it's a mystery. I find this explanation unsatisfactory."
       }
     };
 
