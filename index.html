@@ -84,6 +84,7 @@
     <div id="canvas">
       <pre class="mermaid">
 flowchart TD
+    ANSELM["Anselm · Cur Deus Homo (1098)<br/>Satisfaction Theory"]
     ATH["Athanasius<br/>Recasts atonement as healing, not payment"]
     CALV["Calvin · Institutes (1559)<br/>The Reformed doctrine of satisfaction"]
     SOC["Socinus · De Servatore (1578)<br/>Satisfaction and forgiveness are mutually exclusive opposites.<br/>Retributive justice cannot be transferred."]
@@ -111,6 +112,7 @@ flowchart TD
         OWE77 -.->|"re-secures 1647's scope"| OWE47
     end
 
+    ANSELM -->|"Adds transfer mechanism for rightousness and debt"| CALV
     UNIV -->|"written to refute"| OWE47
     CALV -->|"the doctrine it refutes (via Couet)"| SOC
     CALV -.->|"framework Owen defends"| OWE55
@@ -135,6 +137,7 @@ flowchart TD
     classDef hybrid fill:#ede9fe,stroke:#6d28d9,color:#111;
     classDef onto fill:#dcfce7,stroke:#15803d,color:#111;
     classDef target fill:#e5e7eb,stroke:#6b7280,color:#111;
+    classDef satisfaction fill:#ccfbf1,stroke:#0f766e,color:#111;
 
     class SOC,KANT,MORT01,MORT02,MORT03 critique;
     class GRO,NEW govt;
@@ -142,7 +145,9 @@ flowchart TD
     class BAX hybrid;
     class ATH,CAM,TOR onto;
     class UNIV target;
+    class ANSELM satisfaction;
 
+    click ANSELM call nodeClick("ANSELM")
     click CALV call nodeClick("CALV")
     click ATH call nodeClick("ATH")
     click SOC call nodeClick("SOC")
@@ -191,9 +196,17 @@ flowchart TD
       govt:{c:"#fef3c7",t:"#b45309",label:"Governmental"},
       hybrid:{c:"#ede9fe",t:"#6d28d9",label:"Internal critic"},
       onto:{c:"#dcfce7",t:"#15803d",label:"Ontological"},
-      target:{c:"#e5e7eb",t:"#374151",label:"Provocation"}
+      target:{c:"#e5e7eb",t:"#374151",label:"Provocation"},
+      satisfaction:{c:"#ccfbf1",t:"#0f766e",label:"Satisfaction"}
     };
     const DATA = {
+      ANSELM:{camp:"satisfaction", title:"Anselm · Cur Deus Homo", meta: "1098",
+        headline:"Satisfaction Theory",
+        problem:"Ransom theory has God paying a ransom to the devil, which Anselm felt was intolerable. The devil has no rights against God.",
+        solution:"His solution was satisfaction theory built on feudal honor. Humans have, by their sin, incurred a debt against God's honor, which must be repaid to be satisfied. Man cannot afford to pay, so his punishment is infinite by nature, due to the infinite honor of God. Christ alone, being sinless, is able to repay the debt, and he provides an offering of infinite value and thus repaying the debt.",
+        opens:"The problem of guilt is still unsolved. Christ's death, is offered instead of punishment, but not as punishment. Nothing in satisfaction theory explains how the penalty is applied to the believer--a gaping hole that Calvin would drive through a few hundred years later.",
+        notes:"Notice that in satisfaction theory, God cannot merely waive the debt. This is the view that Socinius would drive through later."
+      },
       CALV:{camp:"penal", title:"Calvin · Institutes of the Christian Religion", meta:"definitive edition, 1559",
         headline:"The Reformed doctrine of satisfaction",
         problem:"How can a just and holy God forgive sinners without treating sin as though it didn't matter? Anselm had framed the answer around God's honor; the Reformers recast it around justice and God's wrath against sin.",
