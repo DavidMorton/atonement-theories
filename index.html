@@ -67,53 +67,58 @@
     padding-top:10px; padding-bottom:10px; background:rgba(59,130,246,0.06); border-radius:0 8px 8px 0; }
   .sec.notes h3 { color:#93c5fd; }
   .sec.notes p { white-space:pre-wrap; font-style:italic; color:#dce3ea; }
+  #title { justify-content: center;
+width: 100vw;
+text-align: center;
+font-size: 20px; }
 </style>
 </head>
 <body>
+  <div id="title">Penal Substitution Family Tree</div>
   <div id="hint">Drag to pan · pinch or scroll to zoom · tap a box for its card</div>
   <div id="legend">
-    <span><i style="background:#ffedd5"></i>satisfaction</span>
+    <span><i style="background:#dcfce7"></i>ontological</span>
     <span><i style="background:#92f3fc"></i>ransom</span>
-    <span><i style="background:#ffa8a8"></i>critique</span>
+    <span><i style="background:#ffedd5"></i>satisfaction</span>
     <span><i style="background:#dbeafe"></i>penal</span>
     <span><i style="background:#fef3c7"></i>governmental</span>
     <span><i style="background:#ffcf8b"></i>internal critic</span>
-    <span><i style="background:#dcfce7"></i>ontological</span>
-    <span><i style="background:#ffffff"></i>provocation</span>
     <span><i style="background:#d9c0fd"></i>moral exemplar</span>
+    <span><i style="background:#ffa8a8"></i>other</span>
   </div>
 
   <div id="graph">
     <div id="canvas">
       <pre class="mermaid">
 flowchart TD
-    ORIGEN["Origen · Commentary on Matthew (3rd century)<br/>Ransom Theory"]
-    ANSELM["Anselm · Cur Deus Homo (1098)<br/>Satisfaction Theory"]
-    ATH["Athanasius · On the Incarnation<br/>Recasts atonement as healing, not payment"]
-    CALV["Calvin · Institutes (1559)<br/>The Reformed doctrine of satisfaction"]
-    SOC["Socinus · De Servatore (1578)<br/>Satisfaction and forgiveness are mutually exclusive opposites.<br/>Retributive justice cannot be transferred."]
-    GRO["Grotius · Defensio (1617)<br/>Founds the governmental theory"]
-    BAX["Baxter (1649)<br/>Universal in the making, particular in the applying"]
-    NEW["New Divinity (18th–19th c.)<br/>Turns justice into moral government"]
-    KANT["Kant (1793)<br/>Moves atonement inside the moral self<br/>Retreats to Moral Exemplar"]
-    CAM["McLeod Campbell (1856)<br/>Replaces penalty with vicarious repentance"]
-    TOR["T. F. Torrance (20th c.)<br/>Grounds salvation in Christ's vicarious humanity"]
-    UNIV["Universal redemption (1646)<br/>Christ died for all alike"]
-    OWE47["Owen · Death of Death (1647)<br/>Introduces limited atonement"]
-    OWE53["Owen · Dissertation on Divine Justice (1653)<br/>Makes justice a necessity by relocating<br/>it from God's will to God's character."]
-    OWE55["Owen · Vindiciae Evangelicae (1655)<br/>Clarifies that PSA is penal, not pecuniary.<br/>Answers Socinius with voluntary death.<br>Introduces suretyship into godhead."]
-    OWE77["Owen · Justification by Faith (1677)<br/>Closes the system with double imputation"]
-    PACKER["Packer · What Did The Cross Achieve? (1973)<br/>Double down on PSA. Accept the mystery."]
+    ORIGEN["<b>Origen · Commentary on Matthew (3rd century)</b><br/>Ransom Theory"]
+    ANSELM["<b>Anselm · Cur Deus Homo (1098)</b><br/>Satisfaction Theory"]
+    ATH["<b>Athanasius · On the Incarnation</b><br/>Recasts atonement as healing, not payment"]
+    CALV["<b>Calvin · Institutes (1559)</b><br/>The Reformed doctrine of satisfaction"]
+    SOC["<b>Socinus · De Servatore (1578)</b><br/>Satisfaction and forgiveness are mutually exclusive opposites.<br/>Retributive justice cannot be transferred."]
+    GRO["<b>Grotius · Defensio (1617)</b><br/>Founds the governmental theory"]
+    BAX["<b>Baxter (1649)</b><br/>Universal in the making, particular in the applying"]
+    NEW["<b>New Divinity (18th-19th c.)</b><br/>Turns justice into moral government"]
+    KANT["<b>Kant · Religion within the Bounds of Bare Reason (1793)</b><br/>Moves atonement inside the moral self<br/>Retreats to Moral Exemplar"]
+    CAM["<b>McLeod Campbell (1856)</b><br/>Replaces penalty with vicarious repentance"]
+    TOR["<b>T. F. Torrance (20th c.)</b><br/>Grounds salvation in Christ's vicarious humanity"]
+    UNIV["<b>Universal redemption (1646)</b><br/>Christ died for all alike"]
+    OWE47["<b>Owen · Death of Death (1647)</b><br/>Introduces limited atonement"]
+    OWE53["<b>Owen · Dissertation on Divine Justice (1653)</b><br/>Makes justice a necessity by relocating<br/>it from God's will to God's character."]
+    OWE55["<b>Owen · Vindiciae Evangelicae (1655)</b><br/>Clarifies that PSA is penal, not pecuniary.<br/>Answers Socinius with voluntary death.<br>Introduces suretyship into godhead."]
+    OWE77["<b>Owen · Justification by Faith (1677)</b><br/>Closes the system with double imputation"]
+    RAMSAY["<b>Ramsay · Models and Mystery (1963)</b><br/>Doctrines are disclosures, not blueprints"]
+    PACKER["<b>Packer · What Did The Cross Achieve? (1973)</b><br/>Double down on PSA. Accept the mystery."]
 
-    ORIGEN -->|"moved creditor from Satan to God"| ANSELM
+    ORIGEN -->|"move creditor from Satan to God"| ANSELM
     OWE47 -->|"turned on itself"| BAX
     %% OWE77 -.->|"re-secures 1647's scope"| OWE47
     OWE47 -->|"reverses its own concession"| OWE53
     OWE53 -->|"grounds: no relaxation possible"| OWE55
     OWE55 -->|"But now that it's penal, it needs a transfer mechanism that pecuniary provided"| OWE77
-    ANSELM -->|"Adds transfer mechanism for rightousness and debt"| CALV
+    ANSELM -->|"add transfer mechanism for rightousness and debt"| CALV
     UNIV -->|"written to refute"| OWE47
-    CALV -->|"the doctrine it refutes (via Couet)"| SOC
+    CALV -->|"refutation"| SOC
     %% CALV -.->|"framework Owen defends"| OWE55
     SOC -->|"answers by conceding"| GRO
     GRO -->|"hardens him"| OWE53
@@ -124,9 +129,10 @@ flowchart TD
     ATH -->|"ontological frame"| CAM
     CAM -->|"carries forward"| TOR
     ATH -->|"modern Athanasian"| TOR
+    RAMSAY -->|"referenced in"| PACKER
     OWE77 -->|"relegate to mystery"| PACKER
 
-    classDef critique fill:#ffa8a8,stroke:#b91c1c,color:#111;
+    classDef other fill:#ffa8a8,stroke:#b91c1c,color:#111;
     classDef govt fill:#fef3c7,stroke:#b45309,color:#111;
     classDef penal fill:#dbeafe,stroke:#1d4ed8,color:#111;
     classDef hybrid fill:#ffcf8b,stroke:#ffcf8b,color:#111;
@@ -136,7 +142,7 @@ flowchart TD
     classDef ransom fill:#92f3fc,stroke:#0e7490,color:#111;
     classDef moralexemplar fill:#d9c0fd,stroke:#bc8dff,color:#111;
 
-    class SOC,MORT01,MORT02,MORT03 critique;
+    class SOC,MORT01,MORT02,MORT03,RAMSAY other;
     class KANT moralexemplar;
     class GRO,NEW govt;
     class OWE47,OWE53,OWE55,OWE77,CALV,PACKER penal;
@@ -163,6 +169,7 @@ flowchart TD
     click OWE55 call nodeClick("OWE55")
     click OWE77 call nodeClick("OWE77")
     click PACKER call nodeClick("PACKER")
+    click RAMSAY call nodeClick("RAMSAY")
       </pre>
     </div>
     <div id="zoomctl">
@@ -189,7 +196,7 @@ flowchart TD
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
   <script>
     const CAMP = {
-      critique:{c:"#fde8e8",t:"#b91c1c",label:"Critique"},
+      other:{c:"#fde8e8",t:"#b91c1c",label:"Other"},
       penal:{c:"#dbeafe",t:"#1d4ed8",label:"Penal"},
       govt:{c:"#fef3c7",t:"#b45309",label:"Governmental"},
       hybrid:{c:"#ffcf8b",t:"#000000",label:"Hybrid"},
@@ -213,7 +220,7 @@ flowchart TD
         problem:"Ransom theory has God paying a ransom to the devil, which Anselm felt was intolerable. The devil has no rights against God.",
         solution:"His solution was satisfaction theory built on feudal honor. Humans have, by their sin, incurred a debt against God's honor, which must be repaid to be satisfied. Man cannot afford to pay, so his punishment is infinite by nature, due to the infinite honor of God. Christ alone, being sinless, is able to repay the debt, and he provides an offering of infinite value and thus repaying the debt.",
         opens:"The problem of guilt is still unsolved. Christ's death, is offered instead of punishment, but not as punishment. Nothing in satisfaction theory explains how the penalty is applied to the believer--a gaping hole that Calvin would drive through a few hundred years later.",
-        notes:"Notice that in satisfaction theory, God cannot merely waive the debt. This is the view that Socinius would drive through later."
+        notes:"Notice that in satisfaction theory, God cannot merely waive the debt. This is the view that Socinius would drive through later.\n\nIt's also worth noting that Anselm's creditor-relocation to God puts God on both sides of the transaction, which means the theory can no longer deal in whole souls--how can God ransom a whole soul from himself? So the currency must also shift. This is where Anselm brings in the debt/honor framework to answer this question. It's worth noting that this move to abstract concepts being the currency between God and man sets up it's reframing by Calvin in 1559."
       },
       CALV:{camp:"penal", title:"Calvin · Institutes of the Christian Religion", meta:"definitive edition, 1559",
         headline:"The Reformed doctrine of satisfaction",
@@ -230,7 +237,7 @@ flowchart TD
         problem:"If salvation is essentially a legal transaction, it never reaches the deeper human catastrophe: a nature that has turned from its source of life and is unravelling into corruption and death.",
         solution:"He frames atonement ontologically. The Word takes on mortal human nature and, by uniting it to his own imperishable life, heals and re-creates it from the inside — covering death with life rather than settling a penalty.",
         opens:"Locating salvation in the healing of nature leaves the legal and moral side underspecified — how guilt is answered and where God's justice and wrath fit — the very data the later Western tradition refuses to fold into ontology."},
-      SOC:{camp:"critique", title:"Faustus Socinus", meta:"De Jesu Christo Servatore, 1578",
+      SOC:{camp:"other", title:"Faustus Socinus", meta:"De Jesu Christo Servatore, 1578",
         headline:"Satisfaction and forgiveness are mutually exclusive opposites. Retributive justice cannot be transferred.",
         problem:"Penal satisfaction struck him as self-cancelling: a debt paid in full is discharged, not forgiven, so grace vanishes — and punishing an innocent substitute for the guilty is itself unjust, since guilt can't be transferred.",
         solution:"He drops objective satisfaction entirely. God, who tells us to forgive freely, simply forgives the repentant; Christ saves as prophet and exemplar whose exaltation gives him power to bless. No payment is owed or made.",
@@ -292,24 +299,31 @@ flowchart TD
         solution:"He closes the forensic circuit with double imputation: the believer's sin is reckoned to Christ and Christ's righteousness reckoned to the believer, received through faith — locking the whole system together.",
         opens:"Double imputation invites the legal-fiction charge and rests the whole system on a transactional Father–Son distinction — Christ standing before the Father — that a strong 'to see Jesus is to see the Father' would collapse.",
         notes:"This opens another problem, which is that the imputation scheme is really just legal fiction and not something actual--it makes no actual change. To defend, he makes it forensically real (stronger than legal fiction) by basing on union with Christ. Rome says that a verdict only declares the person righteous, but doesn't make them righteous. Torrance says salvation should be an actual, not forensic, change, which pushes the actual change to sanctification--making sanctification, not justification, the actual thing that changes."},
-      MORT01:{camp:"critique", title:"Divine Infinity and Simplicity Eliminates Transaction", meta:"Unattributed Idea",
+      MORT01:{camp:"other", title:"Divine Infinity and Simplicity Eliminates Transaction", meta:"Unattributed Idea",
         headline: "Transactions are fiction within an infinite and unified godhead",
         problem: "The whole of the Owen system relies on the redemption-as-covenant framework, which is fiction because in it, the suretyship means that God owes God--a closed transaction. Also, a meaningful, non-symbolic transaction between the person of the Godhead creates a necessary imbalance. For a payment to happen, one party increases as the other decreases, and this leads to heresy.",
         solution: "Reject PSA. Return to ontological/therapeutic frameworks. Abandon annihilationism and eternal conscious torment and reestablish corruption.",
         opens:"The cost moves to the assumed flesh.",
         notes:"The classical rebuttal answers this by relocating the payment for the penalty to the human frame. When we do so, we run into another (kind of athanasian) problem. Once relocated, then we have to provide some way for the human frame to have sufficient value to repay. The best approach for this is in the deification of the body on the basis of The Word's infinite nature, and that brings us full circle back to Athanasius. If Christ's body deifies his human flesh in such a way that it can bear the penalty and be resurrected, then why can't he deify all human flesh (ontological)?"
       },
-      MORT02:{camp:"critique", title:"Infuse mankind with deified dignity to meet the demand.", meta:"Unattributed Idea",
+      MORT02:{camp:"other", title:"Infuse mankind with deified dignity to meet the demand.", meta:"Unattributed Idea",
         headline: "Returns to the Athanasian model.",
         problem: "Human flesh lacks the sufficiency to satisfy the demands of God.",
         solution: "Infuse humanity with something that is sufficient to pay the penalty. This is something that had to preexist before God's death.",
         opens: "The problem that PSA isn't really PSA anymore. It's the movement of a debt from man to God and then back to man again for payment. Man becomes nothing more than a pass-through entity."
       },
-      MORT03:{camp:"critique", title:"Move the source of payment to human flesh.", meta:"Unattributed Idea",
+      MORT03:{camp:"other", title:"Move the source of payment to human flesh.", meta:"Unattributed Idea",
         headline: "The payment comes from man, not from God.",
         problem: "The fact that an intra-trinitarian payment is nonsensical means that the payment must come from somewhere else.",
         solution: "The answer is found in Chalcedonian tradition of God's impassibility. Because God is immutable and cannot be harmed by his creatures, then the repayment must be drawn from man's account and not God's.",
         opens: "Humanity lacks the inherent value necessary to satisfy the demand."
+      },
+      RAMSAY:{camp:"other", title:"Models and Mystery", meta:"Ian Ramsay, 1964",
+        headline:"Doctrines are Disclosure Models",
+        problem:"Logical positivism had reduced religious statements to nonsense - unverifiable, unfalsifiable, therefore meaningless (Flew's \"death by a thousand qualifications\"). And taken literally, doctrines like penal substitution collapse into crude, mockable pictures that critics can dismiss as morally monstrous.",
+        solution: "He recasts theological language as models plus qualifiers anchored in \"disclosure situations\" — an ordinary word (\"substitute,\" \"ransom,\" \"father\") pressed by a qualifier until the penny drops and insight breaks. Such models aren't measured by literal resemblance but by fruitfulness, and they come in corrigible pluralities, each correcting the others and pointing past itself to a mystery none contains.",
+        opens:"Mystery is bought at the price of illogicality.",
+        notes: "This sets up the ball for Packer to kick, and is probably the beginning of the concession of the argument.\n\nIt's worth noting that Ramsay's argument was not pointed at PSA directly, but rather at the way in which theological models are used. He suggests that theological atonement models are not much different from models of light and other models in science (especially physics). They help us understand things, but then their further use is limited as they approach the edges of what they can explain."
       },
       PACKER:{camp:"penal", title:"What Did the Cross Achieve?", meta:"J.I. Packer, 1973",
         headline: "PSA as the central atonement theory.",
@@ -318,8 +332,8 @@ flowchart TD
         "While supporting the Puritans, he simultaneously critiques the rationalism of the Puritans, claiming that they left no room for mystery, and shouldn't have thought about it too deeply. \n\n" +
         "He also rejected the common caricature of PSA as being \"cosmic child abuse\".",
         opens: "Packer abandons reason. By arguing that the Puritans were overly rationalistic in their claims, his conclusion is not that they started with poor premises, but rather that they should have left the mechanisms open to mystery.",
-        notes: "To me this is a concession. Thousands of years of theologians have attempted to find a place for retributive justice to reside within the system logically, with little success.\n\n" +
-        "Packer's solution here is essentially to throw up his hands and just say it's a mystery. I find this explanation unsatisfactory."
+        notes: "To me this is a concession. Anselm, Calvin, Owen, Baxter, and many theologians before them had spent centuries trying to smuggle retributive justice into Christianity without providing a satisfying logic. The model was apparently illogical. Faced with a model that resists attempts to apply logic, one can either reject the model or reject the logic. Packer takes a note from Ramsay and suggests the latter.\n\n" +
+        "Packer's solution (which he draws from Ramsay) is to claim that the model has it's limits, but is still the best model out there. To me, it's essentially throwing up his hands and saying it's a mystery. I find this explanation unsatisfactory."
       }
     };
 
