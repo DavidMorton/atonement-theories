@@ -2,9 +2,21 @@
 
 This is a map that I built to track and understand atonement theories. In it, you can navigate through several developments in theology to try to get a better understanding of what is believed, why, and how we got to where we are. 
 
-**Fair warning**: The notes in this document are *highly* opinionated. I find the atonement theories of penal substitution to be based on the false premise that God is bound satisfy himself by punishing sinners retributively, not only for the moral revulsion it causes, but also because of the way it binds the free will of the sovreign Creator God. This entire project was built for me to explore this thought in detail, and to help me identify where the shortcomings are actually coming from. I'm a software developer by trade, and I see the bug in the system, but tracking the root cause in a complex web of workarounds and patches is challenging to me, and even more challenging to explain. My hope is that this chart can help you think through some of the problems as well. 
+**Fair warning**: The notes in this document are *highly* opinionated. I find the atonement theories of penal substitution to be based on the false premise that God is bound satisfy himself by punishing sinners retributively, not only for the moral revulsion it causes, but also because of the way it binds the free will of the sovereign Creator God. This entire project was built for me to explore this thought in detail, and to help me identify where the shortcomings are actually coming from. I'm a software developer by trade, and I see the bug in the system, but tracking the root cause in a complex web of workarounds and patches is challenging to me, and even more challenging to explain. My hope is that this chart can help you think through some of the problems as well. 
 
-**If this makes you nervous**: Start with Athanasius first. Understand the ontological atonement theories, then come back to this to learn the history. My goal isn't to tear down your faith, its to strengthen it and put it on a more sure footing than it was on before. 
+## For the spiritually nervous
+The idea of rejecting penal substitution can feel like abandoning our faith. I assure you that it doesn't have to be that way. So if you're spiritually sensitive, but worried about deconstructing into agnosticism or atheism, I have a bit of practical advice to help. 
+
+Start by reading Athanasius *On the Incarnation*. Understanding the ontological atonement theory is the soft landing that is needed for people who have only ever heard the gospel through the penal substitution frame. If you're here because penal substitution has brought you to your end, I think you'll find Athanasius to be a breath of fresh air. 
+
+My goal with this project has never to tear down your faith, but rather to strengthen it. Indeed, I built this whole page so that I could hold onto my faith. 
+
+Reading Athanasius was a big revelation for me. Here are a few versions you can pick from. Click the bold text to download the version you want:
+
+- [**Archibald Robertson Translation**](./athanasius-on-the-Incarnation-robertson.pdf) - This is a PDF of the 1911 translation by Archibald Robertson. If you're looking for a translation that is closest to the actual text, and you have the mental bandwidth to read it in early 1900s prose, this is a good place to start.
+- [**Robertson via Claude (PDF)**](./On-the-Incarnation.pdf) - We live in the age of AI, and archaic language is sometimes hard to grasp, so I've had Claude lightly update the original translation from Archibald Robertson so it's easier to read for modern readers.
+- [**Robertson via Claude (Wide Margin PDF)**](./On-the-Incarnation%20-%20Wide%20Margin.pdf) - This is the same text as above, but with wide margins for those of you who want to read it on an iPad or similar and add your notes in the margins. 
+- [**Robertson via Claude (ePub format, for Kindle or Apple Books)**](./On-the-Incarnation.epub) - This is a version that will work well with your eReader or book app.
 
 ## Why did I make this?
 
