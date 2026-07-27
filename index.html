@@ -89,9 +89,60 @@ font-size: 20px; }
   #loadErr { display:none; position:fixed; inset:0; background:var(--bg); color:#f87171;
     align-items:center; justify-content:center; text-align:center; padding:30px;
     font-size:15px; line-height:1.5; z-index:100; }
+
+  /* floating "about" button */
+  #aboutBtn { position:fixed; top:12px; right:12px; width:38px; height:38px; border-radius:50%;
+    border:1px solid #2a2c33; background:rgba(21,22,26,0.92); color:#e5e7eb;
+    font-size:18px; font-weight:700; line-height:1; cursor:pointer; z-index:40;
+    display:flex; align-items:center; justify-content:center; }
+  #aboutBtn:hover { background:#2c2f37; }
+
+  /* about modal — same shell as the card modal, wider for prose */
+  #aboutOverlay { position:fixed; inset:0; background:rgba(0,0,0,0.7);
+    display:none; align-items:center; justify-content:center; padding:16px; z-index:60;
+    backdrop-filter:blur(2px); }
+  #aboutOverlay.open { display:flex; }
+  #aboutModal { position:relative; width:min(720px,94vw); max-height:88vh; overflow-y:auto;
+    background:#15161a; border:1px solid #2a2c33; border-radius:18px;
+    padding:26px 30px 34px; box-shadow:0 20px 60px rgba(0,0,0,0.6);
+    animation:pop .16s ease-out; }
+  #aboutClose { position:sticky; top:0; float:right; width:38px; height:38px; border-radius:50%;
+    border:none; background:#26282f; color:#e5e7eb; font-size:18px; cursor:pointer; line-height:1; }
+  #aboutClose:hover { background:#33363f; }
+
+  /* rendered markdown */
+  .md { color:#eceef2; font-size:15.5px; line-height:1.6; }
+  .md > *:first-child { margin-top:0; }
+  .md > *:last-child { margin-bottom:0; }
+  .md h1 { font-size:24px; line-height:1.25; margin:0 40px 14px 0; }
+  .md h2 { font-size:18px; margin:26px 0 8px; color:#e9d8bf; }
+  .md h3 { font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:#8b8f9a; margin:22px 0 6px; }
+  .md p { margin:0 0 12px; }
+  .md ul, .md ol { margin:0 0 12px; padding-left:22px; }
+  .md li { margin:4px 0; }
+  .md li::marker { color:#8b8f9a; }
+  .md a { color:#93c5fd; }
+  .md strong { color:#fff; }
+  .md em { color:#dce3ea; }
+  .md hr { border:none; border-top:1px solid #2a2c33; margin:22px 0; }
+  .md blockquote { margin:14px 0; padding:2px 0 2px 14px; border-left:3px solid #3b82f6;
+    background:rgba(59,130,246,0.06); border-radius:0 8px 8px 0; color:#dce3ea; font-style:italic; }
+  .md blockquote p:last-child { margin-bottom:0; }
+  .md code { background:#22242b; border-radius:5px; padding:1.5px 5px; font-size:13.5px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; color:#e9d8bf; }
+  .md pre { background:#0f1014; border:1px solid #2a2c33; border-radius:10px;
+    padding:12px 14px; overflow-x:auto; margin:0 0 12px; }
+  .md pre code { background:none; padding:0; font-size:13px; color:#dce3ea; }
+  .md table { border-collapse:collapse; width:100%; margin:0 0 14px; font-size:14.5px; }
+  .md th, .md td { border:1px solid #2a2c33; padding:7px 10px; text-align:left; }
+  .md th { background:#1b1d23; color:#e5e7eb; }
+  .md img { max-width:100%; border-radius:8px; }
 </style>
 </head>
 <body>
+  <button id="aboutBtn" onclick="openAbout()" aria-label="About this page" title="About this page">?</button>
+
   <div id="title"></div>
   <div id="hint"></div>
   <div id="legend"></div>
@@ -121,8 +172,16 @@ font-size: 20px; }
     </div>
   </div>
 
+  <div id="aboutOverlay" onclick="maybeCloseAbout(event)">
+    <div id="aboutModal" role="dialog" aria-modal="true" aria-label="About this page">
+      <button id="aboutClose" onclick="closeAbout()" aria-label="Close">✕</button>
+      <div class="md" id="aboutBody"></div>
+    </div>
+  </div>
+
   <div id="loadErr">
     Couldn't load <code>content.yaml</code>.<br/><br/>
+    <span style="color:#9ca3af">(<code>about.md</code> loads the same way.)</span><br/><br/>
     This page needs to be served over HTTP (not opened directly as a <code>file://</code> URL) so
     it can fetch its content file. Try running a local server in this folder, e.g.<br/><br/>
     <code>python3 -m http.server</code><br/><br/>
@@ -131,6 +190,7 @@ font-size: 20px; }
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/16.3.0/lib/marked.umd.min.js"></script>
   <script>
     /* ---------------------------------------------------------------------
      * Everything in this file is structural. The words — node text, card
@@ -248,7 +308,67 @@ font-size: 20px; }
     function closeModal(){ document.getElementById("overlay").classList.remove("open"); }
     function maybeClose(e){ if(e.target.id === "overlay") closeModal(); }
     window.nodeClick = nodeClick;
-    document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
+
+    /* ---- about modal (markdown from about.md) ---- */
+    function openAbout(){
+      document.getElementById("aboutOverlay").classList.add("open");
+      document.getElementById("aboutModal").scrollTop = 0;
+    }
+    function closeAbout(){ document.getElementById("aboutOverlay").classList.remove("open"); }
+    function maybeCloseAbout(e){ if(e.target.id === "aboutOverlay") closeAbout(); }
+    window.openAbout = openAbout;
+
+    function renderMarkdown(text){
+      // marked exposes .parse in modern builds; older/UMD shapes are callable directly.
+      if(typeof marked !== "undefined"){
+        if(typeof marked.parse === "function") return marked.parse(text);
+        if(typeof marked === "function") return marked(text);
+      }
+      // Last resort: show the raw markdown rather than nothing.
+      const pre = document.createElement("pre");
+      pre.textContent = text;
+      return pre.outerHTML;
+    }
+
+    // Loaded once at startup so opening the modal is instant. Resolves to
+    // true/false so the auto-open step knows whether there's anything to show.
+    const aboutReady = fetch("about.md")
+      .then(res => { if(!res.ok) throw new Error("HTTP " + res.status); return res.text(); })
+      .then(text => {
+        document.getElementById("aboutBody").innerHTML = renderMarkdown(text);
+        return true;
+      })
+      .catch(err => {
+        console.error("about.md failed to load:", err);
+        // Don't offer a button that opens an empty box.
+        document.getElementById("aboutBtn").style.display = "none";
+        return false;
+      });
+
+    const ABOUT_SEEN_KEY = "atonement-lineage:about-seen";
+
+    // Controlled by `about.show_on_load` in content.yaml.
+    function maybeAutoOpenAbout(doc){
+      const mode = (doc.about && doc.about.show_on_load) || "first_visit";
+      if(mode === "never") return;
+      if(mode === "first_visit"){
+        // localStorage can throw in private modes / under file:// — never let
+        // a storage failure stop the page from working.
+        let seen = false;
+        try { seen = localStorage.getItem(ABOUT_SEEN_KEY) === "1"; } catch(_){}
+        if(seen) return;
+        try { localStorage.setItem(ABOUT_SEEN_KEY, "1"); } catch(_){}
+      }
+      openAbout();
+    }
+
+    // Escape closes whichever modal is on top.
+    document.addEventListener("keydown", e => {
+      if(e.key !== "Escape") return;
+      const about = document.getElementById("aboutOverlay");
+      if(about.classList.contains("open")) closeAbout();
+      else closeModal();
+    });
 
     /* ---- pan / zoom layer ---- */
     const graph = document.getElementById("graph");
@@ -338,13 +458,15 @@ font-size: 20px; }
       flowchart:{ useMaxWidth:false, htmlLabels:true, curve:"basis" }
     });
 
+    let contentDoc = null;
+
     fetch("content.yaml")
       .then(res => {
         if(!res.ok) throw new Error("HTTP " + res.status);
         return res.text();
       })
       .then(text => {
-        const doc = jsyaml.load(text);
+        const doc = contentDoc = jsyaml.load(text);
 
         document.title = doc.title || "Atonement Lineage";
         document.getElementById("title").textContent = doc.title || "";
@@ -369,6 +491,9 @@ font-size: 20px; }
           svg.style.width = natW+"px"; svg.style.height = natH+"px"; svg.style.maxWidth="none";
           requestAnimationFrame(fit);
         }
+        // Open the intro over a finished map, not a blank page — and only once
+        // about.md has actually rendered.
+        return aboutReady.then(ok => { if(ok) maybeAutoOpenAbout(contentDoc || {}); });
       })
       .catch(err=>{
         console.error(err);
