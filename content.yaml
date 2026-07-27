@@ -24,15 +24,19 @@ nodes:
 - id: IRE
   camp: onto
   node:
-    title: Irenaeus · Against Heresies
+    title: Irenaeus · Against Heresies (~180 AD)
     desc:
       - Reads mortality as mercy, not sentence
   card:
     title: Irenaeus
-    meta: Against Heresies, 2nd c.
+    meta: Against Heresies, 180 AD.
     headline: Reads mortality as mercy, not sentence
     problem: |-
-      Genesis 3 is the retributive reader's strongest ground. If death is the penalty imposed for sin, then the expulsion from Eden is God's first punitive act, and every ontological account of the atonement has to explain away the one scene where God plainly does something to man. But the penal reading has to ignore the reason the text itself gives for the expulsion: man is driven out lest he reach for the tree of life and live forever.
+      Against Heresies was written to explicitly provide a rebuttal to the gnostic heresies (especially Valentinian heresy) circulating at the time. Indeed, the beginning of the book starts with an exposition of exactly what the gnostic heresy is, and to modern theologians, their view is just plain weird and generally pantheistic. 
+
+      In reference to penal substitution, Genesis 3 is the retributive reader's strongest ground. If death is the penalty imposed for sin, then the expulsion from Eden is God's first punitive act, and every ontological account of the atonement has to explain away the one scene where God plainly does something to man. But the penal reading has to ignore the reason the text itself gives for the expulsion: man is driven out lest he reach for the tree of life and live forever.
+
+      It's notable to me that the seed of PSA really does hinge in many ways on the single question of whether the expulsion from the garden was retributive or restorative. If one chooses to view it as retributive, then death is by definition imposed externally from God as a punishment. If it's restorative, then death is a grace of God to prevent remaining eternally in a corrupted state.
     solution: |-
       Irenaeus takes the exile as an act of pity. Barred from the tree, man does not become immortal in his corruption; God interposes death so that sin is not endless and the evil not irremediable, setting a term to the disease rather than exacting a price for it. The expulsion is therefore continuous with the cure rather than opposed to it — mortality is what keeps the wound from becoming permanent, and death becomes the condition under which the remedy can reach us. Christ then recapitulates the life man forfeited, passing through every stage of it and restoring from within what Adam lost. The guarded tree is reopened, not replaced.
     opens: |-
@@ -66,7 +70,7 @@ nodes:
 - id: ATH
   camp: onto
   node:
-    title: Athanasius · On the Incarnation
+    title: Athanasius · On the Incarnation (4th c. AD)
     desc:
     - Recasts atonement as healing, not payment
   card:
@@ -85,6 +89,8 @@ nodes:
       That said, I do have one minor quibble with Athanasius, and it's in his divine dilemma. The dilemma arguably pits the goodness of God to redeem his image-bearers against the truthfulness of God to hold true to the sentance of death. The trouble is in it's relocation of the consequence of death from the natural world to a necessity by virtue of truthfulness. In doing so, it claims that God is self-bound by his statement to render death unto his image-bearers.
 
       This is, to be sure, an inconsistency within Athanasius. Either sin leads to death inherently, or death is imposed externally, but it cannot be both at the same time. This ambiguity regarding the source of death can be seen as a microcosm of the same equation that Owen tries to balance in the 17th century.
+
+      One other note, and that is on the nature of immortality in man. Modern views tend to presuppose the inherent immortality of man. Indeed, it's this presupposition of immortality that is required to explain eternal conscious torment (and why modern proponents of annihilation call their view "conditional immortality"). Athanasius and Irenaeus held that immortality was a superadded gift of God, dependent upon man's attendance thereto, and not something inherent to the creature. Their argument is that man turned away from the source of life, and by negation, introduced death and corruption into themselves, leading to eventual mortality. 
 - id: CALV
   camp: penal
   node:
