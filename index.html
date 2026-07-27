@@ -47,9 +47,21 @@
     padding:26px 22px 30px; box-shadow:0 20px 60px rgba(0,0,0,0.6);
     animation:pop .16s ease-out; }
   @keyframes pop { from{ transform:scale(.96); opacity:0; } to{ transform:scale(1); opacity:1; } }
-  #closeBtn { position:absolute; top:12px; right:12px; width:38px; height:38px;
-    border-radius:50%; border:none; background:#26282f; color:#e5e7eb; font-size:18px;
-    cursor:pointer; line-height:1; }
+#closeBtn {
+    position: sticky;
+    top: 0px;
+    right: 0px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: #26282f;
+    color: #e5e7eb;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+    float: right;
+}
   #closeBtn:hover { background:#33363f; }
   #tag { display:inline-block; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
     padding:4px 10px; border-radius:999px; margin-bottom:12px; font-weight:700; }
@@ -105,7 +117,8 @@ flowchart TD
     UNIV["<b>Universal redemption (1646)</b><br/>Christ died for all alike"]
     OWE47["<b>Owen · Death of Death (1647)</b><br/>Introduces limited atonement"]
     OWE53["<b>Owen · Dissertation on Divine Justice (1653)</b><br/>Makes justice a necessity by relocating<br/>it from God's will to God's character."]
-    OWE55["<b>Owen · Vindiciae Evangelicae (1655)</b><br/>Clarifies that PSA is penal, not pecuniary.<br/>Answers Socinius with voluntary death.<br>Introduces suretyship into godhead."]
+    TUR["<b>Turretin · Institutes of Elenctic Theology</b><br/>Splits God's attributes into habits and acts"]
+    OWE55["<b>Owen · Vindiciae Evangelicae (1655)</b><br/>Clarifies that PSA is penal, not pecuniary.<br/>Answers Socinius with voluntary death<br>Introduces suretyship into godhead."]
     OWE77["<b>Owen · Justification by Faith (1677)</b><br/>Closes the system with double imputation"]
     RAMSAY["<b>Ramsay · Models and Mystery (1963)</b><br/>Doctrines are disclosures, not blueprints"]
     PACKER["<b>Packer · What Did The Cross Achieve? (1973)</b><br/>Double down on PSA. Accept the mystery."]
@@ -113,6 +126,7 @@ flowchart TD
     ORIGEN -->|"move creditor from Satan to God"| ANSELM
     OWE47 -->|"turned on itself"| BAX
     %% OWE77 -.->|"re-secures 1647's scope"| OWE47
+    OWE53 -->|"is related to"| TUR
     OWE47 -->|"reverses its own concession"| OWE53
     OWE53 -->|"grounds: no relaxation possible"| OWE55
     OWE55 -->|"But now that it's penal, it needs a transfer mechanism that pecuniary provided"| OWE77
@@ -131,6 +145,7 @@ flowchart TD
     ATH -->|"modern Athanasian"| TOR
     RAMSAY -->|"referenced in"| PACKER
     OWE77 -->|"relegate to mystery"| PACKER
+    
 
     classDef other fill:#ffa8a8,stroke:#b91c1c,color:#111;
     classDef govt fill:#fef3c7,stroke:#b45309,color:#111;
@@ -145,7 +160,7 @@ flowchart TD
     class SOC,MORT01,MORT02,MORT03,RAMSAY other;
     class KANT moralexemplar;
     class GRO,NEW govt;
-    class OWE47,OWE53,OWE55,OWE77,CALV,PACKER penal;
+    class OWE47,OWE53,OWE55,OWE77,CALV,PACKER,TUR penal;
     class BAX hybrid;
     class ATH,CAM,TOR onto;
     class UNIV target;
@@ -170,6 +185,7 @@ flowchart TD
     click OWE77 call nodeClick("OWE77")
     click PACKER call nodeClick("PACKER")
     click RAMSAY call nodeClick("RAMSAY")
+    click TUR call nodeClick("TUR")
       </pre>
     </div>
     <div id="zoomctl">
@@ -334,7 +350,13 @@ flowchart TD
         opens: "Packer abandons reason. By arguing that the Puritans were overly rationalistic in their claims, his conclusion is not that they started with poor premises, but rather that they should have left the mechanisms open to mystery.",
         notes: "To me this is a concession. Anselm, Calvin, Owen, Baxter, and many theologians before them had spent centuries trying to smuggle retributive justice into Christianity without providing a satisfying logic. The model was apparently illogical. Faced with a model that resists attempts to apply logic, one can either reject the model or reject the logic. Packer takes a note from Ramsay and suggests the latter.\n\n" +
         "Packer's solution (which he draws from Ramsay) is to claim that the model has it's limits, but is still the best model out there. To me, it's essentially throwing up his hands and saying it's a mystery. I find this explanation unsatisfactory.\n\nMore than this, this also marks a point at which Packer is now playing on different rules than those who created the doctrine. From Packer's perspective, Owen and others were misled by their attempts to use logical positivism to prove the point. The trouble with this is that the entirety of the model was built using similar methods of classical logic. Responses were framed as correctives to previous statements, often based in logic. By claiming that the models are merely tools used for disclosure and not blueprints is denying the foundation upon which they were built."
-      }
+      },
+      TUR:{camp:"penal", title:"Francis Turretin", meta:"Institutes of Elenctic Theology, 1679-85 · after Owen",
+      headline:"Punitive justice is essential to God, not a free act of will. What is free is only its exercise — which is what lets a substitute stand in.",
+      problem:"Socinus had argued that punitive justice is merely a free act of God's will — so God could pardon by fiat and the cross was never necessary. If satisfaction isn't anchored in God's nature, the necessity of Christ's death collapses and the whole Reformed doctrine loses its footing.",
+      solution:"He takes over Owen's thesis from the Dissertation on Divine Justice — that vindicatory justice is a natural, necessary attribute, so God cannot not punish sin — and adds the decisive move: a distinction between the habit and its act. The disposition to punish is necessary; its exercise is free. God must punish sin, yet is free as to when, whom, and by what mode — free, above all, to accept a substitute. Necessity grounds satisfaction; freedom of exercise preserves grace and licenses the transfer to Christ.",
+      opens:"A disposition that is necessarily present but only contingently exercised smuggles a real potency into a God meant to be pure act — the habit/act split names the potentiality rather than dissolving it. And the more necessity is loaded into the attribute, the more grace must answer to a prior necessity in God — justice ruling mercy — while freedom over the mode lets the penalty fall on the innocent, loosening the guilt-to-penalty tie that made the justice retributive in the first place.",
+      notes:"This shows more clearly the faultlines in PSA and why it's so difficult to discuss. There are two pieces that are necessary in PSA: the debt on man's side and the need for satisfaction on God's side. Most of Owen's work in this regards is related to finding a way to insert the satisfaction into the system. What Turretin posits here is a very similar retribution-relocation move that Owen makes in Dissertation. They're looking for a place for the retribution to sit unnoticed, but it will always be noticed.\n\nAnd this is why it's so hard to combat the theory. In an idea space, as theology is, there are plenty of places to try to hide another injected idea, and we see this happening throughout all versions of the theory.\n\nThe trouble with PSA isn't that we're hiding retribution in the wrong place on God's side; it's that the goodness of God dissolves it. We should abandon the idea that God is retributive and just admit that God is good. Maybe he's asking us to trust that anything we lost will be given to us in spades--just as he said. Maybe a God who can generate quite simply anything from thin air has better ways to set justice right."}
     };
 
     function nodeClick(id){
