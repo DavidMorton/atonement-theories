@@ -1,0 +1,18 @@
+# The New Divinity
+# Loaded via the node_files manifest in ../content.yaml
+id: NEW
+camp: govt
+node:
+  title: New Divinity (18th-19th c.)
+  desc:
+  - Turns justice into moral government
+card:
+  title: The New Divinity
+  meta: Bellamy, Edwards Jr., Park · 18th–19th c.
+  headline: Turns justice into moral government
+  problem: |-
+    Grotius's rectoral sketch was suggestive but loosely defined, and Edwardsean Calvinists needed it to fit a theology centered on God's benevolent aim for the whole moral universe.
+  solution: |-
+    They redefine divine justice as general rectitude — God's disposition to do what best serves the moral system. The atonement upholds moral government and makes pardon safe, rather than discharging a retributive debt.
+  opens: |-
+    Recasting justice as benevolent rectitude arguably changes the subject: it strains to hold the biblical language of wrath and desert, and loosens the tie between the atonement and any individual's guilt even further.

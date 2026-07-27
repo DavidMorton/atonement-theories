@@ -1,0 +1,24 @@
+# A Dissertation on Divine Justice
+# Loaded via the node_files manifest in ../content.yaml
+id: OWE53
+camp: penal
+node:
+  title: Owen · Dissertation on Divine Justice (1653)
+  desc:
+  - Makes retributive justice a necessity by
+  - relocating it from God's will to God's
+  - character.
+card:
+  title: A Dissertation on Divine Justice
+  meta: John Owen, 1653
+  headline: Makes justice a necessity, not a choice
+  problem: |-
+    Grotius — and Owen's own earlier self — treated retributive justice as something God could waive by will. If that's true, God could have forgiven with no satisfaction at all, and the cross loses its necessity.
+  solution: |-
+    He argues vindicatory justice is an essential attribute of God's nature, not a free choice: God can no more leave sin unpunished than deny himself. Satisfaction becomes strictly necessary, and no rectoral 'relaxation' is available.
+  opens: |-
+    Making satisfaction strictly necessary revives Socinus's dilemma at full strength: if the penalty is rigorously exacted in full, where is there any room left for grace and forgiveness?
+  notes: |-
+    Like Owen, most modern proponents of penal substitution say that God is required punish the sinner because justice is part of his character. To this I would ask what kind of justice. There are two: retributive and restorative. Restorative could arguably be considered an artifact of the Trinity, as the Trinity could be thought of as continually restoring one other, flowing from the inherent infinity of love within Godhead between it's members. That said, it sits better as the outworking of love when faced with privation, and by extension, sin.
+
+    The trouble with retributive justice, though, is that it has an innate existential dependency on guilt. Take away guilt, and retributive justice doesn't appear. God can never apply retributive justice to himself on account of perfect love. Because God is eternal, unchanging, and fully actual (according to classical theism), then the quality of retribution introduces a potentiality into the very character of God that could never be actualized among the members of the Trinity. In other words, it's unnecessary to God in the pre-fall universe, but necessary in the post-fall universe. This introduces potentiality which, when actualized, is mutability. A cruder way to put this would be that we broke God when we sinned.

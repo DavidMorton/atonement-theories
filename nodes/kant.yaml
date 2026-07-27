@@ -1,0 +1,26 @@
+# Immanuel Kant
+# Loaded via the node_files manifest in ../content.yaml
+id: KANT
+camp: moralexemplar
+node:
+  title: Kant · Religion within the Bounds of Bare Reason (1793)
+  desc:
+  - Retreats to Moral Exemplar
+card:
+  title: Immanuel Kant
+  meta: Religion within the Bounds of Bare Reason, 1793
+  headline: Moves atonement inside the moral self
+  problem: |-
+    Moral guilt looks like the most personal thing a person has — not a fungible liability you can sign over to another — so any scheme that transfers desert seems morally incoherent from the start.
+  solution: |-
+    He internalizes the atonement: what reconciles is the sinner's own moral revolution, the new self bearing the cost of putting the old self to death, rather than the legal crediting of someone else's merit.
+  opens: |-
+    If atonement just is the sinner's own moral reform, nothing is really received from outside — grace, Christ's work, and forgiveness turn symbolic, and the guilt of past sin that reform can't retroactively undo is left unpaid.
+  notes: |-
+    Kant's move here is similar to Grotius's move. Where Grotius moves towards the crucifixion being a relatively non-effectual example of God's retributive justice, Kant bends it towards love. The pair of them then show what happens when PSA collapses in on itself. PSA tried to introduce retributive justice as an attribute of God alongside his love, and where Socinus pushed down on the meaning of retribution and the mathematical impossibility of calling satisfaction forgiveness, two new atonement models emerged, splitting along the two central attributes of God: love and retributive justice.
+
+    The trouble here of course, is that one of these attributes is a fiction. To try to shove it into the frame is to force a split *somewhere* in the system.
+
+    Grotius fell on the side of satisfaction. Kant fell on the side of love.
+
+    Both views render the crucifixion to nothing more than a good example to follow.

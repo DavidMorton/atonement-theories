@@ -1,0 +1,22 @@
+# Origen · Commentary on Matthew
+# Loaded via the node_files manifest in ../content.yaml
+id: ORIGEN
+camp: ransom
+node:
+  title: Origen · Commentary on Matthew (3rd century)
+  desc:
+  - Ransom Theory
+card:
+  title: Origen · Commentary on Matthew
+  meta: 3rd century
+  headline: Ransom Theory
+  problem: |-
+    The devil owns the souls of men.
+  solution: |-
+    Jesus paid the ransom to the devil to free men.
+  opens: |-
+    Gives the devil power over God -- something that Anselm would address later.
+  notes: |-
+    Origen, notably, was a universalist. He believed that the ransom paid covered the whole of the human race.
+
+    The need for satisfaction (in this case to the devil) in order to achieve man's rescue is the seed he planted that would later develop into what we know as penal substitutionary atonement.

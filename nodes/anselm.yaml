@@ -1,0 +1,24 @@
+# Anselm · Cur Deus Homo
+# Loaded via the node_files manifest in ../content.yaml
+id: ANSELM
+camp: satisfaction
+node:
+  title: Anselm · Cur Deus Homo (1098)
+  desc:
+  - Satisfaction Theory
+card:
+  title: Anselm · Cur Deus Homo
+  meta: '1098'
+  headline: Satisfaction Theory
+  problem: |-
+    Ransom theory has God paying a ransom to the devil, which Anselm felt was intolerable. The devil has no rights against God.
+  solution: |-
+    His solution was satisfaction theory built on feudal honor. Humans have, by their sin, incurred a debt against God's honor, which must be repaid to be satisfied. Man cannot afford to pay, so his punishment is infinite by nature, due to the infinite honor of God. Christ alone, being sinless, is able to repay the debt, and he provides an offering of infinite value and thus repaying the debt.
+  opens: |-
+    The problem of guilt is still unsolved. Christ's death, is offered instead of punishment, but not as punishment. Nothing in satisfaction theory explains how the penalty is applied to the believer--a gaping hole that Calvin would drive through a few hundred years later.
+  notes: |-
+    In satisfaction theory, the stated assumption is that God cannot merely waive the debt owed by man. This introduces what I would consider to be a contingent necessity on the part of God--forcing God's hand. It gives mankind a weird kind of control over the actions of God. Man's sin has a deterministic effect upon the actions of God, thus controlling God--even if tha control is destructive to man.
+
+    Further development would try to hide the necessity. Owen's Dissertation on Divine Justice moves it from the will of God (where it's not strictly necessary) into the character of God, so that God is bound to respond. Turretin tries to remove the potentiality this creates within the character of God by further subdividing the concept of an attribute into two parts--habitus and actus--separating the disposition of God from his freedom of method in how he responds, but I claim he merely redefines the terms to relocate the offending concept that ultimately binds God's hand to retribution.
+
+    It's also worth noting that Anselm's creditor-relocation to God puts God on both sides of the transaction, which means the theory can no longer deal in whole souls--how can God ransom a whole soul from himself? So the currency must also change. This is where Anselm brings in the debt/honor framework to answer this question--because we're no longer dealing in full souls, the new trading currency must be deontic properties or symbolic capital. It's worth noting that later developments would shift which deontic properties are the currency, as Calvin does in 1559, moving from debt and honor to sin and righteousness.

@@ -1,0 +1,24 @@
+# Faustus Socinus
+# Loaded via the node_files manifest in ../content.yaml
+id: SOC
+camp: other
+node:
+  title: Socinus · De Servatore (1578)
+  desc:
+  - Satisfaction and forgiveness are mutually exclusive opposites.
+  - Retributive justice cannot be transferred.
+card:
+  title: Faustus Socinus
+  meta: De Jesu Christo Servatore, 1578
+  headline: |-
+    Satisfaction and forgiveness are mutually exclusive opposites. Retributive justice cannot be transferred.
+  problem: |-
+    Penal satisfaction struck him as self-cancelling: a debt paid in full is discharged, not forgiven, so grace vanishes — and punishing an innocent substitute for the guilty is itself unjust, since guilt can't be transferred.
+  solution: |-
+    He drops objective satisfaction entirely. God, who tells us to forgive freely, simply forgives the repentant; Christ saves as prophet and exemplar whose exaltation gives him power to bless. No payment is owed or made.
+  opens: |-
+    If the death accomplishes nothing objective, it becomes hard to say why the cross was needed at all; the atonement risks being morally inspiring but causally idle, and grace loses any costly ground.
+  notes: |-
+    Socinus was an odd bird and held to several very strange beliefs, many of which were heretical. For example, he denied the diety of Christ, but maintained that he should be worshipped. He held to an early form of open theism. So in that vein, he was hardly orthodox on many of his beliefs, so I would hesitate to emulate most of his theology.
+
+    Nevertheless, this might be the single best rebuttal in the history of theology. I still don't think there's a good answer, but as a result of Socinus's rebuttal, Grotius and Kant jumped off the PSA bus entirely while Owen doubled down, and together with Turretin sought to find a sufficiently deep place to hide the retribution they'd accepted as a necessary premise.

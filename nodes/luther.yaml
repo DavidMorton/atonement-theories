@@ -1,0 +1,24 @@
+# Luther · The Freedom of a Christian
+# Loaded via the node_files manifest in ../content.yaml
+id: LUTH
+camp: penal
+node:
+  title: Luther · The Freedom of a Christian (1520)
+  desc:
+  - The joyous exchange
+  - Alien righteousness through faith-union with Christ
+  - Simul justis et peccator
+card:
+  title: Luther · The Freedom of a Christian
+  meta: 1520; cf. Lectures on Galatians, 1535
+  headline: The joyous exchange
+  problem: |-
+    How can a sinner who never does enough penance, contrition, or merit have any certainty of standing right before God? The medieval penitential system ties assurance to the sufficiency of one's own ongoing disposition and works — a ledger the anxious conscience can never confirm is settled.
+  solution: |-
+    Faith unites the soul to Christ the way a bride is united to a bridegroom: what is his becomes hers, what is hers becomes his. Christ takes the soul's sin, death, and damnation as though they were his own; the soul receives his righteousness, life, and blessedness as though they were hers. Luther calls this the fröhliche Wechsel, the joyous exchange — grounded not in a legal transaction but in a real union effected by faith. Assurance no longer rests on the sinner's own supply of merit; it rests on Christ's, already given over in the marriage.
+  opens: |-
+    Is this a real sharing of possessions through union, or a legal fiction dressed up as a marriage? Luther never fully specifies the mechanism — which is exactly the gap Calvin will close by converting the marital metaphor into a juridical one (imputation as legal verdict rather than nuptial gift). It's also the gap Osiander will later exploit from the other side, reading Luther's "union" literally to argue for an essential, indwelling righteousness against Calvin's purely forensic one.
+  notes: |-
+    This is the actual fountainhead — Luther is where the sin/righteousness swap originates, a full generation before Calvin. But it's warmer and less exact than what Calvin will make of it: existential and marital rather than judicial. Luther will even say, in the Galatians lectures, that Christ became "the greatest sinner who ever was" by taking sin onto himself — hyperbolic, personal language, not yet the careful language of a courtroom verdict.
+
+    Calvin inherits the exchange but re-houses it. Where Luther grounds the swap in the intimacy of the wedding ring (faith as what joins the parties), Calvin grounds it in the mechanics of a legal declaration (imputation as a judge's reckoning). Same two goods changing hands — sin out, righteousness in — but Luther's version answers "how can I be sure," and Calvin's answers "how can this be just."

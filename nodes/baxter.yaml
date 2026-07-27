@@ -1,0 +1,30 @@
+# Richard Baxter
+# Loaded via the node_files manifest in ../content.yaml
+id: BAX
+camp: hybrid
+node:
+  title: Baxter (1649)
+  desc:
+  - Universal in the making, particular in the applying
+card:
+  title: Richard Baxter
+  meta: Aphorismes of Justification, 1649
+  headline: Universal in the making, particular in the applying
+  problem: |-
+    Owen's double-payment case for limited atonement only works if satisfaction behaves like money that auto-discharges the account — which flatly contradicts Owen's own penal model, where release is never automatic.
+  solution: |-
+    He splits the difference: the satisfaction is universal in the making but particular in the applying, applied by God as Rector on the condition of faith — so its scope isn't fixed mechanically by the payment itself.
+  opens: |-
+    Resting application on God's rectoral will plus the condition of faith reintroduces a conditional, governmental element that critics read as neonomian — dissolving the very definiteness Owen prized and pressing on whether faith becomes a work.
+  notes: |-
+    This view causes real anxiety. Here's how.
+
+    Baxter was faced with two problems: antinomianism on one end, and an overly forensic theology on the other. He tries to split the difference by denying that Christ's death was a strict quantitative payment to satisfy God, but rather that it _generally_ satisfied the rectoral justice of God. This meant that Christ's death doesn't actually pay the penalty, but merely opens up the door for God to offer another more lenient deal.
+
+    The deal, then, was that the Gospel was the "new law" that depended on the sincere faith of the believer. This meant that faith and obedience aren't the ground for justification (in terms of an actual sin/righteousness exchange), but rather the condition to be met to have the satisfaction applied to you personally.
+
+    This is where the anxiety arises. Most reformed teaching depends on something extrinsic from yourself for salvation, but Baxter relocates it into the act of faith itself. It's the faith and faithful obedience of the believer that God looks to and is satisfied.
+
+    The trouble then is with the self-evaluation of faith. The practical effect of this theology is to create a sort of spiritual navel-gazing--constantly trying to determine if one's faith is of a sufficient character to satisfy God, and without any objective measuring stick against which to measure, no determination can be made.
+
+    For myself, this was where I was before I adopted a stricter Calvinist frame to try to ease my anxiety, but what I found instead was that the question shifted from "is my faith good enough" to "am I elect". It wouldn't be until decades later that I finally realized that the root was the injection of retributive justice into the character of God.

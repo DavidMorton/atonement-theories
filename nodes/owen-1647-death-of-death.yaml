@@ -1,0 +1,24 @@
+# Death of Death in the Death of Christ
+# Loaded via the node_files manifest in ../content.yaml
+id: OWE47
+camp: penal
+node:
+  title: Owen · Death of Death (1647)
+  desc:
+  - Introduces limited atonement
+card:
+  title: Death of Death in the Death of Christ
+  meta: John Owen, 1647
+  headline: Introduces limited atonement
+  problem: |-
+    If Christ actually bore the full penalty for everyone, then either everyone must be saved or God punishes the same sin twice — so a blankly universal atonement seems to prove too much.
+  solution: |-
+    He argues the atonement is definite: Christ died to actually secure, not merely make possible, the salvation of the elect. The double-payment logic says God can't justly exact the debt from both Christ and the sinner.
+  opens: |-
+    The double-payment argument quietly runs on a money-debt model where payment auto-discharges, which invites Socinus's 'then grace is merely owed' retort — and it still leaves justice a free decree, so the cross's necessity isn't yet secured.
+
+    This also opens the double-predestination charge. God, prior to creation must have destined some to be elect, which by privation destines some to be reprobate. This lands the charge that God created some people for damnation.
+  notes: |-
+    This is a "balance the books" answer to try to prevent the double-payment option. It runs on the assumption that there's a constraint within the system between God and man that requires the books to be balanced in the first place, and with double-payment, the books are unbalanced and man pays too much.
+
+    This is assuming that man, who is completely dependent upon the goodness of God for continued existence, has something of value that he God cannot source elsewhere. I fail to see how this doesn't question the infinite nature of God himself.

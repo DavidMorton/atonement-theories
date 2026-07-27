@@ -1,0 +1,18 @@
+# Hugo Grotius
+# Loaded via the node_files manifest in ../content.yaml
+id: GRO
+camp: govt
+node:
+  title: Grotius · Defensio (1617)
+  desc:
+  - Founds Governmental Theory
+card:
+  title: Hugo Grotius
+  meta: Defensio fidei catholicae, 1617
+  headline: Founds the governmental theory
+  problem: |-
+    Socinus's dilemma only bites if God is a private creditor — but once you concede there's no strict payment, you seem pushed all the way to bare forgiveness, with nothing objective left for the cross to do.
+  solution: |-
+    He moves God from creditor to Ruler of a moral order. God may relax the strict penalty, yet stages Christ's death as a public demonstration upholding the law's authority — so he can pardon freely without sin looking trivial.
+  opens: |-
+    A demonstration that upholds the law's authority may not be a real satisfaction of justice at all — it looks like deterrent expediency that never touches anyone's specific guilt, and if the penalty can be relaxed, the bloody display starts to look superfluous.

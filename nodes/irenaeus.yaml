@@ -1,0 +1,28 @@
+# Irenaeus
+# Loaded via the node_files manifest in ../content.yaml
+id: IRE
+camp: onto
+node:
+  title: Irenaeus · Against Heresies (~180 AD)
+  desc:
+  - Reads mortality as mercy, not sentence
+card:
+  title: Irenaeus
+  meta: Against Heresies, 180 AD.
+  headline: Reads mortality as mercy, not sentence
+  problem: |-
+    Against Heresies was written to explicitly provide a rebuttal to the gnostic heresies (especially Valentinian heresy) circulating at the time. Indeed, the beginning of the book starts with an exposition of exactly what the gnostic heresy is, and to modern theologians, their view is just plain weird and generally pantheistic.
+
+    In reference to penal substitution, Genesis 3 is the retributive reader's strongest ground. If death is the penalty imposed for sin, then the expulsion from Eden is God's first punitive act, and every ontological account of the atonement has to explain away the one scene where God plainly does something to man. But the penal reading has to ignore the reason the text itself gives for the expulsion: man is driven out lest he reach for the tree of life and live forever.
+
+    It's notable to me that the seed of PSA really does hinge in many ways on the single question of whether the expulsion from the garden was retributive or restorative. If one chooses to view it as retributive, then death is by definition imposed externally from God as a punishment. If it's restorative, then death is a grace of God to prevent remaining eternally in a corrupted state.
+  solution: |-
+    Irenaeus takes the exile as an act of pity. Barred from the tree, man does not become immortal in his corruption; God interposes death so that sin is not endless and the evil not irremediable, setting a term to the disease rather than exacting a price for it. The expulsion is therefore continuous with the cure rather than opposed to it — mortality is what keeps the wound from becoming permanent, and death becomes the condition under which the remedy can reach us. Christ then recapitulates the life man forfeited, passing through every stage of it and restoring from within what Adam lost. The guarded tree is reopened, not replaced.
+  opens: |-
+    Mortality as mercy requires an Adam who was never immortal by nature — created immature, made to grow, holding incorruption only as gift. That forecloses the Augustinian originally-immortal Adam whose death is purely penal, and buys a developmental anthropology the later West largely abandoned. It also presses downstream: if unending life in corruption is precisely the state God acted to prevent, then eternal conscious punishment restores the condition the exile was meant to foreclose.
+  notes: |-
+    This supplies the piece Athanasius leaves underspecified. A pure natural-consequence reading of death risks making God a bystander at the one moment Genesis has him acting; Irenaeus gives a divine act that is agentive without being retributive, which is exactly the shape I need.
+
+    Adv. Haer. III.23.6 is the citation — banished out of pity, so that man would not remain a sinner forever and the evil not be interminable. The same move recurs in Theophilus (Ad Autolycum II.26), Nazianzen (Or. 45.8, the tree withheld not from envy but so that evil not become immortal), and Nyssa Cat. Or. 8, mortality as therapy). It is a mainstream patristic reading, not a workaround.
+
+    Note the load-bearing device: nature/grace. It carries the asymmetry of the will (able to break what it cannot mend), the loss of ontological stability, and now the exile itself. Progressive rather than immunizing, since it does independent work in each place — but the concentration is worth watching.

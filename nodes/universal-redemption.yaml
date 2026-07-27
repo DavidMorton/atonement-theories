@@ -1,0 +1,18 @@
+# Universal redemption
+# Loaded via the node_files manifest in ../content.yaml
+id: UNIV
+camp: target
+node:
+  title: Universal redemption (1646)
+  desc:
+  - Christ died for all alike
+card:
+  title: Universal redemption
+  meta: Arminian 'general ransom' · Thomas More, 1646
+  headline: Christ died for all alike
+  problem: |-
+    Scripture repeatedly says Christ died for 'all' and for 'the world,' and a gospel freely offered to everyone seems to require that he actually died for everyone — otherwise the universal call rings hollow.
+  solution: |-
+    It affirms a general ransom: Christ's death is a universal provision for all people, its saving benefit becoming effective on the condition of faith. (The milder 'hypothetical universalist' variant says the death is sufficient for all but efficient only for the elect.)
+  opens: |-
+    If Christ actually bore the full penalty for everyone, then either all must be saved or God punishes the same sin twice in those who still perish — the exact vulnerability Death of Death was written to exploit.

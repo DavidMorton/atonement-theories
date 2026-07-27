@@ -1,0 +1,22 @@
+# Models and Mystery
+# Loaded via the node_files manifest in ../content.yaml
+id: RAMSAY
+camp: other
+node:
+  title: Ramsay · Models and Mystery (1963)
+  desc:
+  - Doctrines are disclosures, not blueprints
+card:
+  title: Models and Mystery
+  meta: Ian Ramsay, 1964
+  headline: Doctrines are Disclosure Models
+  problem: |-
+    Logical positivism had reduced religious statements to nonsense - unverifiable, unfalsifiable, therefore meaningless (Flew's "death by a thousand qualifications"). And taken literally, doctrines like penal substitution collapse into crude, mockable pictures that critics can dismiss as morally monstrous.
+  solution: |-
+    He recasts theological language as models plus qualifiers anchored in "disclosure situations" — an ordinary word ("substitute," "ransom," "father") pressed by a qualifier until the penny drops and insight breaks. Such models aren't measured by literal resemblance but by fruitfulness, and they come in corrigible pluralities, each correcting the others and pointing past itself to a mystery none contains.
+  opens: |-
+    Mystery is bought at the price of illogicality.
+  notes: |-
+    This sets up the ball for Packer.
+
+    It's worth noting that Ramsay's argument was not pointed at PSA directly, but rather at the way in which theological models are used. He suggests that theological atonement models are not much different from models of light and other models in science (especially physics). They help us understand things, but then their further use is limited as they approach the edges of what they can explain.
