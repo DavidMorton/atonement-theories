@@ -49,7 +49,7 @@ You will find further thoughts of mine in the notes sections of many of the popu
 
 God is eternal and unchanging, complete within the trinity, without want or need. There is no potentiality in him, and there's nothing in the realm of justice that *requires* him to respond. His love for us is completely self-giving from first to last. It cannot be any other way. We are in total dependence upon God, so everything we are and anything we have is a gift of God himself. Glory be to God that he demands little from his creatures other than a relationship with him. 
 
-## A note on why retributive justice is the wrong frame for God
+## A note on why retributive justice is incoherent when applied to God
 Justice is done by restoration, not by retribution. This is an important point to make. Most of us would intuitively agree that restorative justice is better than retributive justice. If my son takes a toy from his brother, the best solution is to return the toy to the right kid. This is restorative justice. This is possible because the toy still exists, as do the boys. 
 
 Scale the violation from stealing to murder and the picture changes. If a murderer kills someone's husband, we can't bring them back. They're dead. Restorative justice is not an option, but we feel that we still need to somehow make justice known. So we do what we can and punish the offender. Punishing the offender doesn't bring back the woman's husband, but it is the community's way of signalling to the wife that the offense is taken seriously, and to the community as a deterrent to murder. Therefore, retributive justice is a *display* and not true justice. *True* justice would be to give the woman her husband back--but we can't do that, so we resort to retribution.
