@@ -20,7 +20,7 @@ Reading Athanasius was a big revelation for me. Here are a few versions you can 
 
 ## Why did I make this?
 
-I have been attending church in some way or another for nearly 50 years now. I've grown up in the American evangelical context, and so most of my understanding stems initially from there. I'm thankful for the western Protestant tradition, but I have some trouble accepting many of the underlying presuppositions, both logically and emotionally.
+I have been attending church for nearly 50 years now, often in leadership positions. I've grown up in the American evangelical context, and so most of my understanding stems from there. I'm thankful for the western Protestant tradition, but I have some trouble accepting many of the underlying presuppositions, both logically and emotionally.
 
 My main quibble is with an atonement theory called penal substitutionary atonement (PSA). 
 
