@@ -45,7 +45,16 @@ You will find further thoughts of mine in the notes sections of many of the popu
 
 God is eternal and unchanging, complete within the trinity, without want or need. There is no potentiality in him, and there's nothing in the realm of justice that *requires* him to respond. His love for us is completely self-giving from first to last. It cannot be any other way. We are in total dependence upon God, so everything we are and anything we have is a gift of God himself. Glory be to God that he demands little from his creatures other than a relationship with him. 
 
-Justice is done by restoration, not by retribution.
+## A note on why retributive justice is the wrong frame for God
+Justice is done by restoration, not by retribution. This is an important point to make. Most of us would intuitively agree that restorative justice is better than retributive justice. If my son takes a toy from his brother, the best case scenario is to return the toy to the proper owner. This is restorative justice. This is possible because the toy still exists, as do both boys in the transaction. 
+
+Now, scale that to murder. If a murderer kills someone's husband, we can't bring them back. They're dead. Restorative justice is simply not an option, but we feel that we still need to somehow balance the scales. So we do what we can and we punish the offender. Punishing the offender doesn't bring back the woman's husband, but it is the community's way of signalling to the wife that the offense is taken seriously, and it acts as a warning to others that such actions will be responded to in similar ways. In actual effect, retributive justice is a *display* and not true justice. True justice would be to bring back the woman's murdered husband--something we as humans are incapable of achieving.
+
+Therefore, retributive justice is best applied when we have no restorative option.
+
+And this is why retributive justice fails when scaled to an infinite and generative God. There is no lack in God. He has created all things, and through him, all things are sustained. Every option is open to him--*even bringing back dead men*. He can restore any and every loss. He doesn't *need* retributive justice in order to make things right. He can just make new things. God owns the "undo button" for the universe.
+
+Retribution is an economy of constraint. It can't be applied to an unconstrained God.
 
 ## So what do I believe now?
 
