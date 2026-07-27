@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<!-- atonement-lineage — interactive theology map. Blah -->
+<!-- atonement-lineage — interactive theology map.
+     Content lives in content.yaml — edit that file, not this one, to change
+     any node text, card copy, colors, or connections. This file only knows
+     how to turn that YAML into the diagram + cards. -->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -83,110 +86,19 @@
 width: 100vw;
 text-align: center;
 font-size: 20px; }
+  #loadErr { display:none; position:fixed; inset:0; background:var(--bg); color:#f87171;
+    align-items:center; justify-content:center; text-align:center; padding:30px;
+    font-size:15px; line-height:1.5; z-index:100; }
 </style>
 </head>
 <body>
-  <div id="title">Penal Substitution Family Tree</div>
-  <div id="hint">Drag to pan · pinch or scroll to zoom · tap a box for its card</div>
-  <div id="legend">
-    <span><i style="background:#dcfce7"></i>ontological</span>
-    <span><i style="background:#92f3fc"></i>ransom</span>
-    <span><i style="background:#ffedd5"></i>satisfaction</span>
-    <span><i style="background:#dbeafe"></i>penal</span>
-    <span><i style="background:#fef3c7"></i>governmental</span>
-    <span><i style="background:#ffcf8b"></i>internal critic</span>
-    <span><i style="background:#d9c0fd"></i>moral exemplar</span>
-    <span><i style="background:#ffa8a8"></i>other</span>
-  </div>
+  <div id="title"></div>
+  <div id="hint"></div>
+  <div id="legend"></div>
 
   <div id="graph">
     <div id="canvas">
-      <pre class="mermaid">
-flowchart TD
-    ORIGEN["<b>Origen · Commentary on Matthew (3rd century)</b><br/>Ransom Theory"]
-    ANSELM["<b>Anselm · Cur Deus Homo (1098)</b><br/>Satisfaction Theory"]
-    ATH["<b>Athanasius · On the Incarnation</b><br/>Recasts atonement as healing, not payment"]
-    CALV["<b>Calvin · Institutes (1559)</b><br/>The Reformed doctrine of satisfaction"]
-    SOC["<b>Socinus · De Servatore (1578)</b><br/>Satisfaction and forgiveness are mutually exclusive opposites.<br/>Retributive justice cannot be transferred."]
-    GRO["<b>Grotius · Defensio (1617)</b><br/>Founds the governmental theory"]
-    BAX["<b>Baxter (1649)</b><br/>Universal in the making, particular in the applying"]
-    NEW["<b>New Divinity (18th-19th c.)</b><br/>Turns justice into moral government"]
-    KANT["<b>Kant · Religion within the Bounds of Bare Reason (1793)</b><br/>Moves atonement inside the moral self<br/>Retreats to Moral Exemplar"]
-    CAM["<b>McLeod Campbell (1856)</b><br/>Replaces penalty with vicarious repentance"]
-    TOR["<b>T. F. Torrance (20th c.)</b><br/>Grounds salvation in Christ's vicarious humanity"]
-    UNIV["<b>Universal redemption (1646)</b><br/>Christ died for all alike"]
-    OWE47["<b>Owen · Death of Death (1647)</b><br/>Introduces limited atonement"]
-    OWE53["<b>Owen · Dissertation on Divine Justice (1653)</b><br/>Makes justice a necessity by relocating<br/>it from God's will to God's character."]
-    TUR["<b>Turretin · Institutes of Elenctic Theology</b><br/>Splits God's attributes into habits and acts"]
-    OWE55["<b>Owen · Vindiciae Evangelicae (1655)</b><br/>Clarifies that PSA is penal, not pecuniary.<br/>Answers Socinius with voluntary death<br>Introduces suretyship into godhead."]
-    OWE77["<b>Owen · Justification by Faith (1677)</b><br/>Closes the system with double imputation"]
-    RAMSAY["<b>Ramsay · Models and Mystery (1963)</b><br/>Doctrines are disclosures, not blueprints"]
-    PACKER["<b>Packer · What Did The Cross Achieve? (1973)</b><br/>Double down on PSA. Accept the mystery."]
-
-    ORIGEN -->|"move creditor from Satan to God"| ANSELM
-    OWE47 -->|"turned on itself"| BAX
-    %% OWE77 -.->|"re-secures 1647's scope"| OWE47
-    OWE53 -->|"is related to"| TUR
-    OWE47 -->|"reverses its own concession"| OWE53
-    OWE53 -->|"grounds: no relaxation possible"| OWE55
-    OWE55 -->|"But now that it's penal, it needs a transfer mechanism that pecuniary provided"| OWE77
-    ANSELM -->|"add transfer mechanism for rightousness and debt"| CALV
-    UNIV -->|"written to refute"| OWE47
-    CALV -->|"refutation"| SOC
-    %% CALV -.->|"framework Owen defends"| OWE55
-    SOC -->|"answers by conceding"| GRO
-    GRO -->|"hardens him"| OWE53
-    GRO -->|"refined into"| NEW
-    SOC -->|"same objection, full strength"| KANT
-    SOC -->|"grants it, relocates objectivity"| CAM
-    SOC -->|"answers by denying (via Biddle)"| OWE55
-    ATH -->|"ontological frame"| CAM
-    CAM -->|"carries forward"| TOR
-    ATH -->|"modern Athanasian"| TOR
-    RAMSAY -->|"referenced in"| PACKER
-    OWE77 -->|"relegate to mystery"| PACKER
-    
-
-    classDef other fill:#ffa8a8,stroke:#b91c1c,color:#111;
-    classDef govt fill:#fef3c7,stroke:#b45309,color:#111;
-    classDef penal fill:#dbeafe,stroke:#1d4ed8,color:#111;
-    classDef hybrid fill:#ffcf8b,stroke:#ffcf8b,color:#111;
-    classDef onto fill:#dcfce7,stroke:#15803d,color:#111;
-    classDef target fill:#ffffff,stroke:#6b7280,color:#111;
-    classDef satisfaction fill:#ffedd5,stroke:#ea580c,color:#111;
-    classDef ransom fill:#92f3fc,stroke:#0e7490,color:#111;
-    classDef moralexemplar fill:#d9c0fd,stroke:#bc8dff,color:#111;
-
-    class SOC,MORT01,MORT02,MORT03,RAMSAY other;
-    class KANT moralexemplar;
-    class GRO,NEW govt;
-    class OWE47,OWE53,OWE55,OWE77,CALV,PACKER,TUR penal;
-    class BAX hybrid;
-    class ATH,CAM,TOR onto;
-    class UNIV target;
-    class ANSELM satisfaction;
-    class ORIGEN ransom
-
-    click ORIGEN call nodeClick("ORIGEN")
-    click ANSELM call nodeClick("ANSELM")
-    click CALV call nodeClick("CALV")
-    click ATH call nodeClick("ATH")
-    click SOC call nodeClick("SOC")
-    click GRO call nodeClick("GRO")
-    click NEW call nodeClick("NEW")
-    click BAX call nodeClick("BAX")
-    click KANT call nodeClick("KANT")
-    click CAM call nodeClick("CAM")
-    click TOR call nodeClick("TOR")
-    click UNIV call nodeClick("UNIV")
-    click OWE47 call nodeClick("OWE47")
-    click OWE53 call nodeClick("OWE53")
-    click OWE55 call nodeClick("OWE55")
-    click OWE77 call nodeClick("OWE77")
-    click PACKER call nodeClick("PACKER")
-    click RAMSAY call nodeClick("RAMSAY")
-    click TUR call nodeClick("TUR")
-      </pre>
+      <pre class="mermaid"></pre>
     </div>
     <div id="zoomctl">
       <button id="zin" aria-label="Zoom in">+</button>
@@ -209,157 +121,111 @@ flowchart TD
     </div>
   </div>
 
+  <div id="loadErr">
+    Couldn't load <code>content.yaml</code>.<br/><br/>
+    This page needs to be served over HTTP (not opened directly as a <code>file://</code> URL) so
+    it can fetch its content file. Try running a local server in this folder, e.g.<br/><br/>
+    <code>python3 -m http.server</code><br/><br/>
+    then open the page at the printed localhost address.
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
   <script>
-    const CAMP = {
-      other:{c:"#fde8e8",t:"#b91c1c",label:"Other"},
-      penal:{c:"#dbeafe",t:"#1d4ed8",label:"Penal"},
-      govt:{c:"#fef3c7",t:"#b45309",label:"Governmental"},
-      hybrid:{c:"#ffcf8b",t:"#000000",label:"Hybrid"},
-      onto:{c:"#dcfce7",t:"#15803d",label:"Ontological"},
-      target:{c:"#ffffff",t:"#374151",label:"Provocation"},
-      satisfaction:{c:"#ffedd5",t:"#ea580c",label:"Satisfaction"},
-      ransom:{c:"#cffafe",t:"#0e7490",label:"Ransom"},
-      moralexemplar:{c:"#d9c0fd",stroke:"#bc8dff",label:"Moral Exemplar"}
-    };
-    const DATA = {
-      ORIGEN:{camp:"ransom", title:"Origen · Commentary on Matthew", meta: "3rd century",
-        headline: "Ransom Theory",
-        problem: "The devil owns the souls of men.",
-        solution: "Jesus paid the ransom to the devil to free men.",
-        opens: "Gives the devil power over God -- something that Anselm would address later.",
-        notes: "Origen, notably, was a universalist. He believed that the ransom paid covered the whole of the human race.\n\n" +
-        "The need for satisfaction (in this case to the devil) in order to achieve man's rescue is the seed he planted that would later develop into what we know as penal substitutionary atonement."
-      },
-      ANSELM:{camp:"satisfaction", title:"Anselm · Cur Deus Homo", meta: "1098",
-        headline:"Satisfaction Theory",
-        problem:"Ransom theory has God paying a ransom to the devil, which Anselm felt was intolerable. The devil has no rights against God.",
-        solution:"His solution was satisfaction theory built on feudal honor. Humans have, by their sin, incurred a debt against God's honor, which must be repaid to be satisfied. Man cannot afford to pay, so his punishment is infinite by nature, due to the infinite honor of God. Christ alone, being sinless, is able to repay the debt, and he provides an offering of infinite value and thus repaying the debt.",
-        opens:"The problem of guilt is still unsolved. Christ's death, is offered instead of punishment, but not as punishment. Nothing in satisfaction theory explains how the penalty is applied to the believer--a gaping hole that Calvin would drive through a few hundred years later.",
-        notes:"Notice that in satisfaction theory, God cannot merely waive the debt. This is the view that Socinius would drive through later.\n\nIt's also worth noting that Anselm's creditor-relocation to God puts God on both sides of the transaction, which means the theory can no longer deal in whole souls--how can God ransom a whole soul from himself? So the currency must also shift. This is where Anselm brings in the debt/honor framework to answer this question. It's worth noting that this move to abstract concepts being the currency between God and man sets up it's reframing by Calvin in 1559."
-      },
-      CALV:{camp:"penal", title:"Calvin · Institutes of the Christian Religion", meta:"definitive edition, 1559",
-        headline:"The Reformed doctrine of satisfaction",
-        problem:"How can a just and holy God forgive sinners without treating sin as though it didn't matter? Anselm had framed the answer around God's honor; the Reformers recast it around justice and God's wrath against sin.",
-        solution:"Christ, standing in our place, bears the curse and the wrath our sin deserved — a real, objective, substitutionary satisfaction of divine justice — so that God can be at once just and the justifier of those who believe. This is the fountainhead of the penal-substitution stream.",
-        opens:"It hands the critics their opening: if Christ fully bears the penalty in our place, is that forgiveness or merely payment — and can guilt be justly transferred to an innocent? Exactly the blades Socinus will press."},
-      UNIV:{camp:"target", title:"Universal redemption", meta:"Arminian 'general ransom' · Thomas More, 1646",
-        headline:"Christ died for all alike",
-        problem:"Scripture repeatedly says Christ died for 'all' and for 'the world,' and a gospel freely offered to everyone seems to require that he actually died for everyone — otherwise the universal call rings hollow.",
-        solution:"It affirms a general ransom: Christ's death is a universal provision for all people, its saving benefit becoming effective on the condition of faith. (The milder 'hypothetical universalist' variant says the death is sufficient for all but efficient only for the elect.)",
-        opens:"If Christ actually bore the full penalty for everyone, then either all must be saved or God punishes the same sin twice in those who still perish — the exact vulnerability Death of Death was written to exploit."},
-      ATH:{camp:"onto", title:"Athanasius", meta:"On the Incarnation, 4th c.",
-        headline:"Recasts atonement as healing, not payment",
-        problem:"If salvation is essentially a legal transaction, it never reaches the deeper human catastrophe: a nature that has turned from its source of life and is unravelling into corruption and death.",
-        solution:"He frames atonement ontologically. The Word takes on mortal human nature and, by uniting it to his own imperishable life, heals and re-creates it from the inside — covering death with life rather than settling a penalty.",
-        opens:"Locating salvation in the healing of nature leaves the legal and moral side underspecified — how guilt is answered and where God's justice and wrath fit — the very data the later Western tradition refuses to fold into ontology."},
-      SOC:{camp:"other", title:"Faustus Socinus", meta:"De Jesu Christo Servatore, 1578",
-        headline:"Satisfaction and forgiveness are mutually exclusive opposites. Retributive justice cannot be transferred.",
-        problem:"Penal satisfaction struck him as self-cancelling: a debt paid in full is discharged, not forgiven, so grace vanishes — and punishing an innocent substitute for the guilty is itself unjust, since guilt can't be transferred.",
-        solution:"He drops objective satisfaction entirely. God, who tells us to forgive freely, simply forgives the repentant; Christ saves as prophet and exemplar whose exaltation gives him power to bless. No payment is owed or made.",
-        opens:"If the death accomplishes nothing objective, it becomes hard to say why the cross was needed at all; the atonement risks being morally inspiring but causally idle, and grace loses any costly ground.",
-        notes:"This might be the single best rebuttal in the history of theology. I don't think there's a good answer, but Grotius and Kant jumped off the bus while Owen took the bait, and together with Turretin found a sufficiently deep place to hide the retribution they'd accepted as a necessary premise."
-      },
-      GRO:{camp:"govt", title:"Hugo Grotius", meta:"Defensio fidei catholicae, 1617",
-        headline:"Founds the governmental theory",
-        problem:"Socinus's dilemma only bites if God is a private creditor — but once you concede there's no strict payment, you seem pushed all the way to bare forgiveness, with nothing objective left for the cross to do.",
-        solution:"He moves God from creditor to Ruler of a moral order. God may relax the strict penalty, yet stages Christ's death as a public demonstration upholding the law's authority — so he can pardon freely without sin looking trivial.",
-        opens:"A demonstration that upholds the law's authority may not be a real satisfaction of justice at all — it looks like deterrent expediency that never touches anyone's specific guilt, and if the penalty can be relaxed, the bloody display starts to look superfluous."},
-      NEW:{camp:"govt", title:"The New Divinity", meta:"Bellamy, Edwards Jr., Park · 18th–19th c.",
-        headline:"Turns justice into moral government",
-        problem:"Grotius's rectoral sketch was suggestive but loosely defined, and Edwardsean Calvinists needed it to fit a theology centered on God's benevolent aim for the whole moral universe.",
-        solution:"They redefine divine justice as general rectitude — God's disposition to do what best serves the moral system. The atonement upholds moral government and makes pardon safe, rather than discharging a retributive debt.",
-        opens:"Recasting justice as benevolent rectitude arguably changes the subject: it strains to hold the biblical language of wrath and desert, and loosens the tie between the atonement and any individual's guilt even further."},
-      BAX:{camp:"hybrid", title:"Richard Baxter", meta:"Aphorismes of Justification, 1649",
-        headline:"Universal in the making, particular in the applying",
-        problem:"Owen's double-payment case for limited atonement only works if satisfaction behaves like money that auto-discharges the account — which flatly contradicts Owen's own penal model, where release is never automatic.",
-        solution:"He splits the difference: the satisfaction is universal in the making but particular in the applying, applied by God as Rector on the condition of faith — so its scope isn't fixed mechanically by the payment itself.",
-        opens:"Resting application on God's rectoral will plus the condition of faith reintroduces a conditional, governmental element that critics read as neonomian — dissolving the very definiteness Owen prized and pressing on whether faith becomes a work."},
-      KANT:{camp:"moralexemplar", title:"Immanuel Kant", meta:"Religion within the Bounds of Bare Reason, 1793",
-        headline:"Moves atonement inside the moral self",
-        problem:"Moral guilt looks like the most personal thing a person has — not a fungible liability you can sign over to another — so any scheme that transfers desert seems morally incoherent from the start.",
-        solution:"He internalizes the atonement: what reconciles is the sinner's own moral revolution, the new self bearing the cost of putting the old self to death, rather than the legal crediting of someone else's merit.",
-        opens:"If atonement just is the sinner's own moral reform, nothing is really received from outside — grace, Christ's work, and forgiveness turn symbolic, and the guilt of past sin that reform can't retroactively undo is left unpaid."},
-      CAM:{camp:"onto", title:"John McLeod Campbell", meta:"The Nature of the Atonement, 1856",
-        headline:"Replaces penalty with vicarious repentance",
-        problem:"Grant (rightly) that punishment can't be transferred and penal substitution collapses — yet simply dropping objectivity, the Socinian route, throws away the real God-ward reality of the cross.",
-        solution:"He relocates Christ's offering from penalty to confession: a perfect vicarious 'Amen' to the Father's judgment on sin, an adequate repentance humanity couldn't make — keeping atonement objective without transferring guilt.",
-        opens:"It's unclear whether confession and repentance can bear the objective, Godward weight that penalty carried — either an adequate answer to condemnation quietly smuggles the penal element back in, or it leaves the wrath data unaddressed."},
-      TOR:{camp:"onto", title:"T. F. Torrance", meta:"20th c. · after Athanasius & Campbell",
-        headline:"Grounds salvation in Christ's vicarious humanity",
-        problem:"A purely forensic, transactional atonement leaves God's act external to us, and struggles to show how the cross actually heals human nature or reveals a God who isn't at war with himself.",
-        solution:"He grounds salvation in Christ's vicarious humanity: the Son believes, obeys, and dies in our place and on our behalf from inside our fallen nature — so atonement is ontological union and healing, not a legal exchange with an angry Father.",
-        opens:"Critics charge that the ontological account under-accounts for the forensic and wrath-laden texts, buying its coherence by relocating that data rather than explaining it — and assuming fallen humanity raises its own worries about Christ."},
-      OWE47:{camp:"penal", title:"Death of Death in the Death of Christ", meta:"John Owen, 1647",
-        headline:"Introduces limited atonement",
-        problem:"If Christ actually bore the full penalty for everyone, then either everyone must be saved or God punishes the same sin twice — so a blankly universal atonement seems to prove too much.",
-        solution:"He argues the atonement is definite: Christ died to actually secure, not merely make possible, the salvation of the elect. The double-payment logic says God can't justly exact the debt from both Christ and the sinner.",
-        opens:"The double-payment argument quietly runs on a money-debt model where payment auto-discharges, which invites Socinus's 'then grace is merely owed' retort — and it still leaves justice a free decree, so the cross's necessity isn't yet secured."},
-      OWE53:{camp:"penal", title:"A Dissertation on Divine Justice", meta:"John Owen, 1653",
-        headline:"Makes justice a necessity, not a choice",
-        problem:"Grotius — and Owen's own earlier self — treated retributive justice as something God could waive by will. If that's true, God could have forgiven with no satisfaction at all, and the cross loses its necessity.",
-        solution:"He argues vindicatory justice is an essential attribute of God's nature, not a free choice: God can no more leave sin unpunished than deny himself. Satisfaction becomes strictly necessary, and no rectoral 'relaxation' is available.",
-        opens:"Making satisfaction strictly necessary revives Socinus's dilemma at full strength: if the penalty is rigorously exacted in full, where is there any room left for grace and forgiveness?",
-        notes:"Like Owen, most modern proponents of penal substitution say that God is required punish the sinner because justice is part of his character. To this I would ask what kind of justice. There are two: retributive and restorative. Restorative could arguably be considered an artifact of the Trinity, as the Trinity could be thought of as continually restoring one other, flowing from the inherent infinity of love within Godhead between it's members. That said, it sits better as the outworking of love when faced with privation, and by extension, sin.\n\nThe trouble with retributive justice, though, is that it has an innate existential dependency on guilt. Take away guilt, and retributive justice doesn't appear. God can never apply retributive justice to himself on account of perfect love. Because God is eternal, unchanging, and fully actual (according to classical theism), then the quality of retribution introduces a potentiality into the very character of God that could never be actualized among the members of the Trinity. In other words, it's unnecessary to God in the pre-fall universe, but necessary in the post-fall universe. This introduces potentiality which, when actualized, is mutability. A cruder way to put this would be that we broke God when we sinned."},
-      OWE55:{camp:"penal", title:"Vindiciae Evangelicae", meta:"John Owen vs. John Biddle, 1655",
-        headline:"It's not pecuniary, it's penal.",
-        problem:"Socinus, through the English Socinian Biddle, pressed two blades at once: full payment leaves no room for grace, and guilt cannot be justly transferred onto an innocent substitute.",
-        solution:"He distinguishes penal from pecuniary satisfaction — penal payment doesn't auto-discharge, so release still waits on God's free act and grace survives — and grounds the transfer in Christ's voluntary suretyship and covenantal union with the elect.",
-        opens:"The penal move rescues grace but kicks out the pecuniary logic the double-payment case for limited atonement depended on (Baxter's knife) — and the suretyship answer still owes an account of how Christ's work is actually reckoned to the believer.",
-        notes:"So he moves to penal to preserve God's right to accept a substitute, and he says that it's that move that is essentially the grace of God—that God didn't have to accept a substitute but he does anyway.\n\nIt may also be worth noting that this move subtly re-imports restorative justice. Allowing a substitute for retributive justice provides restoration for another, and thus it's no longer retributive, but restorative, which tends toward's God's retribution being more of a display than anything else and we're moving in Grotius's direction towards Governmental theory.\n\n" + 
-        "The unstated motive of allowing the satisfaction to move via the volunteerism provided by this view is to restore the sinner. That means it quietly shifts from retributive to restorative justice. What's left then is a question of whether the shift maintains the judicial parity between how man pays and how Christ pays (is ECT equivalent to death on a cross?), and it opens the question of sourcing the penalty from the divinity or humanity of Christ.\n\n" +
-        "The former split devolves into an argument about the infinite value of Christ and how that pays the debt. But the infinite value argument cuts both ways, and includes an infinite God paying himself, thus omitting mankind entirely in the transaction. Moreover, what does payment between infinite co-equals even mean? It's nonsense.\n\n" + 
-        "To say the debt is paid by Christ's humanity requires some kind of infusion of necessary value into a bankrupt mankind in order to provide a value to remit. The only source outside mankind capable of this is God himself, so mankind is merely inserted as a passthrough entity in a greater (probably nonsensical) transaction between God and God.\n\n" +
-        "Even more than this, what would the suretyship look like amongst the Trinity? Wouldn't this mean that the Son agrees in advance of creation to pay back to the Father what the people owed? Isn't that again another imbalance? What does this mean for immutability?"},
-      OWE77:{camp:"penal", title:"The Doctrine of Justification by Faith", meta:"John Owen, 1677",
-        headline:"Closes the system with double imputation",
-        problem:"The suretyship scheme still owes an account of how Christ's work actually counts as the believer's, and how a guilty person comes to stand righteous before God.",
-        solution:"He closes the forensic circuit with double imputation: the believer's sin is reckoned to Christ and Christ's righteousness reckoned to the believer, received through faith — locking the whole system together.",
-        opens:"Double imputation invites the legal-fiction charge and rests the whole system on a transactional Father–Son distinction — Christ standing before the Father — that a strong 'to see Jesus is to see the Father' would collapse.",
-        notes:"This opens another problem, which is that the imputation scheme is really just legal fiction and not something actual--it makes no actual change. To defend, he makes it forensically real (stronger than legal fiction) by basing on union with Christ. Rome says that a verdict only declares the person righteous, but doesn't make them righteous. Torrance says salvation should be an actual, not forensic, change, which pushes the actual change to sanctification--making sanctification, not justification, the actual thing that changes."},
-      MORT01:{camp:"other", title:"Divine Infinity and Simplicity Eliminates Transaction", meta:"Unattributed Idea",
-        headline: "Transactions are fiction within an infinite and unified godhead",
-        problem: "The whole of the Owen system relies on the redemption-as-covenant framework, which is fiction because in it, the suretyship means that God owes God--a closed transaction. Also, a meaningful, non-symbolic transaction between the person of the Godhead creates a necessary imbalance. For a payment to happen, one party increases as the other decreases, and this leads to heresy.",
-        solution: "Reject PSA. Return to ontological/therapeutic frameworks. Abandon annihilationism and eternal conscious torment and reestablish corruption.",
-        opens:"The cost moves to the assumed flesh.",
-        notes:"The classical rebuttal answers this by relocating the payment for the penalty to the human frame. When we do so, we run into another (kind of athanasian) problem. Once relocated, then we have to provide some way for the human frame to have sufficient value to repay. The best approach for this is in the deification of the body on the basis of The Word's infinite nature, and that brings us full circle back to Athanasius. If Christ's body deifies his human flesh in such a way that it can bear the penalty and be resurrected, then why can't he deify all human flesh (ontological)?"
-      },
-      MORT02:{camp:"other", title:"Infuse mankind with deified dignity to meet the demand.", meta:"Unattributed Idea",
-        headline: "Returns to the Athanasian model.",
-        problem: "Human flesh lacks the sufficiency to satisfy the demands of God.",
-        solution: "Infuse humanity with something that is sufficient to pay the penalty. This is something that had to preexist before God's death.",
-        opens: "The problem that PSA isn't really PSA anymore. It's the movement of a debt from man to God and then back to man again for payment. Man becomes nothing more than a pass-through entity."
-      },
-      MORT03:{camp:"other", title:"Move the source of payment to human flesh.", meta:"Unattributed Idea",
-        headline: "The payment comes from man, not from God.",
-        problem: "The fact that an intra-trinitarian payment is nonsensical means that the payment must come from somewhere else.",
-        solution: "The answer is found in Chalcedonian tradition of God's impassibility. Because God is immutable and cannot be harmed by his creatures, then the repayment must be drawn from man's account and not God's.",
-        opens: "Humanity lacks the inherent value necessary to satisfy the demand."
-      },
-      RAMSAY:{camp:"other", title:"Models and Mystery", meta:"Ian Ramsay, 1964",
-        headline:"Doctrines are Disclosure Models",
-        problem:"Logical positivism had reduced religious statements to nonsense - unverifiable, unfalsifiable, therefore meaningless (Flew's \"death by a thousand qualifications\"). And taken literally, doctrines like penal substitution collapse into crude, mockable pictures that critics can dismiss as morally monstrous.",
-        solution: "He recasts theological language as models plus qualifiers anchored in \"disclosure situations\" — an ordinary word (\"substitute,\" \"ransom,\" \"father\") pressed by a qualifier until the penny drops and insight breaks. Such models aren't measured by literal resemblance but by fruitfulness, and they come in corrigible pluralities, each correcting the others and pointing past itself to a mystery none contains.",
-        opens:"Mystery is bought at the price of illogicality.",
-        notes: "This sets up the ball for Packer.\n\nIt's worth noting that Ramsay's argument was not pointed at PSA directly, but rather at the way in which theological models are used. He suggests that theological atonement models are not much different from models of light and other models in science (especially physics). They help us understand things, but then their further use is limited as they approach the edges of what they can explain."
-      },
-      PACKER:{camp:"penal", title:"What Did the Cross Achieve?", meta:"J.I. Packer, 1973",
-        headline: "PSA as the central atonement theory.",
-        problem: "General resistance to the doctrine of penal substitutionary atonement.",
-        solution: "Packer's paper essentially doubled down on the importance of penal substitutionary atonement by claiming that it is the best possible model we have. \n\n" + 
-        "While supporting the Puritans, he simultaneously critiques the rationalism of the Puritans, claiming that they left no room for mystery, and shouldn't have thought about it too deeply. \n\n" +
-        "He also rejected the common caricature of PSA as being \"cosmic child abuse\".",
-        opens: "Packer abandons reason. By arguing that the Puritans were overly rationalistic in their claims, his conclusion is not that they started with poor premises, but rather that they should have left the mechanisms open to mystery.",
-        notes: "To me this is a concession. Anselm, Calvin, Owen, Baxter, and many theologians before them had spent centuries trying to smuggle retributive justice into Christianity without providing a satisfying logic. The model was apparently illogical. Faced with a model that resists attempts to apply logic, one can either reject the model or reject the logic. Packer takes a note from Ramsay and suggests the latter.\n\n" +
-        "Packer's solution (which he draws from Ramsay) is to claim that the model has it's limits, but is still the best model out there. To me, it's essentially throwing up his hands and saying it's a mystery. I find this explanation unsatisfactory.\n\nMore than this, this also marks a point at which Packer is now playing on different rules than those who created the doctrine. From Packer's perspective, Owen and others were misled by their attempts to use logical positivism to prove the point. The trouble with this is that the entirety of the model was built using similar methods of classical logic. Responses were framed as correctives to previous statements, often based in logic. By claiming that the models are merely tools used for disclosure and not blueprints is denying the foundation upon which they were built.\n\nOne other problem that I have with this argument is that Packer likely wouldn't hold the same level of latitude towards other atonement models. Indeed, in the very same year he wrote this paper, he criticizes C.H. Dodd for trying to reduce propitiation to \"expiation\", which is effectively an attack on another model."
-      },
-      TUR:{camp:"penal", title:"Francis Turretin", meta:"Institutes of Elenctic Theology, 1679-85 · after Owen",
-      headline:"Punitive justice is essential to God, not a free act of will. What is free is only its exercise — which is what lets a substitute stand in.",
-      problem:"Socinus had argued that punitive justice is merely a free act of God's will — so God could pardon by fiat and the cross was never necessary. If satisfaction isn't anchored in God's nature, the necessity of Christ's death collapses and the whole Reformed doctrine loses its footing.",
-      solution:"He takes over Owen's thesis from the Dissertation on Divine Justice — that vindicatory justice is a natural, necessary attribute, so God cannot not punish sin — and adds the decisive move: a distinction between the habit and its act. The disposition to punish is necessary; its exercise is free. God must punish sin, yet is free as to when, whom, and by what mode — free, above all, to accept a substitute. Necessity grounds satisfaction; freedom of exercise preserves grace and licenses the transfer to Christ.",
-      opens:"A disposition that is necessarily present but only contingently exercised smuggles a real potency into a God meant to be pure act — the habit/act split names the potentiality rather than dissolving it. And the more necessity is loaded into the attribute, the more grace must answer to a prior necessity in God — justice ruling mercy — while freedom over the mode lets the penalty fall on the innocent, loosening the guilt-to-penalty tie that made the justice retributive in the first place.",
-      notes:"This shows more clearly the faultlines in PSA and why it's so difficult to discuss. There are two pieces that are necessary in PSA: the debt on man's side and the need for satisfaction on God's side. Most of Owen's work in this regards is related to finding a way to insert the satisfaction into the system. What Turretin posits here is a very similar retribution-relocation move that Owen makes in Dissertation. Not only this, but he also casts strict limits on how attributes can be exercised. It says God can choose when, whom, and how, but would likely say that God isn't free to decide how badly he's going to punish you, because that would essentially open the charge that God could simply slap our hands.\n\nThey're looking for a place for the retribution to hide, but it will always be found.\n\nAnd this is why it's so hard to combat the theory. In an idea space, as theology is, there are plenty of places to try to hide another injected idea, and we see this happening throughout all versions of the theory.\n\nThe trouble with PSA isn't that we're hiding retribution in the wrong place on God's side; it's that the goodness of God dissolves it. We should abandon the idea that God is retributive and just admit that God is good. Maybe he's asking us to trust that anything we lost will be given to us in spades--just as he said. Maybe a God who can generate quite simply anything from thin air has better ways to set justice right."}
-    };
+    /* ---------------------------------------------------------------------
+     * Everything in this file is structural. The words — node text, card
+     * copy, camp colors, legend, edges/arrows — all come from content.yaml.
+     * We fetch it, parse it, and build (a) the mermaid flowchart source and
+     * (b) the CAMP/DATA lookup tables the modal uses, then hand off to the
+     * same pan/zoom/modal logic as before.
+     * ------------------------------------------------------------------- */
+
+    let CAMP = {};
+    let DATA = {};
+
+    function esc(s){
+      // content.yaml text may legitimately contain quotes; mermaid node/edge
+      // labels are wrapped in "..." so escape embedded double-quotes only.
+      return String(s).replace(/"/g, '&quot;');
+    }
+
+    function buildCampTables(doc){
+      CAMP = {};
+      for(const camp of doc.camps){
+        CAMP[camp.id] = {
+          c: camp.tag.bg,
+          t: camp.tag.text,
+          label: camp.label
+        };
+      }
+    }
+
+    function buildDataTable(doc){
+      DATA = {};
+      const allCardEntries = [...(doc.nodes||[]), ...(doc.extra_cards||[])];
+      for(const entry of allCardEntries){
+        DATA[entry.id] = { camp: entry.camp, ...entry.card };
+      }
+    }
+
+    function buildLegend(doc){
+      const legend = document.getElementById("legend");
+      legend.innerHTML = "";
+      for(const camp of doc.camps){
+        if(camp.in_legend === false) continue;
+        const span = document.createElement("span");
+        const i = document.createElement("i");
+        i.style.background = camp.diagram.fill;
+        span.appendChild(i);
+        span.appendChild(document.createTextNode(camp.legend_label || camp.label.toLowerCase()));
+        legend.appendChild(span);
+      }
+    }
+
+    function buildMermaidSource(doc){
+      const lines = [];
+      lines.push("flowchart TD");
+
+      // node boxes
+      for(const n of (doc.nodes||[])){
+        const descHtml = (n.node.desc||[]).map(esc).join("<br/>");
+        lines.push(`    ${n.id}["<b>${esc(n.node.title)}</b>${descHtml ? "<br/>"+descHtml : ""}"]`);
+      }
+      lines.push("");
+
+      // edges (an edge with enabled:false is kept as a commented-out line,
+      // same as the original hand-authored diagram, so it's easy to re-enable)
+      for(const e of (doc.edges||[])){
+        const prefix = e.enabled === false ? "%% " : "";
+        const arrow = e.enabled === false ? "-.->" : "-->";
+        lines.push(`    ${prefix}${e.from} ${arrow}|"${esc(e.label)}"| ${e.to}`);
+      }
+      lines.push("");
+
+      // classDef per camp (diagram fill/stroke/text)
+      for(const camp of doc.camps){
+        lines.push(`    classDef ${camp.id} fill:${camp.diagram.fill},stroke:${camp.diagram.stroke},color:${camp.diagram.text};`);
+      }
+      lines.push("");
+
+      // class assignment: group every id (nodes + extra_cards) by camp
+      const byCamp = {};
+      for(const entry of [...(doc.nodes||[]), ...(doc.extra_cards||[])]){
+        (byCamp[entry.camp] = byCamp[entry.camp] || []).push(entry.id);
+      }
+      for(const camp of doc.camps){
+        const ids = byCamp[camp.id];
+        if(ids && ids.length) lines.push(`    class ${ids.join(",")} ${camp.id};`);
+      }
+      lines.push("");
+
+      // click handlers — only nodes that actually appear in the diagram
+      for(const n of (doc.nodes||[])){
+        lines.push(`    click ${n.id} call nodeClick("${n.id}")`);
+      }
+
+      return lines.join("\n");
+    }
 
     function nodeClick(id){
       const d = DATA[id]; if(!d) return;
@@ -383,13 +249,6 @@ flowchart TD
     function maybeClose(e){ if(e.target.id === "overlay") closeModal(); }
     window.nodeClick = nodeClick;
     document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
-
-    mermaid.initialize({
-      startOnLoad:false, securityLevel:"loose", theme:"base",
-      themeVariables:{ background:"#0b0b0c", lineColor:"#9ca3af",
-        primaryTextColor:"#e5e7eb", fontSize:"14px" },
-      flowchart:{ useMaxWidth:false, htmlLabels:true, curve:"basis" }
-    });
 
     /* ---- pan / zoom layer ---- */
     const graph = document.getElementById("graph");
@@ -469,20 +328,54 @@ flowchart TD
       if(justDragged){ e.stopPropagation(); e.preventDefault(); justDragged=false; }
     }, true);
 
-    mermaid.run().then(()=>{
-      const svg = canvas.querySelector("svg");
-      if(svg){
-        const vb = svg.viewBox && svg.viewBox.baseVal;
-        natW = (vb && vb.width) ? vb.width : svg.getBoundingClientRect().width;
-        natH = (vb && vb.height) ? vb.height : svg.getBoundingClientRect().height;
-        svg.removeAttribute("style");
-        svg.style.width = natW+"px"; svg.style.height = natH+"px"; svg.style.maxWidth="none";
-        requestAnimationFrame(fit);
-      }
-    }).catch(err=>{
-      graph.innerHTML = "<p style='color:#f87171;text-align:center;padding:20px'>Diagram failed to render: "+err+"</p>";
-    });
     window.addEventListener("resize", ()=>{ /* keep current zoom; just reapply */ apply(); });
+
+    /* ---- load content.yaml, build the page, then render the diagram ---- */
+    mermaid.initialize({
+      startOnLoad:false, securityLevel:"loose", theme:"base",
+      themeVariables:{ background:"#0b0b0c", lineColor:"#9ca3af",
+        primaryTextColor:"#e5e7eb", fontSize:"14px" },
+      flowchart:{ useMaxWidth:false, htmlLabels:true, curve:"basis" }
+    });
+
+    fetch("content.yaml")
+      .then(res => {
+        if(!res.ok) throw new Error("HTTP " + res.status);
+        return res.text();
+      })
+      .then(text => {
+        const doc = jsyaml.load(text);
+
+        document.title = doc.title || "Atonement Lineage";
+        document.getElementById("title").textContent = doc.title || "";
+        document.getElementById("hint").textContent = doc.hint || "";
+
+        buildCampTables(doc);
+        buildDataTable(doc);
+        buildLegend(doc);
+
+        const mermaidSrc = buildMermaidSource(doc);
+        document.querySelector(".mermaid").textContent = mermaidSrc;
+
+        return mermaid.run();
+      })
+      .then(()=>{
+        const svg = canvas.querySelector("svg");
+        if(svg){
+          const vb = svg.viewBox && svg.viewBox.baseVal;
+          natW = (vb && vb.width) ? vb.width : svg.getBoundingClientRect().width;
+          natH = (vb && vb.height) ? vb.height : svg.getBoundingClientRect().height;
+          svg.removeAttribute("style");
+          svg.style.width = natW+"px"; svg.style.height = natH+"px"; svg.style.maxWidth="none";
+          requestAnimationFrame(fit);
+        }
+      })
+      .catch(err=>{
+        console.error(err);
+        const box = document.getElementById("loadErr");
+        box.style.display = "flex";
+        graph.innerHTML = "";
+      });
   </script>
 </body>
 </html>
