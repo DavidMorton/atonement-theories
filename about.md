@@ -2,7 +2,11 @@
 
 This is a map that I built to track and understand atonement theories. In it, you can navigate through several developments in theology to try to get a better understanding of what is believed, why, and how we got to where we are. 
 
-**Fair warning**: The notes in this document are *highly* opinionated. I find the atonement theories of penal substitution to be based on the false premise that God is bound satisfy himself by punishing sinners retributively, not only for the moral revulsion it causes, but also because of the way it binds the free will of the sovereign Creator God. This entire project was built for me to explore this thought in detail, and to help me identify where the shortcomings are actually coming from. I'm a software developer by trade, and I see the bug in the system, but tracking the root cause in a complex web of workarounds and patches is challenging to me, and even more challenging to explain. My hope is that this chart can help you think through some of the problems as well. 
+**Fair warning**: The notes in this document are *highly* opinionated. 
+
+I find the atonement theories of penal substitution to be based on the false premise that God is bound satisfy himself by punishing sinners retributively, not only for the moral revulsion it causes, but also because of the way it binds the free will of the sovereign Creator God. 
+
+This entire project was built for me to explore this thought in detail, and to help me identify where the shortcomings are actually coming from. I'm a software developer by trade, and I see the bug in the system, but tracking the root cause in a complex web of workarounds and patches is challenging to me, and even more challenging to explain. My hope is that this chart can help you think through some of the problems as well. 
 
 ## For the spiritually nervous
 The idea of rejecting penal substitution can feel like abandoning your faith. I assure you that it doesn't have to be that way. So if you're spiritually sensitive, but worried about deconstructing into agnosticism or atheism, I have a bit of practical advice to help. 
