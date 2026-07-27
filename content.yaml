@@ -166,7 +166,7 @@ nodes:
   node:
     title: Grotius · Defensio (1617)
     desc:
-    - Founds the governmental theory
+    - Founds Governmental Theory
   card:
     title: Hugo Grotius
     meta: Defensio fidei catholicae, 1617
@@ -226,7 +226,6 @@ nodes:
   node:
     title: Kant · Religion within the Bounds of Bare Reason (1793)
     desc:
-    - Moves atonement inside the moral self
     - Retreats to Moral Exemplar
   card:
     title: Immanuel Kant
@@ -249,9 +248,10 @@ nodes:
 - id: CAM
   camp: onto
   node:
-    title: McLeod Campbell (1856)
+    title: Campbell (1856)
     desc:
     - Replaces penalty with vicarious repentance
+    - Rejects the question of the Puritans, not the answer.
   card:
     title: John McLeod Campbell
     meta: The Nature of the Atonement, 1856
@@ -262,12 +262,21 @@ nodes:
       He relocates Christ's offering from penalty to confession: a perfect vicarious 'Amen' to the Father's judgment on sin, an adequate repentance humanity couldn't make — keeping atonement objective without transferring guilt.
     opens: |-
       It's unclear whether confession and repentance can bear the objective, Godward weight that penalty carried — either an adequate answer to condemnation quietly smuggles the penal element back in, or it leaves the wrath data unaddressed.
+    notes: |-
+      Campbell identifies the core problem with the Puritans in the very question they were trying to answer. He claims that their question, "what must be done to make God able to forgive?", is already off to a bad start because it treats the atonement as the cause of God's love and not the form of God's love. 
+
+      So for him, the atonement is the manifestation of a loving forgiveness that already exists, not a method of acquisition thereof. 
+
+      So he denies that the atonement is a mechanism at all. Instead, it's the person of Christ being who he now eternally is--God and man in one person. He is in the condition of God, and he is also in the condition of man, and it's this link, like the link of a chain, that binds men to God. 
+
+      This is why he's considered in the ontological camp. The atonement *is* Jesus Christ, son of God and son of man. It's not merely the act on the cross bolted onto a life of teaching. Campbell therefore holds an Athanasian view of the incarnation. 
 - id: TOR
   camp: onto
   node:
     title: T. F. Torrance (20th c.)
     desc:
-    - Grounds salvation in Christ's vicarious humanity
+    - Grounds salvation in Christ's vicarious humanity.
+    - There is no hidden God behind Jesus.
   card:
     title: T. F. Torrance
     meta: 20th c. · after Athanasius & Campbell
@@ -278,6 +287,12 @@ nodes:
       He grounds salvation in Christ's vicarious humanity: the Son believes, obeys, and dies in our place and on our behalf from inside our fallen nature — so atonement is ontological union and healing, not a legal exchange with an angry Father.
     opens: |-
       Critics charge that the ontological account under-accounts for the forensic and wrath-laden texts, buying its coherence by relocating that data rather than explaining it — and assuming fallen humanity raises its own worries about Christ.
+    notes: |-
+      Torrance takes the work of Campbell and pushes in the point that there's no hidden God behind Jesus. Who we see in Jesus is who God is; full stop. Where Campbell had is "vicarious repentance", Torrance expands this to vicarious humanity. Federal theology had turned God's covenant into God's contract, and Torrance explicitly rejected this move. 
+
+      More than this, Torrance claimed that Christ assumed *fallen* humanity, and sanctified it in the process. We can see some evidence of this in the miracles of Jesus, and how encounters with him resulted in healing, when according to Jewish law, it should have made Christ himself unclean. Healing flows from the Word of God through to humanity, so Torrance was big on union with Christ. 
+
+      There was a brief period of time when I would have said I was a Christian Universalist (a la Robin Parry and David Bentley Hart). After having moved towards an Athanasian frame, while universal salvation is now a possibility (unlike in the PSA frame), it's no longer as important to me (though I certainly hope that all will be saved, and I think I have good reason from 1 Timothy 2:3-4). Torrance rejects limited atonement, but simultaneously rejects universalism on the basis that both are symptoms of the same disease: reasoning about grace by external logical necessity. 
 - id: UNIV
   camp: target
   node:
@@ -321,8 +336,9 @@ nodes:
   node:
     title: Owen · Dissertation on Divine Justice (1653)
     desc:
-    - Makes justice a necessity by relocating
-    - it from God's will to God's character.
+    - Makes retributive justice a necessity by 
+    - relocating it from God's will to God's 
+    - character.
   card:
     title: A Dissertation on Divine Justice
     meta: John Owen, 1653
@@ -367,9 +383,11 @@ nodes:
   node:
     title: Owen · Vindiciae Evangelicae (1655)
     desc:
-    - Clarifies that PSA is penal, not pecuniary.
-    - Answers Socinius with voluntary death
-    - Introduces suretyship into godhead.
+    - PSA is penal, not pecuniary.
+    - ∴ Substitution is allowed if volunteered.
+    - Adds eternal suretyship into godhead.
+    - Says that while God must punish,
+    - he retains freedom in how and when.
   card:
     title: Vindiciae Evangelicae
     meta: John Owen vs. John Biddle, 1655
