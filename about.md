@@ -50,9 +50,9 @@ Justice is done by restoration, not by retribution. This is an important point t
 
 Now, scale that to murder. If a murderer kills someone's husband, we can't bring them back. They're dead. Restorative justice is simply not an option, but we feel that we still need to somehow balance the scales. So we do what we can and we punish the offender. Punishing the offender doesn't bring back the woman's husband, but it is the community's way of signalling to the wife that the offense is taken seriously, and it acts as a warning to others that such actions will be responded to in similar ways. In actual effect, retributive justice is a *display* and not true justice. True justice would be to bring back the woman's murdered husband--something we as humans are incapable of achieving.
 
-Therefore, retributive justice is best applied when we have no restorative option.
+We apply retribution when restoration is unavailable. It's an inherent admission of finitude.
 
-And this is why retributive justice fails when scaled to an infinite and generative God. There is no lack in God. He has created all things, and through him, all things are sustained. Every option is open to him--*even bringing back dead men*. He can restore any and every loss. He doesn't *need* retributive justice in order to make things right. He can just make new things. God owns the "undo button" for the universe.
+And this is why retributive justice fails when scaled to an infinite and generative God. There is no lack in God. He has created all things, and through him, all things are sustained. Every judicial option is open to him--*even bringing back the dead*. He can restore any and every loss, and even states that we will do so in spades (Matthew 19:29). He doesn't *need* retributive justice in order to make things right. He can just *make new things*. God owns the "undo button" for the universe.
 
 Retribution is an economy of constraint. It can't be applied to an unconstrained God.
 
