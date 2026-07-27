@@ -64,9 +64,11 @@ nodes:
     opens: |-
       The problem of guilt is still unsolved. Christ's death, is offered instead of punishment, but not as punishment. Nothing in satisfaction theory explains how the penalty is applied to the believer--a gaping hole that Calvin would drive through a few hundred years later.
     notes: |-
-      Notice that in satisfaction theory, God cannot merely waive the debt. This is the view that Socinius would drive through later.
+      In satisfaction theory, the stated assumption is that God cannot merely waive the debt owed by man. This introduces what I would consider to be a contingent necessity on the part of God--forcing God's hand. It gives mankind a weird kind of control over the actions of God. Man's sin has a deterministic effect upon the actions of God, thus controlling God--even if tha control is destructive to man. 
+      
+      Further development would try to hide the necessity. Owen's Dissertation on Divine Justice moves it from the will of God (where it's not strictly necessary) into the character of God, so that God is bound to respond. Turretin tries to remove the potentiality this creates within the character of God by further subdividing the concept of an attribute into two parts--habitus and actus--separating the disposition of God from his freedom of method in how he responds, but I claim he merely redefines the terms to relocate the offending concept that ultimately binds God's hand to retribution.
 
-      It's also worth noting that Anselm's creditor-relocation to God puts God on both sides of the transaction, which means the theory can no longer deal in whole souls--how can God ransom a whole soul from himself? So the currency must also shift. This is where Anselm brings in the debt/honor framework to answer this question. It's worth noting that this move to abstract concepts being the currency between God and man sets up it's reframing by Calvin in 1559.
+      It's also worth noting that Anselm's creditor-relocation to God puts God on both sides of the transaction, which means the theory can no longer deal in whole souls--how can God ransom a whole soul from himself? So the currency must also change. This is where Anselm brings in the debt/honor framework to answer this question--because we're no longer dealing in full souls, the new trading currency must be deontic properties or symbolic capital. It's worth noting that later developments would shift which deontic properties are the currency, as Calvin does in 1559, moving from debt and honor to sin and righteousness.
 - id: ATH
   camp: onto
   node:
@@ -91,12 +93,35 @@ nodes:
       This is, to be sure, an inconsistency within Athanasius. Either sin leads to death inherently, or death is imposed externally, but it cannot be both at the same time. This ambiguity regarding the source of death can be seen as a microcosm of the same equation that Owen tries to balance in the 17th century.
 
       One other note, and that is on the nature of immortality in man. Modern views tend to presuppose the inherent immortality of man. Indeed, it's this presupposition of immortality that is required to explain eternal conscious torment (and why modern proponents of annihilation call their view "conditional immortality"). Athanasius and Irenaeus held that immortality was a superadded gift of God, dependent upon man's attendance thereto, and not something inherent to the creature. Their argument is that man turned away from the source of life, and by negation, introduced death and corruption into themselves, leading to eventual mortality. 
+- id: LUTH
+  camp: penal
+  node:
+    title: Luther · The Freedom of a Christian (1520)
+    desc:
+      - The joyous exchange
+      - Alien righteousness through faith-union with Christ
+      - Simul justis et peccator
+  card:
+    title: Luther · The Freedom of a Christian
+    meta: 1520; cf. Lectures on Galatians, 1535
+    headline: The joyous exchange
+    problem: |-
+      How can a sinner who never does enough penance, contrition, or merit have any certainty of standing right before God? The medieval penitential system ties assurance to the sufficiency of one's own ongoing disposition and works — a ledger the anxious conscience can never confirm is settled.
+    solution: |-
+      Faith unites the soul to Christ the way a bride is united to a bridegroom: what is his becomes hers, what is hers becomes his. Christ takes the soul's sin, death, and damnation as though they were his own; the soul receives his righteousness, life, and blessedness as though they were hers. Luther calls this the fröhliche Wechsel, the joyous exchange — grounded not in a legal transaction but in a real union effected by faith. Assurance no longer rests on the sinner's own supply of merit; it rests on Christ's, already given over in the marriage.
+    opens: |-
+      Is this a real sharing of possessions through union, or a legal fiction dressed up as a marriage? Luther never fully specifies the mechanism — which is exactly the gap Calvin will close by converting the marital metaphor into a juridical one (imputation as legal verdict rather than nuptial gift). It's also the gap Osiander will later exploit from the other side, reading Luther's "union" literally to argue for an essential, indwelling righteousness against Calvin's purely forensic one.
+    notes: |-
+      This is the actual fountainhead — Luther is where the sin/righteousness swap originates, a full generation before Calvin. But it's warmer and less exact than what Calvin will make of it: existential and marital rather than judicial. Luther will even say, in the Galatians lectures, that Christ became "the greatest sinner who ever was" by taking sin onto himself — hyperbolic, personal language, not yet the careful language of a courtroom verdict.
+
+      Calvin inherits the exchange but re-houses it. Where Luther grounds the swap in the intimacy of the wedding ring (faith as what joins the parties), Calvin grounds it in the mechanics of a legal declaration (imputation as a judge's reckoning). Same two goods changing hands — sin out, righteousness in — but Luther's version answers "how can I be sure," and Calvin's answers "how can this be just."
 - id: CALV
   camp: penal
   node:
     title: Calvin · Institutes (1559)
     desc:
-    - The Reformed doctrine of satisfaction
+      - The Reformed doctrine of satisfaction
+        Imputation of righteousness
   card:
     title: Calvin · Institutes of the Christian Religion
     meta: definitive edition, 1559
@@ -107,6 +132,14 @@ nodes:
       Christ, standing in our place, bears the curse and the wrath our sin deserved — a real, objective, substitutionary satisfaction of divine justice — so that God can be at once just and the justifier of those who believe. This is the fountainhead of the penal-substitution stream.
     opens: |-
       It hands the critics their opening: if Christ fully bears the penalty in our place, is that forgiveness or merely payment — and can guilt be justly transferred to an innocent? Exactly the blades Socinus will press.
+    notes: |-
+      Calvin changes the deontic currency. Debt and honor are out. Sin and righteousness are in. Why?
+
+      This is because Anselm's view was based on the feudal system of his time. For Anselm, sin disturbed the universe by withholding honor due to God. Satisfaction restores the order by repaying the debt. The category of honor, however, is negotiable, leading to the charge that God could simply waive the debt entirely and forgive anyways. Christ's death on the cross earns infinite merit because Jesus was fully innocent and didn't deserve to die, and his death restores the order that was lost by sin. Mankind, for his end, is not imputed any of this honor. The debt of man goes to zero because it's been paid by a third party (Jesus), but man has no righteousness in himself.
+
+      This was problematic for Calvin. He viewed it as necessary that we have righteousness as well, because we will not enter the kingdom of God unless our righteousness surpasses that of the Pharisees.
+
+      Debt/honor gets a settled account, but sin/righteousness enables a swapped verdict, and Calvin, to be consistent with Luther, needed the latter, emphasizing substitution over the satisfaction. 
 - id: SOC
   camp: other
   node:
@@ -464,6 +497,9 @@ edges:
 - from: ANSELM
   to: CALV
   label: add transfer mechanism for rightousness and debt
+- from: LUTH
+  to: CALV
+  label: refined into proper PSA by
 - from: UNIV
   to: OWE47
   label: written to refute
