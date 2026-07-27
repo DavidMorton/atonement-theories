@@ -1,4 +1,4 @@
-# Welcome to the map of atonement theories!
+# Welcome to my map of atonement theories!
 
 This is a map that I built to track and understand atonement theories. In it, you can navigate through several developments in theology to try to get a better understanding of what is believed, why, and how we got to where we are. 
 
@@ -66,7 +66,7 @@ God is both the doctor and the antidote. We are healed by going to him.
 
 I'm not a historian of doctrine, and these summaries compress a great deal. The dates are publication or authoring dates, not the dates ideas actually moved. Where I've editorialized, it's in the notes section, kept visually separate from the summary so you can ignore me and read the position on its own terms.
 
-Corrections welcome.
+If this has been helpful to you, or even if it hasn't, I'd love to hear from you. Also, please let me know if there are things that require corrections. This whole project is a work in progress. 
 
 David Morton
 
