@@ -1,6 +1,8 @@
 # Welcome to my map of atonement theories!
 
-This is a map that I built to track and understand atonement theories. In it, you can navigate through several developments in theology to try to get a better understanding of what is believed, why, and how we got to where we are. 
+This is a family tree that I built to track and understand the evolution of atonement theories. In it, you can navigate through developments in theology to gain an understanding of what is believed, why, and what problems people were trying to solve. 
+
+To me, this is largely the history of man's seeming inability to just accept that God loves us, represents our attempt to answer "what's the catch?" (Spoiler: There isn't one). 
 
 **Fair warning**: The notes in this document are *highly* opinionated. 
 
