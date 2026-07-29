@@ -40,25 +40,77 @@
 {% block scripts %}
 {% if page.show_toc %}
 <script>
-  // Highlight the contents entry for whatever section is on screen.
+  // Highlight the contents entry for the section currently being read.
+  //
+  // This is a scroll-position calculation, not an IntersectionObserver: the
+  // active section is the last heading to have crossed the line near the top
+  // of the viewport, and it stays active for the whole body of text beneath
+  // it. An observer only knows which headings are *visible*, so the highlight
+  // would drop off as soon as a heading scrolled out of view — leaving nothing
+  // marked for most of a long section.
   (function () {
     var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
-    if (!links.length || !('IntersectionObserver' in window)) return;
-    var byId = {};
-    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
-    var seen = new Set();
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) seen.add(e.target.id); else seen.delete(e.target.id);
-      });
-      links.forEach(function (a) { a.classList.remove('active'); });
-      var first = Object.keys(byId).find(function (id) { return seen.has(id); });
-      if (first) byId[first].classList.add('active');
-    }, { rootMargin: '-80px 0px -70% 0px' });
-    Object.keys(byId).forEach(function (id) {
+    if (!links.length) return;
+
+    var targets = [];
+    links.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      try { id = decodeURIComponent(id); } catch (e) {}
       var el = document.getElementById(id);
-      if (el) obs.observe(el);
+      if (el) targets.push({ link: a, el: el });
     });
+    if (!targets.length) return;
+
+    // Clears the sticky site header, so a heading becomes current as it
+    // reaches the top of the readable area rather than the top of the window.
+    var OFFSET = 96;
+    var panel = document.querySelector('.toc');
+    var current = null;
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+
+      var active = targets[0];
+      for (var i = 0; i < targets.length; i++) {
+        if (targets[i].el.getBoundingClientRect().top <= OFFSET) active = targets[i];
+        else break;
+      }
+
+      // At the bottom of the page the remaining headings can never cross the
+      // line, so the last one would never light up without this.
+      var doc = document.documentElement;
+      if (window.innerHeight + window.pageYOffset >= doc.scrollHeight - 2) {
+        active = targets[targets.length - 1];
+      }
+
+      if (active === current) return;
+      if (current) current.link.classList.remove('active');
+      active.link.classList.add('active');
+      current = active;
+
+      // Keep the active entry in view when the contents list is long enough
+      // to scroll on its own.
+      if (panel && panel.scrollHeight > panel.clientHeight) {
+        var pr = panel.getBoundingClientRect();
+        var lr = active.link.getBoundingClientRect();
+        if (lr.top < pr.top || lr.bottom > pr.bottom) {
+          panel.scrollTop += lr.top - pr.top - panel.clientHeight / 3;
+        }
+      }
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    // Fonts and images settle after load and move every heading with them.
+    window.addEventListener('load', update);
+    update();
   })();
 </script>
 {% endif %}

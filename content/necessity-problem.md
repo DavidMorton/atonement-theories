@@ -55,8 +55,6 @@ What follows is that story.
 
 *David Morton, July 2026*
 
----
-
 ## Terms
 
 **Retributive justice.** Punishment deserved because of what was done, proportioned to the offence, owed to the offender. It looks backward at the crime. Contrast **restorative justice**, which looks forward and aims at repairing the person and the relationship.
@@ -70,8 +68,6 @@ What follows is that story.
 **Acquired necessity.** A constraint on God whose *object comes into being with the creature*: God stands under it after the fall and did not stand under it before. This is independent of modality. An acquired necessity can be hypothetical (Anselm's honour, triggered by sin) or absolute (Owen's vindicatory justice, essential but with nothing to act on until there is guilt). "Consequent necessity" would be the natural name, but scholastic usage has already claimed that term for the benign category.
 
 **Pure act** (*actus purus*). God has no unrealised potential — nothing in him is waiting to happen, nothing in him can be switched on later. It travels with **divine simplicity** (God is not assembled out of parts; his attributes are not components but identical with what he is) and **immutability** (God does not change). Hold these three together and you have the wall the tradition eventually runs into.
-
----
 
 ## Part one — the apparatus
 
@@ -149,8 +145,6 @@ Faustus Socinus pressed two blades at once. First: satisfaction and forgiveness 
 Stated as a disjunction, the first blade becomes the dilemma that governs everything after. Either God could have forgiven without payment, in which case the cross was not required and the whole apparatus is superfluous — the **mercy horn** — or the payment was exacted in full, in which case nothing was forgiven. Both horns are fatal to a doctrine that needs the cross to be both necessary and gracious.
 
 He was heterodox on a great deal else, and it doesn't matter. The objection is clean, and every subsequent move in the penal tradition is a response to it.
-
----
 
 ## Part two — the necessity
 
@@ -319,8 +313,6 @@ You can have an intelligible transaction or you can have trinitarian equality. N
 
 The framers were not sloppy. They were working hard to preserve exactly these commitments, and the moves are ingenious. But the two walls close in as the constraint moves inward, and every remaining move trades one for the other. Turretin buys sovereignty and pays in pure act. The covenant buys necessity and pays in trinitarian equality. Owen 1677 buys reality for imputation and pays by borrowing from the system PSA replaced. Packer buys peace and pays with the entire rational apparatus.
 
----
-
 ## Part three — leaving
 
 Everyone who leaves PSA leaves by the same door. Whatever else divides them, every departure is an operation on the necessity slot.
@@ -343,8 +335,6 @@ His framework is more considered than the label suggests. Packer is doing philos
 The charge is narrower than "he stopped arguing." Of all the slots in the system, the one he declines to specify is the necessity — and that is the slot which, when specified, lands in the Godhead as a constraint incoherent before the fall. He cannot ground it in the sin of man without making the creature the author of a divine obligation. He cannot ground it in the essence without inheriting Wall One. Declining to say is the only remaining option that keeps the doctrine intact, which is why the silence falls exactly there and nowhere else. Read that way, the evaporation is not intellectual fatigue; it is an accurate assessment of the terrain.
 
 There is a further awkwardness. Every position on the penal spine was built by classical logic, each framed as a correction of the last and argued on the premises of the previous move. Declaring the resulting doctrine exempt from logical inspection disowns the method that produced it. And the exemption is not extended evenly: the same lecture that asks for latitude on penal substitution presses Dodd hard on reducing propitiation to expiation.
-
----
 
 ## Part four — why there is nothing to house
 
@@ -369,8 +359,6 @@ Two consequences.
 **The retributive God is a smaller God than the restorative one.** The usual intuition runs the other way: strict justice looks like the demanding, serious position, and restoration looks like leniency. But strict retribution is what you fall back on when repair is beyond you. A God who *must* balance the books is a God for whom the alternative is closed. A God of infinite generative abundance does justice by making it right, and does so not reactively but out of what he has.
 
 **And this is why the exits look alike.** What unites Grotius, the New Divinity, Socinus and Kant, Campbell and Torrance is that each, by a different route, stopped treating a finitude artifact as a divine attribute. Not four theories. Four ways of noticing the same thing.
-
----
 
 ## Conclusion: where do we go from here
 
@@ -402,19 +390,13 @@ There is no retribution in him. There is no hidden face. There is nothing behind
 
 Glory to the Father, who never needed the books to balance; to the Son, who came the whole way down; and to the Holy Spirit, who is making us alive — one God, of whose love there has never been, and never will be, any sign of turning. Amen.
 
----
-
 ## Appendix
-
----
 
 ### The root objection, stated briefly
 
 Penal substitution requires a necessity simultaneously strong enough to make the cross unavoidable and weak enough to leave God's acceptance of a substitute gracious. No location satisfies both. Outside God the constraint insults his sovereignty; inside him it introduces a potency into pure act, and it drags the transaction inside the Trinity, where a payment between co-equals is either meaningless or subordinating. The tradition responds by adjusting the necessity's *modality* — outward for the nature's sake, inward for sovereignty's sake — until it arrives in the divine essence, then subdivides it, then declares it a mystery, with the silence falling precisely on the slot that cannot be specified without exposing the problem. But the modality was never the problem. In every location the constraint's *object* is creaturely: it has nothing to bear on until man sins.
 
 And the conclusion is not that the retribution was hidden in the wrong place. Retribution is what justice becomes when restoration is impossible, and for a God who raises the dead it never is. So there is no right place. Remove the acquired necessity and there is nothing left to relocate, split, or conceal — and you are back at Athanasius, minus the dilemma.
-
----
 
 ### On Romans 3:25–26
 
