@@ -143,7 +143,7 @@ Two rows are worth staring at.
 
 **Desert never moves.** From the ransom fathers to Packer, seventeen centuries, the liability sits on man and nobody ever proposes otherwise. Everything else gets relocated, subdivided, or abandoned. That's the first anchor.
 
-**The transfer-device row rhymes at both ends.** Athanasius has union. Owen in 1677 lands on union. When double imputation gets accused of being a legal fiction — a verdict that declares you righteous without making you righteous — Owen's answer is to ground it in union with Christ. The terminal repair of the forensic system is borrowed from the ontological system it was built to replace.
+**The transfer-device row rhymes at both ends.** Athanasius has union. Owen in 1677 lands on union. When double imputation gets accused of being a legal fiction — a verdict that declares you righteous without making you righteous — Owen's answer is to ground it in union with Christ. The terminal repair of the forensic system is borrowed from the ontological system it was increasingly replacing with theological machinery.
 
 Of the seven rows, one drives all the others: *necessity*.
 
