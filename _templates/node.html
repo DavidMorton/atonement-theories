@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}{{ card.title }} · {{ site.title }}{% endblock %}
+{% block bodyclass %}page node-page{% endblock %}
+
+{% block content %}
+<article class="wrap prose-wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ url('/map/') }}">The family tree</a> <span aria-hidden="true">/</span>
+    <span>{{ card.title }}</span>
+  </nav>
+
+  <header class="prose-head">
+    {% if camp %}
+    <span class="tag" style="background:{{ camp.tag.bg }};color:{{ camp.tag.text }}">{{ camp.label }}</span>
+    {% endif %}
+    <h1>{{ card.title }}</h1>
+    {% if card.meta %}
+    <p class="prose-meta">{{ card.meta }}</p>
+    {% endif %}
+    {% if card.headline %}
+    <p class="headline">{{ card.headline }}</p>
+    {% endif %}
+  </header>
+
+  <div class="prose node-body">
+    {% if card.problem %}
+    <section class="sec">
+      <h2>The problem it faces</h2>
+      <p>{{ card.problem }}</p>
+    </section>
+    {% endif %}
+    {% if card.solution %}
+    <section class="sec">
+      <h2>The move it makes</h2>
+      <p>{{ card.solution }}</p>
+    </section>
+    {% endif %}
+    {% if card.opens %}
+    <section class="sec opens">
+      <h2>The new problem it opens</h2>
+      <p>{{ card.opens }}</p>
+    </section>
+    {% endif %}
+    {% if card.notes %}
+    <section class="sec notes">
+      <h2>My notes</h2>
+      {% for para in card.notes.split('\n\n') %}
+      {% if para.strip() %}<p>{{ para.strip() }}</p>{% endif %}
+      {% endfor %}
+    </section>
+    {% endif %}
+  </div>
+
+  {% if incoming or outgoing %}
+  <section class="lineage">
+    <h2 class="section-label">Where this sits</h2>
+    {% if incoming %}
+    <div class="lineage-group">
+      <h3>Upstream</h3>
+      <ul>
+        {% for other in incoming %}
+        <li>
+          <a href="{{ url('/map/' ~ other.slug ~ '/') }}">{{ other.card.title }}</a>
+          {% set label = edge_labels.get((other.id, entry.id)) %}
+          {% if label %}<span class="edge-label">{{ label }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% if outgoing %}
+    <div class="lineage-group">
+      <h3>Downstream</h3>
+      <ul>
+        {% for other in outgoing %}
+        <li>
+          <a href="{{ url('/map/' ~ other.slug ~ '/') }}">{{ other.card.title }}</a>
+          {% set label = edge_labels.get((entry.id, other.id)) %}
+          {% if label %}<span class="edge-label">{{ label }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <footer class="prose-foot">
+    <nav class="next-up">
+      <a href="{{ url('/map/') }}#{{ entry.slug }}">See this in the family tree</a>
+      <a href="{{ url('/start/') }}">Read the short essay</a>
+    </nav>
+    <p>
+      These summaries compress a great deal, and the notes are opinionated by
+      design. Corrections welcome at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+    </p>
+  </footer>
+</article>
+{% endblock %}

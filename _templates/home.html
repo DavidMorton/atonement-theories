@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}{{ site.title }} — {{ site.tagline }}{% endblock %}
+{% block bodyclass %}home{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">An essay and a map</p>
+    <h1>{{ site.title }}</h1>
+    <p class="lede">
+      Penal substitution needs God to be <em>unable</em> to simply forgive. Not
+      unwilling — unable. That inability is about our guilt, and our guilt did
+      not exist until we made it. This is a study of what seventeen centuries
+      of careful people did with that problem.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ url('/start/') }}">Start with the short version</a>
+      <a class="btn" href="{{ url('/map/') }}">Explore the map</a>
+    </div>
+    <p class="hero-note">
+      New here? The short essay is the front door. The map is the reference —
+      it rewards a big screen.
+    </p>
+  </div>
+</section>
+
+<section class="wrap cards">
+  <h2 class="section-label">Where to go</h2>
+  <ul class="card-grid">
+    {% for card in site.cards %}
+    <li class="card{% if card.featured %} card-featured{% endif %}">
+      <a href="{{ url(card.url) }}">
+        {% if card.image %}
+        <div class="card-image">
+          <img src="{{ url('/' ~ card.image) }}" alt="" loading="lazy" width="1200" height="800" />
+        </div>
+        {% endif %}
+        <div class="card-body">
+          <p class="card-kicker">{{ card.kicker }}</p>
+          <h3>{{ card.title }}</h3>
+          <p class="card-blurb">{{ card.blurb }}</p>
+          <p class="card-meta">{{ card.meta }}</p>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="wrap argument">
+  <h2 class="section-label">The argument in brief</h2>
+  <div class="argument-body">
+    <p>
+      Penal substitutionary atonement requires a constraint on God that did not
+      exist before the fall — a necessity God acquires when the creature sins.
+      Before there is guilt, nothing obliges God to punish. After there is guilt,
+      he cannot do otherwise.
+    </p>
+    <p>
+      And it has nowhere to sit. Housed outside God, it insults his sovereignty:
+      something that is not God now binds God. Housed inside him, it damages his
+      nature: an attribute that is essential yet has no object until a creature
+      sins is an unrealised capacity in a being who is supposed to have none.
+    </p>
+    <p>
+      So the constraint migrates, and it migrates one way. Every move operates on
+      the <em>modality</em> of the constraint — whether the &ldquo;must&rdquo; is absolute or
+      hypothetical, whether it sits in the will or the essence — while leaving its
+      <em>object</em> untouched. In every location the object is creaturely.
+      <strong>The defect was always in the object.</strong>
+    </p>
+    <p class="argument-more">
+      <a href="{{ url('/necessity-problem/') }}">Read the full essay →</a>
+    </p>
+  </div>
+</section>
+
+<section class="wrap nervous">
+  <div class="nervous-inner">
+    <h2>If this feels like it&rsquo;s pulling a thread you can&rsquo;t afford to lose</h2>
+    <p>
+      Rejecting penal substitution can feel like abandoning your faith. It doesn&rsquo;t
+      have to be. Start with Athanasius&rsquo; <em>On the Incarnation</em> — the ontological
+      account is the soft landing for anyone who has only ever heard the gospel in a
+      penal frame. This project exists because it&rsquo;s what let me keep my faith, not
+      lose it.
+    </p>
+    <p><a class="btn" href="{{ url('/athanasius/') }}">Get On the Incarnation, free →</a></p>
+  </div>
+</section>
+{% endblock %}

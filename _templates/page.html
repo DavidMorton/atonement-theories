@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block bodyclass %}page{% if page.show_toc %} has-toc{% endif %}{% endblock %}
+
+{% block content %}
+<article class="wrap prose-wrap">
+  <header class="prose-head">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <p class="subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+    {% if page.show_reading_time %}
+    <p class="prose-meta">{{ site.author }} · {{ page.reading_time }} min read</p>
+    {% endif %}
+  </header>
+
+  {% if page.show_toc %}
+  <aside class="toc" aria-label="Table of contents">
+    <p class="toc-label">Contents</p>
+    {{ page.toc }}
+  </aside>
+  {% endif %}
+
+  <div class="prose">
+    {{ page.content }}
+  </div>
+
+  <footer class="prose-foot">
+    <p>
+      Found an error, or want to argue? I&rsquo;d like to hear it —
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+    </p>
+    <nav class="next-up">
+      <a href="{{ url('/map/') }}">Explore the family tree</a>
+      <a href="{{ url('/athanasius/') }}">Read Athanasius</a>
+    </nav>
+  </footer>
+</article>
+{% endblock %}
+
+{% block scripts %}
+{% if page.show_toc %}
+<script>
+  // Highlight the contents entry for whatever section is on screen.
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var seen = new Set();
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) seen.add(e.target.id); else seen.delete(e.target.id);
+      });
+      links.forEach(function (a) { a.classList.remove('active'); });
+      var first = Object.keys(byId).find(function (id) { return seen.has(id); });
+      if (first) byId[first].classList.add('active');
+    }, { rootMargin: '-80px 0px -70% 0px' });
+    Object.keys(byId).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+  })();
+</script>
+{% endif %}
+{% endblock %}

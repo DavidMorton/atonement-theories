@@ -1,0 +1,84 @@
+# ---------------------------------------------------------------------------
+# Site-level configuration. Everything here is about the *site wrapper* —
+# domain, navigation, the landing page cards. Content itself lives in
+# content/*.md (prose) and content.yaml + nodes/*.yaml (the map).
+#
+# To add a new page: drop a .md file in content/ with front matter, then add
+# it to `nav` and/or `cards` below if you want it linked from the chrome.
+# ---------------------------------------------------------------------------
+title: The Necessity Problem
+tagline: Tracing penal substitution's central difficulty through seventeen centuries
+description: >-
+  An essay and interactive family tree tracing how penal substitutionary
+  atonement keeps relocating its central difficulty — the claim that God
+  cannot simply forgive — instead of answering it.
+author: David Morton
+email: theology@davidmorton.io
+
+# Where the site lives. `baseurl` is the subpath GitHub Pages serves from —
+# empty string if you move to a custom domain at the root.
+url: https://davidmorton.github.io
+baseurl: /atonement-theories
+
+# Social / SEO defaults
+image: assets/img/family-tree.png
+locale: en_US
+twitter: ''
+
+# ---------------------------------------------------------------------------
+# Top navigation. `url` values are site-relative (no baseurl — build.py adds it).
+# ---------------------------------------------------------------------------
+nav:
+- title: Start here
+  url: /start/
+- title: The essay
+  url: /necessity-problem/
+- title: The map
+  url: /map/
+- title: Athanasius
+  url: /athanasius/
+- title: About
+  url: /about/
+
+# ---------------------------------------------------------------------------
+# Landing page cards, in order of increasing commitment. `kicker` is the small
+# label above the title; `meta` is the time/format hint under the blurb.
+# ---------------------------------------------------------------------------
+cards:
+- title: Start here
+  url: /start/
+  kicker: The short version
+  meta: ~15 min read
+  blurb: >-
+    The whole argument in plain terms: penal substitution needs God to be
+    unable to forgive, that inability is about our guilt, and our guilt did
+    not exist until we made it.
+  featured: true
+
+- title: The Necessity Problem
+  url: /necessity-problem/
+  kicker: The full essay
+  meta: Long read · tables & citations
+  blurb: >-
+    The complete argument, with the historical apparatus laid out: how the
+    constraint on God migrates from the will to the essence across seventeen
+    centuries, and why every move leaves its object untouched.
+
+- title: The family tree
+  url: /map/
+  kicker: Interactive
+  meta: 24 positions · Irenaeus to Packer
+  blurb: >-
+    Every position as a box, every arrow a pressure — what refutes what, what
+    concedes to what, what hardens in response to what. Tap any box for the
+    problem it faces, the move it makes, and the new problem that move opens.
+  image: assets/img/family-tree.png
+
+- title: Reading Athanasius
+  url: /athanasius/
+  kicker: Primary source
+  meta: 4 formats · free download
+  blurb: >-
+    On the Incarnation in four editions, from the 1911 Robertson translation
+    to a lightly modernised ePub. The soft landing for anyone who has only
+    ever heard the gospel in a penal frame.

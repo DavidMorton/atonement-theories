@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <!-- atonement-lineage — interactive theology map.
-     Content lives in content.yaml — edit that file, not this one, to change
-     any node text, card copy, colors, or connections. This file only knows
-     how to turn that YAML into the diagram + cards. -->
+     Content lives in content.yaml and nodes/*.yaml — edit those, not this
+     file, to change any node text, card copy, colors, or connections.
+     build.py merges them into map-data.json, which this page fetches; this
+     file only knows how to turn that JSON into the diagram + cards.
+
+     %%BASEURL%% and %%ORIGIN%% are substituted by build.py at build time. -->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>Atonement Lineage</title>
+<title>The atonement family tree · The Necessity Problem</title>
+<meta name="description" content="An interactive family tree of atonement theories from Irenaeus to Packer — every position as a box, every arrow a pressure: what refutes what, what concedes to what, what hardens in response to what." />
+<link rel="canonical" href="%%ORIGIN%%%%BASEURL%%/map/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The atonement family tree" />
+<meta property="og:description" content="24 positions, from Irenaeus to Packer. Every arrow is a pressure: what refutes what, what concedes to what, what hardens in response to what." />
+<meta property="og:url" content="%%ORIGIN%%%%BASEURL%%/map/" />
+<meta property="og:image" content="%%ORIGIN%%%%BASEURL%%/assets/img/family-tree.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "The atonement family tree",
+  "description": "An interactive family tree of atonement theories from Irenaeus to Packer.",
+  "url": "%%ORIGIN%%%%BASEURL%%/map/",
+  "image": "%%ORIGIN%%%%BASEURL%%/assets/img/family-tree.png",
+  "author": { "@type": "Person", "name": "David Morton" },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "The Necessity Problem",
+    "url": "%%ORIGIN%%%%BASEURL%%/"
+  }
+}
+</script>
 <style>
   :root { --bg:#0b0b0c; --ink:#e5e7eb; --muted:#9ca3af; color-scheme: light; }
   * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -138,14 +165,79 @@ font-size: 20px; }
   .md th, .md td { border:1px solid #2a2c33; padding:7px 10px; text-align:left; }
   .md th { background:#1b1d23; color:#e5e7eb; }
   .md img { max-width:100%; border-radius:8px; }
+
+  /* ---- site bar -------------------------------------------------------
+     The map used to be the front door. It isn't any more, so it needs a way
+     back out to the rest of the site. */
+  #sitebar { flex:0 0 auto; display:flex; align-items:center; gap:14px;
+    padding:0 14px; min-height:46px; border-bottom:1px solid #212329;
+    background:#0b0b0c; }
+  #sitebar a { color:#9ca3af; text-decoration:none; font-size:13.5px; white-space:nowrap; }
+  #sitebar a:hover { color:#e5e7eb; }
+  #sitebar .home { color:#e5e7eb; font-weight:700; margin-right:auto; font-size:14px; }
+  #sitebar .home:hover { color:#e9d8bf; }
+  #sitebar nav { display:flex; gap:16px; }
+
+  /* ---- permalink out of a card ---- */
+  #mPermalink { display:inline-block; margin-top:20px; font-size:13.5px;
+    color:#93c5fd; text-decoration:none; }
+  #mPermalink:hover { text-decoration:underline; }
+
+  /* ---- mobile card list ------------------------------------------------
+     Below 700px the flowchart is a wall of tiny boxes that people pinch at
+     once and then leave. Same content, same cards, as a thumb-scrollable
+     list grouped by camp and ordered the way the diagram is ordered. */
+  #cardlist { display:none; padding:4px 14px 40px; overflow-y:auto; flex:1 1 auto; }
+  #cardlist h2 { font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:#8b8f9a; margin:22px 0 10px; font-weight:700; }
+  #cardlist ul { list-style:none; margin:0; padding:0; }
+  #cardlist li { margin-bottom:8px; }
+  #cardlist button { display:block; width:100%; text-align:left; cursor:pointer;
+    background:#15161a; border:1px solid #2a2c33; border-left-width:4px;
+    border-radius:12px; padding:14px 16px; color:#e5e7eb; font-family:inherit; }
+  #cardlist button:active { background:#1d1f25; }
+  #cardlist .t { display:block; font-size:16px; font-weight:600; line-height:1.3; }
+  #cardlist .h { display:block; font-size:13.5px; color:#9ca3af; margin-top:4px; line-height:1.4; }
+  #listIntro { font-size:14px; color:#9ca3af; line-height:1.55; margin:14px 0 4px; }
+  #listIntro a { color:#93c5fd; }
+
+  @media (max-width:700px){
+    /* Let the page scroll normally — the fixed-height pan/zoom shell only
+       makes sense when there's a diagram in it. */
+    body { height:auto; min-height:100dvh; overflow:visible; }
+    #graph, #zoomctl, #legend, #hint { display:none !important; }
+    #cardlist { display:block; }
+    #aboutBtn { display:none; }
+    #title { font-size:19px; padding:14px 14px 0; width:auto; }
+  }
 </style>
 </head>
 <body>
-  <button id="aboutBtn" onclick="openAbout()" aria-label="About this page" title="About this page">?</button>
+  <button id="aboutBtn" onclick="openAbout()" aria-label="How to read this chart" title="How to read this chart">?</button>
+
+  <div id="sitebar">
+    <a class="home" href="%%BASEURL%%/">The Necessity Problem</a>
+    <nav>
+      <a href="%%BASEURL%%/start/">Start here</a>
+      <a href="%%BASEURL%%/necessity-problem/">The essay</a>
+      <a href="%%BASEURL%%/athanasius/">Athanasius</a>
+      <a href="%%BASEURL%%/about/">About</a>
+    </nav>
+  </div>
 
   <div id="title"></div>
   <div id="hint"></div>
   <div id="legend"></div>
+
+  <section id="cardlist" aria-label="All positions">
+    <p id="listIntro">
+      The diagram is a wide flowchart and doesn't fit a phone well, so here is
+      the same thing as a list — every position in the order the chart builds
+      them. Tap any one for the full card.
+      <a href="%%BASEURL%%/start/">Or start with the essay instead →</a>
+    </p>
+    <div id="listBody"></div>
+  </section>
 
   <div id="graph">
     <div id="canvas">
@@ -167,29 +259,49 @@ font-size: 20px; }
       <div class="sec"><h3>The move it makes</h3><p id="mSolution"></p></div>
       <div class="sec opens"><h3>The new problem it opens</h3><p id="mOpens"></p></div>
       <div class="sec notes" id="notesSec"><h3>My notes</h3><p id="mNotes"></p></div>
+      <a id="mPermalink" href="#">Open this as its own page →</a>
     </div>
   </div>
 
   <div id="aboutOverlay" onclick="maybeCloseAbout(event)">
     <div id="aboutModal" role="dialog" aria-modal="true" aria-label="About this page">
       <button id="aboutClose" onclick="closeAbout()" aria-label="Close">✕</button>
-      <div class="md" id="aboutBody"></div>
+      <div class="md" id="aboutBody">
+        <h1>How to read this chart</h1>
+        <ul>
+          <li><b>Boxes</b> are positions — a person, a book, a year, and the move that book makes.</li>
+          <li><b>Arrows</b> are the pressure between them: what refutes what, what concedes to
+            what, what hardens in response to what.</li>
+          <li><b>Tap any box</b> for the full card: the problem it faces, the move it makes, and
+            the new problem that move opens.</li>
+          <li><b>Colors</b> mark the family a position belongs to. See the legend up top.</li>
+        </ul>
+        <h2>Fair warning</h2>
+        <p>The notes in these cards are <i>highly</i> opinionated, and kept visually separate
+          from the summaries so you can ignore me and read each position on its own terms. I'm
+          not a historian of doctrine; these summaries compress a great deal, and the dates are
+          publication dates rather than the dates ideas actually moved.</p>
+        <h2>Elsewhere</h2>
+        <ul>
+          <li><a href="%%BASEURL%%/start/">The short essay</a> — the argument in fifteen minutes.</li>
+          <li><a href="%%BASEURL%%/necessity-problem/">The full essay</a> — with the tables and citations.</li>
+          <li><a href="%%BASEURL%%/athanasius/">Reading Athanasius</a> — the primary source, free.</li>
+          <li><a href="%%BASEURL%%/about/">About this project</a> — why I built it.</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <div id="loadErr">
-    <span id="loadErrMsg">Couldn't load the content files.</span><br/><br/>
-    <span style="color:#9ca3af">(<code>content.yaml</code>, the files under <code>nodes/</code>, and
-    <code>about.md</code> all load the same way.)</span><br/><br/>
-    This page needs to be served over HTTP (not opened directly as a <code>file://</code> URL) so
-    it can fetch its content file. Try running a local server in this folder, e.g.<br/><br/>
-    <code>python3 -m http.server</code><br/><br/>
+    <span id="loadErrMsg">Couldn't load <code>map-data.json</code>.</span><br/><br/>
+    <span style="color:#9ca3af">That file is generated from <code>content.yaml</code> and
+    <code>nodes/*.yaml</code> by <code>build.py</code> — it isn't in the repo.</span><br/><br/>
+    Run the build and serve the output, e.g.<br/><br/>
+    <code>python3 build.py &amp;&amp; ./run.sh</code><br/><br/>
     then open the page at the printed localhost address.
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/16.3.0/lib/marked.umd.min.js"></script>
   <script>
     /* ---------------------------------------------------------------------
      * Everything in this file is structural. The words — node text, card
@@ -199,8 +311,10 @@ font-size: 20px; }
      * same pan/zoom/modal logic as before.
      * ------------------------------------------------------------------- */
 
+    const BASEURL = "%%BASEURL%%";
     let CAMP = {};
     let DATA = {};
+    const BY_SLUG = {};
 
     function esc(s){
       // content.yaml text may legitimately contain quotes; mermaid node/edge
@@ -223,7 +337,52 @@ font-size: 20px; }
       DATA = {};
       const allCardEntries = [...(doc.nodes||[]), ...(doc.extra_cards||[])];
       for(const entry of allCardEntries){
-        DATA[entry.id] = { camp: entry.camp, ...entry.card };
+        DATA[entry.id] = { camp: entry.camp, slug: entry.slug, ...entry.card };
+        // Slug -> id, so /map/#anselm can open the right card.
+        if(entry.slug) BY_SLUG[entry.slug] = entry.id;
+      }
+    }
+
+    /* ---- mobile card list ----
+       Built from the same DATA the diagram uses, grouped by camp so the list
+       has some shape to it rather than being 24 undifferentiated rows. */
+    function buildCardList(doc){
+      const body = document.getElementById("listBody");
+      body.innerHTML = "";
+      const entries = [...(doc.nodes||[]), ...(doc.extra_cards||[])];
+
+      for(const camp of doc.camps){
+        const mine = entries.filter(e => e.camp === camp.id);
+        if(!mine.length) continue;
+
+        const h = document.createElement("h2");
+        h.textContent = camp.label;
+        body.appendChild(h);
+
+        const ul = document.createElement("ul");
+        for(const entry of mine){
+          const card = entry.card || {};
+          const li = document.createElement("li");
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.style.borderLeftColor = camp.diagram.stroke;
+          btn.addEventListener("click", () => nodeClick(entry.id));
+
+          const t = document.createElement("span");
+          t.className = "t";
+          t.textContent = card.title || entry.id;
+          btn.appendChild(t);
+
+          if(card.headline){
+            const hl = document.createElement("span");
+            hl.className = "h";
+            hl.textContent = card.headline;
+            btn.appendChild(hl);
+          }
+          li.appendChild(btn);
+          ul.appendChild(li);
+        }
+        body.appendChild(ul);
       }
     }
 
@@ -301,14 +460,30 @@ font-size: 20px; }
       const notesSec = document.getElementById("notesSec");
       if(d.notes){ document.getElementById("mNotes").textContent = d.notes; notesSec.style.display=""; }
       else { notesSec.style.display="none"; }
+
+      // Every card has a standalone page; link to it so a card can be shared,
+      // bookmarked, and found by a search engine.
+      const perma = document.getElementById("mPermalink");
+      if(d.slug){ perma.href = BASEURL + "/map/" + d.slug + "/"; perma.style.display = ""; }
+      else { perma.style.display = "none"; }
+
       document.getElementById("overlay").classList.add("open");
       document.getElementById("modal").scrollTop = 0;
+
+      // Reflect the open card in the URL without adding a history entry per
+      // card — back should leave the map, not walk through everything tapped.
+      if(d.slug){
+        try { history.replaceState(null, "", "#" + d.slug); } catch(_){}
+      }
     }
-    function closeModal(){ document.getElementById("overlay").classList.remove("open"); }
+    function closeModal(){
+      document.getElementById("overlay").classList.remove("open");
+      try { history.replaceState(null, "", location.pathname + location.search); } catch(_){}
+    }
     function maybeClose(e){ if(e.target.id === "overlay") closeModal(); }
     window.nodeClick = nodeClick;
 
-    /* ---- about modal (markdown from about.md) ---- */
+    /* ---- "how to read this chart" modal (static markup above) ---- */
     function openAbout(){
       document.getElementById("aboutOverlay").classList.add("open");
       document.getElementById("aboutModal").scrollTop = 0;
@@ -317,38 +492,13 @@ font-size: 20px; }
     function maybeCloseAbout(e){ if(e.target.id === "aboutOverlay") closeAbout(); }
     window.openAbout = openAbout;
 
-    function renderMarkdown(text){
-      // marked exposes .parse in modern builds; older/UMD shapes are callable directly.
-      if(typeof marked !== "undefined"){
-        if(typeof marked.parse === "function") return marked.parse(text);
-        if(typeof marked === "function") return marked(text);
-      }
-      // Last resort: show the raw markdown rather than nothing.
-      const pre = document.createElement("pre");
-      pre.textContent = text;
-      return pre.outerHTML;
-    }
-
-    // Loaded once at startup so opening the modal is instant. Resolves to
-    // true/false so the auto-open step knows whether there's anything to show.
-    const aboutReady = fetch("about.md")
-      .then(res => { if(!res.ok) throw new Error("HTTP " + res.status); return res.text(); })
-      .then(text => {
-        document.getElementById("aboutBody").innerHTML = renderMarkdown(text);
-        return true;
-      })
-      .catch(err => {
-        console.error("about.md failed to load:", err);
-        // Don't offer a button that opens an empty box.
-        document.getElementById("aboutBtn").style.display = "none";
-        return false;
-      });
-
     const ABOUT_SEEN_KEY = "atonement-lineage:about-seen";
 
-    // Controlled by `about.show_on_load` in content.yaml.
+    // Controlled by `about.show_on_load` in content.yaml. The default is now
+    // `never` — the landing page does the explaining, so opening a modal over
+    // the map on arrival just puts a wall in front of the thing people came for.
     function maybeAutoOpenAbout(doc){
-      const mode = (doc.about && doc.about.show_on_load) || "first_visit";
+      const mode = (doc.about && doc.about.show_on_load) || "never";
       if(mode === "never") return;
       if(mode === "first_visit"){
         // localStorage can throw in private modes / under file:// — never let
@@ -447,7 +597,7 @@ font-size: 20px; }
 
     window.addEventListener("resize", ()=>{ /* keep current zoom; just reapply */ apply(); });
 
-    /* ---- load content.yaml, build the page, then render the diagram ---- */
+    /* ---- load map-data.json, build the page, then render the diagram ---- */
     mermaid.initialize({
       startOnLoad:false, securityLevel:"loose", theme:"base",
       themeVariables:{ background:"#0b0b0c", lineColor:"#9ca3af",
@@ -457,61 +607,13 @@ font-size: 20px; }
 
     let contentDoc = null;
 
-    function fetchYaml(path){
-      return fetch(path)
-        .then(res => { if(!res.ok) throw new Error("HTTP " + res.status); return res.text(); })
-        .then(text => jsyaml.load(text))
-        // Name the file in the error — with content split across many files,
-        // "HTTP 404" on its own is useless.
-        .catch(err => { throw new Error(path + " — " + err.message); });
-    }
-
-    // Fetch every file in the node_files manifest (in parallel) and fold the
-    // results into doc.nodes / doc.extra_cards, preserving manifest order.
-    // Any nodes written inline in content.yaml are kept and come first.
-    function loadNodeFiles(doc){
-      doc.nodes = doc.nodes || [];
-      doc.extra_cards = doc.extra_cards || [];
-      const files = doc.node_files || [];
-      if(!files.length) return Promise.resolve(doc);
-
-      return Promise.all(files.map(path => fetchYaml(path).then(entry => ({path, entry}))))
-        .then(loaded => {
-          for(const {path, entry} of loaded){
-            if(!entry || !entry.id){ console.warn("skipped " + path + ": no `id` field"); continue; }
-            // A file with a `node:` block gets a box on the diagram;
-            // a card-only file is reachable but unplotted.
-            (entry.node ? doc.nodes : doc.extra_cards).push(entry);
-          }
-          return doc;
-        });
-    }
-
-    // Content now spans ~25 files, so a typo in an id fails silently unless we
-    // look for it. These are warnings, not errors — the page still renders.
-    function validateContent(doc){
-      const all = [...doc.nodes, ...doc.extra_cards];
-      const seen = new Set();
-      for(const e of all){
-        if(seen.has(e.id)) console.warn('duplicate id "' + e.id + '"');
-        seen.add(e.id);
-        if(!e.card) console.warn('"' + e.id + '" has no `card:` block');
-      }
-      const camps = new Set((doc.camps || []).map(c => c.id));
-      for(const e of all){
-        if(!camps.has(e.camp)) console.warn('"' + e.id + '" has unknown camp "' + e.camp + '"');
-      }
-      // Edges can only attach to nodes that actually have a box.
-      const boxed = new Set(doc.nodes.map(n => n.id));
-      for(const ed of (doc.edges || [])){
-        if(!boxed.has(ed.from)) console.warn('edge "' + ed.from + '" -> "' + ed.to + '": unknown source');
-        if(!boxed.has(ed.to))   console.warn('edge "' + ed.from + '" -> "' + ed.to + '": unknown target');
-      }
-    }
-
-    fetchYaml("content.yaml")
-      .then(doc => { contentDoc = doc; return loadNodeFiles(doc); })
+    // One file now, generated by build.py from content.yaml + nodes/*.yaml.
+    // Validation moved into the build, where a typo shows up in the build log
+    // instead of silently in someone's console.
+    fetch(BASEURL + "/map-data.json")
+      .then(res => { if(!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
       .then(doc => {
+        contentDoc = doc;
         document.title = doc.title || "Atonement Lineage";
         document.getElementById("title").textContent = doc.title || "";
         // Drop the hint line entirely if content.yaml doesn't define one,
@@ -520,10 +622,14 @@ font-size: 20px; }
         if(doc.hint){ hintEl.textContent = doc.hint; }
         else { hintEl.style.display = "none"; }
 
-        validateContent(doc);
         buildCampTables(doc);
         buildDataTable(doc);
         buildLegend(doc);
+        buildCardList(doc);
+
+        // Skip Mermaid entirely on narrow screens. Rendering a 24-box flowchart
+        // costs real time on a phone, and the card list is what's visible there.
+        if(window.matchMedia("(max-width:700px)").matches) return null;
 
         const mermaidSrc = buildMermaidSource(doc);
         document.querySelector(".mermaid").textContent = mermaidSrc;
@@ -540,18 +646,23 @@ font-size: 20px; }
           svg.style.width = natW+"px"; svg.style.height = natH+"px"; svg.style.maxWidth="none";
           requestAnimationFrame(fit);
         }
-        // Open the intro over a finished map, not a blank page — and only once
-        // about.md has actually rendered.
-        return aboutReady.then(ok => { if(ok) maybeAutoOpenAbout(contentDoc || {}); });
+        openFromHash();
+        maybeAutoOpenAbout(contentDoc || {});
       })
       .catch(err=>{
         console.error(err);
-        // Surface which file broke — a 404 on one node file shouldn't look
-        // identical to the server not running at all.
         document.getElementById("loadErrMsg").textContent = "Couldn't load: " + err.message;
         document.getElementById("loadErr").style.display = "flex";
         graph.innerHTML = "";
       });
+
+    // Arriving at /map/#anselm — from a node page, a bookmark, or a shared
+    // link — should land on that card rather than the bare diagram.
+    function openFromHash(){
+      const slug = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+      if(slug && BY_SLUG[slug]) nodeClick(BY_SLUG[slug]);
+    }
+    window.addEventListener("hashchange", openFromHash);
   </script>
 </body>
 </html>

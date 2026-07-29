@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{% block title %}{{ page.title }} · {{ site.title }}{% endblock %}</title>
+<meta name="description" content="{{ page.description }}" />
+<link rel="canonical" href="{{ absurl(page.url) }}" />
+{% if page.noindex %}
+<meta name="robots" content="noindex" />
+{% endif %}
+
+<meta property="og:type" content="{{ page.type|default('article') }}" />
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:description" content="{{ page.description }}" />
+<meta property="og:url" content="{{ absurl(page.url) }}" />
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:image" content="{{ absurl('/' ~ site.image) }}" />
+<meta property="og:locale" content="{{ site.locale }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ page.title }}" />
+<meta name="twitter:description" content="{{ page.description }}" />
+<meta name="twitter:image" content="{{ absurl('/' ~ site.image) }}" />
+
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "Article" if page.type == "article" else "WebSite",
+  "headline": page.title,
+  "description": page.description,
+  "url": absurl(page.url),
+  "image": absurl("/" ~ site.image),
+  "datePublished": page.updated,
+  "dateModified": page.updated,
+  "author": {"@type": "Person", "name": site.author},
+  "publisher": {"@type": "Person", "name": site.author},
+  "isPartOf": {"@type": "WebSite", "name": site.title, "url": absurl("/")}
+}|tojson }}
+</script>
+
+<link rel="stylesheet" href="{{ url('/assets/site.css') }}" />
+{% block head %}{% endblock %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="{{ url('/') }}">{{ site.title }}</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="site-nav">
+      {% for item in site.nav %}
+      <a href="{{ url(item.url) }}"{% if page.url.startswith(item.url) and item.url != '/' %} class="here" aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav class="foot-nav">
+      {% for item in site.nav %}
+      <a href="{{ url(item.url) }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+    <p class="foot-note">
+      {{ site.tagline }}<br />
+      By {{ site.author }} — corrections and disagreements welcome at
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+    </p>
+    <p class="foot-fine">© {{ site.year }} {{ site.author }}</p>
+  </div>
+</footer>
+
+<script>
+  // Nav toggle. Small enough that a dependency would cost more than it saves.
+  (function () {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  })();
+</script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

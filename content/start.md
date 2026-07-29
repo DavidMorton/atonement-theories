@@ -1,10 +1,18 @@
-# The Necessity Problem
-
-### Why penal substitution keeps moving its hardest question instead of answering it
-
-*This is based on a much longer essay and is intended as a high-level overview of the problem. If you want to dive deep, the original essay is [here](./the-necessity-problem-v5.md).*
-
 ---
+title: The Necessity Problem — the short version
+subtitle: Why penal substitution keeps moving its hardest question instead of answering it
+slug: start
+description: >-
+  Penal substitution needs God to be unable to forgive. That inability is about
+  our guilt, and our guilt did not exist until we made it. The whole objection,
+  in plain terms and about fifteen minutes.
+toc: true
+priority: '0.9'
+---
+
+*A high-level overview. If you want the full argument — the historical tables,
+the citations, the seventeen-century migration — the long essay is
+[here](../necessity-problem/).*
 
 ## Start here
 

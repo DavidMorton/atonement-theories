@@ -1,10 +1,14 @@
 title: Atonement Theory Family Tree
-# The intro modal (rendered from about.md).
-#   first_visit — open automatically the first time someone loads the page (default)
+# The "how to read this chart" modal.
+#   never       — only opens via the "?" button (default)
+#   first_visit — also open automatically the first time someone loads the map
 #   always      — open on every page load
-#   never       — only opens via the "?" button
+#
+# This defaults to `never` now that the landing page does the introducing.
+# Opening a modal over the map on arrival puts a wall in front of the thing
+# people clicked through to see.
 about:
-  show_on_load: first_visit
+  show_on_load: never
 # ---------------------------------------------------------------------------
 # Nodes. One file per position, loaded in the order listed below.
 #
