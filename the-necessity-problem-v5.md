@@ -103,7 +103,7 @@ So the sequence runs: transaction (3rd c.) → deontic two-party frame (1098) �
 
 Everything after this point is written under pressure from one man.
 
-Faustus Socinus pressed two blades at once. First: if satisfaction is genuinely paid in full, the debt is *discharged*, not forgiven — so grace has vanished and God is simply collecting. Second: guilt is the most personal thing a person has, and cannot justly be signed over to an innocent substitute.
+Faustus Socinus pressed two blades at once. First: satisfaction and forgiveness are mutually exclusive opposites. If satisfaction is genuinely paid in full, the debt is *discharged*, not forgiven — so grace has vanished and God is simply collecting. Second: guilt, in relation to retributive justice, belongs to the offender alone, and cannot justly be signed over to an innocent substitute.
 
 Stated as a disjunction, the first blade becomes the dilemma that governs everything after. Either God could have forgiven without payment, in which case the cross was not required and the whole apparatus is superfluous — the **mercy horn** — or the payment was exacted in full, in which case nothing was forgiven. Both horns are fatal to a doctrine that needs the cross to be both necessary and gracious.
 
