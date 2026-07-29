@@ -201,6 +201,21 @@ font-size: 20px; }
   #listIntro { font-size:14px; color:#9ca3af; line-height:1.55; margin:14px 0 4px; }
   #listIntro a { color:#93c5fd; }
 
+  /* ---- view switch ----
+     The list is the default on a phone, but it's a default, not a verdict.
+     Anyone who wants the real diagram can have it, and the choice sticks. */
+  #toGraph { display:inline-block; margin:14px 0 6px; padding:11px 17px;
+    border-radius:11px; border:1px solid #2a2c33; background:#15161a;
+    color:#e5e7eb; font:inherit; font-size:14.5px; font-weight:600; cursor:pointer; }
+  #toGraph:active { background:#23252c; }
+  #toGraphNote { font-size:12.5px; color:#6b7280; margin:0 0 6px; }
+
+  #toList { display:none; position:fixed; bottom:12px; left:58px; z-index:40;
+    height:38px; padding:0 15px; border-radius:19px; border:1px solid #2a2c33;
+    background:rgba(21,22,26,0.94); color:#e5e7eb; font:inherit; font-size:13.5px;
+    font-weight:600; cursor:pointer; align-items:center; }
+  #toList:active { background:#2c2f37; }
+
   @media (max-width:700px){
     /* Let the page scroll normally — the fixed-height pan/zoom shell only
        makes sense when there's a diagram in it. */
@@ -209,6 +224,16 @@ font-size: 20px; }
     #cardlist { display:block; }
     #aboutBtn { display:none; }
     #title { font-size:19px; padding:14px 14px 0; width:auto; }
+
+    /* …unless the reader has asked for the diagram anyway. */
+    body.force-graph { height:100vh; height:100dvh; overflow:hidden; }
+    body.force-graph #graph { display:block !important; }
+    body.force-graph #zoomctl { display:flex !important; }
+    body.force-graph #legend { display:flex !important; }
+    body.force-graph #hint { display:block !important; }
+    body.force-graph #cardlist { display:none; }
+    body.force-graph #aboutBtn { display:flex; }
+    body.force-graph #toList { display:inline-flex; }
   }
 </style>
 </head>
@@ -236,8 +261,12 @@ font-size: 20px; }
       them. Tap any one for the full card.
       <a href="%%BASEURL%%/start/">Or start with the essay instead →</a>
     </p>
+    <button id="toGraph" type="button">Show the full diagram instead</button>
+    <p id="toGraphNote">Pan and pinch to zoom. Best turned sideways.</p>
     <div id="listBody"></div>
   </section>
+
+  <button id="toList" type="button">☰ List view</button>
 
   <div id="graph">
     <div id="canvas">
@@ -627,25 +656,14 @@ font-size: 20px; }
         buildLegend(doc);
         buildCardList(doc);
 
-        // Skip Mermaid entirely on narrow screens. Rendering a 24-box flowchart
-        // costs real time on a phone, and the card list is what's visible there.
-        if(window.matchMedia("(max-width:700px)").matches) return null;
-
-        const mermaidSrc = buildMermaidSource(doc);
-        document.querySelector(".mermaid").textContent = mermaidSrc;
-
-        return mermaid.run();
+        // On a narrow screen the list is what's on show, so the 24-box
+        // flowchart isn't built until it's actually wanted — laying it out
+        // costs real time on a phone. renderDiagram() handles both cases.
+        if(isNarrow() && !prefersGraph()) return null;
+        if(isNarrow()) document.body.classList.add("force-graph");
+        return renderDiagram();
       })
       .then(()=>{
-        const svg = canvas.querySelector("svg");
-        if(svg){
-          const vb = svg.viewBox && svg.viewBox.baseVal;
-          natW = (vb && vb.width) ? vb.width : svg.getBoundingClientRect().width;
-          natH = (vb && vb.height) ? vb.height : svg.getBoundingClientRect().height;
-          svg.removeAttribute("style");
-          svg.style.width = natW+"px"; svg.style.height = natH+"px"; svg.style.maxWidth="none";
-          requestAnimationFrame(fit);
-        }
         openFromHash();
         maybeAutoOpenAbout(contentDoc || {});
       })
@@ -655,6 +673,63 @@ font-size: 20px; }
         document.getElementById("loadErr").style.display = "flex";
         graph.innerHTML = "";
       });
+
+    /* ---- diagram rendering + the mobile view switch ----
+       Mermaid is rendered at most once, and only when the diagram is on
+       screen. Rendering it while hidden gives every box a zero-size bounding
+       rect, so fit() would compute nonsense. */
+    let diagramRendered = false;
+
+    function isNarrow(){ return window.matchMedia("(max-width:700px)").matches; }
+
+    const VIEW_KEY = "atonement-lineage:mobile-view";
+    function prefersGraph(){
+      try { return localStorage.getItem(VIEW_KEY) === "graph"; } catch(_){ return false; }
+    }
+
+    function renderDiagram(){
+      if(diagramRendered) return Promise.resolve();
+      if(!contentDoc) return Promise.resolve();
+      diagramRendered = true;
+
+      document.querySelector(".mermaid").textContent = buildMermaidSource(contentDoc);
+      return mermaid.run()
+        .then(()=>{
+          const svg = canvas.querySelector("svg");
+          if(!svg) return;
+          const vb = svg.viewBox && svg.viewBox.baseVal;
+          natW = (vb && vb.width) ? vb.width : svg.getBoundingClientRect().width;
+          natH = (vb && vb.height) ? vb.height : svg.getBoundingClientRect().height;
+          svg.removeAttribute("style");
+          svg.style.width = natW+"px"; svg.style.height = natH+"px"; svg.style.maxWidth="none";
+          requestAnimationFrame(fit);
+        })
+        .catch(err => { diagramRendered = false; throw err; });
+    }
+
+    // The class goes on before rendering, so the graph has real dimensions to
+    // be measured and fitted against.
+    function setMobileView(view){
+      try { localStorage.setItem(VIEW_KEY, view); } catch(_){}
+      if(view === "graph"){
+        document.body.classList.add("force-graph");
+        window.scrollTo(0, 0);
+        renderDiagram().then(()=>{ requestAnimationFrame(fit); });
+      } else {
+        document.body.classList.remove("force-graph");
+      }
+    }
+
+    document.getElementById("toGraph").addEventListener("click", ()=> setMobileView("graph"));
+    document.getElementById("toList").addEventListener("click", ()=> setMobileView("list"));
+
+    // Rotating to landscape (or resizing past the breakpoint on a tablet) puts
+    // the diagram on screen even if it was never built. Catch that.
+    window.addEventListener("resize", ()=>{
+      if(!isNarrow() && !diagramRendered && contentDoc){
+        renderDiagram().catch(err => console.error(err));
+      }
+    });
 
     // Arriving at /map/#anselm — from a node page, a bookmark, or a shared
     // link — should land on that card rather than the bare diagram.
