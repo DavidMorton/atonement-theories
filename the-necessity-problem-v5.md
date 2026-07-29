@@ -324,9 +324,43 @@ Two consequences.
 
 ---
 
-## The root objection
+## Conclusion: where do we go from here
 
-Stripped to one paragraph:
+It would be reckless to end this essay without providing an alternative. Dismantling penal substitution yet leaving the ground bare arguably damages more than the doctrine does, mostly because of who tends to be standing there.
+
+Many people I know and love have abandoned their faith because of this doctrine. Not marginally, and not mainly among the careless — it survives untroubled in anyone who holds it at arm's length. It becomes unbearable precisely to the person who takes it seriously enough to feel it: who follows the transfer of guilt to its conclusion and asks what kind of Father requires the blood of his Son before he can look at his children without anger. That person is told to look at Jesus and see the Father, but when they do, they find someone unexpected standing behind Jesus — a hidden God with a prior demand, whose disposition toward them had to be purchased before it could be enjoyed. They came for comfort and healing and were handed a creditor. And they are, more often than not, the most morally serious people in the room. In contrast, the doctrine costs least to those who examine it least.
+
+Many have loved God through this doctrine and been brought to Christ by it, and nothing here is aimed at them. But the wreckage is real, and it falls hardest on the tender, the scrupulous, and the ones who came in already wounded.
+
+### What stands in its place
+
+Athanasius already has a complete account, and it needs one repair. The divine dilemma of *De Incarnatione* 6–7 — where God's truthfulness is said to bind him to the sentence of death — is the single place he lodges a necessity in God, and it is the seed everything in this document has been tracing. Prune it, and take instead his own better line: death is what follows when a creature turns from the source of its life, as cold follows the removal of heat. Not a sentence imposed from outside. What absence is.
+
+Then the shape of the gospel changes. The problem was never that God's books wouldn't balance. The problem was that we were dying. Sin is not first a debt but a self-inflicted wound — a turning away from the One who holds us in being, and the unravelling that follows from it is the corruption that leads to death. Nothing needed to be paid, because payment was never what the situation called for. What it called for was rescue.
+
+And God himself came down. The Word through whom everything was made took on the very nature that was coming apart, carried it into death, and death could not hold him — life of that kind cannot be contained by it. He did not persuade the Father to relent, because there was nothing to relent from. He did not absorb a penalty, because no penalty was hanging over us waiting to fall. He went down into the grave and broke it open from the inside, and the nature he carried through it is the nature you are wearing right now.
+
+So what you are offered is not a verdict but a life. Not being counted righteous while remaining exactly what you were, but being actually healed: the corruption reversed, the image restored, the dying thing made alive. Torrance's name for this is the vicarious humanity of Christ — he assumed what we are in order to make us what he is. It is not a lighter gospel than the one it replaces. It is a heavier one, because it proposes to change you rather than your paperwork.
+
+### The God at the end of it
+
+Everything argued here about the doctrine of God turns, at the last, into good news.
+
+Pure act means there is nothing in God waiting to be switched on. No stored demand. No reserve of wrath held in check pending a trigger. Nothing latent in him that had to be discharged before he could turn his face toward you. Simplicity means his justice is not a second thing standing behind his love and negotiating terms with it; there is no committee in God, no attribute that has to be satisfied before another is free to act. Immutability means he has not changed toward you and cannot — no variation, no shadow of turning. No God behind God.
+
+He is not a creditor who was satisfied. He is not a judge who was talked round. He is the One who has been giving himself away from before the foundation of the world, Father to Son and Son to Father, and everything that exists is the overflow of it. Creation was not required of him. The incarnation was not extracted from him. The cross was not the price of his affection — it was his affection, arriving where we were, going as far down as we had fallen and further, until there was no place left for a person to be lost and not found.
+
+There is no retribution in him. There is no hidden face. There is nothing behind Jesus but more of the same: the same light, further in. All the way to the core.
+
+Glory to the Father, who never needed the books to balance; to the Son, who came the whole way down; and to the Holy Spirit, who is making us alive — one God, of whose love there has never been, and never will be, any sign of turning. Amen.
+
+---
+
+## Appendix
+
+---
+
+### The root objection, stated briefly
 
 Penal substitution requires a necessity simultaneously strong enough to make the cross unavoidable and weak enough to leave God's acceptance of a substitute gracious. No location satisfies both. Outside God the constraint insults his sovereignty; inside him it introduces a potency into pure act, and it drags the transaction inside the Trinity, where a payment between co-equals is either meaningless or subordinating. The tradition responds by adjusting the necessity's *modality* — outward for the nature's sake, inward for sovereignty's sake — until it arrives in the divine essence, then subdivides it, then declares it a mystery, with the silence falling precisely on the slot that cannot be specified without exposing the problem. But the modality was never the problem. In every location the constraint's *object* is creaturely: it has nothing to bear on until man sins.
 
@@ -334,7 +368,7 @@ And the conclusion is not that the retribution was hidden in the wrong place. Re
 
 ---
 
-## Romans 3:25–26
+### On Romans 3:25–26
 
 One passage is the strongest prima facie evidence against all of this. **Romans 3:25–26** presents Christ as set forth to demonstrate God's righteousness, so that he might be just and the justifier of the one who has faith in Jesus. This is read, reasonably, as establishing that something about God's own justice required the cross.
 
@@ -345,35 +379,3 @@ First, the passage establishes a *display* of righteousness — a demonstration,
 Second, "just and the justifier" states a conjunction, not a mechanism. It says God is both. It does not say what makes both possible, and it does not say that the second required the penal suffering of a substitute to make room for it. Reading the mechanism in is the interpretive tradition's contribution, not the sentence's.
 
 The related crux is *hilastērion* — whether it denotes propitiation of divine wrath or expiation of sin's defilement — and that dispute cannot be settled from this direction. It is the point where a text-first conversation about the same question will actually turn.
-
----
-
-## Conclusion: where do we go from here
-
-Something has to stand in the place this argument clears. Dismantling penal substitution and leaving the ground bare does more damage than the doctrine does, because of who tends to be standing there.
-
-It should be said plainly that this doctrine has wrecked faith. Not marginally, and not mainly among the careless — it survives untroubled in anyone who holds it at arm's length. It becomes unbearable precisely to the person who takes it seriously enough to feel it: who follows the transfer of guilt to its conclusion and asks what kind of Father requires the blood of his Son before he can look at his children without anger. That person is told to look at Jesus and see the Father, and then finds someone else standing behind Jesus — a hidden God with a prior demand, whose disposition toward them had to be purchased before it could be enjoyed. They came for comfort and healing and were handed a creditor. And they are, very often, the most morally serious people in the room. The doctrine costs least to those who examine it least.
-
-Many have loved God through this doctrine and been brought to Christ by it, and nothing here is aimed at them. But the wreckage is real, and it falls hardest on the tender, the scrupulous, and the ones who arrived already wounded.
-
-### What stands in its place
-
-Athanasius already has a complete account, and it needs one repair. The divine dilemma of *De Incarnatione* 6–7 — where God's truthfulness is said to bind him to the sentence of death — is the single place he lodges a necessity in God, and it is the seed everything in this document has been tracing. Prune it, and take instead his own better line: death is what follows when a creature turns from the source of its life, as cold follows the removal of heat. Not a sentence imposed from outside. What absence is.
-
-Then the shape of the gospel changes. The problem was never that God's books wouldn't balance. The problem was that we were dying and could not stop. Sin is not first a debt but a wound — a turning away from the One who holds us in being, and the unravelling that follows from it. Nothing needed to be paid, because payment was never what the situation called for. What it called for was rescue.
-
-And God came himself. The Word through whom everything was made took on the very nature that was coming apart, carried it into death, and death could not hold him — life of that kind cannot be contained by it. He did not persuade the Father to relent, because there was nothing to relent from. He did not absorb a penalty, because no penalty was hanging over us waiting to fall. He went down into the grave and broke it open from the inside, and the nature he carried through it is the nature you are wearing right now.
-
-So what you are offered is not a verdict but a life. Not being counted righteous while remaining exactly what you were, but being actually healed: the corruption reversed, the image restored, the dying thing made alive. Torrance's name for this is the vicarious humanity of Christ — he assumed what we are in order to make us what he is. It is not a lighter gospel than the one it replaces. It is a heavier one, because it proposes to change you rather than your paperwork.
-
-### The God at the end of it
-
-Everything argued here about the doctrine of God turns, at the last, into good news.
-
-Pure act means there is nothing in God waiting to be switched on. No stored demand. No reserve of wrath held in check pending a trigger. Nothing latent in him that had to be discharged before he could turn his face toward you. Simplicity means his justice is not a second thing standing behind his love and negotiating terms with it; there is no committee in God, no attribute that has to be satisfied before another is free to act. Immutability means he has not changed toward you and cannot — no variation, no shadow of turning.
-
-He is not a creditor who was satisfied. He is not a judge who was talked round. He is the One who has been giving himself away from before the foundation of the world, Father to Son and Son to Father, and everything that exists is the overflow of it. Creation was not required of him. The incarnation was not extracted from him. The cross was not the price of his affection — it was his affection, arriving where we were, going as far down as we had fallen and further, until there was no place left where a person could be lost and not be found.
-
-There is no retribution in him. There is no hidden face. There is nothing behind Jesus but more of the same: the same light, further in.
-
-Glory to the Father, who never needed persuading; to the Son, who came the whole way down; and to the Holy Spirit, who is making us alive — one God, of whose love there has never been, and never will be, any sign of turning. Amen.
