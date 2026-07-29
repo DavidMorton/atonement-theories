@@ -323,6 +323,14 @@ a:hover { color: var(--link-hover); text-decoration-color: currentColor; }
   }
 }
 
+@media (max-width: 800px) {
+  div.toc {
+    border: none;
+    padding: 0;
+    margin:0;
+  }
+}
+
 /* --- node pages --------------------------------------------------------- */
 
 .node-body .sec { margin: 0 0 30px; }
