@@ -71,13 +71,15 @@ Column order is derivational, not chronological. Origen predates Athanasius by a
 |---|---|---|---|---|
 | **currency** | · no exchange | **whole souls** | **debt / honour** | **sin / penalty** |
 | **desert** | · absent | **man, as property** | **man, as guilty** | man |
-| **guilt–penalty coupling** | · n/a | · n/a | **loosened** | **re-welded by imputation** |
+| **guilt–penalty coupling** | · n/a | · n/a | **loosened** | **re-welded by currency conversion** |
 | **proportion** | · n/a | · no measure | **infinite merit** | **full wrath** |
 | **necessity** | *God's truthfulness* | **the adversary's rights** | **God's honour** | **God's justice** |
 | **discharge** | · n/a | **automatic** | automatic | automatic |
 | **transfer device** | · union, not transfer | **purchase** | ✕ destroyed | **imputation** |
 
 The ransom column is labelled by framework rather than by person. Origen is its clearest early exponent, but the developed doctrine of the adversary's *rights* is later — Gregory of Nyssa states it more sharply — and Origen's own restorative and universalist commitments sit awkwardly with the column's other entries. The column marks the arrival of the transactional frame, not a settled reading of Origen.
+
+The Calvin transfer-device cell is bold for *moved*, not *invented*. Imputation is Melanchthon’s — *iustificare* read forensically, to be pronounced righteous rather than made so — worked out a generation earlier and in a different controversy. The penal turn conscripts it and reverses its direction: justification needed righteousness to travel from Christ to the sinner, and the penal turn needs guilt to travel the other way first. The same tool runs backwards without modification, which is part of why the slot got filled without anyone remarking that a new one had opened.
 
 **Six of the seven slots start empty.** These aren't features the tradition inherited from scripture and then organised. They are apparatus it built, and each piece can be dated.
 
@@ -167,7 +169,7 @@ The inward migration is an attempt to fix the problem by **changing the modality
 
 Translation, fission, evaporation — all three are operations on modality and location. **None of them touches what the constraint is about.** That is why the search space gets consumed in order rather than resolved: not bad luck, and not incompetence, but a thorough and systematic search of the wrong axis. 
 
-Incidentally, this constant adjustment of the search space is what has given PSA its staying power. The sheer number of variations of the model make it extremely difficult to pin down because of the shape-shifty nature of how they're popularly conflated with each other. An adept defender of PSA almost intuitively knows how to defend by subtly shifting the presuppositions mid-conversation. This leaves the person questioning it sensing something is wrong but not quite knowing what. I want to say, however, that I don't think it's intentional on the part of the defender. They're trying to defend the value of the cross and their defense matches the defenses they've heard when they argued against it. Eventually, one just accepts it as a mystery (as Packer does) and assumes it's the only way it works. I was there myself.
+Incidentally, this constant adjustment of the search space is what has given PSA its staying power. The sheer number of variations of the model make it extremely difficult to pin down because of the shape-shifty nature of how they're popularly conflated with each other. An adept defender of PSA almost intuitively knows how to defend by subtly shifting the presuppositions mid-conversation. This leaves the person questioning it sensing something is wrong but not quite knowing what. I don't think it's intentional on the part of the defender. They're trying to defend the value of the cross and their defense matches the defenses they've heard when they argued against it. Eventually, one just accepts it as a mystery (as Packer does) and assumes it's the only way it works. I was there myself.
 
 ### The squeeze
 
@@ -181,7 +183,7 @@ The net pressure runs inward, because the two objections do not arrive on equal 
 
 That asymmetry is the whole dynamic. It does not mean nobody pushed back. Twisse — prolocutor of the Westminster Assembly — argued in 1632 that God punishes sin by no necessity of nature but in virtue of a decree originating in a free act of his will, and Rutherford followed him in 1649. Thomas Gilbert, an admirer of Owen close enough to be commissioned to write his epitaph, published against Owen's position in 1665. The will-located option was live, orthodox, and held by people nobody could dismiss. It was rejected for a stated reason: the fear that a will-located necessity concedes the Socinian case. The wind blew both ways; the tradition chose its direction.
 
-### The table
+### Table C - The penal spine
 
 The sequence running down it — everything that stays inside the satisfaction framework and keeps relocating the necessity rather than giving it up — is the **penal spine**. Part three deals with the positions that leave.
 
@@ -200,7 +202,7 @@ The sequence running down it — everything that stays inside the satisfaction f
 | **Owen**, 1677 | *none* | Doesn't move the necessity at all; closes the forensic circuit with double imputation grounded in union with Christ. | unchanged | unchanged | trinitarian equality again: a transactional Father–Son distinction |
 | **Packer**, 1973 | **evaporation** | Keeps the necessity but withdraws the mechanism from rational inspection: the model is a disclosure, not a blueprint. | mystery — *asserted, unspecified* | unstated, and the silence is telling | intelligibility itself |
 
-Read the two location columns against each other. The first is in constant motion for fifteen hundred years. The second never changes.
+Read the two location columns (**Necessity sits in** and **Object of the constaint**) against each other. The first is in constant motion for fifteen hundred years. The second never changes.
 
 Four cells leave something behind that the next move has to deal with. Anselm's honour is waivable, so it fails to necessitate at all — and man's sin has acquired a lever. Calvin never says whether justice-must-punish is essential or willed, and that ambiguity is load-bearing: it is precisely what Socinus forces into the open. Owen's 1655 freedom over *mode* severs the guilt-penalty coupling that made the justice retributive in the first place, and accepting a substitute in order to restore the sinner quietly converts retribution into restoration. Turretin's disposition, necessarily present but only contingently exercised, is exactly the potency the move was meant to avoid; the split labels the problem instead of dissolving it.
 
@@ -226,15 +228,17 @@ One more regularity: **the necessity slot only goes slack when something else is
 
 ### Wall one — the doctrine of God
 
-Push the necessity inward to protect God's sovereignty and you eventually reach his essence. But retributive justice is existentially dependent on guilt: take away guilt and it has nothing to do. So before the fall, this supposedly essential attribute has no object. An essential attribute with nothing to act on is an unrealised capacity — a potency — in a being who is supposed to be pure act. And when the creature sins and the capacity switches on, that is a change in God.
+> If punishing sin is something God must do by his very nature, then before anyone had sinned there was something in him with nothing to do — a capacity idling, waiting for a creature to switch it on, in a God who is supposed to have no idling parts.
 
-**The standard reply.** A classical theist will answer immediately: God's mercy has no object before creation either. Neither does his creative power, nor his knowledge of contingents. The tradition handles this with *extrinsic denomination* — the change is in the creature, not in God; God's attributes terminate in creatures without any real relation in God. On that account Turretin's *habitus/actus* split isn't an improvisation but standard machinery applied to a standard case, and the objection proves far too much: run it against vindicatory justice and you run it against every divine attribute that relates to creation at all.
+Push the necessity inward to protect God's sovereignty and you eventually reach his essence. But retributive justice is existentially dependent on guilt: take away guilt and it has nothing to do. So before the fall, this supposedly essential attribute has no object. An essential attribute with nothing on which to act is an unrealised capacity — a potency — in a being who is supposed to be pure act. And when the creature sins and the capacity switches on, that is a change in God.
 
-The reply is a good one, and the objection has to be sharpened to survive it. Two independent disanalogies do the work; either is sufficient.
+**The standard reply.** A classical theist might respond: God's mercy has no object before creation either. Neither does his creative power, nor his knowledge of contingents. The tradition handles this with *extrinsic denomination* — the change is in the creature, not in God; God's attributes terminate in creatures without any real relation in God. On that account Turretin's *habitus/actus* split isn't an improvisation but standard machinery applied to a standard case, and the objection proves far too much: run it against vindicatory justice and you run it against every divine attribute that relates to creation at all.
+
+The theist's reply is a good one, and the objection has to be sharpened to survive it. Two independent disanalogies do the work; either is sufficient.
 
 **Disanalogy one: the direction of determination.** Creation runs one way. God acts; the creature exists in consequence. No creaturely state is the proximate cause of anything in God, and no creaturely state *compels* a divine response — nobody claims God must be merciful to this sinner rather than that one.
 
-Retributive necessity runs the other way. Its whole content is that God *cannot* leave sin unpunished. The creature acts, independently of the divine act in the relevant sense, and God is now compelled to respond. That makes a creaturely state the sufficient condition for a divine action God is not free to withhold. Extrinsic denomination cannot absorb this, because the objection is no longer that God has an unexercised capacity — it is that the creature holds a lever. Mercy without an object is a capacity awaiting a fitting occasion. Vindicatory justice without an object is a demand awaiting a trigger, and the trigger is in the creature's hand.
+Retributive necessity runs the other way. Its whole content is that God *cannot* leave sin unpunished. The creature acts, independently of the divine act in the relevant sense, and God is now *compelled* to respond. That makes a creaturely state the sufficient condition for a divine action God is not free to withhold. Extrinsic denomination cannot absorb this, because the objection is no longer that God has an unexercised capacity — *it is that the creature holds a lever*. Mercy without an object is a capacity awaiting a fitting occasion. Vindicatory justice without an object is a demand awaiting a trigger, and the trigger is in the creature's hand.
 
 **Disanalogy two: contrastive dependence.** Mercy and goodness are intelligible without creatures. The intra-trinitarian life gives goodness an eternal object; nothing about the concept requires a deficient recipient.
 
@@ -255,6 +259,8 @@ The second horn is not an imputation. The supralapsarian line that God ordained 
 And if the fall is decreed and the decree serves the display of an essential attribute, then God is the author of the condition that binds him, which makes the constraint self-imposed and therefore not a necessity at all — Socinus's mercy horn returns intact. Human responsibility for the fall also becomes difficult to state in any robust sense. This is a fork rather than a knockout: a defender can retreat to a merely permissive decree, or to middle knowledge, and the argument has to be fought on that ground instead. But both branches cost something, and the branch that best protects free will is the one that least supports the necessity.
 
 ### Wall two — the doctrine of the Trinity
+
+> Once the debt is owed to God himself, the only parties left who can settle it are the persons of the Trinity — and between persons who share one essence, one will, and everything else, nothing can actually change hands.
 
 This one follows from the same move and is less often noticed. Once the obligation is *internal* to God, the only parties left to transact are the divine persons. Hence the pre-temporal pact, hence eternal suretyship, hence Christ standing before the Father. But a transaction between co-equals is either vacuous — nothing can really change hands between persons who share one essence — or it is subordinating, because a genuine payment requires one party to gain what the other gives up.
 
