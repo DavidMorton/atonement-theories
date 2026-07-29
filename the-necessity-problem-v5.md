@@ -8,7 +8,7 @@
 
 Penal substitutionary atonement (PSA) requires **a constraint on God that did not exist before the fall** — a necessity God acquires when the creature sins. Before there is guilt, nothing obliges God to punish. After there is guilt, he cannot do otherwise. In the God of classical theism that is a foreign object, incompatible with pure act, simplicity, and immutability.
 
-And it has nowhere to sit. Housed outside God, it insults his sovereignty: something that is not God now binds God. Housed inside him, it damages his nature: an attribute that is essential yet has no object until a creature sins is an unrealised capacity in a being who is supposed to have none. Every available location offends one side or the other, and the pressure is not symmetrical. Sovereignty objections arrive immediately and always push inward; objections from the doctrine of God bite only once the constraint is already deep inside, which means they arrive late and against a position already adopted. So the constraint migrates, and it migrates one way.
+And it has nowhere to sit. Housed outside God, it insults his sovereignty: something that is not God now binds God. Housed inside him, it damages his nature: an attribute that is essential yet has no object until a creature sins is an unrealised capacity in a being who is supposed to have none. Every available location offends one side or the other, and the pressure is not symmetrical. Sovereignty objections arrive immediately and always push inward; objections from the doctrine of God bite only once the constraint is already deep inside, which means they arrive late and against a position already adopted. Over time this constraint grows ever smaller until, in 1973, it just goes **poof** (more on that later). So the constraint migrates, and it migrates one way.
 
 Seventeen centuries of that migration end in failure, for a reason that can be stated precisely: every move operates on the *modality* of the constraint — whether the "must" is absolute or hypothetical, whether it sits in the will or the essence — while leaving its *object* untouched. In every location the object is creaturely. The defect was always in the object.
 
@@ -174,6 +174,7 @@ Incidentally, this constant adjustment of the search space is what has given PSA
 Underneath the necessity row, as the tradition understood it, runs a single trade-off:
 
 > The further **out** the constraint sits, the safer God's nature is — and the more it looks like an insult to his sovereignty.
+> 
 > The further **in** it sits, the more sovereign God looks — and the more the constraint damages his nature.
 
 The net pressure runs inward, because the two objections do not arrive on equal terms. *Nothing outside God may bind God* is available from the beginning and applies to every external location. Simplicity, immutability and pure act only bite once the constraint is already inside the divine nature, which means they arrive after the inward move has been made and must be answered from a position already occupied.
