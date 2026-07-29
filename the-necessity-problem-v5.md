@@ -121,11 +121,11 @@ The starting material is a *deontic* (what *ought* to happen) fact about the cre
 
 What PSA needs, and what satisfaction theory needed before it, is an *alethic* (what *must* happen) fact about God: **God cannot leave sin unpunished**. Without that, the cross is optional.
 
-That last word carries an assumption that holds only inside the satisfaction frame: that the cross's rationale is *exhausted* by the discharge of a debt. Grant it, and removing the necessity leaves the cross nothing to do, which makes the whole apparatus of wrath, substitution and imputation decorative rather than structural. Refuse it, as the ontological accounts do, and the cross is not optional at all, because the penalty was never what made it necessary. The alethic fact is not what makes the cross matter. It's what makes it matter *penally*. 
+That last word carries an assumption that holds only inside the satisfaction frame: that the cross is only valuable in that it discharges a debt. If that view is held, then removing the necessity leaves the cross nothing to do, which makes the whole apparatus of wrath, substitution and imputation decorative rather than structural. Refuse it, as the ontological accounts do, and the cross is not optional at all, because the penalty was never what made it necessary. The alethic fact is not what makes the cross matter. It's what makes it matter *penally*. 
 
 Getting from the deontic fact to the alethic one is the entire problem: a claim about what a creature deserves has to become a claim about what God is unable to do. Make that conversion and you've placed a modal constraint on God whose object — guilt — didn't exist until the creature produced it.
 
-What the tradition does from there is take the "must" and adjust *which kind it is* and *where it is housed*. What it never does is ask whether the conversion should have ever been made.
+What the tradition does from there is take the "must" and adjust *which kind it is* and *where it is housed*. What it never does is ask whether the conversion should have ever been made in the first place.
 
 ### Table B — under pressure
 
