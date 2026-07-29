@@ -278,22 +278,88 @@ a:hover { color: var(--link-hover); text-decoration-color: currentColor; }
 }
 .prose pre code { background: none; border: 0; padding: 0; font-size: inherit; }
 
-/* Tables carry a lot of the long essay's weight; they scroll on small screens
-   rather than squashing the prose column. */
+/* --- tables --------------------------------------------------------------
+   Tables carry a lot of the long essay's weight and several are far wider
+   than the prose column, so each one scrolls inside its own box (the
+   .table-wrapper div added by build.py) rather than pushing the whole page
+   sideways.
+
+   The wrapper scrolls sideways at every width, and the first column stays
+   pinned so you never lose track of which row you're reading. Tables keep
+   their natural height — nothing scrolls vertically inside the box.
+
+   No sticky header row, deliberately. A sticky cell positions against its
+   nearest *scrolling ancestor*, and per the overflow spec, when one axis is
+   `auto`/`scroll` and the other is `visible`, the visible one computes to
+   `auto`. So the moment overflow-x is set, the wrapper is a scroll container
+   on both axes and a sticky `th` can only ever pin to the wrapper — never to
+   the page. Since the wrapper has natural height it never scrolls
+   vertically, so a sticky header would have nothing to travel against.
+   Horizontal scrolling and a page-relative sticky header are mutually
+   exclusive; we chose horizontal scrolling.
+
+   Note also that `border-collapse: collapse` hands borders to the table
+   rather than to the cells, so a sticky column's right-hand border stays
+   behind and scrolls away. `separate` keeps each border on its own cell,
+   where it travels with it.
+--------------------------------------------------------------------------- */
+
+.table-wrapper {
+  max-width: 100%;
+  margin: 0 0 24px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;   /* don't chain to the page at the edges */
+  scrollbar-width: thin;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
 .prose table {
-  width: 100%; border-collapse: collapse; margin: 0 0 24px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 0 24px;
   font-family: var(--sans); font-size: 14.5px; line-height: 1.45;
 }
-.prose thead th {
+.table-wrapper table { margin: 0; }
+
+.prose th {
   text-align: left; background: var(--bg-raised); color: var(--accent);
   font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase;
   padding: 11px 13px; border-bottom: 1px solid var(--line);
 }
-.prose td { padding: 11px 13px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
-.prose tbody tr:hover { background: rgba(255, 255, 255, 0.02); }
+.prose td {
+  padding: 11px 13px; border-bottom: 1px solid var(--line-soft);
+  vertical-align: top; background: var(--bg);
+}
+.prose tbody tr:hover td { background: #131418; }
+
+/* Give columns room to breathe rather than cramming them into the prose
+   column. If the total exceeds the available width the wrapper scrolls, which
+   is the intended behaviour — a readable column you scroll to beats a narrow
+   one you squint at. */
+.table-wrapper td, .table-wrapper th { min-width: 160px; }
+
+/* Sticky first column, so the row label stays put while you scroll sideways.
+   The background has to be opaque or the cells passing underneath show
+   through; the shadow lifts it above them. */
+.table-wrapper tbody td:first-child,
+.table-wrapper tbody th:first-child,
+.table-wrapper thead th:first-child {
+  position: sticky; left: 0;
+  min-width: 145px;
+  border-right: 1px solid var(--line);
+  box-shadow: 3px 0 6px -2px rgba(0, 0, 0, 0.45);
+}
+.table-wrapper tbody td:first-child,
+.table-wrapper tbody th:first-child { z-index: 1; }
+.table-wrapper thead th:first-child { z-index: 2; }
+
 @media (max-width: 700px) {
-  .prose table { display: block; overflow-x: auto; white-space: nowrap; }
-  .prose td, .prose th { white-space: normal; min-width: 150px; }
+  .table-wrapper td, .table-wrapper th { min-width: 150px; }
+  .table-wrapper tbody td:first-child,
+  .table-wrapper tbody th:first-child,
+  .table-wrapper thead th:first-child { min-width: 125px; }
 }
 
 .prose .footnote {
@@ -334,12 +400,6 @@ a:hover { color: var(--link-hover); text-decoration-color: currentColor; }
     position: fixed; top: 90px; left: max(20px, calc(50vw - 590px));
     width: 250px; max-height: calc(100vh - 130px); overflow-y: auto; margin: 0; text-align: left;
   }
-}
-
-.table-wrapper {
-  width: 100%;
-  max-width:800px;
-  overflow-x: scroll;
 }
 
 @media (max-width: 800px) {
