@@ -12,9 +12,9 @@ And it has nowhere to sit. Housed outside God, it insults his sovereignty: somet
 
 Seventeen centuries of that migration end in failure, for a reason that can be stated precisely: every move operates on the *modality* of the constraint — whether the "must" is absolute or hypothetical, whether it sits in the will or the essence — while leaving its *object* untouched. In every location the object is creaturely. The defect was always in the object.
 
-What the moves accomplish instead is distribution. Retributive justice gets taken apart and its pieces lodged in separate places, so that no single point in the system ever displays the whole contradiction at once. Hence the tables below: the pieces have to be laid side by side before the contradiction is visible.
+The history of PSA is one of distribution and redistribution. Retributive justice gets disassembled and its pieces lodged in separate places, so that no single point in the system ever displays the whole contradiction at once. 
 
-Part one dates the apparatus. Part two follows the necessity alone, because that thread carries everything else. Part three reads the departures. Part four asks the further question — whether there was ever anything to house.
+In this essay, the history of an embattled but influential doctrine is explored. Part one dates the apparatus. Part two follows the necessity alone, because that thread carries everything else. Part three reads the departures. Part four asks the further question — whether there was ever anything to house.
 
 ---
 
@@ -32,30 +32,30 @@ Part one dates the apparatus. Part two follows the necessity alone, because that
 
 **Pure act** (*actus purus*). God has no unrealised potential — nothing in him is waiting to happen, nothing in him can be switched on later. It travels with **divine simplicity** (God is not assembled out of parts; his attributes are not components but identical with what he is) and **immutability** (God does not change). Hold these three together and you have the wall the tradition eventually runs into.
 
+---
+
+## Part one — the apparatus
+
 ### The conversion that starts it
 
 The move that generates the problem passes so smoothly it usually goes unremarked.
 
-The starting material is a deontic fact about the creature: **sin deserves punishment**. Nobody in this argument disputes it; desert is the one slot that never moves in seventeen centuries. Part four asks what follows from desert, not whether desert is real.
+The starting material is a deontic fact about the creature: **sin deserves punishment**. Nobody disputes it; desert is the one slot that never moves in seventeen centuries. 
 
-What PSA needs, and what satisfaction theory needed before it, is an alethic fact about God: **God cannot leave sin unpunished**. Without that, the cross is optional.
+What PSA needs, and what satisfaction theory needed before it, is an *alethic* fact about God: **God cannot leave sin unpunished**. Without that, the cross is optional.
 
-That last word carries an assumption that holds only inside the satisfaction frame: that the cross's rationale is *exhausted* by the discharge of a debt. Grant it, and removing the necessity leaves the cross nothing to do, which makes the whole apparatus of wrath, substitution and imputation decorative rather than structural. Refuse it — as the ontological accounts do, on which God enters death to destroy it and heal the nature he has assumed — and the cross is not optional at all, because the penalty was never what made it necessary. The alethic fact is not what makes the cross matter. It is what makes it matter *penally*, and that is all that is at stake here.
+That last word carries an assumption that holds only inside the satisfaction frame: that the cross's rationale is *exhausted* by the discharge of a debt. Grant it, and removing the necessity leaves the cross nothing to do, which makes the whole apparatus of wrath, substitution and imputation decorative rather than structural. Refuse it — as the ontological accounts do, on which God enters death to destroy it and heal the nature he has assumed — and the cross is not optional at all, because the penalty was never what made it necessary. The alethic fact is not what makes the cross matter. It is what makes it matter *penally*, and that is the subject of the rest of this essay.
 
-Getting from the first fact to the second is the entire problem: a claim about what a creature deserves has to become a claim about what God is unable to do. Make that conversion and you have placed a modal constraint on God whose object — guilt — did not exist until the creature produced it.
+Getting from the deontic fact to the alethic one is the entire problem: a claim about what a creature deserves has to become a claim about what God is unable to do. Make that conversion and you have placed a modal constraint on God whose object — guilt — did not exist until the creature produced it.
 
-What the tradition does from there is adjust *which kind* of "must" is involved and *where it is housed*. What it never does is ask whether the conversion should have been made.
-
----
-
-## Part one — the apparatus
+What the tradition does from there is take the "must" and adjust *which kind is involved* and *where it is housed*. What it never does is ask whether the conversion should have ever been made.
 
 ### Retributive justice isn't one thing
 
 To claim that a system takes retributive justice apart and hides the pieces, you have to say what the pieces are. Minimally, retribution needs five things:
 
 1. **Desert** — guilt attaches to a particular person and merits a penalty.
-2. **The guilt–penalty tie** — the penalty must land on the one who deserves it. This is what makes it *retribution* rather than just harm.
+2. **The guilt–penalty coupling** — the penalty must land on the one who deserves it. This is what makes it *retribution* rather than just harm.
 3. **Proportion** — the penalty is matched to the offence. Too little and it's a hand-slap; too much and it's cruelty.
 4. **Necessity** — it genuinely must be exacted. Something makes it unavoidable.
 5. **Discharge** — once paid, the matter is closed.
@@ -85,7 +85,7 @@ Column order is derivational, not chronological. Origen predates Athanasius by a
 |---|---|---|---|---|
 | **currency** | · no exchange | **whole souls** | **debt / honour** | **sin / penalty** |
 | **desert** | · absent | **man, as property** | **man, as guilty** | man |
-| **guilt–penalty tie** | · n/a | · n/a | **loosened** | **re-welded by imputation** |
+| **guilt–penalty coupling** | · n/a | · n/a | **loosened** | **re-welded by imputation** |
 | **proportion** | · n/a | · no measure | **infinite merit** | **full wrath** |
 | **necessity** | *God's truthfulness* | **the adversary's rights** | **God's honour** | **God's justice** |
 | **discharge** | · n/a | **automatic** | automatic | automatic |
@@ -97,15 +97,15 @@ The ransom column is labelled by framework rather than by person. Origen is its 
 
 ### Three inventions, and the penal one comes last
 
-*Stage one — the transaction (patristic ransom).* Exchange, a liable party, a transfer device, automatic discharge. But both specifically *retributive* slots stay empty: no guilt–penalty tie, no proportion. Ransom is a transaction without retribution.
+*Stage one — the transaction (patristic ransom).* Exchange, a liable party, a transfer device, automatic discharge. But both specifically *retributive* slots stay empty: no guilt–penalty coupling, no proportion. Ransom is a transaction without retribution.
 
 *Stage two — the two-party deontic frame (Anselm).* Anselm removes the third party. There is no longer anyone outside God holding a claim; the transaction is between God and man alone. And the currency becomes explicitly deontic — honour and debt, properties the parties *have* rather than states they are *in*. This is the precedent PSA is built on.
 
-Retribution proper still hasn't arrived, and by the criterion set out above it can't have: the guilt–penalty tie is what makes retribution retribution rather than harm, and Anselm loosens it. He has to. Satisfaction, for him, must be *surplus* — something the giver does not already owe, since rendering what is owed discharges a duty and generates nothing extra. Christ, being sinless, owes no death. That is what makes his death available as satisfaction, and why it cannot also be the penalty: a penalty is owed, and what is owed cannot satisfy.
+Retribution proper still hasn't arrived, and by the criterion set out above it can't have: the guilt–penalty coupling is what makes retribution retribution rather than harm, and Anselm loosens it. He has to. Satisfaction, for him, must be *surplus* — something the giver does not already owe, since rendering what is owed discharges a duty and generates nothing extra. Christ, being sinless, owes no death. That is what makes his death available as satisfaction, and why it cannot also be the penalty: a penalty is owed, and what is owed cannot satisfy.
 
-Which means the shared word hides opposite mechanisms. Anselm's satisfaction is what makes the penalty unnecessary, offered *instead of* punishment. PSA's satisfaction *is* the punishment, exacted in full and redirected onto a substitute. One averts, the other administers. The tie follows: PSA must move guilt onto Christ before the penalty can justly land, and Anselm must not, since a guilty Christ would owe death and a debt owed cannot be surplus. Imputation completes the one mechanism and wrecks the other. Punishment survives in Anselm only as the disjunct not taken — *aut poena aut satisfactio* — the fate of those outside the satisfaction.
+Which means the shared word hides opposite mechanisms. Anselm's satisfaction is what makes the penalty unnecessary, offered *instead of* punishment. PSA's satisfaction *is* the punishment, exacted in full and redirected onto a substitute. One averts, the other administers. The coupling follows: PSA must move guilt onto Christ before the penalty can justly land, and Anselm must not, since a guilty Christ would owe death and a debt owed cannot be surplus. Imputation completes the one mechanism and wrecks the other. Punishment survives in Anselm only as the disjunct not taken — *aut poena aut satisfactio* — the fate of those outside the satisfaction.
 
-*Stage three — the penal turn (Calvin).* Calvin's move is usually described as swapping honour for justice, which undersells it. He **converts the currency from a gift into a penalty** — and the moment he does, the guilt–penalty tie has to be re-welded, because a penalty *does* have to land on someone, and it is now landing on the wrong person.
+*Stage three — the penal turn (Calvin).* Calvin's move is usually described as swapping honour for justice, which undersells it. He **converts the currency from a gift into a penalty** — and the moment he does, the guilt–penalty coupling has to be re-welded, because a penalty *does* have to land on someone, and it is now landing on the wrong person.
 
 **Which is why imputation exists.** Anselm doesn't fail to supply a transfer device; he breaks one. Moving the creditor from Satan to God voids the purchase model, since you can't buy something back from its own owner. But he doesn't *need* a replacement, because satisfaction is offered up rather than put on anyone, and the slot sits empty for 450 years without embarrassment. Calvin can't leave it empty: a penalty borne by a substitute requires a mechanism by which guilt gets onto the substitute and righteousness onto the sinner. The transfer device isn't a late invention that happened to arrive with Calvin. It is the entailment of the penal turn.
 
@@ -129,7 +129,7 @@ He was heterodox on a great deal else, and it doesn't matter. The objection is c
 |---|---|---|---|---|---|---|---|---|
 | **currency** | ✕ | sin / penalty | sin / penalty | sin / penalty | sin / penalty | sin / penalty | sin / penalty | sin / penalty |
 | **desert** | — | man | man | man | man | man | man | man |
-| **guilt–penalty tie** | ✕ | imputed | **representative headship** | rep. headship | **suretyship** | **union** | **licensed transfer** | **mystery** |
+| **guilt–penalty coupling** | ✕ | imputed | **representative headship** | rep. headship | **suretyship** | **union** | **licensed transfer** | **mystery** |
 | **proportion** | — | **quantified** | quantified | quantified | **parity left open** | parity left open | **fixed by fiat** | **mystery** |
 | **necessity** | ✕ | **God's free decree** | **the pact** | **the divine essence** | **essence / mode** | essence / mode | **habitus / actus** | **mystery** |
 | **discharge** | ✕ | automatic | automatic | automatic | ✕ dropped | dropped | dropped | dropped |
@@ -199,7 +199,7 @@ The sequence running down it — everything that stays inside the satisfaction f
 
 Read the two location columns against each other. The first is in constant motion for fifteen hundred years. The second never changes.
 
-Four cells leave something behind that the next move has to deal with. Anselm's honour is waivable, so it fails to necessitate at all — and man's sin has acquired a lever. Calvin never says whether justice-must-punish is essential or willed, and that ambiguity is load-bearing: it is precisely what Socinus forces into the open. Owen's 1655 freedom over *mode* severs the guilt-to-penalty tie that made the justice retributive in the first place, and accepting a substitute in order to restore the sinner quietly converts retribution into restoration. Turretin's disposition, necessarily present but only contingently exercised, is exactly the potency the move was meant to avoid; the split labels the problem instead of dissolving it.
+Four cells leave something behind that the next move has to deal with. Anselm's honour is waivable, so it fails to necessitate at all — and man's sin has acquired a lever. Calvin never says whether justice-must-punish is essential or willed, and that ambiguity is load-bearing: it is precisely what Socinus forces into the open. Owen's 1655 freedom over *mode* severs the guilt-penalty coupling that made the justice retributive in the first place, and accepting a substitute in order to restore the sinner quietly converts retribution into restoration. Turretin's disposition, necessarily present but only contingently exercised, is exactly the potency the move was meant to avoid; the split labels the problem instead of dissolving it.
 
 ### The three regimes
 
