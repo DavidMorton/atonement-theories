@@ -207,11 +207,11 @@ Four cells leave something behind that the next move has to deal with. Anselm's 
 
 The regime column names what *kind* of operation is being performed, and the phases turn out to be strictly ordered.
 
-**Translation** — the constraint is moved from one container to another. The adversary's rights, then God's honour, then his justice, then his will, then a covenant, then his essence.
+**Translation** — the constraint is moved from one container to another. The adversary's rights, then God's honour, then justice, then his will, then a covenant, then his essence.
 
-**Fission** — once the constraint reaches the divine essence there is nowhere further in to go, so the motion changes kind. The container itself starts splitting. Owen divides necessity into fact and mode; Turretin divides the attribute into disposition and exercise.
+**Fission** — once the constraint reaches the divine essence there is nowhere further in to go, so the motion changes kind. The container itself starts splitting. Owen divides necessity into fact (as attributes) and mode (as will); Turretin takes the fact owen just split out and subdivides it into disposition and exercise. There are more containers, but each one is smaller.
 
-**Evaporation** — when division stops helping, the locus is emptied. Packer keeps the claim that satisfaction was necessary and declines to say what makes it so.
+**Evaporation** — when division stops helping, the locus is emptied. Packer keeps the claim that satisfaction was necessary and declines to say what makes it so. The asymptote hovers ever increasingly toward zero.
 
 Reading down the column: two origins, five translations, two fissions, one evaporation. No fission happens before translation is exhausted; no translation happens after fission begins. That is not what a tradition wandering around looks like. It is what a search space being consumed in order looks like.
 
