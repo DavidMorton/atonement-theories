@@ -23,9 +23,9 @@ In this essay, the history of an embattled but influential doctrine is explored.
 Before we begin, you have the right to know who I am, and how this essay was created.
 
 ### On Motivation
-I have been a Christian in American evangelical spaces for over 40 years now. The gospel that was presented to me in my youth and young adulthood was always in the frame of penal substitution, and the logic of it never seemed intuitively solid. Nevertheless, I ignored my intuition for years due to the complexity of the problem. Many have rejected PSA on the basis that it feels wrong somehow. The typical complaint is that they "can't believe in a God who damns his creatures to hell". While I can resonate with the emotional reaction, the counterargument is hard to argue against: who are you to question God? 
+I have been a Christian in American evangelical spaces for over 40 years now. The gospel that was presented to me in my youth and young adulthood was always in the frame of penal substitution, and my intuition told me that something wasn't quite right in it. Nevertheless, I ignored my intuition for years due to the complexity of the problem. Many have rejected PSA on the basis that it just *feels wrong*. The typical complaint is that they "can't believe in a God who damns his creatures to hell". While I can resonate with the emotional reaction, the counterargument is hard to argue against: who are you to question God? 
 
-Maybe it's a quirk of my personality, but that simply wasn't enough for me. I just lacked the necessary time and tools to perform a full systematic approach of the problem (which, as it turns out, is quite complex indeed). Eventually, my struggle with this doctrine had created a crisis of faith for me and I began to consider myself to be a church-attending agnostic. 
+Maybe it's a quirk of my personality, but that simply wasn't enough for me. Over time, the vibrancy of my faith started to fade, and eventually my struggle with the doctrine had created in me a crisis of faith and I began to consider myself to be a church-attending agnostic. 
 
 This document is my systematic attempt to recover my faith.
 
@@ -35,7 +35,13 @@ This document is my systematic attempt to recover my faith.
 The actual design began with mapping out the various views, pinned to major streams or major documents in the history of theology, and the relationships between them. You can explore the map [here](https://davidmorton.github.io/atonement-theories/). After creating the map, I worked to understand each node's contribution - the thing it was trying to fix, and the new problems it created - and I added my notes to each. Finally, after having built the map and having entered my notes, I pointed Claude towards the map and asked it to identify patterns. What it identified is the subject of this essay. 
 
 ### On Assistance
-The text in this document is largely AI generated and the research was AI assisted. **This does not mean it is not my own work.** My brain was involved throughout the process, not only in understanding the various positions, but also in questioning the AI assistant itself where I felt it was unclear or inaccurate. I used Anthropic's Claude Opus 4.8 for this research almost exclusively, and set the reasoning to high. I researched every claim in the document as best as I could, using primary sources when possible. While I've done my best to identify and rectify any inaccuracies, it's possible that there are some remaining. The fault for that lies squarely on my shoulders. Nevertheless, my belief in the premise is strong - the history of PSA is the history of a never-recognized bug introduced into a system, and how that bug impacts the supporting structures around it.
+The text in this document is is a combination of AI-generated text and manual edits. Much of the research was AI assisted. I, like you, am a finite being with a limited amount of time to devote to theological study, so I used the best tools at my disposal to help me get a comprehensive-enough grasp on the topic to be able to speak intelligently about it. 
+
+**This does not mean it is not my own work.** My brain was involved throughout the process, not only in understanding the various positions, but also in questioning the AI assistant itself where I felt it was unclear or inaccurate. I used Anthropic's Claude Opus 4.8 for this research almost exclusively, and set the reasoning to high. The model just below Opus (Sonnet) was too error-prone and introduced too many confident (but wrong) assertions and speculations for my purposes. 
+
+I researched every claim in the document as best as I could, using primary sources when possible. While I've done my best to identify and rectify any inaccuracies, it's almost certain that there are some remaining. The fault for that lies squarely on my shoulders. Nevertheless, I believe the general premise to be strong - the history of PSA is the history of a never-recognized bug introduced into a system, and how that bug impacts the supporting structures around it.
+
+What follows is that story.
 
 *David Morton, July 2026*
 
