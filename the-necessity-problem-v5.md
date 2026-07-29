@@ -32,6 +32,8 @@ This document is my systematic attempt to recover my faith.
 ### On Method 
 **Full disclosure: I am an amateur theologian.** I have no official seminary training, and I don't have any masters of divinity on my resume. I came to this material as an interested amateur, and worked through it self-taught, from primary texts in translation and the secondary literature around them. My training is in software and systems design, and I haven't tried to disguise that this document is the result systems analysis pointed at theology. 
 
+![](./family-tree-image.png)
+
 The actual design began with mapping out the various views, pinned to major streams or major documents in the history of theology, and the relationships between them. You can explore the map [here](https://davidmorton.github.io/atonement-theories/). After creating the map, I worked to understand each node's contribution - the thing it was trying to fix, and the new problems it created - and I added my notes to each. Finally, after having built the map and having entered my notes, I pointed Claude towards the map and asked it to identify patterns. What it identified is the subject of this essay. 
 
 ### On Assistance
