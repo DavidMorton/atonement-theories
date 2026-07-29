@@ -84,7 +84,7 @@ If you know any classical theology you've had the reply ready for a page or two 
 
 That reply is strong enough that the objection has to be sharpened. Two things sharpen it, and either one is enough on its own.
 
-**One: which way the causing runs.** With creation, God acts and the creature exists as a result. Nothing a creature does *compels* anything in God. Nobody claims God must be merciful to this sinner rather than that one — mercy is a capacity awaiting a fitting occasion.
+**One: which way the causing runs.** With creation, God acts and the creature exists as a result. Nothing a creature does *compels* anything in God. Nobody claims God *must* be merciful to this sinner rather than that one — mercy is a capacity awaiting a fitting occasion.
 
 Retributive necessity runs the other way, and that's its whole content: God *cannot* let sin go. A creature acts, and God is now required to respond in a way he isn't free to withhold. That's not an unexercised capacity. It's a demand with a trigger, and the trigger is in our hand. The objection was never that God has idle equipment. It's that we have a lever on him.
 
