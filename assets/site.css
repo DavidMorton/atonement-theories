@@ -27,8 +27,20 @@
   --wrap: 1080px;
   --measure: 42rem;
 
+  /* Height of the sticky header, and how far below the top of the viewport an
+     anchor target should come to rest. Keep --anchor-offset comfortably below
+     the scrollspy threshold in _templates/page.html (96px) — a heading that
+     lands *past* that line would highlight the previous section instead. */
+  --head-h: 58px;
+  --anchor-offset: 84px;
+
   color-scheme: dark;
 }
+
+/* Jumping to #some-heading scrolls it to y=0, which is underneath the sticky
+   header. scroll-margin-top reserves that space so the target lands below it.
+   Applied to anything addressable — headings, footnotes, footnote backrefs. */
+[id] { scroll-margin-top: var(--anchor-offset); }
 
 * { box-sizing: border-box; }
 

@@ -63,7 +63,14 @@
 
     // Clears the sticky site header, so a heading becomes current as it
     // reaches the top of the readable area rather than the top of the window.
-    var OFFSET = 96;
+    //
+    // Read from --anchor-offset (site.css) plus a little slack, so clicking a
+    // contents link lands the heading just *above* this line and immediately
+    // marks it active. Hard-coding a second number here is how these two
+    // silently drift apart.
+    var cssOffset = parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--anchor-offset'), 10);
+    var OFFSET = (isNaN(cssOffset) ? 84 : cssOffset) + 12;
     var panel = document.querySelector('.toc');
     var current = null;
     var ticking = false;
