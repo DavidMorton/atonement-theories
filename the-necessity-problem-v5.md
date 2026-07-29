@@ -36,20 +36,6 @@ In this essay, the history of an embattled but influential doctrine is explored.
 
 ## Part one — the apparatus
 
-### The conversion that starts it
-
-The move that generates the problem passes so smoothly it usually goes unremarked.
-
-The starting material is a deontic fact about the creature: **sin deserves punishment**. Nobody disputes it; desert is the one slot that never moves in seventeen centuries. 
-
-What PSA needs, and what satisfaction theory needed before it, is an *alethic* fact about God: **God cannot leave sin unpunished**. Without that, the cross is optional.
-
-That last word carries an assumption that holds only inside the satisfaction frame: that the cross's rationale is *exhausted* by the discharge of a debt. Grant it, and removing the necessity leaves the cross nothing to do, which makes the whole apparatus of wrath, substitution and imputation decorative rather than structural. Refuse it — as the ontological accounts do, on which God enters death to destroy it and heal the nature he has assumed — and the cross is not optional at all, because the penalty was never what made it necessary. The alethic fact is not what makes the cross matter. It is what makes it matter *penally*, and that is the subject of the rest of this essay.
-
-Getting from the deontic fact to the alethic one is the entire problem: a claim about what a creature deserves has to become a claim about what God is unable to do. Make that conversion and you have placed a modal constraint on God whose object — guilt — did not exist until the creature produced it.
-
-What the tradition does from there is take the "must" and adjust *which kind is involved* and *where it is housed*. What it never does is ask whether the conversion should have ever been made.
-
 ### Retributive justice isn't one thing
 
 To claim that a system takes retributive justice apart and hides the pieces, you have to say what the pieces are. Minimally, retribution needs five things:
@@ -123,6 +109,24 @@ Stated as a disjunction, the first blade becomes the dilemma that governs everyt
 
 He was heterodox on a great deal else, and it doesn't matter. The objection is clean, and every subsequent move in the penal tradition is a response to it.
 
+---
+
+## Part two — the necessity
+
+### The conversion that starts it
+
+The move that generates the problem passes so smoothly it usually goes unremarked.
+
+The starting material is a *deontic* (what *ought* to happen) fact about the creature: **sin deserves punishment**. Nobody disputes it; desert is the one slot that never moves in seventeen centuries. 
+
+What PSA needs, and what satisfaction theory needed before it, is an *alethic* (what *must* happen) fact about God: **God cannot leave sin unpunished**. Without that, the cross is optional.
+
+That last word carries an assumption that holds only inside the satisfaction frame: that the cross's rationale is *exhausted* by the discharge of a debt. Grant it, and removing the necessity leaves the cross nothing to do, which makes the whole apparatus of wrath, substitution and imputation decorative rather than structural. Refuse it, as the ontological accounts do, and the cross is not optional at all, because the penalty was never what made it necessary. The alethic fact is not what makes the cross matter. It's what makes it matter *penally*. 
+
+Getting from the deontic fact to the alethic one is the entire problem: a claim about what a creature deserves has to become a claim about what God is unable to do. Make that conversion and you've placed a modal constraint on God whose object — guilt — didn't exist until the creature produced it.
+
+What the tradition does from there is take the "must" and adjust *which kind it is* and *where it is housed*. What it never does is ask whether the conversion should have ever been made.
+
 ### Table B — under pressure
 
 | | Socinus (1578) | Owen 1647 | Federal, c.1648 | Owen 1653 | Owen 1655 | Owen 1677 | Turretin 1679–85 | Packer 1973 |
@@ -137,15 +141,11 @@ He was heterodox on a great deal else, and it doesn't matter. The objection is c
 
 Two rows are worth staring at.
 
-**Desert never moves.** From the ransom fathers to Packer, seventeen centuries, the liability sits on man and nobody ever proposes otherwise. Everything else gets relocated, subdivided, or abandoned. That is the first anchor.
+**Desert never moves.** From the ransom fathers to Packer, seventeen centuries, the liability sits on man and nobody ever proposes otherwise. Everything else gets relocated, subdivided, or abandoned. That's the first anchor.
 
 **The transfer-device row rhymes at both ends.** Athanasius has union. Owen in 1677 lands on union. When double imputation gets accused of being a legal fiction — a verdict that declares you righteous without making you righteous — Owen's answer is to ground it in union with Christ. The terminal repair of the forensic system is borrowed from the ontological system it was built to replace.
 
----
-
-## Part two — the necessity
-
-Of the seven rows, one drives all the others.
+Of the seven rows, one drives all the others: *necessity*.
 
 ### The question it answers
 
@@ -165,7 +165,9 @@ There are two independent things you can ask about any necessity in this system.
 
 The inward migration is an attempt to fix the problem by **changing the modality** — pushing from hypothetical toward absolute, so that nothing outside God binds God. It is well motivated and pursued with real rigour. But Owen 1653's necessity is fully absolute and still acquired, because vindicatory justice has nothing to be about until there is guilt to punish. Turretin's *habitus* is fully essential and still acquired, for the same reason.
 
-Translation, fission, evaporation — all three are operations on modality and location. **None of them touches what the constraint is about.** That is why the search space gets consumed in order rather than resolved: not bad luck, and not incompetence, but a thorough and systematic search of the wrong axis.
+Translation, fission, evaporation — all three are operations on modality and location. **None of them touches what the constraint is about.** That is why the search space gets consumed in order rather than resolved: not bad luck, and not incompetence, but a thorough and systematic search of the wrong axis. 
+
+Incidentally, this constant adjustment of the search space is what has given PSA its staying power. The sheer number of variations of the model make it extremely difficult to pin down because of the shape-shifty nature of how they're popularly conflated with each other. An adept defender of PSA almost intuitively knows how to defend by subtly shifting the presuppositions mid-conversation. This leaves the person questioning it sensing something is wrong but not quite knowing what. I want to say, however, that I don't think it's intentional on the part of the defender. They're trying to defend the value of the cross and their defense matches the defenses they've heard when they argued against it. Eventually, one just accepts it as a mystery (as Packer does) and assumes it's the only way it works. I was there myself.
 
 ### The squeeze
 
