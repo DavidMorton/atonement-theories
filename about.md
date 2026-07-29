@@ -41,7 +41,7 @@ It's my current view that penal substition, which has its root back in ransom th
 To apply an analogy from software development, there's a bug in the system, and each new adjustment attempts to address the bug by building upon Anselm's satisfaction theory instead of questioning the base assumption that God is deterministically bound to punish sin in order to provide justice, and is instead providing a workaround instead of addressing the root cause. 
 
 ## So what is the root cause?
-The root cause is man's attempt to force potentiality into God. 
+The root cause of the issue is that PSA, in all it's forms, *requires* God to act in response to sin and guilt.
 
 What do I mean by that? In classical theism, God must be *actual* and *immutable*. He cannot change, and none of his attributes can be extrinsically dependent. One theme you'll see throughout many of these viewpoints (especially developments within the penal substitution line) is an attempt to hide contingent determinism inside our concept of God. Contingent determinism is the idea that God *must* respond to an action instigated by man, and that this is a *necessity* on the side of God. This is where I disagree. To claim that God is required to perform an action restricts the free will of God.
 
