@@ -336,6 +336,12 @@ a:hover { color: var(--link-hover); text-decoration-color: currentColor; }
   }
 }
 
+.table-wrapper {
+  width: 100%;
+  max-width:800px;
+  overflow-x: scroll;
+}
+
 @media (max-width: 800px) {
   div.toc {
     border: none;

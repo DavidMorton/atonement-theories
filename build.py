@@ -34,10 +34,24 @@ from pathlib import Path
 try:
     import yaml
     import markdown
+    from markdown.extensions import Extension
+    from xml.etree import ElementTree as etree
     from jinja2 import Environment, FileSystemLoader, select_autoescape
     from markupsafe import Markup
 except ImportError as exc:  # pragma: no cover - startup guard
     sys.exit(f"missing dependency: {exc}\n\n    pip install -r requirements.txt\n")
+
+def wrap_tables_serializer(element):
+    # 1. Use the original markdown serializer to convert the tree to a string
+    html_string = markdown.serializers.to_html_string(element)
+    
+    # 2. Instantly wrap the tables using C-optimized regex
+    return re.sub(
+        r'(<table>.*?</table>)', 
+        r'<div class="table-wrapper">\1</div>', 
+        html_string, 
+        flags=re.DOTALL
+    )
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "_site"
@@ -54,7 +68,7 @@ MD_EXTENSIONS = [
     "toc",
     "sane_lists",
     "smarty",       # curly quotes and em-dashes, matching the prose style
-    "admonition",
+    "admonition"
 ]
 MD_CONFIG = {
     "toc": {"permalink": "¶", "permalink_class": "anchor", "toc_depth": "2-3"},
@@ -214,6 +228,7 @@ def build() -> None:
 
     # -- prose pages -------------------------------------------------------
     md = markdown.Markdown(extensions=MD_EXTENSIONS, extension_configs=MD_CONFIG)
+    md.serializer = wrap_tables_serializer
     for path in sorted(CONTENT.glob("*.md")):
         meta, body = split_front_matter(path.read_text(encoding="utf-8"))
         md.reset()
