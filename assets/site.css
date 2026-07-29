@@ -328,7 +328,8 @@ a:hover { color: var(--link-hover); text-decoration-color: currentColor; }
 @media (min-width: 800px) {
   /* Float the contents into the left margin on wide screens rather than
      making the reader scroll past it. */
-  body.has-toc .prose-wrap { max-width: 1000px; padding-left: 300px; position: relative; text-align:justify; }
+  body.has-toc .prose-wrap { max-width: 1000px; padding-left: 300px; position: relative; }
+  body div.prose p { text-align: justify; }
   body.has-toc .toc {
     position: fixed; top: 90px; left: max(20px, calc(50vw - 590px));
     width: 250px; max-height: calc(100vh - 130px); overflow-y: auto; margin: 0; text-align: left;

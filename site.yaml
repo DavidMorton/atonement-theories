@@ -7,7 +7,7 @@
 # it to `nav` and/or `cards` below if you want it linked from the chrome.
 # ---------------------------------------------------------------------------
 title: The Necessity Problem
-tagline: Tracing penal substitution's central difficulty through seventeen centuries
+tagline: There is no hidden God behind Jesus
 description: >-
   An essay and interactive family tree tracing how penal substitutionary
   atonement keeps relocating its central difficulty — the claim that God
@@ -17,8 +17,8 @@ email: theology@davidmorton.io
 
 # Where the site lives. `baseurl` is the subpath GitHub Pages serves from —
 # empty string if you move to a custom domain at the root.
-url: https://davidmorton.github.io
-baseurl: /atonement-theories
+url: https://thenecessityproblem.org
+baseurl: ''
 
 # Social / SEO defaults
 image: assets/img/family-tree.png
