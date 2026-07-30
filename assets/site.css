@@ -116,6 +116,37 @@ a:hover { color: var(--link-hover); text-decoration-color: currentColor; }
   .site-nav a.here { border-bottom-color: var(--line-soft); }
 }
 
+/* --- app shell -----------------------------------------------------------
+   The map and the drift chart aren't documents; they're single screens that
+   fill the viewport and never scroll the page. They share the header with
+   everything else, so the difference lives here rather than in each page:
+   the shell is a flex column, the header is a fixed-height first row, and
+   <main> takes what's left.
+
+   min-height:0 on the main is load-bearing. A flex item's default minimum is
+   its content size, so without it a tall child (the note, the card list)
+   pushes the shell past the viewport instead of scrolling inside it.
+
+   dvh, not vh: on mobile Safari `100vh` is the height of the viewport with
+   the browser chrome *retracted*, so a 100vh shell is taller than what you
+   can actually see until you scroll. dvh tracks the visible height. The vh
+   line stays first as the fallback for anything that doesn't know dvh.
+--------------------------------------------------------------------------- */
+
+body.app-shell {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+body.app-shell > .site-head { flex: 0 0 auto; position: relative; }
+body.app-shell > main { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+
+/* The nav drops out of flow on mobile and overlays the screen below it, so it
+   needs to sit above the diagram, the zoom controls and the floating buttons. */
+body.app-shell .site-head { z-index: 60; }
+
 /* --- hero --------------------------------------------------------------- */
 
 .hero { padding: 72px 0 48px; border-bottom: 1px solid var(--line-soft); }

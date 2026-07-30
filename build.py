@@ -60,6 +60,8 @@ NODES = ROOT / "nodes"
 TEMPLATES = ROOT / "_templates"
 ASSETS = ROOT / "assets"
 MAP_SRC = ROOT / "map" / "index.html"
+DRIFT_YAML = ROOT / "drift.yaml"
+DRIFT_SRC = ROOT / "drift" / "index.html"
 
 # Markdown extensions. `footnotes` and `tables` are load-bearing for the long
 # essay; `toc` gives us heading anchors *and* the sidebar contents list.
@@ -181,6 +183,27 @@ def validate_map(doc: dict) -> None:
                 print(f"  warn: edge {edge.get('from')} -> {edge.get('to')}: unknown {side}")
 
 
+def validate_drift(doc: dict) -> None:
+    """Warn about drift.yaml problems. Never fails the build."""
+    for phase in doc.get("phases", []) or []:
+        pid = phase.get("id", "?")
+        if not phase.get("steps"):
+            print(f"  ! drift: phase '{pid}' has no steps")
+        prev_area = None
+        for step in phase.get("steps", []) or []:
+            sid = step.get("id", "?")
+            for key in ("head", "note"):
+                if not step.get(key):
+                    print(f"  ! drift: {pid}/{sid} is missing '{key}'")
+            live = step.get("live")
+            if live:
+                area = (live["x1"] - live["x0"]) * (live["y1"] - live["y0"])
+                if prev_area and area > prev_area + 1e-9:
+                    print(f"  ! drift: {pid}/{sid} live region grew; "
+                          f"cuts should only ever halve it")
+                prev_area = area
+
+
 # ---------------------------------------------------------------------------
 # build
 # ---------------------------------------------------------------------------
@@ -223,6 +246,15 @@ def build() -> None:
     write(OUT / "map-data.json", json.dumps(doc, ensure_ascii=False, indent=1))
     print(f"  map-data.json ({len(doc['nodes'])} nodes, "
           f"{len(doc['extra_cards'])} cards, {len(doc.get('edges') or [])} edges)")
+
+    # -- shared chrome -----------------------------------------------------
+    # map/ and drift/ are copied rather than templated, but they still need
+    # the same header as everything else. Render the partial once here and
+    # hand it to them as a token, so there is exactly one copy of the nav.
+    nav_tpl = env.get_template("_nav.html")
+
+    def site_head(here: str) -> str:
+        return nav_tpl.render(here=here)
 
     pages: list[dict] = []
 
@@ -324,9 +356,12 @@ def build() -> None:
 
     # -- the map itself ----------------------------------------------------
     # Copied rather than templated: the file is full of JS with braces that
-    # Jinja would fight over. Two tokens is all it needs.
+    # Jinja would fight over. Three tokens is all it needs.
     map_html = MAP_SRC.read_text(encoding="utf-8")
-    map_html = map_html.replace("%%BASEURL%%", baseurl).replace("%%ORIGIN%%", site["origin"])
+    map_html = (map_html
+                .replace("%%SITEHEAD%%", site_head("/map/"))
+                .replace("%%BASEURL%%", baseurl)
+                .replace("%%ORIGIN%%", site["origin"]))
     write(OUT / "map" / "index.html", map_html)
     map_page = {
         "slug": "map", "url": "/map/", "title": "The atonement family tree",
@@ -336,6 +371,31 @@ def build() -> None:
     }
     pages.append(map_page)
     print("  /map/")
+
+    # -- the drift chart ---------------------------------------------------
+    # Same pattern as the map: content lives in drift.yaml, the page is copied
+    # rather than templated (its JS is full of braces Jinja would fight over),
+    # and the data arrives as JSON it fetches at runtime.
+    if DRIFT_YAML.exists() and DRIFT_SRC.exists():
+        drift = load_yaml(DRIFT_YAML)
+        validate_drift(drift)
+        write(OUT / "drift-data.json", json.dumps(drift, ensure_ascii=False))
+
+        drift_html = DRIFT_SRC.read_text(encoding="utf-8")
+        drift_html = (drift_html
+                      .replace("%%SITEHEAD%%", site_head("/drift/"))
+                      .replace("%%BASEURL%%", baseurl)
+                      .replace("%%ORIGIN%%", site["origin"]))
+        write(OUT / "drift" / "index.html", drift_html)
+
+        pages.append({
+            "slug": "drift", "url": "/drift/",
+            "title": drift.get("title", "The Migration of the Claim"),
+            "description": drift.get("tagline", ""),
+            "updated": date.today().isoformat(), "priority": "0.8",
+            "type": "website", "sitemap": True, "noindex": False,
+        })
+        print("  /drift/")
 
     # -- static assets -----------------------------------------------------
     if ASSETS.exists():

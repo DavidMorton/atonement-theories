@@ -1,0 +1,44 @@
+{# ---------------------------------------------------------------------------
+   The site header. Single source of truth.
+
+   Two consumers, and they need different things:
+
+   * base.html includes it directly, so `page` is in scope and the current
+     item can be marked.
+   * map/index.html and drift/index.html are copied rather than templated
+     (their JS is full of braces Jinja would fight over), so build.py renders
+     this file on its own and substitutes the result for %%SITEHEAD%%. There
+     is no `page` in that render, so `here` is passed in as a plain string.
+
+   Hence the `here` variable rather than reaching for `page.url`: it is the
+   only thing the two callers disagree about.
+
+   Styles live in assets/site.css under `--- header ---`. The toggle script
+   ships with the markup so a page gets working navigation from one include.
+--------------------------------------------------------------------------- #}
+{% set here = here|default(page.url if page is defined else '', true) %}
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="{{ url('/') }}">{{ site.title }}</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="site-nav">
+      {% for item in site.nav %}
+      <a href="{{ url(item.url) }}"{% if here.startswith(item.url) and item.url != '/' %} class="here" aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+<script>
+  // Nav toggle. Small enough that a dependency would cost more than it saves.
+  (function () {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  })();
+</script>

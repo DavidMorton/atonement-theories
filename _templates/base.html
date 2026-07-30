@@ -46,19 +46,7 @@
 
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-head">
-  <div class="wrap head-inner">
-    <a class="brand" href="{{ url('/') }}">{{ site.title }}</a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <nav id="nav" class="site-nav">
-      {% for item in site.nav %}
-      <a href="{{ url(item.url) }}"{% if page.url.startswith(item.url) and item.url != '/' %} class="here" aria-current="page"{% endif %}>{{ item.title }}</a>
-      {% endfor %}
-    </nav>
-  </div>
-</header>
+{% include "_nav.html" %}
 
 <main id="main">
 {% block content %}{% endblock %}
@@ -80,18 +68,6 @@
   </div>
 </footer>
 
-<script>
-  // Nav toggle. Small enough that a dependency would cost more than it saves.
-  (function () {
-    var btn = document.querySelector('.nav-toggle');
-    var nav = document.getElementById('nav');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open));
-    });
-  })();
-</script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

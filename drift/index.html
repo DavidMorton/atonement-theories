@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<!-- The Migration of the Claim — stepped diagram in three acts.
+     Content and geometry live in drift.yaml — edit that, not this file, to
+     change any wording, position, cut, or the number of steps. build.py emits
+     drift-data.json, which this page fetches; this file only knows how to
+     turn that JSON into the field.
+
+     %%BASEURL%% and %%ORIGIN%% are substituted by build.py at build time. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Migration of the Claim · The Necessity Problem</title>
+<meta name="description" content="Every increase in what is claimed over God drives the claim further inward, until it is held by God against God. An interactive diagram in three acts: relocation, fission, mystery." />
+<link rel="canonical" href="%%ORIGIN%%%%BASEURL%%/drift/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Migration of the Claim" />
+<meta property="og:description" content="Watch the constraint on God move: outside him, then inside him, then dividing him, then nowhere at all." />
+<meta property="og:url" content="%%ORIGIN%%%%BASEURL%%/drift/" />
+<meta property="og:image" content="%%ORIGIN%%%%BASEURL%%/assets/img/family-tree.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "The Migration of the Claim",
+  "description": "An interactive diagram in three acts showing how the necessity in penal substitution relocates inward, splits apart once inside God, and is finally placed under mystery.",
+  "url": "%%ORIGIN%%%%BASEURL%%/drift/",
+  "author": { "@type": "Person", "name": "David Morton" },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "The Necessity Problem",
+    "url": "%%ORIGIN%%%%BASEURL%%/"
+  }
+}
+</script>
+<link rel="stylesheet" href="%%BASEURL%%/assets/site.css" />
+<style>
+/* ---------------------------------------------------------------------------
+   Palette, typography and the app shell come from assets/site.css. This page
+   adds only what the diagram itself needs.
+
+   The three data colours below are the page's own, because they mean
+   something rather than merely matching: --live marks territory the claim
+   still holds and the cuts that take it away, --creature marks a constraint
+   that binds the creature, and --accent (inherited) marks the trail. They are
+   tuned to sit on the site's #0b0b0c rather than on the cream field this page
+   used to draw on.
+
+   Layout: the whole page is one screen. The header is a fixed first row, and
+   everything under it divides the remainder — masthead, then the field, which
+   takes whatever is left over, then note and controls. Nothing scrolls except
+   the note, and only when the text is long enough to need it.
+--------------------------------------------------------------------------- */
+
+:root {
+  --plate:    var(--bg-raised);   /* the field */
+  --edge:     var(--line);
+  --on-plate: var(--ink-soft);    /* label ink on the field */
+  --live:     #b23a4c;            /* live territory, cuts, binds God */
+  --creature: #3f8a70;            /* binds the creature */
+  --data: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+
+main {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 18px 22px 16px;
+  gap: 0;
+}
+
+/* -- masthead ------------------------------------------------------------ */
+.eyebrow, #acts, #caption, #legend {
+  font-family: var(--data);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.eyebrow { font-size: 10px; margin: 0 0 12px; text-align: center; }
+
+#acts {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px;
+  font-size: 10px; margin: 0 0 12px;
+}
+#acts .act { color: var(--dim); transition: color .3s ease; white-space: nowrap; }
+#acts .act .num { color: var(--accent); opacity: .5; margin-right: .5em; }
+#acts .act.on { color: var(--ink); }
+#acts .act.on .num { opacity: 1; }
+
+/* Same reasoning as #note below: the heads run to 36 characters and the
+   longest of them takes a second line once the measure gets narrow enough,
+   so the row is held at the taller of the two counts rather than allowed to
+   change height between steps. min-height, not height — reserving the space
+   is the point; clipping a head that somehow overruns is not. */
+h1 {
+  --head-lines: 1;
+  min-height: calc(var(--head-lines) * 1.14em);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(21px, 5.2vw, 30px);
+  line-height: 1.14;
+  letter-spacing: -.02em;
+  margin: 0 0 6px;
+  text-align: center;
+}
+@media (max-width: 560px) { h1 { --head-lines: 2; } }
+#date {
+  font-family: var(--data);
+  font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent); text-align: center; margin: 0 0 10px; min-height: 1.2em;
+}
+
+/* -- the field ------------------------------------------------------------
+   The field is the one part that should absorb whatever space is going, so
+   it's the only flexible row. `height:100%` on the svg plus a `meet` fit
+   means the drawing scales down on a short screen instead of overflowing —
+   and because every label size is in viewBox units, the type scales with it.
+   overflow:visible would defeat that, so the axis labels below the plate are
+   inside the viewBox (which is 92 tall against a 84-tall plate) instead. */
+#fieldwrap { flex: 1 1 auto; min-height: 120px; position: relative; }
+svg#field {
+  display: block; width: 100%; height: 100%;
+  overflow: hidden;
+}
+/* transform-origin is pinned because the collapse transform is written the
+   SVG way — translate to the fold line, scale, translate back — which assumes
+   the origin is the viewBox origin. CSS doesn't: on an SVG element it
+   resolves 50%/50% against the view box, so an unpinned origin conjugates the
+   whole thing by (50, 46) and the flattened field lands about half a viewBox
+   below the line it's supposed to be collapsing onto. */
+#stage {
+  transition: transform 950ms cubic-bezier(.66,.02,.28,1);
+  transform-box: view-box;
+  transform-origin: 0 0;
+}
+#glyph { transition: opacity 420ms ease 780ms; }
+
+.lbl {
+  font-family: var(--data);
+  letter-spacing: .12em; text-transform: uppercase;
+  font-size: 2.4px; text-anchor: middle; dominant-baseline: middle;
+}
+.lbl.small { font-size: 2.1px; }
+.lbl.outline { font-size: 1.9px; fill: var(--accent); }
+.axis {
+  font-family: var(--data);
+  font-size: 2.3px; letter-spacing: .12em; text-transform: uppercase;
+  fill: var(--dim);
+}
+
+#caption { font-size: 9.5px; text-align: center; margin: 8px 0 0; min-height: 1.3em; }
+
+/* -- note -----------------------------------------------------------------
+   Fixed box, deliberately. The notes run from 149 to 340 characters, so a box
+   that sizes to its content changes height on almost every step — and since
+   the field above it takes whatever is left over, the diagram would resize
+   and re-animate every time the prose got a line longer. Pinning the height
+   keeps the field still, which is the part you're actually meant to watch.
+
+   Five lines fits the longest note at the full 640px measure. Narrower
+   viewports wrap the same text onto more lines, so the count goes up rather
+   than letting the box eat the diagram; anything past that scrolls.
+
+   Height is in em, not px, so it tracks the font-size changes in the
+   short-screen queries below without needing to be restated there. */
+#note {
+  --note-lines: 5;
+  flex: 0 0 auto;
+  height: calc(var(--note-lines) * 1.55em);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 12px 0 0;
+}
+@media (max-width: 620px) { #note { --note-lines: 6; } }
+@media (max-width: 460px) { #note { --note-lines: 8; } }
+
+/* -- legend -------------------------------------------------------------- */
+#legend {
+  display: flex; justify-content: center; gap: 18px;
+  font-size: 9px; margin: 10px 0 0; min-height: 1.2em;
+}
+#legend span { display: inline-flex; align-items: center; gap: 6px; }
+#legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+/* -- controls ------------------------------------------------------------ */
+#controls {
+  flex: 0 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; margin: 12px 0 0;
+  border-top: 1px solid var(--line-soft); padding-top: 12px;
+}
+.step-nav {
+  font-family: var(--data); font-size: 10px; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--accent);
+  background: none; border: 1px solid var(--line);
+  border-radius: 8px; padding: 9px 13px; cursor: pointer;
+  transition: background .18s ease, opacity .18s ease; white-space: nowrap;
+}
+.step-nav:hover:not(:disabled) { background: var(--bg-raised); border-color: #3a3d46; }
+.step-nav:disabled { opacity: .22; cursor: default; }
+
+#dots { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; justify-content: center; }
+#dots button {
+  width: 9px; height: 9px; padding: 0; border-radius: 50%;
+  border: 1px solid var(--dim); background: transparent;
+  cursor: pointer; transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+#dots button.done { background: var(--accent); border-color: var(--accent); }
+#dots button.on { background: var(--ink); border-color: var(--ink); transform: scale(1.5); }
+#dots button.gap { margin-left: 14px; }
+
+#err {
+  display: none; font-family: var(--data); font-size: 12px; line-height: 1.6;
+  color: #f87171; text-align: center; padding: 40px 0;
+}
+
+.sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Short screens — phones in landscape, small laptops. The prose is the first
+   thing to give up room, because the diagram is the point of the page. */
+@media (max-height: 720px) {
+  main { padding-top: 10px; }
+  .eyebrow { display: none; }
+  #acts { margin-bottom: 8px; }
+  #note { font-size: 14px; line-height: 1.5; }
+}
+@media (max-height: 560px) {
+  h1 { font-size: 19px; }
+  #date, #caption { display: none; }
+  #note { font-size: 13.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #stage, #glyph, #dots button { transition: none !important; }
+}
+</style>
+</head>
+<body class="app-shell">
+
+%%SITEHEAD%%
+
+<main id="main">
+  <p class="eyebrow" id="eyebrow"></p>
+
+  <nav id="acts" aria-label="Acts"></nav>
+
+  <h1 id="head">…</h1>
+  <p id="date"></p>
+
+  <div id="fieldwrap">
+    <svg id="field" viewBox="0 0 100 92" preserveAspectRatio="xMidYMid meet" role="img" aria-label="">
+      <g id="stage"></g>
+      <g id="over"></g>
+    </svg>
+  </div>
+  <p id="caption"></p>
+
+  <p id="note" aria-live="polite"></p>
+  <div id="legend"></div>
+
+  <div id="controls">
+    <button class="step-nav" id="prev" type="button">← back</button>
+    <div id="dots" role="group" aria-label="Steps"></div>
+    <button class="step-nav" id="next" type="button">next →</button>
+  </div>
+
+  <p id="err">Couldn’t load <code>drift-data.json</code>.</p>
+  <p class="sr" id="srpos" aria-live="polite"></p>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var BASEURL = "%%BASEURL%%";
+
+  /* ---- the plotting field, in viewBox units --------------------------- */
+  var F = { x: 8, y: 8, w: 84, h: 76 };
+  var fx = function (t) { return F.x + t * F.w; };
+  var fy = function (t) { return F.y + t * F.h; };
+
+  var SVGNS = "http://www.w3.org/2000/svg";
+  var reduced = window.matchMedia &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var el = function (id) { return document.getElementById(id); };
+  var stage = el("stage"), over = el("over");
+
+  function mk(name, attrs, text) {
+    var n = document.createElementNS(SVGNS, name);
+    for (var k in attrs) {
+      if (attrs[k] === null || attrs[k] === undefined) continue;
+      n.setAttribute(k, attrs[k]);
+    }
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+  function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+  /* ---- state ---------------------------------------------------------- */
+  var DOC = null, STEPS = [], idx = 0;
+
+  /* ---- flatten phases into one ordered step list ---------------------- */
+  function flatten(doc) {
+    var out = [];
+    (doc.phases || []).forEach(function (phase, pi) {
+      (phase.steps || []).forEach(function (step, si) {
+        out.push({
+          step: step, phase: phase, phaseIndex: pi,
+          first: si === 0,
+          hash: (phase.id || pi) + "-" + (step.id || si)
+        });
+      });
+    });
+    return out;
+  }
+
+  /* ---- chrome --------------------------------------------------------- */
+  function buildActs() {
+    var acts = el("acts");
+    clear(acts);
+    (DOC.phases || []).forEach(function (p, i) {
+      var s = document.createElement("span");
+      s.className = "act";
+      s.dataset.phase = i;
+      s.innerHTML = '<span class="num"></span><span class="nm"></span>';
+      s.querySelector(".num").textContent = p.numeral || "";
+      s.querySelector(".nm").textContent = p.name || p.id || "";
+      acts.appendChild(s);
+    });
+  }
+
+  function buildDots() {
+    var dots = el("dots");
+    clear(dots);
+    STEPS.forEach(function (entry, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", entry.step.head || ("Step " + (i + 1)));
+      if (entry.first && i > 0) b.classList.add("gap");
+      b.addEventListener("click", function () { go(i); });
+      dots.appendChild(b);
+    });
+  }
+
+  /* ---- drawing -------------------------------------------------------- */
+
+  function drawPlate() {
+    stage.appendChild(mk("rect", {
+      x: F.x, y: F.y, width: F.w, height: F.h,
+      fill: "var(--plate)", stroke: "var(--edge)", "stroke-width": .5
+    }));
+  }
+
+  function drawLive(live, bloom) {
+    var x = fx(live.x0), y = fy(live.y0);
+    var w = (live.x1 - live.x0) * F.w, h = (live.y1 - live.y0) * F.h;
+
+    if (!bloom || reduced) {
+      stage.appendChild(mk("rect", {
+        x: x, y: y, width: w, height: h, fill: "var(--live)", opacity: .92
+      }));
+      return;
+    }
+
+    /* The claim arrives at the interior as a single point and then *is* the
+       interior. Rather than cutting from a dot to a filled square, grow the
+       dot until it covers the square: same fact, shown happening. It starts
+       at the radius of the trail dot the previous phase ended on, so the
+       handover is continuous, and it ends at the distance to the furthest
+       corner of the live region, clipped to that region so it reads as the
+       region filling rather than as a blob spilling over the field.
+
+       SMIL rather than a CSS transition on a transform, because a CSS
+       transform on an SVG element is resolved against `transform-box:
+       view-box` with a 50%/50% origin — so `translate(cx, cy) scale(k)` is
+       applied about the centre of the viewBox, not about the circle, and the
+       thing scales itself off the field. Pinning transform-origin would fix
+       that, but animating `r` needs no reference box at all.
+
+       `begin="indefinite"` + beginElement(), not `begin="0s"`: SMIL timing
+       runs on the document timeline, so an animation inserted after load with
+       a begin of zero is already past its end and simply snaps. */
+    var cx = fx(bloom.x), cy = fy(bloom.y);
+    var reach = Math.max(
+      Math.hypot(cx - x, cy - y), Math.hypot(cx - x - w, cy - y),
+      Math.hypot(cx - x, cy - y - h), Math.hypot(cx - x - w, cy - y - h)
+    );
+
+    var clipId = "bloomclip";
+    var clip = mk("clipPath", { id: clipId });
+    clip.appendChild(mk("rect", { x: x, y: y, width: w, height: h }));
+    stage.appendChild(clip);
+
+    var g = mk("g", { "clip-path": "url(#" + clipId + ")" });
+    var dot = mk("circle", {
+      cx: cx, cy: cy, r: 1.5, fill: "var(--live)", opacity: .92
+    });
+    var anim = mk("animate", {
+      attributeName: "r", from: 1.5, to: reach,
+      dur: "900ms", begin: "indefinite", fill: "freeze",
+      calcMode: "spline", keyTimes: "0;1", keySplines: ".4 .02 .2 1"
+    });
+    dot.appendChild(anim);
+    g.appendChild(dot);
+    stage.appendChild(g);
+
+    if (anim.beginElement) {
+      try { anim.beginElement(); }
+      catch (e) { dot.setAttribute("r", reach); }   /* no SMIL: just be there */
+    } else {
+      dot.setAttribute("r", reach);
+    }
+  }
+
+  function drawGuides(phase) {
+    (phase.guides || []).forEach(function (g) {
+      stage.appendChild(mk("line", {
+        x1: fx(g), y1: F.y, x2: fx(g), y2: F.y + F.h,
+        stroke: "var(--dim)", "stroke-width": .3,
+        "stroke-dasharray": "1 1.6", opacity: .5
+      }));
+    });
+  }
+
+  function drawCut(cut) {
+    var a;
+    if (cut.orient === "h") {
+      a = { x1: fx(cut.from), y1: fy(cut.at), x2: fx(cut.to), y2: fy(cut.at) };
+    } else {
+      a = { x1: fx(cut.at), y1: fy(cut.from), x2: fx(cut.at), y2: fy(cut.to) };
+    }
+    a.stroke = "var(--live)";
+    a["stroke-width"] = .55;
+    a["stroke-linecap"] = "square";
+    stage.appendChild(mk("line", a));
+  }
+
+  function drawLabels(step) {
+    (step.labels || []).forEach(function (l) {
+      var t = mk("text", {
+        x: fx(l.x), y: fy(l.y),
+        class: "lbl" + (l.small ? " small" : ""),
+        fill: l.live ? "var(--ink)" : "var(--on-plate)"
+      }, l.text);
+      stage.appendChild(t);
+    });
+  }
+
+  function drawOutline(o) {
+    stage.appendChild(mk("rect", {
+      x: fx(o.rect.x0), y: fy(o.rect.y0),
+      width: (o.rect.x1 - o.rect.x0) * F.w,
+      height: (o.rect.y1 - o.rect.y0) * F.h,
+      fill: "none", stroke: "var(--accent)", "stroke-width": .4,
+      "stroke-dasharray": "1.4 1.2"
+    }));
+    if (o.label && o.label_at) {
+      stage.appendChild(mk("text", {
+        x: fx(o.label_at.x), y: fy(o.label_at.y), class: "lbl outline"
+      }, o.label));
+    }
+  }
+
+  function drawTrail(points) {
+    if (!points || !points.length) return;
+    if (points.length > 1) {
+      stage.appendChild(mk("polyline", {
+        points: points.map(function (p) { return fx(p.x) + "," + fy(p.y); }).join(" "),
+        fill: "none", stroke: "var(--accent)", "stroke-width": .45,
+        "stroke-linejoin": "round", opacity: .85
+      }));
+    }
+    points.forEach(function (p, i) {
+      var col = p.binds === "creature" ? "var(--creature)" : "var(--live)";
+      var last = i === points.length - 1;
+      stage.appendChild(mk("circle", {
+        cx: fx(p.x), cy: fy(p.y), r: last ? 1.5 : 1.1,
+        fill: last ? col : "var(--bg)",
+        stroke: col, "stroke-width": .5
+      }));
+    });
+  }
+
+  /* Axis labels. Four optional keys per phase, each naming one end of one
+     axis: axis_left / axis_right under the field, axis_top / axis_bottom up
+     its left-hand side. Each label is anchored at its own end and set to run
+     back toward the middle, so a long one grows inward across the field
+     rather than off the edge of the viewBox.
+
+     The y pair is rotated a quarter turn anticlockwise, which is why the
+     anchors look inverted: after rotate(-90) a glyph placed to the *left* of
+     the anchor lands *below* it. So "end" runs downward and "start" runs
+     upward, exactly mirroring the x pair. */
+  function drawAxis(phase) {
+    var base = F.y + F.h + 4.6;   // baseline under the field
+    var side = F.x - 3;           // the rotated labels' baseline, left of it
+
+    if (phase.axis_left) {
+      stage.appendChild(mk("text", {
+        x: F.x, y: base, class: "axis", "text-anchor": "start"
+      }, phase.axis_left));
+    }
+    if (phase.axis_right) {
+      stage.appendChild(mk("text", {
+        x: F.x + F.w, y: base, class: "axis", "text-anchor": "end"
+      }, phase.axis_right));
+    }
+    if (phase.axis_top) {
+      stage.appendChild(mk("text", {
+        x: side, y: F.y, class: "axis", "text-anchor": "end",
+        transform: "rotate(-90 " + side + " " + F.y + ")"
+      }, phase.axis_top));
+    }
+    if (phase.axis_bottom) {
+      stage.appendChild(mk("text", {
+        x: side, y: F.y + F.h, class: "axis", "text-anchor": "start",
+        transform: "rotate(-90 " + side + " " + (F.y + F.h) + ")"
+      }, phase.axis_bottom));
+    }
+  }
+
+  function drawCollapse(c) {
+    var y = fy(c.at);
+    over.appendChild(mk("line", {
+      x1: F.x, y1: y, x2: F.x + F.w, y2: y,
+      stroke: "var(--ink)", "stroke-width": .9
+    }));
+    if (c.label) {
+      over.appendChild(mk("text", {
+        x: F.x + F.w, y: y - 2.4, class: "axis",
+        "text-anchor": "end", fill: "var(--ink)"
+      }, c.label));
+    }
+    if (c.glyph && c.glyph_at) {
+      var g = mk("text", {
+        id: "glyph", x: fx(c.glyph_at.x), y: fy(c.glyph_at.y),
+        "text-anchor": "middle", "dominant-baseline": "middle",
+        fill: "var(--accent)",
+        style: "font-family:var(--serif);font-size:34px;opacity:" +
+               (reduced ? 1 : 0) + ";"
+      }, c.glyph);
+      over.appendChild(g);
+      if (!reduced) {
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { g.style.opacity = "1"; });
+        });
+      }
+    }
+  }
+
+  /* ---- render --------------------------------------------------------- */
+  function render() {
+    var entry = STEPS[idx];
+    if (!entry) return;
+    var step = entry.step, phase = entry.phase;
+
+    /* text */
+    el("head").textContent = step.head || "";
+    el("date").textContent = step.date || "";
+    el("note").textContent = step.note || "";
+    el("caption").textContent = phase.caption || "";
+    el("field").setAttribute("aria-label", step.head || "");
+    el("srpos").textContent = "Step " + (idx + 1) + " of " + STEPS.length +
+                              " — " + (phase.name || "") + ": " + (step.head || "");
+
+    /* acts */
+    Array.prototype.forEach.call(el("acts").children, function (node, i) {
+      node.classList.toggle("on", i === entry.phaseIndex);
+    });
+
+    /* dots */
+    Array.prototype.forEach.call(el("dots").children, function (b, i) {
+      b.classList.toggle("done", i <= idx);
+      b.classList.toggle("on", i === idx);
+      b.setAttribute("aria-current", i === idx ? "step" : "false");
+    });
+
+    el("prev").disabled = idx === 0;
+    el("next").disabled = idx === STEPS.length - 1;
+
+    /* legend — only where `binds` is doing work */
+    var legend = el("legend");
+    clear(legend);
+    if (step.points && step.points.length) {
+      [["var(--creature)", "binds the creature"],
+       ["var(--live)", "binds God"]].forEach(function (pair) {
+        var s = document.createElement("span");
+        var i = document.createElement("i");
+        i.style.background = pair[0];
+        s.appendChild(i);
+        s.appendChild(document.createTextNode(pair[1]));
+        legend.appendChild(s);
+      });
+    }
+
+    /* field */
+    clear(stage);
+    clear(over);
+
+    drawPlate();
+    if (step.live) drawLive(step.live, step.bloom);
+    drawGuides(phase);
+
+    /* every cut up to and including this step, within this phase */
+    var steps = phase.steps || [];
+    for (var i = 0; i < steps.length; i++) {
+      if (steps[i].cut) drawCut(steps[i].cut);
+      if (steps[i] === step) break;
+    }
+
+    drawLabels(step);
+    if (step.outline) drawOutline(step.outline);
+    drawTrail(step.points);
+    drawAxis(phase);
+
+    /* collapse — outside the transformed group so it isn't squashed */
+    var cy = fy(step.collapse ? step.collapse.at : 0);
+    var k = step.collapse ? 0.012 : 1;
+    stage.style.transform =
+      "translate(0px, " + cy + "px) scale(1, " + k + ") translate(0px, " + (-cy) + "px)";
+    if (step.collapse) drawCollapse(step.collapse);
+
+    /* hash */
+    var want = "#" + entry.hash;
+    if (location.hash !== want) {
+      history.replaceState(null, "", location.pathname + location.search + want);
+    }
+  }
+
+  function go(n) {
+    idx = Math.max(0, Math.min(STEPS.length - 1, n));
+    render();
+  }
+
+  /* ---- interaction ---------------------------------------------------- */
+  el("prev").addEventListener("click", function () { go(idx - 1); });
+  el("next").addEventListener("click", function () { go(idx + 1); });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === "ArrowLeft") { go(idx - 1); e.preventDefault(); }
+    if (e.key === "ArrowRight") { go(idx + 1); e.preventDefault(); }
+  });
+
+  window.addEventListener("hashchange", function () {
+    var n = fromHash();
+    if (n !== idx) go(n);
+  });
+
+  function fromHash() {
+    var h = (location.hash || "").replace(/^#/, "");
+    if (!h) return 0;
+    for (var i = 0; i < STEPS.length; i++) if (STEPS[i].hash === h) return i;
+    return 0;
+  }
+
+  /* ---- load ----------------------------------------------------------- */
+  fetch(BASEURL + "/drift-data.json")
+    .then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    })
+    .then(function (doc) {
+      DOC = doc;
+      STEPS = flatten(doc);
+      if (!STEPS.length) throw new Error("no steps");
+      document.title = (doc.title || "The Migration of the Claim") +
+                       " · The Necessity Problem";
+      el("eyebrow").textContent = doc.eyebrow || "";
+      buildActs();
+      buildDots();
+      go(fromHash());
+    })
+    .catch(function () {
+      el("err").style.display = "block";
+      el("head").textContent = "";
+      el("field").style.display = "none";
+    });
+})();
+</script>
+</body>
+</html>

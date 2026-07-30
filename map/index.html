@@ -35,12 +35,11 @@
   }
 }
 </script>
+<link rel="stylesheet" href="%%BASEURL%%/assets/site.css" />
 <style>
-  :root { --bg:#0b0b0c; --ink:#e5e7eb; --muted:#9ca3af; color-scheme: light; }
-  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html,body { margin:0; background:var(--bg); color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
-  body { height:100vh; height:100dvh; overflow:hidden; display:flex; flex-direction:column; }
+  /* Palette, typography and the app shell (full-height flex column, shared
+     header) come from assets/site.css. Everything below is the diagram. */
+  * { -webkit-tap-highlight-color:transparent; }
   #hint { flex:0 0 auto; text-align:center; font-size:12.5px; color:var(--muted);
     padding:10px 16px 2px; }
   #legend { flex:0 0 auto; display:flex; flex-wrap:wrap; gap:6px 14px; justify-content:center;
@@ -109,10 +108,8 @@
     padding-top:10px; padding-bottom:10px; background:rgba(59,130,246,0.06); border-radius:0 8px 8px 0; }
   .sec.notes h3 { color:#93c5fd; }
   .sec.notes p { white-space:pre-wrap; font-style:italic; color:#dce3ea; }
-  #title { justify-content: center;
-width: 100vw;
-text-align: center;
-font-size: 20px; }
+  #title { flex:0 0 auto; text-align:center; font-size:20px; font-weight:700;
+    padding:12px 16px 0; }
   #loadErr { display:none; position:fixed; inset:0; background:var(--bg); color:#f87171;
     align-items:center; justify-content:center; text-align:center; padding:30px;
     font-size:15px; line-height:1.5; z-index:100; }
@@ -166,18 +163,6 @@ font-size: 20px; }
   .md th { background:#1b1d23; color:#e5e7eb; }
   .md img { max-width:100%; border-radius:8px; }
 
-  /* ---- site bar -------------------------------------------------------
-     The map used to be the front door. It isn't any more, so it needs a way
-     back out to the rest of the site. */
-  #sitebar { flex:0 0 auto; display:flex; align-items:center; gap:14px;
-    padding:0 14px; min-height:46px; border-bottom:1px solid #212329;
-    background:#0b0b0c; }
-  #sitebar a { color:#9ca3af; text-decoration:none; font-size:13.5px; white-space:nowrap; }
-  #sitebar a:hover { color:#e5e7eb; }
-  #sitebar .home { color:#e5e7eb; font-weight:700; margin-right:auto; font-size:14px; }
-  #sitebar .home:hover { color:#e9d8bf; }
-  #sitebar nav { display:flex; gap:16px; }
-
   /* ---- permalink out of a card ---- */
   #mPermalink { display:inline-block; margin-top:20px; font-size:13.5px;
     color:#93c5fd; text-decoration:none; }
@@ -217,16 +202,14 @@ font-size: 20px; }
   #toList:active { background:#2c2f37; }
 
   @media (max-width:700px){
-    /* Let the page scroll normally — the fixed-height pan/zoom shell only
-       makes sense when there's a diagram in it. */
-    body { height:auto; min-height:100dvh; overflow:visible; }
+    /* The card list scrolls inside <main> rather than scrolling the page, so
+       the header stays put and the shell keeps its full-height layout. */
     #graph, #zoomctl, #legend, #hint { display:none !important; }
     #cardlist { display:block; }
     #aboutBtn { display:none; }
     #title { font-size:19px; padding:14px 14px 0; width:auto; }
 
     /* …unless the reader has asked for the diagram anyway. */
-    body.force-graph { height:100vh; height:100dvh; overflow:hidden; }
     body.force-graph #graph { display:block !important; }
     body.force-graph #zoomctl { display:flex !important; }
     body.force-graph #legend { display:flex !important; }
@@ -237,19 +220,12 @@ font-size: 20px; }
   }
 </style>
 </head>
-<body>
+<body class="app-shell">
   <button id="aboutBtn" onclick="openAbout()" aria-label="How to read this chart" title="How to read this chart">?</button>
 
-  <div id="sitebar">
-    <a class="home" href="%%BASEURL%%/">The Necessity Problem</a>
-    <nav>
-      <a href="%%BASEURL%%/start/">Start here</a>
-      <a href="%%BASEURL%%/necessity-problem/">The essay</a>
-      <a href="%%BASEURL%%/athanasius/">Athanasius</a>
-      <a href="%%BASEURL%%/about/">About</a>
-    </nav>
-  </div>
+%%SITEHEAD%%
 
+  <main id="main">
   <div id="title"></div>
   <div id="hint"></div>
   <div id="legend"></div>
@@ -276,6 +252,7 @@ font-size: 20px; }
       <button id="zreset" aria-label="Reset view">⟲</button>
     </div>
   </div>
+  </main>
 
   <div id="overlay" onclick="maybeClose(event)">
     <div id="modal" role="dialog" aria-modal="true">

@@ -1,0 +1,197 @@
+# ---------------------------------------------------------------------------
+# The Migration of the Claim — content and geometry for /drift/.
+#
+# Coordinates are fractions of the plotting field (0..1). x runs outward ->
+# inward; y runs top -> bottom, so lower y = stronger bind on God.
+#
+# Three phases, each with its own visual logic:
+#   relocation — positions travel through a space; points and a trail
+#   fission    — the space IS God; no points, only cuts and shading
+#   mystery    — the field flattens to a line
+#
+# Axis labels are per-phase and all four are optional. `axis_left` and
+# `axis_right` sit under the field at its two ends; `axis_top` and
+# `axis_bottom` do the same for the y axis, rotated up the left-hand side.
+# Each is anchored at its own end and runs back toward the middle, so a long
+# label grows inward across the field rather than off the edge. Omit any of
+# them and nothing is drawn — phases whose axes don't measure anything (the
+# cuts in `fission` are geometry, not a scale) should leave them out.
+#
+# To add a step: add an entry under the right phase's `steps:`. To change the
+# geometry of a cut, edit its `cut:` and `live:` blocks. Nothing else moves.
+# ---------------------------------------------------------------------------
+title: The Migration of the Claim
+tagline: >-
+  Every increase in what is claimed over God drives the claim further inward,
+  until it is held by God against God.
+eyebrow: an argument, not a survey
+
+phases:
+
+  # =========================================================================
+  - id: relocation
+    numeral: I
+    name: relocation
+    axis_left: outside God
+    axis_right: the will
+    axis_top: binds God absolutely
+    axis_bottom: binds the creature only
+    # faint vertical guides marking the stops
+    guides: [0.18, 0.36, 0.74]
+    steps:
+
+      - id: man
+        head: Outside God entirely
+        date: c. 318 · Athanasius, without decree
+        note: >-
+          Corruption follows sin as a fact about creatures. The necessity is
+          absolute and lands wholly on man. God is under no obligation to meet
+          it — there is no claim here at all.
+        points:
+          - {x: 0.06, y: 0.96, binds: creature}
+
+      - id: satan
+        head: A third party holds it
+        date: 2nd–3rd c. · Ransom
+        note: >-
+          A claimant is inserted between man and God and the claim passes
+          through him. It binds only if the devil can hold a right against God
+          — and he cannot.
+        points:
+          - {x: 0.06, y: 0.96, binds: creature}
+          - {x: 0.26, y: 0.82, binds: god}
+
+      - id: decree
+        head: Inside, by God's own act
+        date: 318 – 1647 · Athanasius · Calvin · Owen
+        note: >-
+          God spoke, decreed, covenanted. The claim now sits inside him — but
+          only because he freely put it there, and what is freely given can be
+          freely released. Calvin says so outright.
+        points:
+          - {x: 0.06, y: 0.96, binds: creature}
+          - {x: 0.26, y: 0.82, binds: god}
+          - {x: 0.48, y: 0.66, binds: god}
+          - {x: 0.56, y: 0.58, binds: god}
+          - {x: 0.63, y: 0.52, binds: god}
+
+      - id: will
+        head: The interior is reached
+        date: the relocation ends
+        note: >-
+          At the will, the claim is inside God's being. There is nowhere
+          further out to go and nowhere further in that isn't a division of
+          him. Travel stops. Cutting begins.
+        points:
+          - {x: 0.06, y: 0.96, binds: creature}
+          - {x: 0.26, y: 0.82, binds: god}
+          - {x: 0.48, y: 0.66, binds: god}
+          - {x: 0.56, y: 0.58, binds: god}
+          - {x: 0.63, y: 0.52, binds: god}
+          - {x: 0.86, y: 0.38, binds: god}
+
+  # =========================================================================
+  - id: fission
+    numeral: II
+    name: fission
+    caption: shaded — what still carries the claim
+    steps:
+
+      - id: undivided
+        head: The interior, undivided
+        date: before the pressure
+        note: >-
+          No distinctions. None have been drawn because none have yet been
+          needed. Every line that follows is drawn under attack, and each one
+          halves what is left to stand on.
+        live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 1.0}
+        # Where the previous phase left the claim. `bloom` grows the point out
+        # to fill the live region instead of cutting to it, so the handover
+        # from travelling to filling is one motion rather than two pictures.
+        bloom: {x: 0.86, y: 0.38}
+
+      - id: father-son
+        head: The Father, or the Son
+        date: 1638–1648 · Dickson · Cocceius · the pactum
+        note: >-
+          The covenant of redemption gives the persons opposed roles in a
+          transaction — one holds the claim, the other stands surety. The
+          distinction is ancient; making it load-bearing for a payment is
+          seventeenth-century. The claim follows the Father, who does the
+          punishing, though justice is an essential attribute and therefore
+          equally the Son's.
+        cut:  {orient: h, at: 0.5, from: 0.0, to: 1.0}
+        live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 0.5}
+        labels:
+          - {text: father, x: 0.5, y: 0.28, live: true}
+          - {text: son,    x: 0.5, y: 0.78}
+
+      - id: will-essence
+        head: Will, or essence
+        date: 1653 · Owen, Dissertation on Divine Justice
+        note: >-
+          Is the claim held by what God decided, or by what God is? Owen
+          crosses in six years. Everything left of the line is now conceded
+          ground — releasable, and therefore useless to the argument.
+        cut:  {orient: v, at: 0.5, from: 0.0, to: 0.5}
+        live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 0.5}
+        labels:
+          - {text: son,     x: 0.5,  y: 0.78}
+          - {text: will,    x: 0.25, y: 0.28}
+          - {text: essence, x: 0.75, y: 0.28, live: true}
+
+      - id: mode-fact
+        head: A mode of acting, or a fact of being
+        date: 1655 · Owen, Vindiciae Evangelicae
+        note: >-
+          Justice as the manner in which God acts can still bend. Justice as a
+          constitutive fact of what he is cannot. The claim keeps its force by
+          moving further in, and the room to stand halves again.
+        cut:  {orient: h, at: 0.25, from: 0.5, to: 1.0}
+        live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 0.25}
+        labels:
+          - {text: son,  x: 0.5,  y: 0.78}
+          - {text: will, x: 0.25, y: 0.28}
+          - {text: mode, x: 0.75, y: 0.40, small: true}
+          - {text: fact, x: 0.75, y: 0.14, small: true, live: true}
+
+      - id: habitus-actus
+        head: Held, or exercised
+        date: 1679 · Turretin, Institutio
+        note: >-
+          Justice possessed as a permanent attribute, its exercise necessary as
+          to substance and free as to degree. Habitus is the defensible cell.
+          Actus is what gets preached. The same substitution as before, four
+          levels down.
+        cut:  {orient: v, at: 0.75, from: 0.0, to: 0.25}
+        live: {x0: 0.75, x1: 1.0, y0: 0.0, y1: 0.25}
+        outline:
+          rect: {x0: 0.5, x1: 0.75, y0: 0.0, y1: 0.25}
+          label: preached
+          label_at: {x: 0.625, y: 0.21}
+        labels:
+          - {text: son,     x: 0.5,   y: 0.78}
+          - {text: will,    x: 0.25,  y: 0.28}
+          - {text: mode,    x: 0.75,  y: 0.40, small: true}
+          - {text: actus,   x: 0.625, y: 0.13, small: true}
+          - {text: habitus, x: 0.875, y: 0.13, small: true, live: true}
+
+  # =========================================================================
+  - id: mystery
+    numeral: III
+    name: mystery
+    steps:
+      - id: packer
+        head: Locus abandoned, bind retained
+        date: 1973 · Packer
+        note: >-
+          That the claim binds is required. Where it is held becomes optional —
+          placed under mystery and left unanswered. The territory goes to zero
+          and the square flattens into the one line the argument actually
+          needs. This is not a new move. It is the limit of every cut before
+          it.
+        collapse:
+          at: 0.13
+          label: the bind, without a ground
+          glyph: '?'
+          glyph_at: {x: 0.5, y: 0.72}

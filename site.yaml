@@ -35,6 +35,8 @@ nav:
   url: /necessity-problem/
 - title: The map
   url: /map/
+- title: The drift
+  url: /drift/
 - title: Athanasius
   url: /athanasius/
 - title: About
@@ -73,6 +75,15 @@ cards:
     concedes to what, what hardens in response to what. Tap any box for the
     problem it faces, the move it makes, and the new problem that move opens.
   image: assets/img/family-tree.png
+
+- title: The drift of the claim
+  url: /drift/
+  kicker: Interactive
+  meta: 10 steps · three phases
+  blurb: >-
+    Watch the constraint on God move. It starts outside him and travels in;
+    once inside, it stops moving and starts dividing him; and at the end the
+    ground drops away and only the claim is left standing.
 
 - title: Reading Athanasius
   url: /athanasius/
