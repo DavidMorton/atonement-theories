@@ -58,12 +58,12 @@ cards:
   featured: true
 
 cards:
-- title: The parable
+- title: The Physician's Word
   url: /parable/
-  kicker: A parable - by AI
+  kicker: The parable
   meta: ~10 min read
   blurb: >-
-    "Claude, turn the story into a wizard's parable!"
+    A parable of the House on the hill and the thing in its foundations
 
 - title: The Necessity Problem
   url: /necessity-problem/
