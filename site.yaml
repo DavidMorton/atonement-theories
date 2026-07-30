@@ -31,6 +31,8 @@ twitter: ''
 nav:
 - title: Start here
   url: /start/
+- title: Parable
+  url: /parable/
 - title: The essay
   url: /necessity-problem/
 - title: The map
@@ -53,6 +55,15 @@ cards:
     The whole argument in plain terms: penal substitution needs God to be
     unable to forgive, that inability is about our guilt, and our guilt did
     not exist until we made it.
+  featured: true
+
+cards:
+- title: The parable
+  url: /parable/
+  kicker: An AI Slop Parable
+  meta: ~10 min read
+  blurb: >-
+    Claude, make this into a wizard's parable!
   featured: true
 
 - title: The Necessity Problem
