@@ -131,12 +131,23 @@ a:hover { color: var(--link-hover); text-decoration-color: currentColor; }
    the browser chrome *retracted*, so a 100vh shell is taller than what you
    can actually see until you scroll. dvh tracks the visible height. The vh
    line stays first as the fallback for anything that doesn't know dvh.
+
+   position:fixed, not just overflow:hidden. `overflow:hidden` on the body
+   alone does not stop iOS Safari scrolling the document — the html element
+   keeps the scroll, so the shell can still be dragged up and rubber-banded
+   even though nothing on it is meant to move. Taking the shell out of flow
+   entirely leaves the document with no content to scroll, and inset:0 pins
+   it to the visual viewport. overscroll-behavior kills the bounce on the one
+   thing inside that *is* scrollable (the note).
 --------------------------------------------------------------------------- */
 
 body.app-shell {
+  position: fixed;
+  inset: 0;
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
+  overscroll-behavior: none;
   display: flex;
   flex-direction: column;
 }
