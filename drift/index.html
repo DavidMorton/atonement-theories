@@ -482,12 +482,18 @@ svg#field {
       }));
     }
     points.forEach(function (p, i) {
-      var col = p.binds === "creature" ? "var(--creature)" : "var(--live)";
+      /* A position that never fixes its modality gets a broken ring in the
+         guide colour, and is the one point that stays open even when it's the
+         one you're standing on — because leaving it open is the position. */
+      var open = p.binds === "unstated";
+      var col = open ? "var(--dim)"
+              : p.binds === "creature" ? "var(--creature)" : "var(--live)";
       var last = i === points.length - 1;
       stage.appendChild(mk("circle", {
         cx: fx(p.x), cy: fy(p.y), r: last ? 1.5 : 1.1,
-        fill: last ? col : "var(--bg)",
-        stroke: col, "stroke-width": .5
+        fill: (last && !open) ? col : "var(--bg)",
+        stroke: col, "stroke-width": .5,
+        "stroke-dasharray": open ? ".9 .7" : null
       }));
     });
   }
@@ -593,13 +599,25 @@ svg#field {
     var legend = el("legend");
     clear(legend);
     if (step.points && step.points.length) {
-      [["var(--creature)", "binds the creature"],
-       ["var(--live)", "binds God"]].forEach(function (pair) {
+      var keys = [
+        { c: "var(--creature)", t: "binds the creature" },
+        { c: "var(--live)",     t: "binds God" }
+      ];
+      /* The open key only appears once there's an open point to explain. */
+      if (step.points.some(function (p) { return p.binds === "unstated"; })) {
+        keys.push({ c: "var(--dim)", t: "never specified", open: true });
+      }
+      keys.forEach(function (key) {
         var s = document.createElement("span");
         var i = document.createElement("i");
-        i.style.background = pair[0];
+        if (key.open) {
+          i.style.background = "transparent";
+          i.style.border = "1px dashed " + key.c;
+        } else {
+          i.style.background = key.c;
+        }
         s.appendChild(i);
-        s.appendChild(document.createTextNode(pair[1]));
+        s.appendChild(document.createTextNode(key.t));
         legend.appendChild(s);
       });
     }
