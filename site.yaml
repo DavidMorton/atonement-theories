@@ -57,7 +57,6 @@ cards:
     not exist until we made it.
   featured: true
 
-cards:
 - title: The Physician's Word
   url: /parable/
   kicker: The parable
