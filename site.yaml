@@ -60,11 +60,10 @@ cards:
 cards:
 - title: The parable
   url: /parable/
-  kicker: An AI Slop Parable
+  kicker: A parable - by AI
   meta: ~10 min read
   blurb: >-
-    Claude, make this into a wizard's parable!
-  featured: true
+    "Claude, turn the story into a wizard's parable!"
 
 - title: The Necessity Problem
   url: /necessity-problem/
