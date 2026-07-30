@@ -33,8 +33,6 @@ nav:
   url: /start/
 - title: The essay
   url: /necessity-problem/
-- title: The parable
-  url: /parable/
 - title: The map
   url: /map/
 - title: Athanasius
@@ -65,13 +63,6 @@ cards:
     The complete argument, with the historical apparatus laid out: how the
     constraint on God migrates from the will to the essence across seventeen
     centuries, and why every move leaves its object untouched.
-
-- title: The Physician's Word
-  url: /parable/
-  kicker: The parable
-  meta: ~10 min read
-  blurb: >-
-    A parable of the House on the hill and the thing in its foundations that explains the problem as a story.
 
 - title: The family tree
   url: /map/
