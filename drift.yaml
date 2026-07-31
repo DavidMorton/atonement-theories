@@ -66,7 +66,7 @@ phases:
         head: God's own word binds him
         date: 4th c. · Athanasius, the divine dilemma
         note: >-
-          God utters a sentance, and truthfulness cannot let the sentence of death fall. The claim is inside God from the very start — but only because a free utterance put it there, so it remains free. Costing nothing yet. This is the seed of everything after it.
+          God says they will die, and truthfulness cannot let the sentence of death fall. God is bound to his promise — but only because his free utterance put it there. Costing little - This is the seed of everything after it.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
