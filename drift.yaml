@@ -141,8 +141,8 @@ phases:
         note: >-
           Vindicatory justice is declared a natural and necessary attribute:
           God can no more leave sin unpunished than deny himself. Absolute at
-          last. Five moves, generally towards the center, and now there is nowhere left
-          to go that isn't a division of him. Travel stops.
+          last. Five moves, generally towards the top right, and now there is 
+          nowhere left to go that isn't a division of him. Travel stops.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
