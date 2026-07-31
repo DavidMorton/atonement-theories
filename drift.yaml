@@ -47,9 +47,9 @@ phases:
     numeral: I
     name: relocation
     axis_left: outside God
-    axis_right: the essence
-    axis_top: binds God absolutely
-    axis_bottom: binds the creature only
+    axis_right: in God
+    axis_top: God is constrained
+    axis_bottom: God is free
     # the edge of God, and the edge of his essence
     guides: [0.28, 0.78]
     steps:
