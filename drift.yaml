@@ -108,7 +108,7 @@ phases:
         head: Into the will of God
         date: 1647 · Owen, The Death of Death
         note: >-
-          Necessity sits in the will: God decreed it, and the constraint is arithmetic — the same debt cannot justly be exacted twice. A step back out, not further in. What is freely decreed can be freely released, which is the opening Socinus is already standing in.
+          Owen balances the books. Now that the payment is a punishment and not a gift, two things are required: proportionality and no overpayment. For the moment, Owen is firm that the whole system relies in God's will, and thus his discretion. This doesn't last long.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -121,10 +121,7 @@ phases:
         head: The interior is reached
         date: 1653 · Owen reverses himself
         note: >-
-          Vindicatory justice is declared a natural and necessary attribute:
-          God can no more leave sin unpunished than deny himself. Absolute at
-          last. Five major moves, and now there's  
-          nowhere left to go that isn't a division of him. Travel stops.
+          Vindicatory justice is declared a natural and necessary attribute: God can no more leave sin unpunished than deny himself. Absolute at last. Five major moves, and now there's nowhere left to go that isn't a division of him. Travel stops.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
