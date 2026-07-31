@@ -125,7 +125,7 @@ phases:
         head: Justice, on unstated terms
         date: 1559 · Calvin
         note: >-
-          But if it's God honour that is offended, then honour can be compensated for by gifts, and Rome's indulgences. That's works, not faith. So he picks a more objective trait - justice - and applies a penal frame. The payment, which was a reward for Anselm becomes a punishment for Calvin, and Jesus pays it. Calvin declines to say if God's hand is forced.
+          But if it's God honour that is offended, then honour can be compensated for by gifts - and Rome's indulgences. That's works, not faith. So he picks a more objective trait - justice - and applies a penal frame. The payment, which was a reward for Anselm becomes a punishment for Calvin, and Jesus pays it. Calvin declines to say if God's hand is forced.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
