@@ -29,9 +29,9 @@ twitter: ''
 # Top navigation. `url` values are site-relative (no baseurl — build.py adds it).
 # ---------------------------------------------------------------------------
 nav:
-- title: Start here
+- title: Short essay
   url: /start/
-- title: The essay
+- title: Long essay
   url: /necessity-problem/
 - title: The map
   url: /map/
