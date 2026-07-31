@@ -109,14 +109,14 @@ phases:
         head: Into the will of God
         date: 1647 · Owen, The Death of Death
         note: >-
-          The need to punish wrong retributively moves to the will and justice requires balance — the same debt cannot justly be exacted twice. Now an arithmetic constraint binds an infinite being. Five major moves, and now there's nowhere left to go that isn't a division of him. Travel stops.
+          The need to punish wrong retributively moves to the will. Justice requires balance — the same debt cannot be exacted twice. Now an arithmetic constraint binds an infinite being. Five major moves, and there's nowhere left to go that isn't a division of the godhead itself.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
           - {x: 0.16, y: 0.30, binds: god}
           - {x: 0.34, y: 0.66, binds: god}
           - {x: 0.52, y: 0.50, binds: unstated}
-          - {x: 0.88, y: 0.70, binds: god}
+          - {x: 0.88, y: 0.25, binds: god}
 
   # =========================================================================
   - id: fission
@@ -129,13 +129,13 @@ phases:
         head: The interior, undivided
         date: from 1578 · under Socinian pressure
         note: >-
-          It's part of God's nature that he punish justice, but the mechanism is still, as of yet, unspecified. Where the past steps have been made to ensure God's sovereignty, the next ones will be made to explain how such a creature-centric attribute could exist within an eternal and immutable God.
+          It's part of God's nature that he must punish justice, but the mechanism is still unspecified. Where the past steps have been made to ensure God's sovereignty, the next ones will be made to explain how such a creature-centric attribute could possibly exist within an eternal and immutable God.
         live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 1.0}
         # Where the previous phase left the claim — keep this in step with the
         # last point of `relocation`. `bloom` grows that point out to fill the
         # live region instead of cutting to it, so the handover from travelling
         # to filling is one motion rather than two pictures.
-        bloom: {x: 0.88, y: 0.70}
+        bloom: {x: 0.88, y: 0.25}
 
       # An orthogonal division, not a narrowing one: it answers who the parties
       # are, not where the necessity lives, so it crosses the ladder rather than
