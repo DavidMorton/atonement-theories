@@ -135,23 +135,6 @@ phases:
           - {x: 0.52, y: 0.50, binds: unstated}
           - {x: 0.46, y: 0.70, binds: god}
 
-      - id: pactum
-        head: God contracts with God
-        date: c. 1648 · Dickson · Cocceius · the pactum
-        note: >-
-          The obligation is grounded in a covenant made before time between
-          Father and Son, with Christ standing surety. Wholly interior now, and
-          still freely made — then binding. The only parties left who can
-          transact are the divine persons themselves.
-        points:
-          - {x: 0.05, y: 0.96, binds: creature}
-          - {x: 0.40, y: 0.72, binds: god}
-          - {x: 0.16, y: 0.30, binds: god}
-          - {x: 0.34, y: 0.66, binds: god}
-          - {x: 0.52, y: 0.50, binds: unstated}
-          - {x: 0.46, y: 0.70, binds: god}
-          - {x: 0.62, y: 0.64, binds: god}
-
       - id: essence
         head: The interior is reached
         date: 1653 · Owen reverses himself
@@ -167,7 +150,6 @@ phases:
           - {x: 0.34, y: 0.66, binds: god}
           - {x: 0.52, y: 0.50, binds: unstated}
           - {x: 0.46, y: 0.70, binds: god}
-          - {x: 0.62, y: 0.64, binds: god}
           - {x: 0.92, y: 0.10, binds: god}
 
   # =========================================================================
@@ -193,14 +175,13 @@ phases:
         bloom: {x: 0.92, y: 0.10}
 
       - id: father-son
-        head: The Father, or the Son
-        date: the pactum, now as a line
+        head: God contracts with God
+        date: c. 1648 · Dickson · Cocceius · the pactum
         note: >-
-          The covenant of the previous phase, seen from inside: it gives the
-          persons opposed roles in a transaction — one holds the claim, the
-          other stands surety. The claim follows the Father, who does the
-          punishing, though justice is an essential attribute and therefore
-          equally the Son's.
+          The obligation is grounded in a covenant made before time between
+          Father and Son, with Christ standing surety. Wholly interior now, and
+          still freely made — then binding. The only parties left who can
+          transact are the divine persons themselves.
         cut:  {orient: h, at: 0.5, from: 0.0, to: 1.0}
         live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 0.5}
         labels:
