@@ -66,7 +66,7 @@ phases:
         head: God's own word binds him
         date: 4th c. · Athanasius, the divine dilemma
         note: >-
-          God says they will die, and truthfulness cannot let the sentence of death fall. God is bound to his promise — but only because his free utterance put it there. Costing little - This is the seed of everything after it.
+          God says Adam and Eve will die, and God is bound by truth to his statement and *must* ensure it happens. God is bound to his promise — but only because his free utterance put it there. Costing little - This is the seed of everything after it.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -75,10 +75,7 @@ phases:
         head: A third party holds it
         date: 3rd c. · patristic ransom
         note: >-
-          The claim leaves God altogether and is placed in another agent: the
-          adversary holds title to human souls, so a price must be paid.
-          Absolute now, and wholly outside him. It binds only if the devil can
-          hold a right against God — and he cannot.
+          The claim leaves God, moving from his utterance about death and to the devil instead. The devil holds us ransom and our only hope is if God pays the ransom price. It binds only if the devil can hold a right against God.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -88,10 +85,7 @@ phases:
         head: Wounded honour
         date: 1098 · Anselm
         note: >-
-          The adversary is denied any rights and the third party disappears.
-          The claim comes back inside, re-seated in God's honour and the
-          rectitude of the created order. Triggered rather than absolute: a
-          creature's act now generates an obligation in God.
+          But the devil has no claim over his creator. Man's error is now his violation of the moral order and the offense that is to God's honour. Christ volunteers, reaps a surplus reward, and gifts it to men. Triggered but not absolute, as God can use his discretion in application of punishment.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -102,10 +96,7 @@ phases:
         head: Justice, on unstated terms
         date: 1559 · Calvin
         note: >-
-          A relational category is swapped for a proper attribute: justice, not
-          honour, is what must be answered, and the payment turns from gift
-          into penalty. Whether that justice must punish or merely chooses to,
-          he never says. The circle stays open because he left it open.
+          But if God can use his discretion, then our good works contribute somehow. That's works, not faith. So he picks a more objective trait - justice - and applies a penal frame. The payment, which is a reward in satisfaction becomes a punishment in Calvinism, and Jesus pays it. Calvin declines to say if God's hand is forced.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -114,13 +105,10 @@ phases:
           - {x: 0.52, y: 0.50, binds: unstated}
 
       - id: decree
-        head: Back out to the decree
+        head: Into the will of God
         date: 1647 · Owen, The Death of Death
         note: >-
-          Necessity sits in the will: God decreed it, and the constraint is
-          arithmetic — the same debt cannot justly be exacted twice. A step
-          back out, not further in. What is freely decreed can be freely
-          released, which is the opening Socinus is already standing in.
+          Necessity sits in the will: God decreed it, and the constraint is arithmetic — the same debt cannot justly be exacted twice. A step back out, not further in. What is freely decreed can be freely released, which is the opening Socinus is already standing in.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
