@@ -146,6 +146,7 @@ svg#field {
 }
 .lbl.small { font-size: 2.1px; }
 .lbl.outline { font-size: 1.9px; fill: var(--accent); }
+.lbl.cross { font-size: 2px; fill: var(--accent); opacity: .8; }
 .axis {
   font-family: var(--data);
   font-size: 2.3px; letter-spacing: .12em; text-transform: uppercase;
@@ -445,6 +446,28 @@ svg#field {
     a["stroke-linecap"] = "square";
     stage.appendChild(mk("line", a));
   }
+  
+  /* An overlay is a division that crosses the ladder instead of forming a
+     rung of it: it answers who the parties are, not where the necessity
+     lives, so it never narrows the live region. Drawn on the diagonal so it
+     can't collide with an axis-aligned cut at any depth, and kept on screen
+     under later cuts when `persist` is set, because the division doesn't
+     go away once it has been made. */
+  function drawOverlay(o) {
+    var l = o.line;
+    var a = {
+      x1: fx(l.x1), y1: fy(l.y1), x2: fx(l.x2), y2: fy(l.y2),
+      stroke: "var(--accent)", "stroke-width": .45,
+      "stroke-linecap": "round", opacity: .8
+    };
+    if (o.dash !== false) a["stroke-dasharray"] = "1.4 1.4";
+    stage.appendChild(mk("line", a));
+    (o.labels || []).forEach(function (lb) {
+      stage.appendChild(mk("text", {
+        x: fx(lb.x), y: fy(lb.y), "class": "lbl cross"
+      }, lb.text));
+    });
+  }
 
   function drawLabels(step) {
     (step.labels || []).forEach(function (l) {
@@ -630,12 +653,17 @@ svg#field {
     if (step.live) drawLive(step.live, step.bloom);
     drawGuides(phase);
 
-    /* every cut up to and including this step, within this phase */
+    /* every cut up to and including this step, within this phase — plus any
+       overlay that is either introduced here or set to persist */
     var steps = phase.steps || [];
     for (var i = 0; i < steps.length; i++) {
       if (steps[i].cut) drawCut(steps[i].cut);
+      if (steps[i].overlay && (steps[i] === step || steps[i].overlay.persist)) {
+        drawOverlay(steps[i].overlay);
+      }
       if (steps[i] === step) break;
     }
+
 
     drawLabels(step);
     if (step.outline) drawOutline(step.outline);
