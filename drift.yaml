@@ -49,18 +49,11 @@ intro:
   date: how to read this
   cta: begin →
   body: |
-    What follows is one claim, tracked across sixteen centuries: that God
-    *must* punish sin retributively. Not a survey of atonement theories — an
-    argument about a single thread inside one of them.
+    What follows is one claim, tracked across sixteen centuries: that God *must* punish sin retributively. Not a survey of atonement theories — an argument about a single thread inside one of them.
 
-    The field is a map with two axes. Left to right is **where the necessity
-    is kept**, from wholly outside God to the divine essence itself. Top to
-    bottom is **how hard it binds** — absolute at the top, no claim on God at
-    all at the bottom.
+    The field is a map with two axes. Left to right is **where the compulsion is kept**, from wholly outside God to the divine essence itself. Top to bottom is **how hard it binds** — absolute at the top, no claim on God at all at the bottom.
 
-    Watch the two axes come apart. Each answer to an objection moves the
-    claim further in; and once it is inside, the only room left to move is to
-    divide God.
+    Watch the two axes come apart as theology develops. Each answer to an objection moves the claim further in; and once it is inside, the only room left to move is to divide God.
 
 phases:
 
@@ -132,7 +125,7 @@ phases:
         head: Justice, on unstated terms
         date: 1559 · Calvin
         note: >-
-          But if God can use his discretion with the gift, then our good works could contribute somehow. That's works, not faith. So he picks a more objective trait - justice - and applies a penal frame. The payment, which was a reward for Anselm becomes a punishment for Calvin, and Jesus pays it. Calvin declines to say if God's hand is forced.
+          But if it's God honour that is offended, then honour can be compensated for by gifts, and Rome's indulgences. That's works, not faith. So he picks a more objective trait - justice - and applies a penal frame. The payment, which was a reward for Anselm becomes a punishment for Calvin, and Jesus pays it. Calvin declines to say if God's hand is forced.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -145,7 +138,7 @@ phases:
         head: Into the will of God
         date: 1647 · Owen, The Death of Death
         note: >-
-          The need to punish wrong retributively moves to the will. Justice requires balance — the same debt cannot be exacted twice. Now an arithmetic constraint binds an infinite being. Five major moves, and there's nowhere left to go that isn't a division of the godhead itself.
+          The need to punish wrong retributively moves to the will of God. Justice requires balance — the same debt cannot be exacted twice. An arithmetic constraint binds an infinite being. Five major moves, and there's nowhere left to go that isn't a division of the godhead itself.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -255,18 +248,11 @@ outro:
   date: what the picture shows
   cta: end
   body: |
-    Nothing here is a charge of bad faith. Every move was made by someone
-    answering a real objection, and each one works — locally. The trouble is
-    only visible end to end: the answers accumulate into a claim no single
-    author would have made, held in a place no earlier author would have put
-    it.
+    Nothing here is a charge of bad faith. Every move was made by someone answering a real objection, and each one works — locally. The trouble is only visible end to end: the answers accumulate into a claim no single author would have made, held in a place no earlier author would have put it.
 
-    The last step is the one to sit with. When the locus goes to mystery but
-    the *must* stays, the necessity is no longer being argued for. It is being
-    assumed, and then protected.
+    The last step is the one to sit with. When the locus goes to mystery but the *must* stays, the necessity is no longer being argued for. It is being assumed, and then protected.
 
-    So the question the diagram leaves you with isn't whether God punishes
-    sin. It's what is still doing the work once the ground has been withdrawn.
+    So the question the diagram leaves you with isn't whether God punishes sin. It's what is still doing the work once the ground has been withdrawn.
   links:
     - {text: the full essay, href: /necessity-problem/}
     - {text: the family tree, href: /map/}
