@@ -108,7 +108,7 @@ phases:
         head: Into the will of God
         date: 1647 · Owen, The Death of Death
         note: >-
-          Owen balances the books. Now that the payment is a punishment and not a gift, two things are required: proportionality and no overpayment. For the moment, Owen is firm that the whole system relies in God's will, and thus his discretion. This doesn't last long.
+          Now that the payment is a punishment and not a gift, two things are required: proportionality and no overpayment. Owen balances the books. For the moment, Owen is firm that the whole system relies in God's will, and thus his discretion. This doesn't last long.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -121,7 +121,7 @@ phases:
         head: The interior is reached
         date: 1653 · Owen reverses himself
         note: >-
-          Vindicatory justice is declared a natural and necessary attribute: God can no more leave sin unpunished than deny himself. Absolute at last. Five major moves, and now there's nowhere left to go that isn't a division of him. Travel stops.
+          The universalists point out that if it's God's will then God could just forgive. No payment needed. To Owen, that empties the cross of value. To solve this, Owen relocates retributive justice from God's will to his essence. God can now no more leave sin unpunished than deny himself. God cannot not punish sin. Five major moves and the requirement is embedded in God himself.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -142,10 +142,7 @@ phases:
         head: The interior, undivided
         date: from 1578 · under Socinian pressure
         note: >-
-          Either God could have forgiven, and the cross is superfluous; or the
-          debt was exacted in full, and nothing was forgiven. The tradition has
-          to say where the necessity lives. No distinctions have been drawn
-          inside God, because until now none were needed.
+          It's part of God's nature that he punish justice, but the mechanism is still, as of yet, unspecified. Where the past steps have been made to ensure God's sovereignty, the next ones will be made to explain how such a creature-centric attribute could exist within an eternal and immutable God.
         live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 1.0}
         # Where the previous phase left the claim — keep this in step with the
         # last point of `relocation`. `bloom` grows that point out to fill the
@@ -157,10 +154,7 @@ phases:
         head: God contracts with God
         date: c. 1648 · Dickson · Cocceius · the pactum
         note: >-
-          The obligation is grounded in a covenant made before time between
-          Father and Son, with Christ standing surety. Wholly interior now, and
-          still freely made — then binding. The only parties left who can
-          transact are the divine persons themselves.
+          Around this time, the federal theologians propose an eternal covenant: an agreement between the Father and the Son that was made before creation. Christ stands as surety for the world, offering to take the punishment of a not-yet-created mankind. Wholly interior now, and still freely made — then binding. The only parties left who can transact are the divine persons themselves.
         cut:  {orient: h, at: 0.5, from: 0.0, to: 1.0}
         live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 0.5}
         labels:
@@ -171,9 +165,7 @@ phases:
         head: Will, or essence
         date: 1653 · the same reversal, seen from inside
         note: >-
-          Is the claim held by what God wants, or by what God is? Owen
-          crossed that line in six years. Everything left out of it is now conceded
-          ground — releasable, and therefore useless to the argument. Technically, this is the whole Trinity, but perception tends towards Father/Son temperament differences here.
+          Is the claim held by what God wants, or by what God is? Owen crossed that line in six years. Everything left out of it is now conceded ground — releasable, and therefore useless to the argument. Technically, this is the whole Trinity, but perception tends towards Father/Son temperament differences here.
         cut:  {orient: v, at: 0.5, from: 0.0, to: 0.5}
         live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 0.5}
         labels:
