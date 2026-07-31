@@ -22,6 +22,8 @@ Not unwilling — unable. If God could have forgiven without the cross, then the
 
 Here is the whole objection in one sentence: **that "must" is about our guilt, and our guilt didn't exist until we made it.**
 
+I want you to remember the term *must* in this document. I will use it as a noun relatively often, and it describes anything we assume God *must* do in response to sin. My thesis is that this assumption is faulty.
+
 Before the fall there was nothing for it to be about. Nothing obliged God to punish, because there was nothing to punish. After the fall, on this account, he cannot do otherwise. A constraint came to bind God that did not bind him before — and we are the ones who triggered it.
 
 That is a very strange object to have inside God. And the striking thing about the history is that seventeen centuries of careful, serious people kept moving it around and never made it less strange. They adjusted *where it lives* and *what kind of must it is*. Nobody asked what it was *about*.
