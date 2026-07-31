@@ -18,15 +18,13 @@ the citations, the seventeen-century migration — the long essay is
 
 Penal substitution needs God to be *unable* to simply forgive.
 
-Not unwilling — unable. If God could have forgiven without the cross, then the cross wasn't required, and everything built on top of it becomes decoration rather than structure. So something has to stand in the way. His justice, his holiness, his honour, his righteousness — the name varies. What doesn't vary is that it has to be a genuine *must*.
+Not unwilling — unable. If God could have forgiven without the cross, then the cross wasn't required, and everything built on top of it becomes decoration rather than structure. So something has to stand in the way. His justice, his holiness, his honour, his righteousness — the name varies. What doesn't vary is that it has to be a genuine *must*. A *compulsion* in God to punish sin.
 
-Here is the whole objection in one sentence: **that "must" is about our guilt, and our guilt didn't exist until we made it.**
-
-**Important:** I want you to remember the term "*must*" in this document. I will use it as a noun relatively often, and it describes anything we assume God *must* do in response to sin. My thesis is that this assumption is faulty.
+Here is the whole objection in one sentence: **that compulsion is about our guilt, and our guilt didn't exist until we made it.**
 
 Before the fall there was nothing for it to be about. Nothing obliged God to punish, because there was nothing to punish. After the fall, on this account, he cannot do otherwise. A constraint came to bind God that did not bind him before — and we are the ones who triggered it.
 
-That is a very strange object to have inside God. And the striking thing about the history is that seventeen centuries of careful, serious people kept moving it around and never made it less strange. They adjusted *where it lives* and *what kind of must it is*. Nobody asked what it was *about*.
+That is a very strange object to have inside God. And the striking thing about the history is that seventeen centuries of careful, serious people kept moving it around and never made it less strange. They adjusted *where it lives* and *what kind of compulsion it is*. Nobody asked what it was *about*.
 
 ## The step that gets skipped
 
@@ -34,7 +32,7 @@ There's a move near the start of the argument that passes so smoothly almost nob
 
 You begin with something no one disputes: **sin deserves punishment.** That's a claim about *us*. It's about what a creature has earned.
 
-What penal substitution actually needs is a different claim: **God cannot leave sin unpunished.** That's a claim about *God*. It's about what he is unable to do.
+What penal substitution actually needs is a different claim: **God cannot leave sin unpunished.** That's a claim about *God*. It's about what he is unable to not do - what he is *compelled* to do.
 
 Those are not the same kind of statement, and getting from the first to the second is the entire problem. A fact about what a creature deserves has been converted into a limit on what the Creator is able to do. Everything below comes out of that one step.
 
@@ -42,37 +40,37 @@ Notice what the second claim is and isn't doing. It isn't what makes the cross m
 
 ## Two addresses, both bad
 
-Grant the step for a moment. You now have a *must* on your hands, and it has to be kept somewhere. There are only two directions.
+Grant the step for a moment. You now have a *compulsion* on your hands, and it has to be kept somewhere. There are only two directions.
 
-**Put it outside God** — in the devil's rights, in the moral order, in the demands of good government — and you've said that something which is not God now binds God. Every believer feels the problem with that immediately. It's an insult to his sovereignty.
+**Put it outside God** — in the devil's rights, in the moral order, in the demands of good government — and you've said that something which is not God now compels God. Every believer feels the problem with that immediately. It's an insult to his sovereignty.
 
 **Put it inside God** — in his essence, his nature, his character — and you protect his sovereignty at the cost of something else. Christians have always said that God has no unrealised potential: nothing in him is idling, nothing is waiting to be switched on later. He isn't assembled out of parts, and he doesn't change. Now put inside that God an attribute which is essential to him but has nothing whatever to do until a creature sins — and which switches on when one does.
 
-Those two objections do not arrive on equal terms, and that asymmetry drives the entire history. *Nothing outside God may bind God* is available from day one and applies to every external address. The objections from God's own nature only bite once the constraint is already inside, which means they always arrive late, against a position someone is already committed to.
+Those two objections do not arrive on equal terms, and that asymmetry drives the entire history. *Nothing outside God may bind God* is available from day one, but is largely unconsidered. The objections from God's own nature only bite once the compulsion is already inside, which means they always arrive late, against a position someone is already committed to.
 
-So the constraint migrates. And it migrates one direction: inward.
+So the compulsion migrates. And it migrates one direction: inward.
 
 ## Seventeen centuries, compressed
 
-| | Where the "must" is kept | What it costs |
+| | What compels God | What it costs |
 |---|---|---|
 | **Athanasius**, 4th c. | God's truthfulness — he said death would follow, and he can't go back on his word | Nothing yet. The binding is one God freely placed on himself |
 | **Ransom view**, 3rd c. | The devil's rights over captured humanity | Nothing in God — but the devil now has standing against him |
-| **Anselm**, 1098 | God's honour, wounded by sin | A creature's act now generates an obligation in God |
+| **Anselm**, 1098 | God's honour, wounded by sin | A creature's act now generates an obligation in God, but God is still somewhat free |
 | **Calvin**, 1559 | God's justice. And the payment stops being a gift and becomes a *penalty* | Deferred. Calvin never says whether justice *must* punish or *chooses* to |
 | **Socinus**, 1578 | *(the attack)* Either God could have forgiven, so the cross was superfluous — or it was paid in full, in which case nothing was forgiven, it was collected | The tradition now has to say out loud where the must lives |
 | **Owen**, 1647 | God's free decree. He chose this | Little — but only because something else is carrying the weight |
 | **Covenant view**, c. 1648 | A pre-creation contract between Father and Son | God now contracts with God |
-| **Owen**, 1653 | The divine essence. He reverses himself: God can no more leave sin unpunished than deny himself | An idle capacity inside a God who is supposed to have none |
+| **Owen**, 1653 | The divine essence. God can no more leave sin unpunished than deny himself | An idle capacity inside a God who is supposed to have none |
 | **Owen**, 1655 | Split in two: *that* sin is punished is necessary; *who, when and how* is free | One attribute now running on two settings at once |
-| **Turretin**, 1679–85 | Split again, inside the attribute: God necessarily *has* the disposition, freely *uses* it | Names the idle capacity instead of removing it |
-| **Packer**, 1973 | Mystery. The must is still asserted; what grounds it is withdrawn from inspection | Intelligibility |
+| **Turretin**, 1679–85 | Split again, inside the attribute: God necessarily *has* the compulsion, but is free in the *use* it | Names the idle capacity instead of removing it |
+| **Packer**, 1973 | Mystery. The compulsion is still affirmed; on what grounds is withdrawn from inspection | Intelligibility |
 
-The shape is unmistakable once you see it. First the *must* gets **moved** — five times, each time further in, until it reaches the divine essence and there is nowhere further in to go. Then the motion changes kind and the container starts getting **split**, twice, into ever smaller pieces. Then, when splitting stops helping, it **evaporates**. No splitting happens before the moving is exhausted. No moving happens after the splitting begins. That isn't what a tradition wandering around looks like. It's what a search space being used up in order looks like.
+The shape is unmistakable once you see it. First the *compulsion* gets **moved** — five times, each time further in, until it reaches the divine essence and there is nowhere further in to go. Then the motion changes kind and the container starts getting **split**, twice, into ever smaller pieces. Then, when splitting stops helping, it **evaporates**. No splitting happens before the moving is exhausted. No moving happens after the splitting begins. That isn't what a tradition wandering around looks like. It's what a search space being used up in order looks like.
 
-Owen is the hinge, twice over — he moves the must into the essence in 1653 and performs the first split two years later. He didn't discover that necessity belonged in God's essence and then separately discover it needed subdividing. He ran out of room and changed operations.
+Owen is the hinge, twice over — he moves the compulsion into the essence in 1653 and then splits the essence itself two years later. He didn't discover that necessity belonged in God's essence and then separately discover it needed subdividing. He ran out of room and changed operations.
 
-And here's the part that should bother you most: **in every single row, the thing the "must" is about is something we did.** The devil's captives, the offence against honour, the guilt, the debt, the foreseen elect. Nobody, in seventeen centuries, ever relocates *that*. All the ingenuity went into whether the must is absolute or conditional and whether it sits in God's will or his nature. None of it went into what the must is about — which is where the trouble always was.
+And here's the part that should bother you most: **in every single row, the thing the "compulsion" is about is something we did.** The devil's captives, the offence against honour, the guilt, the debt, the foreseen elect. Nobody, in seventeen centuries, ever relocates *that*. All the ingenuity went into whether the compulsion is absolute or conditional and whether it sits in God's will or his nature. None of it went into what the compulsion is about — which is where the trouble always was.
 
 Worth noticing on the way past: the specifically **penal** element is the last piece to arrive. The transaction frame comes in the third century, the two-party debt frame in 1098, and the conversion of the payment from a gift into a penalty in 1559. Anselm's satisfaction is explicitly what makes punishment *unnecessary* — it's offered instead of the penalty. Penal substitution's satisfaction *is* the penalty. Both camps use the word "satisfaction" for opposite mechanisms. And once the payment is a penalty rather than a gift, you need some way of getting the guilt onto the one who pays it, which is exactly why imputation gets invented when it does. It isn't an independent discovery about scripture. It's the bill that arrives with the penal turn.
 
@@ -84,11 +82,11 @@ I was there myself.
 
 If you know any classical theology you've had the reply ready for a page or two now, and it's a good one. God's mercy had no object before creation either. Neither did his creative power, or his knowledge of what creatures would freely do. We handle this all the time: the change is in the creature, not in God. On that account Turretin's split into *having* and *using* isn't an improvisation at all — it's standard equipment applied to a standard case. And if the objection works here, it works against every attribute of God that touches creation, which is far too much.
 
-That reply is strong enough that the objection has to be sharpened. Two things sharpen it, and either one is enough on its own.
+There are two good responses why mercy and retributive justice aren't alike:
 
-**One: which way the causing runs.** With creation, God acts and the creature exists as a result. Nothing a creature does *compels* anything in God. Nobody claims God *must* be merciful to this sinner rather than that one — mercy is a capacity awaiting a fitting occasion.
+**One: which way the causing runs.** With creation, God acts and the creature exists as a result. Nothing a creature does *compels* anything in God. Nobody claims God is *compelled* to be merciful to this sinner rather than that one — mercy is a capacity awaiting a fitting occasion.
 
-Retributive necessity runs the other way, and that's its whole content: God *cannot* let sin go. A creature acts, and God is now required to respond in a way he isn't free to withhold. That's not an unexercised capacity. It's a demand with a trigger, and the trigger is in our hand. The objection was never that God has idle equipment. It's that we have a lever on him.
+Retributive necessity runs the other way, and that's its whole content: God *cannot* let sin go. A creature acts, and God is now required to respond in a way he isn't free to withhold. He's compelled by our actions. That's an unexercised capacity in eternity, but only appears when we fall. It's a demand with a trigger, and the trigger is in our hand. The objection was never that God has idle equipment. It's that we have a lever on him.
 
 **Two: what the concept needs in order to mean anything.** Mercy and goodness are intelligible without creatures at all; the life of Father, Son and Spirit gives goodness an eternal object.
 
@@ -96,13 +94,13 @@ Retribution isn't like that. It's contrastive the way "cure" is contrastive. A c
 
 Put the two together and you get a sentence the doctrine has never been able to say out loud: **on this account, we broke God when we sinned.** Not damaged him. But a constraint came to bind him that hadn't bound him before, and we're the ones who pulled the lever.
 
-**One more, quickly.** If justice-that-must-punish is an essential perfection, ask what's missing in a world where nobody ever sins. Either nothing is missing — in which case it's hard to see why it counts as an essential perfection, and the *having/using* split is doing no work. Or something *is* missing, in which case a sinless world is one where God is less fully displayed as what he is, and he has reason to want the fall. That second horn isn't a smear; it's a stated position in the tradition — Edwards argues that a full display of God's perfections requires objects of both mercy and justice. But then God has authored the very condition that binds him, which makes the constraint self-imposed, and a self-imposed constraint isn't a necessity at all. Socinus walks right back in.
+**One more, quickly.** If justice-that-must-punish is an essential perfection, ask what's missing in a world where nobody ever sins. Either nothing is missing — in which case it's hard to see why it counts as an essential perfection, and the *having/using* split is doing no work. Or something *is* missing, in which case a sinless world is one where God is less fully displayed as what he is, and he has reason to want the fall. That second horn isn't a smear; it's a stated position in the tradition — Edwards argues that a full display of God's perfections requires objects of both mercy and justice. But then God has authored the very condition that binds him, which makes the constraint self-imposed, and a self-imposed constraint isn't a necessity at all. It's also a very scary thing to say about God.
 
 ## The bill from the Trinity
 
 One more cost, briefly, because it follows from the same move and is noticed least.
 
-Once the obligation is *inside* God, the only parties left who can transact are the divine persons — which is exactly what shows up: a pre-creation covenant between Father and Son, the Son standing as guarantor, Christ presenting a payment to the Father. But a payment between two who share one essence, one will and one set of goods is in trouble whichever way you take it. If nothing really changes hands, the transaction is empty. If something really does, then one party gained what the other gave up, and they aren't equal.
+Once the obligation is *inside* God, the only parties left to transact are the divine persons — which is exactly what shows up: a pre-creation covenant between Father and Son, the Son standing as guarantor, Christ presenting a payment to the Father. But a payment between two who share one essence, one will and one set of goods is in trouble whichever way you take it. If nothing really changes hands, the transaction is empty. If something really does, then one party gained what the other gave up, and they aren't equal.
 
 The usual answer is that the Son pays *as man*. But a finite nature can't render infinite satisfaction — which is precisely why the tradition reached for the infinite worth of the divine person in the first place. Say his humanity has infinite value *because* it is the humanity of the divine person, and you've conceded it: the value is sourced in the divinity, and the payment is internal to God after all.
 
@@ -110,7 +108,7 @@ You can have an intelligible transaction, or you can have equality between the p
 
 ## Where it lands: mystery
 
-By 1973 the answer becomes: this is a model, not a blueprint. It discloses something true about God without licensing us to press every joint of it.
+In 1973, Packer says penal substitution is a model, not a blueprint. It discloses something true about God without licensing us to press every joint of it.
 
 Packer deserves better than a brush-off here — he's doing serious philosophy of religious language, and his exegetical work is real. The point is narrower and more interesting than "he gave up."
 
