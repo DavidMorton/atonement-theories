@@ -192,8 +192,8 @@ phases:
         head: Will, or essence
         date: 1653 · the same reversal, seen from inside
         note: >-
-          Is the claim held by what God decided, or by what God is? Owen
-          crossed that line in six years. Everything left of it is now conceded
+          Is the claim held by what God wants, or by what God is? Owen
+          crossed that line in six years. Everything left out of it is now conceded
           ground — releasable, and therefore useless to the argument.
         cut:  {orient: v, at: 0.5, from: 0.0, to: 0.5}
         live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 0.5}
@@ -206,7 +206,7 @@ phases:
         head: The fact, or the mode
         date: 1655 · Owen, Vindiciae Evangelicae
         note: >-
-          The necessity itself is bisected. That sin is punished is necessary;
+          the necessity itself is bisected. That sin is punished is necessary;
           when, on whom and how is free. This is exactly what licenses
           accepting a substitute — and it hands the mode back to the will, so
           one attribute now runs under two modalities at once.
@@ -252,7 +252,7 @@ phases:
           placed under mystery and left unanswered. The territory goes to zero
           and the square flattens into the one line the argument actually
           needs. This is not a new move. It is the limit of every cut before
-          it.
+          it. The Trinity dissolves retribution.
         collapse:
           at: 0.13
           label: the bind, without a ground
