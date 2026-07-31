@@ -96,7 +96,7 @@ phases:
         head: Justice, on unstated terms
         date: 1559 · Calvin
         note: >-
-          But if God can use his discretion, then our good works contribute somehow. That's works, not faith. So he picks a more objective trait - justice - and applies a penal frame. The payment, which is a reward in satisfaction becomes a punishment in Calvinism, and Jesus pays it. Calvin declines to say if God's hand is forced.
+          But if God can use his discretion, then our good works could contribute somehow. That's works, not faith. So he picks a more objective trait - justice - and applies a penal frame. The payment, which was a reward for Anselm becomes a punishment for Calvin, and Jesus pays it. Calvin declines to say if God's hand is forced.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
