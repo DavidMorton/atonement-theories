@@ -35,8 +35,8 @@ nav:
   url: /necessity-problem/
 - title: The map
   url: /map/
-#- title: The drift
-  #url: /drift/
+- title: The drift
+  url: /drift/
 - title: Athanasius
   url: /athanasius/
 - title: About
@@ -47,7 +47,18 @@ nav:
 # label above the title; `meta` is the time/format hint under the blurb.
 # ---------------------------------------------------------------------------
 cards:
-- title: Start here
+
+- title: The drift of the claim
+  url: /drift/
+  kicker: Interactive
+  meta: 10 steps · three phases
+  blurb: >-
+    Watch how the constraint moves. It starts outside him and travels in;
+    once inside, it stops moving and starts dividing him; and at the end the
+    ground drops away and only the bare claim is left standing.
+  featured: true
+
+- title: Short essay
   url: /start/
   kicker: The short version
   meta: ~15 min read
@@ -55,7 +66,6 @@ cards:
     The whole argument in plain terms: penal substitution needs God to be
     unable to forgive, that inability is about our guilt, and our guilt did
     not exist until we made it.
-  featured: true
 
 - title: The Necessity Problem
   url: /necessity-problem/
@@ -75,15 +85,6 @@ cards:
     concedes to what, what hardens in response to what. Tap any box for the
     problem it faces, the move it makes, and the new problem that move opens.
   image: assets/img/family-tree.png
-
-# - title: The drift of the claim
-  #url: /drift/
-  #kicker: Interactive
-  #meta: 10 steps · three phases
-  #blurb: >-
-    #Watch the constraint on God move. It starts outside him and travels in;
-    #once inside, it stops moving and starts dividing him; and at the end the
-    #ground drops away and only the claim is left standing.
 
 - title: Reading Athanasius
   url: /athanasius/
