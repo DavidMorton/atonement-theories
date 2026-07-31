@@ -102,20 +102,21 @@ phases:
           - {x: 0.40, y: 0.72, binds: god}
           - {x: 0.16, y: 0.30, binds: god}
           - {x: 0.34, y: 0.66, binds: god}
-          - {x: 0.52, y: 0.50, binds: god}  
+          - {x: 0.52, y: 0.50, binds: unstated}
+  
 
       - id: decree
         head: Into the will of God
         date: 1647 · Owen, The Death of Death
         note: >-
-          Necessity sits in the will: God decreed it, and the constraint is arithmetic — the same debt cannot justly be exacted twice. A step back out, not further in. What is freely decreed can be freely released, which is the opening Socinus is already standing in. Five major moves, and now there's nowhere left to go that isn't a division of him. Travel stops.
+          The need to punish wrong retributively moves to the will and justice requires balance — the same debt cannot justly be exacted twice. Now an arithmetic constraint binds an infinite being. Five major moves, and now there's nowhere left to go that isn't a division of him. Travel stops.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
           - {x: 0.16, y: 0.30, binds: god}
           - {x: 0.34, y: 0.66, binds: god}
           - {x: 0.52, y: 0.50, binds: unstated}
-          - {x: 0.46, y: 0.70, binds: god}
+          - {x: 0.88, y: 0.70, binds: god}
 
   # =========================================================================
   - id: fission
@@ -134,7 +135,7 @@ phases:
         # last point of `relocation`. `bloom` grows that point out to fill the
         # live region instead of cutting to it, so the handover from travelling
         # to filling is one motion rather than two pictures.
-        bloom: {x: 0.46, y: 0.70}
+        bloom: {x: 0.88, y: 0.70}
 
       # An orthogonal division, not a narrowing one: it answers who the parties
       # are, not where the necessity lives, so it crosses the ladder rather than
@@ -144,10 +145,7 @@ phases:
         head: God contracts with God
         date: c. 1648 · Dickson · Cocceius · the pactum
         note: >-
-          The obligation is grounded in a covenant made before time between
-          Father and Son, with Christ standing surety. Wholly interior now, and
-          still freely made — then binding. The only parties left who can
-          transact are the divine persons themselves.
+          The obligation is grounded in a covenant made before time between Father and Son, with Christ standing surety. Wholly interior now, and still freely made — then binding. The only parties left to transact are the divine persons themselves.
         overlay:
           line: {x1: 0.0, y1: 0.12, x2: 1.0, y2: 0.88}
           dash: true
@@ -161,13 +159,7 @@ phases:
         head: Will, or essence
         date: 1653 · Owen reverses himself
         note: >-
-          Is the claim held by what God wants, or by what God is? Owen crossed
-          that line in six years. Vindicatory justice is declared a natural and
-          necessary attribute: God can no more leave sin unpunished than deny
-          himself. Absolute at last. Everything left out of it is now conceded
-          ground — releasable, and therefore useless to the argument.
-          Technically, this is the whole Trinity, but perception tends towards
-          Father/Son temperament differences here.
+          Is the claim held by what God wants, or by what God is? Owen crossed that line in six years. Vindicatory justice is declared a natural and necessary attribute: God can no more leave sin unpunished than deny himself. Absolute at last. Everything left out of it is now conceded ground — releasable, and therefore useless to the argument.
         cut:  {orient: v, at: 0.5, from: 0.0, to: 1.0}
         live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 1.0}
         labels:
