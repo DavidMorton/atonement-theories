@@ -66,7 +66,7 @@ phases:
         head: God's own word binds him
         date: 4th c. · Athanasius, the divine dilemma
         note: >-
-          God says Adam and Eve will die, and God is bound by truth to his statement and *must* ensure it happens. God is bound to his promise — but only because his free utterance put it there. Costing little - This is the seed of everything after it.
+          In those later pages, God says Adam and Eve will die, and God is bound by truth to his statement and *must* ensure it happens. God is bound to his promise — but only because his free utterance put it there. Costing little - This is the seed of everything after it.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -75,7 +75,7 @@ phases:
         head: A third party holds it
         date: 3rd c. · patristic ransom
         note: >-
-          The claim leaves God, moving from his utterance about death and to the devil instead. The devil holds us ransom and our only hope is if God pays the ransom price. It binds only if the devil can hold a right against God.
+          The claim on man leaves God, moving from his utterance about death and to the devil instead. The devil holds us ransom and our only hope is if God pays the ransom price. It binds only if the devil can hold a right against God.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
