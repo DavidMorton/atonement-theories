@@ -168,7 +168,9 @@ So what you're offered is not a verdict but a life. Not being *counted* righteou
 
 Everything argued here about the doctrine of God turns, at the last, into good news.
 
-*Nothing in God is waiting to be switched on.* No stored demand. No reserve of wrath held in check pending a trigger. Nothing latent in him that had to be discharged before he could turn his face toward you. No spring preloaded with guilt existed before creation. *God is not assembled out of parts* — his justice isn't a second thing standing behind his love and negotiating terms with it. It's an outflow of his infinitely self-giving love and it's aim is *restoration* not destruction. There is no committee in God, no attribute that has to be satisfied before another is free to act. *God does not change* — he has not changed toward you and cannot. No shadow of turning. *No God behind God.*
+*Nothing in God is waiting to be switched on.* No stored demand. No reserve of wrath held in check pending a trigger. Nothing latent in him that had to be discharged before he could turn his face toward you. No spring preloaded with guilt existed before creation. *God is not assembled out of parts* — his justice isn't a second thing standing behind his love and negotiating terms with it. It's an outflow of his infinitely self-giving love and it's aim is *restoration* not destruction. There is no committee in God, no attribute that has to be satisfied before another is free to act. *God does not change* — he has not changed toward you and cannot. No shadow of turning. 
+
+*No God behind God.*
 
 He is not a creditor who was satisfied. He is not a judge who was talked round. He has been giving himself away since before the foundation of the world, Father to Son and Son to Father, and everything that exists is the overflow of it. Nothing changed in him when he made man. The cross was not the price of his affection. It *was* his affection, arriving where we were, going as far down as we had fallen and further, until there was nowhere left for a person to be lost and not found.
 
