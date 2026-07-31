@@ -47,11 +47,11 @@ phases:
     numeral: I
     name: relocation
     axis_left: outside God
-    axis_right: in God
+    axis_right: inside God
     axis_top: God is constrained
     axis_bottom: God is free
     # the edge of God, and the edge of his essence
-    guides: [0.28, 0.78]
+    guides: [0.28, 0.72]
     steps:
 
       - id: none
@@ -102,13 +102,13 @@ phases:
           - {x: 0.40, y: 0.72, binds: god}
           - {x: 0.16, y: 0.30, binds: god}
           - {x: 0.34, y: 0.66, binds: god}
-          - {x: 0.52, y: 0.50, binds: unstated}
+          - {x: 0.52, y: 0.50, binds: god}  
 
       - id: decree
         head: Into the will of God
         date: 1647 · Owen, The Death of Death
         note: >-
-          Now that the payment is a punishment and not a gift, two things are required: proportionality and no overpayment. Owen balances the books. For the moment, Owen is firm that the whole system relies in God's will, and thus his discretion. This doesn't last long.
+          Necessity sits in the will: God decreed it, and the constraint is arithmetic — the same debt cannot justly be exacted twice. A step back out, not further in. What is freely decreed can be freely released, which is the opening Socinus is already standing in. Five major moves, and now there's nowhere left to go that isn't a division of him. Travel stops.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -116,20 +116,6 @@ phases:
           - {x: 0.34, y: 0.66, binds: god}
           - {x: 0.52, y: 0.50, binds: unstated}
           - {x: 0.46, y: 0.70, binds: god}
-
-      - id: essence
-        head: The interior is reached
-        date: 1653 · Owen reverses himself
-        note: >-
-          The universalists point out that if it's God's will then God could just forgive. No payment needed. To Owen, that empties the cross of value. To solve this, Owen relocates retributive justice from God's will to his essence. God can now no more leave sin unpunished than deny himself. God cannot not punish sin. Five major moves and the requirement is embedded in God himself.
-        points:
-          - {x: 0.05, y: 0.96, binds: creature}
-          - {x: 0.40, y: 0.72, binds: god}
-          - {x: 0.16, y: 0.30, binds: god}
-          - {x: 0.34, y: 0.66, binds: god}
-          - {x: 0.52, y: 0.50, binds: unstated}
-          - {x: 0.46, y: 0.70, binds: god}
-          - {x: 0.92, y: 0.10, binds: god}
 
   # =========================================================================
   - id: fission
@@ -148,30 +134,45 @@ phases:
         # last point of `relocation`. `bloom` grows that point out to fill the
         # live region instead of cutting to it, so the handover from travelling
         # to filling is one motion rather than two pictures.
-        bloom: {x: 0.92, y: 0.10}
+        bloom: {x: 0.46, y: 0.70}
 
+      # An orthogonal division, not a narrowing one: it answers who the parties
+      # are, not where the necessity lives, so it crosses the ladder rather than
+      # forming a rung of it. `live` is unchanged and `persist` keeps the line
+      # drawn faintly under every cut that follows.
       - id: father-son
         head: God contracts with God
         date: c. 1648 · Dickson · Cocceius · the pactum
         note: >-
-          Around this time, the federal theologians propose an eternal covenant: an agreement between the Father and the Son that was made before creation. Christ stands as surety for the world, offering to take the punishment of a not-yet-created mankind. Wholly interior now, and still freely made — then binding. The only parties left who can transact are the divine persons themselves.
-        cut:  {orient: h, at: 0.5, from: 0.0, to: 1.0}
-        live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 0.5}
-        labels:
-          - {text: father, x: 0.5, y: 0.28, live: true}
-          - {text: son,    x: 0.5, y: 0.78}
+          The obligation is grounded in a covenant made before time between
+          Father and Son, with Christ standing surety. Wholly interior now, and
+          still freely made — then binding. The only parties left who can
+          transact are the divine persons themselves.
+        overlay:
+          line: {x1: 0.0, y1: 0.12, x2: 1.0, y2: 0.88}
+          dash: true
+          persist: true
+          labels:
+            - {text: father, x: 0.10, y: 0.06}
+            - {text: son,    x: 0.90, y: 0.94}
+        live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 1.0}
 
       - id: will-essence
         head: Will, or essence
-        date: 1653 · the same reversal, seen from inside
+        date: 1653 · Owen reverses himself
         note: >-
-          Is the claim held by what God wants, or by what God is? Owen crossed that line in six years. Everything left out of it is now conceded ground — releasable, and therefore useless to the argument. Technically, this is the whole Trinity, but perception tends towards Father/Son temperament differences here.
-        cut:  {orient: v, at: 0.5, from: 0.0, to: 0.5}
-        live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 0.5}
+          Is the claim held by what God wants, or by what God is? Owen crossed
+          that line in six years. Vindicatory justice is declared a natural and
+          necessary attribute: God can no more leave sin unpunished than deny
+          himself. Absolute at last. Everything left out of it is now conceded
+          ground — releasable, and therefore useless to the argument.
+          Technically, this is the whole Trinity, but perception tends towards
+          Father/Son temperament differences here.
+        cut:  {orient: v, at: 0.5, from: 0.0, to: 1.0}
+        live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 1.0}
         labels:
-          - {text: son,     x: 0.5,  y: 0.78}
-          - {text: will,    x: 0.25, y: 0.28}
-          - {text: essence, x: 0.75, y: 0.28, live: true}
+          - {text: will,    x: 0.25, y: 0.5}
+          - {text: essence, x: 0.75, y: 0.5, live: true}
 
       - id: mode-fact
         head: The fact, or the mode
@@ -181,13 +182,12 @@ phases:
           when, on whom and how is free. This is exactly what licenses
           accepting a substitute — and it hands the mode back to the will, so
           one attribute now runs under two modalities at once.
-        cut:  {orient: h, at: 0.25, from: 0.5, to: 1.0}
-        live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 0.25}
+        cut:  {orient: h, at: 0.5, from: 0.5, to: 1.0}
+        live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 0.5}
         labels:
-          - {text: son,  x: 0.5,  y: 0.78}
-          - {text: will, x: 0.25, y: 0.28}
-          - {text: mode, x: 0.75, y: 0.40, small: true}
-          - {text: fact, x: 0.75, y: 0.14, small: true, live: true}
+          - {text: will, x: 0.25, y: 0.5}
+          - {text: mode, x: 0.75, y: 0.75}
+          - {text: fact, x: 0.75, y: 0.25, live: true}
 
       - id: habitus-actus
         head: Held, or exercised
@@ -197,18 +197,17 @@ phases:
           necessary; actus, its exercise, is free. Habitus is the defensible
           cell, actus is what gets preached. The potency the whole move was
           meant to avoid is now named rather than removed.
-        cut:  {orient: v, at: 0.75, from: 0.0, to: 0.25}
-        live: {x0: 0.75, x1: 1.0, y0: 0.0, y1: 0.25}
+        cut:  {orient: v, at: 0.75, from: 0.0, to: 0.5}
+        live: {x0: 0.75, x1: 1.0, y0: 0.0, y1: 0.5}
         outline:
-          rect: {x0: 0.5, x1: 0.75, y0: 0.0, y1: 0.25}
+          rect: {x0: 0.5, x1: 0.75, y0: 0.0, y1: 0.5}
           label: preached
-          label_at: {x: 0.625, y: 0.21}
+          label_at: {x: 0.625, y: 0.38}
         labels:
-          - {text: son,     x: 0.5,   y: 0.78}
-          - {text: will,    x: 0.25,  y: 0.28}
-          - {text: mode,    x: 0.75,  y: 0.40, small: true}
-          - {text: actus,   x: 0.625, y: 0.13, small: true}
-          - {text: habitus, x: 0.875, y: 0.13, small: true, live: true}
+          - {text: will,    x: 0.25,  y: 0.5}
+          - {text: mode,    x: 0.75,  y: 0.75}
+          - {text: actus,   x: 0.625, y: 0.25, small: true}
+          - {text: habitus, x: 0.875, y: 0.25, small: true, live: true}
 
   # =========================================================================
   - id: mystery
