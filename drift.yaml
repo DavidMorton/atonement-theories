@@ -182,7 +182,7 @@ phases:
         head: Held, or exercised
         date: 1679 · Turretin, Institutio
         note: >-
-          The attribute itself is bisected: habitus, the disposition, is necessary; actus, its exercise, is free. This still doesn't answer how an God can have an attribute based on man's sin that preexists the existence of sin itself. Instead of removing the potentiality, it's relabelled.
+          Why don't all get punished immediately with no exceptions, then? Turretin cuts an attribute itself into habitus (the disposition that requires God punish sin) and actus (which controls the actual firing of it). God walks a fine line. Ultimately, this answers the objection, but there's nowhere else to cut. 
         cut:  {orient: v, at: 0.75, from: 0.0, to: 0.5}
         live: {x0: 0.75, x1: 1.0, y0: 0.0, y1: 0.5}
         outline:
@@ -204,7 +204,7 @@ phases:
         head: Locus abandoned, bind retained
         date: 1973 · Packer
         note: >-
-          Without any more cuts possible, and without a good explanation of how the system works, Packer relegates the logic to mystery but maintains that God can't not punish sin. The logic is abandoned but the compulsion is maintained. It is the limit of every cut before it. It seems that retribution dissolves to nothing in the presence of the trinity - but tradition still says it's there.
+          Without any more things to cut or a good explanation of how the system works, Packer relegates the compulsion's locus to mystery but maintains that God *must* punish sin. This is the limit of every cut before it. It seems that retribution dissolves in the presence of the trinity - but tradition maintains it's presence anyhow.
         collapse:
           at: 0.13
           label: the bind, without a ground
