@@ -58,10 +58,7 @@ phases:
         head: Nothing to keep
         date: De Incarnatione · the better line
         note: >-
-          Corruption follows sin the way cold follows the removal of heat: a
-          fact about creatures, not a sentence imposed from outside. Nothing
-          here binds God. This is the account Athanasius already has, before
-          the dilemma a few pages later claimed he put a constraint on himself.
+          Corruption follows sin the way cold follows the removal of heat: a fact about creatures, not a sentence imposed from outside. Nothing here binds God. This is the account Athanasius already has, before the dilemma a few pages later claimed he put a constraint on himself.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
 
@@ -69,10 +66,7 @@ phases:
         head: God's own word binds him
         date: 4th c. · Athanasius, the divine dilemma
         note: >-
-          Goodness would redeem; truthfulness cannot let the sentence of death
-          fall. The claim is inside God from the very start — but only because
-          a free utterance put it there, so it remains his to release. Costing
-          nothing yet. This is the seed of everything after it.
+          God utters a sentance, and truthfulness cannot let the sentence of death fall. The claim is inside God from the very start — but only because a free utterance put it there, so it remains free. Costing nothing yet. This is the seed of everything after it.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
