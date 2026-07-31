@@ -49,6 +49,8 @@ intro:
   date: how to read this
   cta: begin →
   body: |
+    **Why does God *have* to punish sin?**
+
     What follows is one claim, tracked across sixteen centuries: that God *must* punish sin retributively. Not a survey of atonement theories — an argument about a single thread inside one of them.
 
     The field is a map with two axes. Left to right is **where the compulsion is kept**, from wholly outside God to the divine essence itself. Top to bottom is **how hard it binds** — absolute at the top, no claim on God at all at the bottom.
@@ -216,8 +218,8 @@ phases:
         live: {x0: 0.75, x1: 1.0, y0: 0.0, y1: 0.5}
         outline:
           rect: {x0: 0.5, x1: 0.75, y0: 0.0, y1: 0.5}
-          label: preached
-          label_at: {x: 0.625, y: 0.38}
+          # label: preached
+          # label_at: {x: 0.625, y: 0.38}
         labels:
           - {text: will,    x: 0.25,  y: 0.5}
           - {text: mode,    x: 0.75,  y: 0.75}
