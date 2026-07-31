@@ -77,6 +77,13 @@ MD_CONFIG = {
     "smarty": {"smart_dashes": True, "smart_quotes": True, "smart_ellipses": True},
 }
 
+# The drift page's prose is short — a note under the diagram, or the body of an
+# intro/outro screen — so it gets a smaller kit than the essay: emphasis, links,
+# lists, the odd blockquote, and the same curly quotes as everywhere else. No
+# toc (nothing to anchor), no footnotes (nowhere to put them).
+DRIFT_MD_EXTENSIONS = ["extra", "sane_lists", "smarty"]
+DRIFT_MD_CONFIG = {"smarty": MD_CONFIG["smarty"]}
+
 
 # ---------------------------------------------------------------------------
 # helpers
@@ -183,8 +190,39 @@ def validate_map(doc: dict) -> None:
                 print(f"  warn: edge {edge.get('from')} -> {edge.get('to')}: unknown {side}")
 
 
+def render_drift_prose(doc: dict) -> None:
+    """Turn drift.yaml's prose fields into HTML, in place.
+
+    Rendered here rather than in the browser so the page doesn't have to ship a
+    markdown parser for a few dozen sentences. The page inserts these as HTML,
+    which is safe because the only author is this repo.
+
+    Run this *after* validate_drift, which wants to see the raw text.
+    """
+    md = markdown.Markdown(extensions=DRIFT_MD_EXTENSIONS,
+                           extension_configs=DRIFT_MD_CONFIG)
+
+    def convert(text: str) -> str:
+        md.reset()
+        return md.convert(str(text).strip())
+
+    for key in ("intro", "outro"):
+        screen = doc.get(key)
+        if isinstance(screen, dict) and screen.get("body"):
+            screen["body"] = convert(screen["body"])
+
+    for phase in doc.get("phases", []) or []:
+        for step in phase.get("steps", []) or []:
+            if step.get("note"):
+                step["note"] = convert(step["note"])
+
+
 def validate_drift(doc: dict) -> None:
     """Warn about drift.yaml problems. Never fails the build."""
+    for key in ("intro", "outro"):
+        screen = doc.get(key)
+        if screen is not None and not (isinstance(screen, dict) and screen.get("body")):
+            print(f"  ! drift: '{key}' is present but has no 'body'")
     for phase in doc.get("phases", []) or []:
         pid = phase.get("id", "?")
         if not phase.get("steps"):
@@ -379,6 +417,7 @@ def build() -> None:
     if DRIFT_YAML.exists() and DRIFT_SRC.exists():
         drift = load_yaml(DRIFT_YAML)
         validate_drift(drift)
+        render_drift_prose(drift)
         write(OUT / "drift-data.json", json.dumps(drift, ensure_ascii=False))
 
         drift_html = DRIFT_SRC.read_text(encoding="utf-8")

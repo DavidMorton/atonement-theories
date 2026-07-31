@@ -19,12 +19,48 @@
 #
 # To add a step: add an entry under the right phase's `steps:`. To change the
 # geometry of a cut, edit its `cut:` and `live:` blocks. Nothing else moves.
+#
+# Every `note:`, and the `body:` of the intro and outro below, is markdown —
+# *italics*, **bold**, links, lists, > quotes. build.py renders it at build
+# time, so the page ships no parser. Use `|` (not `>-`) for anything with
+# blank lines or list items in it, so the line breaks survive YAML folding.
 # ---------------------------------------------------------------------------
 title: The Migration of the Claim
 tagline: >-
   Every increase in what is claimed over God drives the claim further inward,
   until it is held by God against God.
 eyebrow: an argument, not a survey
+
+# ---------------------------------------------------------------------------
+# Optional opening and closing screens. Either can be deleted outright and the
+# page simply starts on the first step and ends on the last. While one is up
+# the diagram stands down and the whole middle of the page is prose.
+#
+#   head:  the headline, where a step's `head` goes
+#   date:  the small line under it — a kicker, not necessarily a date
+#   body:  markdown
+#   cta:   label for the forward button (defaults to "next →")
+#   back:  label for the back button (defaults to "← back")
+#   links: optional buttons at the foot of the screen; site-relative hrefs
+#          get the baseurl added, absolute ones are left alone
+# ---------------------------------------------------------------------------
+intro:
+  head: Before the first move
+  date: how to read this
+  cta: begin →
+  body: |
+    What follows is one claim, tracked across sixteen centuries: that God
+    *must* punish sin retributively. Not a survey of atonement theories — an
+    argument about a single thread inside one of them.
+
+    The field is a map with two axes. Left to right is **where the necessity
+    is kept**, from wholly outside God to the divine essence itself. Top to
+    bottom is **how hard it binds** — absolute at the top, no claim on God at
+    all at the bottom.
+
+    Watch the two axes come apart. Each answer to an objection moves the
+    claim further in; and once it is inside, the only room left to move is to
+    divide God.
 
 phases:
 
@@ -85,7 +121,7 @@ phases:
         head: Wounded honour
         date: 1098 · Anselm
         note: >-
-          But the devil has no claim over his creator. Man's error is now his violation of the moral order and the offense that is to God's honour. Christ volunteers, reaps a surplus reward, and gifts it to men. Triggered but not absolute, as God can use his discretion in application of punishment.
+          But the devil has no claim over his creator. Man's error is now his violation of the moral order and the offense that is to God's honour. Christ volunteers, reaps a surplus reward, and gifts it to men. Triggered but not absolute, as God can use his discretion in who receives the gift.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -96,7 +132,7 @@ phases:
         head: Justice, on unstated terms
         date: 1559 · Calvin
         note: >-
-          But if God can use his discretion, then our good works could contribute somehow. That's works, not faith. So he picks a more objective trait - justice - and applies a penal frame. The payment, which was a reward for Anselm becomes a punishment for Calvin, and Jesus pays it. Calvin declines to say if God's hand is forced.
+          But if God can use his discretion with the gift, then our good works could contribute somehow. That's works, not faith. So he picks a more objective trait - justice - and applies a penal frame. The payment, which was a reward for Anselm becomes a punishment for Calvin, and Jesus pays it. Calvin declines to say if God's hand is forced.
         points:
           - {x: 0.05, y: 0.96, binds: creature}
           - {x: 0.40, y: 0.72, binds: god}
@@ -116,7 +152,7 @@ phases:
           - {x: 0.16, y: 0.30, binds: god}
           - {x: 0.34, y: 0.66, binds: god}
           - {x: 0.52, y: 0.50, binds: unstated}
-          - {x: 0.88, y: 0.25, binds: god}
+          - {x: 0.88, y: 0.19, binds: god}
 
   # =========================================================================
   - id: fission
@@ -135,7 +171,7 @@ phases:
         # last point of `relocation`. `bloom` grows that point out to fill the
         # live region instead of cutting to it, so the handover from travelling
         # to filling is one motion rather than two pictures.
-        bloom: {x: 0.88, y: 0.25}
+        bloom: {x: 0.88, y: 0.19}
 
       # An orthogonal division, not a narrowing one: it answers who the parties
       # are, not where the necessity lives, so it crosses the ladder rather than
@@ -210,3 +246,27 @@ phases:
           label: the bind, without a ground
           glyph: '?'
           glyph_at: {x: 0.5, y: 0.72}
+
+# ---------------------------------------------------------------------------
+# The closing screen. Same shape as `intro:` above.
+# ---------------------------------------------------------------------------
+outro:
+  head: After the last cut
+  date: what the picture shows
+  cta: end
+  body: |
+    Nothing here is a charge of bad faith. Every move was made by someone
+    answering a real objection, and each one works — locally. The trouble is
+    only visible end to end: the answers accumulate into a claim no single
+    author would have made, held in a place no earlier author would have put
+    it.
+
+    The last step is the one to sit with. When the locus goes to mystery but
+    the *must* stays, the necessity is no longer being argued for. It is being
+    assumed, and then protected.
+
+    So the question the diagram leaves you with isn't whether God punishes
+    sin. It's what is still doing the work once the ground has been withdrawn.
+  links:
+    - {text: the full essay, href: /necessity-problem/}
+    - {text: the family tree, href: /map/}

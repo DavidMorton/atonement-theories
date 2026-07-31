@@ -142,12 +142,13 @@ echo
 # --- watch -----------------------------------------------------------------
 
 if [ "${WATCH}" -eq 1 ]; then
-  echo "  Watching content/ nodes/ _templates/ assets/ map/ *.yaml build.py"
+  echo "  Watching content/ nodes/ _templates/ assets/ map/ drift/ *.yaml build.py"
   echo
   # No fswatch/entr dependency: hash a listing of the sources and poll it.
   # `ls -ld` output includes mtime and path, and works the same on BSD and GNU.
   fingerprint() {
-    find content nodes _templates assets map site.yaml content.yaml build.py \
+    find content nodes _templates assets map drift \
+      site.yaml content.yaml drift.yaml build.py \
       -type f -exec ls -ld {} + 2>/dev/null | cksum
   }
   LAST="$(fingerprint)"

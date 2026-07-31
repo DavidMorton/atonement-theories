@@ -182,6 +182,78 @@ svg#field {
 @media (max-width: 620px) { #note { --note-lines: 6; } }
 @media (max-width: 460px) { #note { --note-lines: 8; } }
 
+/* The note is markdown, rendered to HTML by build.py, so it arrives with real
+   block elements in it. They inherit the measure and the line-height; all they
+   need is for the first and last of them not to add margin the fixed height
+   above hasn't accounted for. */
+#note > *:first-child { margin-top: 0; }
+#note > *:last-child { margin-bottom: 0; }
+#note p, #note ul, #note ol, #note blockquote { margin: 0 0 .55em; }
+#note ul, #note ol { padding-left: 1.3em; }
+#note blockquote {
+  padding-left: .9em; border-left: 2px solid var(--line);
+  color: var(--dim); font-style: italic;
+}
+#note em, #screen em { color: var(--accent); font-style: italic; }
+#note strong, #screen strong { color: var(--ink); font-weight: 600; }
+#note code, #screen code {
+  font-family: var(--data); font-size: .88em;
+  background: var(--bg-raised); border: 1px solid var(--line-soft);
+  border-radius: 4px; padding: .05em .35em;
+}
+#note a, #screen a { color: var(--accent); }
+
+/* -- intro / outro screens ------------------------------------------------
+   Optional `intro:` and `outro:` blocks in drift.yaml become steps at the two
+   ends of the sequence: same masthead and same controls, but the field, the
+   note and the legend give up their rows to one column of prose. The screen
+   takes the flexible row the field usually has, so a long thought scrolls
+   inside it rather than pushing the controls off the bottom. */
+#screen {
+  display: none;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font-family: var(--serif);
+  font-size: clamp(16px, 2.4vw, 18px);
+  line-height: 1.68;
+  color: var(--ink-soft);
+  margin: 6px 0 0;
+}
+main.screen-mode #screen { display: block; }
+main.screen-mode #fieldwrap,
+main.screen-mode #caption,
+main.screen-mode #note,
+main.screen-mode #legend { display: none; }
+
+#screen > *:first-child { margin-top: 0; }
+#screen > *:last-child { margin-bottom: 0; }
+#screen p { margin: 0 0 1em; }
+#screen ul, #screen ol { margin: 0 0 1em; padding-left: 1.3em; }
+#screen li { margin-bottom: .4em; }
+#screen h2 {
+  font-size: 1.1em; font-weight: 600; color: var(--ink);
+  margin: 1.4em 0 .5em;
+}
+#screen blockquote {
+  margin: 0 0 1em; padding-left: 1em;
+  border-left: 2px solid var(--line); color: var(--dim); font-style: italic;
+}
+#screen hr { border: 0; border-top: 1px solid var(--line); margin: 1.6em 0; }
+
+/* Optional `links:` on a screen — somewhere to send the reader at the end. */
+#screen .screen-links {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px;
+}
+#screen .screen-links a {
+  font-family: var(--data); font-size: 10px; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--accent); text-decoration: none;
+  border: 1px solid var(--line); border-radius: 8px; padding: 9px 13px;
+  transition: background .18s ease, border-color .18s ease;
+}
+#screen .screen-links a:hover { background: var(--bg-raised); border-color: #3a3d46; }
+
 /* -- legend -------------------------------------------------------------- */
 #legend {
   display: flex; justify-content: center; gap: 18px;
@@ -266,7 +338,9 @@ svg#field {
   </div>
   <p id="caption"></p>
 
-  <p id="note" aria-live="polite"></p>
+  <div id="screen"></div>
+
+  <div id="note" aria-live="polite"></div>
   <div id="legend"></div>
 
   <div id="controls">
@@ -311,18 +385,24 @@ svg#field {
   /* ---- state ---------------------------------------------------------- */
   var DOC = null, STEPS = [], idx = 0;
 
-  /* ---- flatten phases into one ordered step list ---------------------- */
+  /* ---- flatten phases into one ordered step list ----------------------
+     An optional `intro:` and `outro:` in drift.yaml ride at the two ends of
+     the same list, so one index and one pair of buttons drive everything.
+     They carry `kind` rather than a phase, and the renderer branches on it. */
   function flatten(doc) {
     var out = [];
+    if (doc.intro) out.push({ kind: "screen", screen: doc.intro, hash: "intro" });
     (doc.phases || []).forEach(function (phase, pi) {
       (phase.steps || []).forEach(function (step, si) {
         out.push({
+          kind: "step",
           step: step, phase: phase, phaseIndex: pi,
           first: si === 0,
           hash: (phase.id || pi) + "-" + (step.id || si)
         });
       });
     });
+    if (doc.outro) out.push({ kind: "screen", screen: doc.outro, hash: "outro" });
     return out;
   }
 
@@ -341,16 +421,35 @@ svg#field {
     });
   }
 
+  /* One dot per diagram step. The intro and outro get none: they aren't
+     positions on the field, and a dot for them would imply the argument has
+     two more stations than it does. Each dot remembers which STEPS index it
+     stands for, so the two lists can be different lengths. */
   function buildDots() {
     var dots = el("dots");
     clear(dots);
+    var n = 0;
     STEPS.forEach(function (entry, i) {
+      if (entry.kind !== "step") return;
       var b = document.createElement("button");
       b.type = "button";
-      b.setAttribute("aria-label", entry.step.head || ("Step " + (i + 1)));
-      if (entry.first && i > 0) b.classList.add("gap");
+      b.setAttribute("aria-label", entry.step.head || ("Step " + (n + 1)));
+      if (entry.first && n > 0) b.classList.add("gap");
       b.addEventListener("click", function () { go(i); });
       dots.appendChild(b);
+      entry.dot = n++;
+    });
+  }
+
+  /* Dots for a diagram step: everything up to here is done, this one is on.
+     On the intro nothing has happened yet; on the outro all of it has. */
+  function paintDots(entry) {
+    var here = entry.kind === "step" ? entry.dot
+             : entry.hash === "outro" ? Infinity : -1;
+    Array.prototype.forEach.call(el("dots").children, function (b, i) {
+      b.classList.toggle("done", i <= here);
+      b.classList.toggle("on", i === here);
+      b.setAttribute("aria-current", i === here ? "step" : "false");
     });
   }
 
@@ -592,31 +691,81 @@ svg#field {
   function render() {
     var entry = STEPS[idx];
     if (!entry) return;
+
+    if (entry.kind === "screen") renderScreen(entry);
+    else renderStep(entry);
+
+    paintDots(entry);
+    el("prev").disabled = idx === 0;
+    el("next").disabled = idx === STEPS.length - 1;
+
+    /* hash */
+    var want = "#" + entry.hash;
+    if (location.hash !== want) {
+      history.replaceState(null, "", location.pathname + location.search + want);
+    }
+  }
+
+  /* An intro or outro screen: the masthead and controls stay put, the field
+     and the note stand down, and the whole middle of the page is prose. */
+  function renderScreen(entry) {
+    var s = entry.screen;
+    el("main").classList.add("screen-mode");
+
+    el("head").textContent = s.head || "";
+    el("date").textContent = s.date || "";
+
+    var screen = el("screen");
+    screen.innerHTML = s.body || "";          /* HTML rendered by build.py */
+    if (s.links && s.links.length) {
+      var wrap = document.createElement("div");
+      wrap.className = "screen-links";
+      s.links.forEach(function (link) {
+        var a = document.createElement("a");
+        a.href = href(link.href || "#");
+        a.textContent = link.text || link.href || "";
+        wrap.appendChild(a);
+      });
+      screen.appendChild(wrap);
+    }
+    screen.scrollTop = 0;
+
+    Array.prototype.forEach.call(el("acts").children, function (node) {
+      node.classList.remove("on");
+    });
+
+    el("next").textContent = s.cta || "next →";
+    el("prev").textContent = s.back || "← back";
+    el("srpos").textContent = s.head || (entry.hash === "intro" ? "Introduction"
+                                                                : "Afterword");
+  }
+
+  /* Site-relative hrefs get the baseurl; anything already absolute doesn't. */
+  function href(h) {
+    return /^([a-z]+:|#|\/\/)/i.test(h) ? h : BASEURL + h;
+  }
+
+  function renderStep(entry) {
     var step = entry.step, phase = entry.phase;
+    el("main").classList.remove("screen-mode");
 
     /* text */
     el("head").textContent = step.head || "";
     el("date").textContent = step.date || "";
-    el("note").textContent = step.note || "";
+    el("note").innerHTML = step.note || "";   /* HTML rendered by build.py */
+    el("note").scrollTop = 0;
     el("caption").textContent = phase.caption || "";
     el("field").setAttribute("aria-label", step.head || "");
-    el("srpos").textContent = "Step " + (idx + 1) + " of " + STEPS.length +
+    el("srpos").textContent = "Step " + (entry.dot + 1) + " of " + (el("dots").children.length) +
                               " — " + (phase.name || "") + ": " + (step.head || "");
+
+    el("next").textContent = "next →";
+    el("prev").textContent = "← back";
 
     /* acts */
     Array.prototype.forEach.call(el("acts").children, function (node, i) {
       node.classList.toggle("on", i === entry.phaseIndex);
     });
-
-    /* dots */
-    Array.prototype.forEach.call(el("dots").children, function (b, i) {
-      b.classList.toggle("done", i <= idx);
-      b.classList.toggle("on", i === idx);
-      b.setAttribute("aria-current", i === idx ? "step" : "false");
-    });
-
-    el("prev").disabled = idx === 0;
-    el("next").disabled = idx === STEPS.length - 1;
 
     /* legend — only where `binds` is doing work */
     var legend = el("legend");
@@ -676,12 +825,6 @@ svg#field {
     stage.style.transform =
       "translate(0px, " + cy + "px) scale(1, " + k + ") translate(0px, " + (-cy) + "px)";
     if (step.collapse) drawCollapse(step.collapse);
-
-    /* hash */
-    var want = "#" + entry.hash;
-    if (location.hash !== want) {
-      history.replaceState(null, "", location.pathname + location.search + want);
-    }
   }
 
   function go(n) {
