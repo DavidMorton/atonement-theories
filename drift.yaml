@@ -160,7 +160,7 @@ phases:
         head: The interior, undivided
         date: 1647 · Owen, The Death of Death
         note: >-
-          It's now part of God's nature that he must punish justice, but the mechanism is still unspecified. Where the past steps have been made to defend God's sovereignty, the next ones will try to explain where an eternal predisposition dependent on man's guilt could be placed in God.
+          It's now part of God's nature that he must punish justice, but the mechanism is still unspecified. Where the past steps have been made to defend God's sovereignty, the next steps will try to locate where an eternal, immutable predisposition dependent on man's guilt could be placed in God.
         live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 1.0}
         # Where the previous phase left the claim — keep this in step with the
         # last point of `relocation`. `bloom` grows that point out to fill the
@@ -176,7 +176,7 @@ phases:
         head: God contracts with God
         date: c. 1648 · Dickson · Cocceius · the pactum
         note: >-
-          The obligation is grounded in a covenant made before time between Father and Son, with Christ standing surety. A freely made, but bindin contract between trinitarian persons. The only parties left to transact are the divine persons themselves.
+          The obligation is grounded in a covenant made before time between Father and Son, with Christ standing surety. A freely made, but binding contract between trinitarian persons. The only parties left to transact are the divine persons themselves.
         overlay:
           line: {x1: 0.0, y1: 0.12, x2: 1.0, y2: 0.88}
           dash: true
