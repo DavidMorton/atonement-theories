@@ -158,9 +158,9 @@ phases:
 
       - id: undivided
         head: The interior, undivided
-        date: from 1578 · under Socinian pressure
+        date: 1647 · Owen, The Death of Death
         note: >-
-          It's now part of God's nature that he must punish justice, but the mechanism is still unspecified. Where the past steps have been made to ensure God's sovereignty, the next ones will be made to explain how a predisposition dependent on man's guilt could possibly exist within an eternal and immutable God.
+          It's now part of God's nature that he must punish justice, but the mechanism is still unspecified. Where the past steps have been made to defend God's sovereignty, the next steps will try to locate where an eternal, immutable predisposition dependent on man's guilt could be placed in God.
         live: {x0: 0.0, x1: 1.0, y0: 0.0, y1: 1.0}
         # Where the previous phase left the claim — keep this in step with the
         # last point of `relocation`. `bloom` grows that point out to fill the
@@ -176,7 +176,7 @@ phases:
         head: God contracts with God
         date: c. 1648 · Dickson · Cocceius · the pactum
         note: >-
-          The obligation is grounded in a covenant made before time between Father and Son, with Christ standing surety. Wholly interior now, and still freely made — then binding. The only parties left to transact are the divine persons themselves.
+          The federal theologians posit that the obligation stems from a covenant made before time between Father and Son, with Christ standing surety. A freely made, but binding contract between trinitarian persons. The only parties left to transact are the divine persons themselves.
         overlay:
           line: {x1: 0.0, y1: 0.12, x2: 1.0, y2: 0.88}
           dash: true
@@ -201,7 +201,7 @@ phases:
         head: The fact, or the mode
         date: 1655 · Owen, Vindiciae Evangelicae
         note: >-
-          Socinus points out that demanding payment is mutually exclusive with forgiveness, and the object of retribution cannot be justly transferred. So Owen bisects an essential attribute. *That* sin is punished is fact; when, on whom and how is free, and is the mode. This is exactly what licenses accepting a substitute and it hands the mode back to the will.
+          Socinus points out that demanding payment is mutually exclusive with forgiveness, and retribution' target cannot be justly transferred. So Owen bisects an essential attribute. *That* sin is punished is fact; when, on whom and how is free, and is the mode. This is what licenses accepting a substitute for retributive justice.
         cut:  {orient: h, at: 0.5, from: 0.5, to: 1.0}
         live: {x0: 0.5, x1: 1.0, y0: 0.0, y1: 0.5}
         labels:
@@ -213,7 +213,7 @@ phases:
         head: Held, or exercised
         date: 1679 · Turretin, Institutio
         note: >-
-          Then why don't all get punished immediately with no exceptions? Turretin cuts an attribute itself into habitus (the disposition that requires God punish sin) and actus (which controls the actual firing of it). God walks a fine line, but still compelled. This answers the objection, but there's nowhere else to cut. 
+          Then why don't all get punished immediately with no exceptions? Turretin cuts an attribute itself into habitus (the disposition that requires God punish sin) and actus (which controls the actual firing of it). God is still compelled. This answers the objection, but there's nowhere else to cut. 
         cut:  {orient: v, at: 0.75, from: 0.0, to: 0.5}
         live: {x0: 0.75, x1: 1.0, y0: 0.0, y1: 0.5}
         outline:
