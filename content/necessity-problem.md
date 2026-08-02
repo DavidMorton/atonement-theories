@@ -16,7 +16,7 @@ version, [read the short essay first](../start/).*
 
 ## The argument
 
-Penal substitutionary atonement (PSA) requires **a constraint on God that did not exist before the fall** — a necessity God acquires when the creature sins. Before there is guilt, nothing obliges God to punish. After there is guilt, he cannot do otherwise. In the God of classical theism that is a foreign object, incompatible with pure act, simplicity, and immutability.
+Penal substitutionary atonement (PSA) requires **a constraint on God that did not exist before the fall** — a necessity God acquires when the creature sins. Before there is guilt, nothing obliges God to punish. After there is guilt, he cannot do otherwise. In the God of classical theism, this constraint is a foreign object, incompatible with pure act, simplicity, and immutability.
 
 And it has nowhere to sit. Housed outside God, it insults his sovereignty: something that is not God now binds God. Housed inside him, it damages his nature: an attribute that is essential yet has no object until a creature sins is an unrealised capacity in a being who is supposed to have none. Every available location offends one side or the other, and the pressure is not symmetrical. Sovereignty objections arrive immediately and always push inward; objections from the doctrine of God bite only once the constraint is already deep inside, which means they arrive late and against a position already adopted. Over time this constraint grows ever smaller until, in 1973, it just goes *poof* (more on that later). So the constraint migrates, and it migrates one way.
 
@@ -59,25 +59,29 @@ What follows is that story.
 
 **Retributive justice.** Punishment deserved because of what was done, proportioned to the offence, owed to the offender. It looks backward at the crime. Contrast **restorative justice**, which looks forward and aims at repairing the person and the relationship.
 
-**Satisfaction.** Whatever must be rendered before the sinner can go free. The whole Western tradition after Anselm runs on this word, and fills it in two incompatible ways: for Anselm it is offered *instead of* the penalty, which is then never exacted; for PSA it is the penalty, exacted in full on a substitute. Both camps use the word; they do not use it for the same thing.
+**Satisfaction.** Whatever must be rendered before the sinner can go free. The whole Western tradition after Anselm runs on this word, and defines it in two incompatible ways. For Anselm it is offered *instead of* the penalty, which is then never exacted It is a gift from God. For PSA it is not a gift, but a penalty, exacted in full on a substitute. Both camps use the word; they do not use it for the same thing.
 
-**Deontic vs. alethic.** *Deontic* is the "ought" family — duty, obligation, permission, desert. A *deontic property* is something like guilt, merit, debt, or righteousness: not a physical thing, but treated in these systems as though it can be owned, owed, transferred, or cancelled. *Alethic* is the "must" family — necessity, possibility, impossibility.
+**Deontic vs. alethic.** Both of these are terms that point to various properties of a metaphysical subject. *Deontic* is the "ought" family — duty, obligation, permission, desert. A *deontic property* is something like guilt, merit, debt, or righteousness: not a physical thing, but treated in these systems as though it can be owned, owed, transferred, or cancelled. *Alethic* is the "must" family — necessity, possibility, impossibility.
 
-**Absolute vs. hypothetical necessity.** Absolute necessity means it could not have been otherwise, full stop. Hypothetical necessity (also called consequent or conditional) means it is necessary *given some earlier free choice* — once you have promised you must keep it, but you needn't have promised. These are the two settings on the modality dial, and the tradition turns that dial constantly.
+**Modality.** The character of a "must": how strongly it binds and in virtue of what. To specify a constraint's modality is to say whether it holds absolutely or only given some prior free choice, and what grounds it. Distinct from the constraint's object, which is what it bears on. The tradition's whole search operates on modality; this document's claim is that the defect was in the object.
 
-**Acquired necessity.** A constraint on God whose *object comes into being with the creature*: God stands under it after the fall and did not stand under it before. This is independent of modality. An acquired necessity can be hypothetical (Anselm's honour, triggered by sin) or absolute (Owen's vindicatory justice, essential but with nothing to act on until there is guilt). "Consequent necessity" would be the natural name, but scholastic usage has already claimed that term for the benign category.
+**Absolute vs. hypothetical necessity.** Absolute necessity means it could not have been otherwise, full stop. Hypothetical necessity (also called consequent or conditional) means it is necessary *given some earlier free choice* — once you have promised you must keep it, but you needn't have promised. These are the two settings on the modality dial, and the tradition turns that dial constantly. Historically, the pressure to maintain God's sovereignty has turned the dial towards absolute necessity and away from hypothetical necessity.
 
 **Pure act** (*actus purus*). God has no unrealised potential — nothing in him is waiting to happen, nothing in him can be switched on later. It travels with **divine simplicity** (God is not assembled out of parts; his attributes are not components but identical with what he is) and **immutability** (God does not change). Hold these three together and you have the wall the tradition eventually runs into.
+
+**Acquired necessity.** A constraint on God whose *object comes into being with the creature*: God stands under it after the fall and did not stand under it before. This is different from modality above. An acquired necessity can be hypothetical (Anselm's honour, triggered by sin) or absolute (Owen's vindicatory justice, essential but with nothing to act on until there is guilt). Strictly speaking, an acquired necessity is incompatible with an immutable, divinely simple God comprised of pure act. My thesis is that PSA claims an acquired necessity upon God, and by doing so, God becomes dependent upon man's guilt for the expression of his eternal character. 
 
 ## Part one — the apparatus
 
 ### Retributive justice isn't one thing
 
-To claim that a system takes retributive justice apart and hides the pieces, you have to say what the pieces are. Minimally, retribution needs five things:
+The thesis claims that PSA disassembles retributive justice and hides the component parts, so let's start with identifying these parts. 
+
+Minimally, retribution needs five things:
 
 1. **Desert** — guilt attaches to a particular person and merits a penalty.
 2. **The guilt–penalty coupling** — the penalty must land on the one who deserves it. This is what makes it *retribution* rather than just harm.
-3. **Proportion** — the penalty is matched to the offence. Too little and it's a hand-slap; too much and it's cruelty.
+3. **Proportion** — the penalty is matched to the offense. Too little and it's a hand-slap; too much and it's cruelty.
 4. **Necessity** — it genuinely must be exacted. Something makes it unavoidable.
 5. **Discharge** — once paid, the matter is closed.
 
