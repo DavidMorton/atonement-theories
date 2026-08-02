@@ -16,7 +16,7 @@ version, [read the short essay first](../start/).*
 
 ## The argument
 
-Penal substitutionary atonement (PSA) requires **a constraint on God that did not exist before the fall** — a necessity God acquires when the creature sins. Before there is guilt, nothing obliges God to punish. After there is guilt, he cannot do otherwise. In the God of classical theism, this constraint is a foreign object, incompatible with pure act, simplicity, and immutability.
+Penal substitutionary atonement (PSA) requires **a constraint on God that did not exist before the fall** — a necessity that God acquires when the creature sins. Before there is guilt, nothing obliges God to punish. After there is guilt, he *cannot do otherwise*. In the God of classical theism, this constraint is a foreign object, incompatible with pure act, simplicity, and immutability.
 
 And it has nowhere to sit. Housed outside God, it insults his sovereignty: something that is not God now binds God. Housed inside him, it damages his nature: an essential attribute that that has no object until a creature sins is an unrealised capacity in a being who is supposed to have none. Every available location offends one side or the other, and the pressure is not symmetrical. Sovereignty objections arrive immediately and always push inward towards God; objections from God's aseity bite only once the constraint is already internal to God, which means they arrive late and against a position already adopted. Over time the locus of constraint within God is described as an ever smaller part of God's being, until, in 1973, it is admitted that the locus can't and shouldn't be identified through logic, while still maintaining it's existence. So the constraint - what forces God's hand - migrates, and it migrates one way.
 
@@ -71,24 +71,27 @@ What follows is that story.
 
 **Pure act** (*actus purus*). God has no unrealised potential — nothing in him is waiting to happen, nothing in him can be switched on later. It travels with **divine simplicity** (God is not assembled out of parts; his attributes are not components but identical with what he is) and **immutability** (God does not change). Hold these three together and you have the wall the tradition eventually runs into.
 
-**Acquired necessity.** A constraint on God whose *object comes into being with the creature*: God stands under it after the fall and did not stand under it before. This is different from modality above. An acquired necessity can be hypothetical (Anselm's honour, triggered by sin) or absolute (Owen's vindicatory justice, essential but with nothing to act on until there is guilt). Strictly speaking, an acquired necessity is incompatible with an immutable, divinely simple God comprised of pure act. My thesis is that PSA claims an acquired necessity upon God, and by doing so, God becomes dependent upon man's guilt for the expression of his eternal character. 
+**Acquired necessity.** A constraint on God whose *object comes into being with the creature*: God stands under it after the fall and did not stand under it before. This is different from modality above. An acquired necessity can be hypothetical (Anselm's honour, triggered by sin) or absolute (Owen's vindicatory justice, essential but with nothing to act on until there is guilt). Strictly speaking, an acquired necessity is incompatible with an immutable, divinely simple God comprised of pure act. My thesis is that PSA claims an acquired necessity upon God, and by doing so, God becomes eternally dependent upon man's guilt for the expression of his character. 
 
 ## Part one — the apparatus
 
 ### Retributive justice isn't one thing
 
-The thesis claims that PSA disassembles retributive justice and hides the component parts, so let's start with identifying these parts. 
+The thesis claims that PSA disassembles retributive justice and hides the component parts in various metaphysical locations, so let's start with identifying these parts. 
 
-Minimally, retribution needs five things:
+Minimally, retribution needs three things in relation to deontic facts about the offender:
 
 1. **Desert** — guilt attaches to a particular person and merits a penalty.
 2. **The guilt–penalty coupling** — the penalty must land on the one who deserves it. This is what makes it *retribution* rather than just harm.
 3. **Proportion** — the penalty is matched to the offense. Too little and it's a hand-slap; too much and it's cruelty.
-4. **Necessity** — it genuinely must be exacted. Something makes it unavoidable.
+
+And one alethic property referring to the punisher: 
+
+4. **Necessity** — from the punisher's perspective, what makes it necessary that the punisher perform the punishment?
+
+Three more are needed to run any of this as a *transaction*:
+
 5. **Discharge** — once paid, the matter is closed.
-
-Two more are needed to run any of this as a *transaction*:
-
 6. **Currency** — what actually changes hands.
 7. **Transfer device** — the mechanism by which it moves.
 
@@ -115,7 +118,7 @@ Column order is derivational, not chronological. Origen predates Athanasius by a
 | **guilt–penalty coupling** | · n/a | · n/a | **loosened** | **re-welded by currency conversion** |
 | **proportion** | · n/a | · no measure | **infinite merit** | **full wrath** |
 | **necessity** | *God's truthfulness* | **the adversary's rights** | **God's honour** | **God's justice** |
-| **discharge** | · n/a | **automatic** | automatic | automatic |
+| **discharge** | · n/a | **automatic** | acceptive | acceptive - unstated |
 | **transfer device** | · union, not transfer | **purchase** | ✕ destroyed | **imputation** |
 
 The ransom column is labelled by framework rather than by person. Origen is its clearest early exponent, but the developed doctrine of the adversary's *rights* is later — Gregory of Nyssa states it more sharply — and Origen's own restorative and universalist commitments sit awkwardly with the column's other entries. The column marks the arrival of the transactional frame, not a settled reading of Origen.
@@ -177,7 +180,7 @@ What the tradition does from there is take the "must" and adjust *which kind it 
 | **guilt–penalty coupling** | ✕ | imputed | **representative headship** | rep. headship | **suretyship** | **union** | **licensed transfer** | **mystery** |
 | **proportion** | — | **quantified** | quantified | quantified | **parity left open** | parity left open | **fixed by fiat** | **mystery** |
 | **necessity** | ✕ | **God's free decree** | **the pact** | **the divine essence** | **essence / mode** | essence / mode | **habitus / actus** | **mystery** |
-| **discharge** | ✕ | automatic | automatic | automatic | ✕ dropped | dropped | dropped | dropped |
+| **discharge** | remissive | automatic | automatic | acceptive | acceptive | deferred (acceptive) | acceptive | acceptive (unexamined) |
 | **transfer device** | ✕ | — | **covenant** | covenant | ✕ broken | **double imputation** | double imputation | **mystery** |
 
 Two rows are worth staring at.
